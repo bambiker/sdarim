@@ -1,0 +1,331 @@
+<!-- 
+https://script.google.com/macros/s/AKfycbz_phXDjLGXKNe5aPOxxEgorM6o_C94biT4N8G4YLI/dev?seder=%D7%99%D7%91&verse=%D7%93&book=%D7%A9%D7%9E%D7%95%D7%AA
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JETFHY33T0');
+</script>
+
+  </head>
+  <body dir="rtl"  onLoad="start()">
+    <H1> ספר התנ"ך על פי החלוקה לסדרים </H1>
+    
+    <label>הספר</label>
+  <select name="cbook" id="cbook">
+  <option value=""></option>
+  <option value="בראשית">בראשית</option>
+  <option value="שמות">שמות</option>
+  <option value="ויקרא">ויקרא</option>
+  <option value="במדבר">במדבר</option>
+  <option value="דברים">דברים</option>
+  <option value="יהושע">יהושע</option>
+  <option value="שופטים">שופטים</option>
+  <option value="שמואל א">שמואל א</option>
+  <option value="שמואל ב">שמואל ב</option>
+  <option value="מלכים א">מלכים א</option>
+  <option value="מלכים ב">מלכים ב</option>
+  <option value="ישעיהו">ישעיהו</option>
+  <option value="ירמיהו">ירמיהו</option>
+  <option value="יחזקאל">יחזקאל</option>
+  <option value="הושע">הושע</option>
+  <option value="יואל">יואל</option>
+  <option value="עמוס">עמוס</option>
+  <option value="עובדיה">עובדיה</option>
+  <option value="יונה">יונה</option>
+  <option value="מיכה">מיכה</option>
+  <option value="נחום">נחום</option>
+  <option value="חבקוק">חבקוק</option>
+  <option value="צפניה">צפניה</option>
+  <option value="חגי">חגי</option>
+  <option value="זכריה">זכריה</option>
+  <option value="מלאכי">מלאכי</option>
+  <option value="תהילים">תהילים</option>
+  <option value="משלי">משלי</option>
+  <option value="איוב">איוב</option>
+  <option value="שיר השירים">שיר השירים</option>
+  <option value="רות">רות</option>
+  <option value="איכה">איכה</option>
+  <option value="קהלת">קהלת</option>
+  <option value="אסתר">אסתר</option>
+  <option value="דניאל">דניאל</option>
+  <option value="עזרא">עזרא</option>
+  <option value="נחמיה">נחמיה</option>
+  <option value="דברי הימים א">דברי הימים א</option>
+  <option value="דברי הימים ב">דברי הימים ב</option>
+</select>    
+    <label>הפרק</label>
+    <input type="text" id="chapter">
+    <label>הפסוק</label>
+    <input type="text" id="cverse">
+    <button id="btnfindchapter">חפש</button>
+    <br>   
+
+    <label>הספר</label>
+    
+<select name="sbook" id="sbook">
+   <option value=<?= sbook; ?> selected disabled hidden><?= sbook; ?></option>
+  <option value=""></option>
+  <option value="בראשית">בראשית</option>
+  <option value="שמות">שמות</option>
+  <option value="ויקרא">ויקרא</option>
+  <option value="במדבר">במדבר</option>
+  <option value="דברים">דברים</option>
+  <option value="יהושע">יהושע</option>
+  <option value="שופטים">שופטים</option>
+  <option value="שמואל">שמואל</option>
+  <option value="מלכים">מלכים</option>
+  <option value="ישעיהו">ישעיהו</option>
+  <option value="ירמיהו">ירמיהו</option>
+  <option value="יחזקאל">יחזקאל</option>
+  <option value="תרי עשר">תרי עשר</option>
+  <option value="תהילים">תהילים</option>
+  <option value="משלי">משלי</option>
+  <option value="איוב">איוב</option>
+  <option value="שיר השירים">שיר השירים</option>
+  <option value="רות">רות</option>
+  <option value="איכה">איכה</option>
+  <option value="קהלת">קהלת</option>
+  <option value="אסתר">אסתר</option>
+  <option value="דניאל">דניאל</option>
+  <option value="עזרא ונחמיה">עזרא ונחמיה</option>
+  <option value="דברי הימים">דברי הימים</option>
+</select>    
+    <label>הסדר</label>
+    <input type="text" id="seder" value=<?= seder; ?>>
+    <label>הפסוק</label>
+    <input type="text" id="sverse" value=<?= sverse; ?>>
+    <button id="btnfindseder">חפש</button>
+    
+<br>
+
+<input type="text" id="free">
+<button id="btnfree"> חיפוש חופשי</button>
+    
+<select name="resultSelect" id="resultSelect">
+</select>    
+
+<button id="btnchoosefree">בחר תוצאת חיפוש</button>
+<br>
+
+<select name="parasha" id="parasha">
+<option value=<?= parasha; ?> selected disabled hidden><?= parasha; ?></option>
+<option value=""></option>
+<option value="בראשית">בראשית</option>
+<option value="נח">	נח</option>
+<option value="לך לך">	לך לך</option>
+<option value="וירא">	וירא</option>
+<option value="חיי שרה">	חיי שרה</option>
+<option value="תולדות">	תולדות</option>
+<option value="ויצא">	ויצא</option>
+<option value="וישלח">	וישלח</option>
+<option value="וישב">	וישב</option>
+<option value="מקץ">	מקץ</option>
+<option value="ויגש">	ויגש</option>
+<option value="ויחי">	ויחי</option>
+<option value="שמות">	שמות</option>
+<option value="וארא">	וארא</option>
+<option value="בא">	בא</option>
+<option value="בשלח">	בשלח</option>
+<option value="יתרו">	יתרו</option>
+<option value="משפטים">	משפטים</option>
+<option value="תרומה">	תרומה</option>
+<option value="תצוה">	תצוה</option>
+<option value="כי תשא">	כי תשא</option>
+<option value="ויקהל">	ויקהל</option>
+<option value="פקודי">	פקודי</option>
+<option value="ויקרא">	ויקרא</option>
+<option value="צו">	צו</option>
+<option value="שמיני">	שמיני</option>
+<option value="תזריע">	תזריע</option>
+<option value="מצורע">	מצורע</option>
+<option value="אחרי מות">	אחרי מות</option>
+<option value="קדשים">	קדשים</option>
+<option value="אמר">	אמר</option>
+<option value="בהר">	בהר</option>
+<option value="בחקתי">	בחקתי</option>
+<option value="במדבר">	במדבר</option>
+<option value="נשא">	נשא</option>
+<option value="בהעלתך">	בהעלתך</option>
+<option value="שלח לך">	שלח לך</option>
+<option value="קרח">	קרח</option>
+<option value="חקת">	חקת</option>
+<option value="בלק">	בלק</option>
+<option value="פינחס">	פינחס</option>
+<option value="מטות">	מטות</option>
+<option value="מסעי">	מסעי</option>
+<option value="דברים">	דברים</option>
+<option value="ואתחנן">	ואתחנן</option>
+<option value="עקב">	עקב</option>
+<option value="ראה">	ראה</option>
+<option value="שפטים">	שפטים</option>
+<option value="כי תצא">	כי תצא</option>
+<option value="כי תבוא">	כי תבוא</option>
+<option value="נצבים">	נצבים</option>
+<option value="וילך">	וילך</option>
+<option value="האזינו">	האזינו</option>
+<option value="וזאת הברכה">	וזאת הברכה</option>
+
+</select>    
+
+<button id="btnparasha">הצג פרשה</button>
+
+    
+    <div>
+    <label id="result"><br>החיפוש יארך מספר שניות</label>
+    </div>
+    <br>
+    <label>קישור ישיר לדף זה: </label>
+    <label id="urlname"></label>
+    <label id="url"><a href="http://tinyurl.com/sdarim">http://tinyurl.com/sdarim</a></label>
+    <br>
+    <br>
+        <?var url = getScriptUrl();?><a href='https://script.google.com/macros/s/AKfycbx7Drvf8hkvgL1PStXUG10ARDlyPq7c-pVert3ZcYGPJSyDZu0/exec?page=links' target="_blank"> <input type='button' name='button' value='אודות והסכמות'></a>
+        
+        <?var url = getScriptUrl();?><a href='https://forms.gle/FJx3CNFUcExcG9Fn9' target="_blank"> <input type='button' name='button' value='צור קשר'></a>
+<br>
+        נשמח לעזרה בקידום המיזם
+<br>
+<br>
+
+    <script>
+    
+    document.getElementById("btnfindseder").addEventListener("click",doSeder);
+    document.getElementById("btnfindchapter").addEventListener("click",doChapter);
+    document.getElementById("btnfree").addEventListener("click",doFree);
+    document.getElementById("btnchoosefree").addEventListener("click",doChoose);
+    document.getElementById("btnparasha").addEventListener("click",doParasha);
+    
+    function start()
+    {
+    if (document.getElementById("parasha").value=="")
+        doSeder();
+    else
+        doParasha();
+    }
+    
+    function doChoose()
+    {
+        var res = document.getElementById("resultSelect").value
+        var twodots = res.indexOf(":")
+        var place = res.substring(0,twodots).trim()
+        var sp1 = place.lastIndexOf(" ")  //8
+        var verse = place.substring(sp1,132).trim()
+        var trim1 = place.substring(0,sp1)
+        var sp2 = trim1.lastIndexOf(" ")  //8
+        var seder = trim1.substring(sp2,132).trim()
+        var book = trim1.substring(0,sp2)
+        document.getElementById('sbook').value = book;
+        document.getElementById('seder').value = seder;
+        document.getElementById('sverse').value = verse;
+        doSeder();
+       // document.getElementById('result').innerHTML = sp1*10000 + sp2
+    }
+    function doParasha()
+    {
+        var parasha = document.getElementById("parasha").value;
+        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
+        google.script.run.withSuccessHandler(goodresultsparasha).userParasha(parasha);
+        url = "http://tinyurl.com/sdarim?parasha="+parasha;
+        document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
+        document.getElementById('urlname').innerHTML ='('+ 'פרשת ' + parasha + ')';
+    }
+
+    function doFree()
+    {
+        var free = document.getElementById("free").value;
+        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
+        google.script.run.withSuccessHandler(goodresultsfree).userFree(free);
+    }
+
+    function doSeder()
+    {
+        if (document.getElementById("sbook").value!='')
+        {
+        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
+        var book = document.getElementById("sbook").value;
+        var seder = document.getElementById("seder").value;         
+        var verse = document.getElementById("sverse").value;         
+        google.script.run.withSuccessHandler(goodresultsseder).userSeder(book, seder, verse, "seder");
+        url = "http://tinyurl.com/sdarim?book="+book+"&seder="+seder+"&verse="+verse;
+        document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
+        document.getElementById('urlname').innerHTML = '('+ book + ' סדר ' + seder + ' פסוק ' + verse + ')';
+        }
+    }
+    function doChapter()
+    {
+        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
+        var book = document.getElementById("cbook").value;
+        var seder = document.getElementById("chapter").value;         
+        var verse = document.getElementById("cverse").value;         
+        google.script.run.withSuccessHandler(goodresultschapter).userSeder(book, seder, verse, "chapter");
+    }
+    
+    function goodresultsparasha(res)
+    {
+    document.getElementById('result').innerHTML = res[0];
+    document.getElementById('sbook').value = res[1];
+    document.getElementById('seder').value = res[2];
+    document.getElementById('sverse').value = res[3];
+    }
+    
+    function goodresultsseder(res)
+    {
+    document.getElementById('result').innerHTML = res[0];
+    document.getElementById('cbook').value = res[1];
+    document.getElementById('chapter').value = res[2];
+    document.getElementById('cverse').value = res[3];
+    }
+    
+    function goodresultschapter(res)
+    {
+       if (res[2]=='')
+          document.getElementById('result').innerHTML = 'הפרק לא נמצא';
+       else
+       {
+       document.getElementById('result').innerHTML = res[0];
+       document.getElementById('sbook').value = res[1];
+       document.getElementById('seder').value = res[2];
+       document.getElementById('sverse').value = res[3];
+       url = "http://tinyurl.com/sdarim?book="+res[1]+"&seder="+res[2]+"&verse="+res[3];
+       document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
+       }
+    }
+    function goodresultsfree(res)
+    {
+       if (res.length==0)
+          document.getElementById('result').innerHTML = 'המילה המבוקשת לא נמצאה בתנ"ך';      
+       else
+          document.getElementById('result').innerHTML = "תוצאות החיפוש התעדכנו בתיבת התוצאות, יש לבחור את התוצאה הרצויה ואז ניתן יהיה להציגה באמצעות הכפתור 'בחר תוצאות חיפוש'";
+       var select = document.getElementById("resultSelect");
+       
+       var i, L = select.options.length - 1;
+       for(i = L; i >= 0; i--) {
+       select.remove(i);
+       }
+
+       for(var i=0;i<res.length;i++)
+       {
+       var option = document.createElement("option");
+       option.text = res[i];
+       select.add(option);
+       }
+    }
+    </script>
+    
+    <!--  
+
+        <img src="https://drive.google.com/uc?export=download&id=14IrzqZVTfONbRvoilLsTPxzlIhegzyU3"> 
+-->
+  </body>
+
+</html>
