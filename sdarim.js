@@ -16,7 +16,7 @@ async function chapter2seder(){
 
     console.log(tt); 
     console.log(tt.list[1])
-    console.log(tt.list[1][name])
+    console.log(tt.list[1].name)
     
     payment = seder[1][parasha];
     pay2   = 'gg'; //seder[1].[verseseder];
