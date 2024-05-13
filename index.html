@@ -204,7 +204,9 @@ https://script.google.com/macros/s/AKfycbz_phXDjLGXKNe5aPOxxEgorM6o_C94biT4N8G4Y
       function testhtml() {
             const status = document.querySelector('#status');
             [ret,ret2] = chapter2seder();
-            status.textContent = ret+' '+ret2;
+             window.alert(ret);
+        window.alert(ret2);
+            status.textContent = str(ret)+' '+str(ret2);
       }
       document.querySelector('#findchapter').addEventListener('click', testhtml);
     </script>
