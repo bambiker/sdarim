@@ -1,7 +1,7 @@
 function chapter2seder(){
- payment = 3.13;
- pay2 = 2;
- return [payment.toFixed(2), pay2]; 
+ payment = (3.13).toString();
+ pay2 = (2).toString();
+ return [payment, pay2]; 
 }
 
 
