@@ -9,7 +9,7 @@ async function chapter2seder(){
 
     payment = 'dd'; //seder[1].parasha;
     pay2   = 'gg'; //seder[1].verseseder;
-    return [payment, pay2];
+    return payment;
 
 }
 
