@@ -198,10 +198,13 @@ https://script.google.com/macros/s/AKfycbz_phXDjLGXKNe5aPOxxEgorM6o_C94biT4N8G4Y
 <br>
 
        <button class="button" id = "chapter2seder"><b>Test</b></button><br/>
+       <p id = "status"></p>
+
         <script>
       function testhtml() {
+            const status = document.querySelector('#status');
             chapter2seder("dsf","d","t");
-            echo "test"
+            status.textContent = 'Locating…';
       }
       document.querySelector('#chapter2seder').addEventListener('click', testhtml);
     </script>
