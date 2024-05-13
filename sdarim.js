@@ -1,5 +1,6 @@
 function chapter2seder(){
  payment = 3.13;
+ pay2 = 2;
  return payment.toFixed(2); 
 }
 
