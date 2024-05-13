@@ -1,4 +1,4 @@
-function chapter2seder(book,chapter,verse){
+function chapter2seder(){
  payment = 3.13;
  return payment.toFixed(2); 
 }
