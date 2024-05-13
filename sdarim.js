@@ -7,8 +7,8 @@ async function chapter2seder(){
     console.log(json);
     console.log(seder[1]);
 
-    payment = seder[1].parasha;
-    papy2   = seder[1].verseseder;
+    payment = 'dd'; //seder[1].parasha;
+    papy2   = 'gg'; //seder[1].verseseder;
     return [payment, pay2];
 
 }
