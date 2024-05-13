@@ -1,7 +1,23 @@
+function fetchJSONData() {
+       fetch("./sdarim.json")
+           .then((res) => {
+               if (!res.ok) {
+                   throw new Error
+                       (`HTTP error! Status: ${res.status}`);
+               }
+               return res.json();
+           })
+           .then((data) => 
+                 console.log(data))
+           .catch((error) => 
+                  console.error("Unable to fetch data:", error));
+       return data;
+   }
+
 function chapter2seder(){
  payment = (3.13).toString();
  pay2 = (2).toString();
- const data = require('./sdarim.json');
+ const data =    fetchJSONData();
  payment = data.seder[1].parasha;
  papy2   = data.seder[1].verseseder;
  return [payment, pay2]; 
