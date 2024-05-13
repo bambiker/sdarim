@@ -5,7 +5,7 @@ async function chapter2seder(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
     console.log(json);
-    console.log(json.seder[2][parasha]);
+    console.log(json[2].seder[parasha]);
 
    tt =  {"list": [
     {"name":"my Name","id":12,"type":"car owner"},
@@ -16,6 +16,7 @@ async function chapter2seder(){
 
     console.log(tt); 
     console.log(tt.list[1])
+    console.log(tt.list[1][name])
     
     payment = seder[1][parasha];
     pay2   = 'gg'; //seder[1].[verseseder];
