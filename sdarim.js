@@ -1,5 +1,12 @@
 function fetchJSONData() {
-       fetch("./sdarim.json")
+ 
+   }
+
+function chapter2seder(){
+ payment = (3.13).toString();
+ pay2 = (2).toString();
+
+      fetch("./sdarim.json")
            .then((res) => {
                if (!res.ok) {
                    throw new Error
@@ -8,18 +15,12 @@ function fetchJSONData() {
                return res.json();
            })
            .then((data) => 
-                 return data;
-           .catch((error) => 
-                  console.error("Unable to fetch data:", error));
-   }
-
-function chapter2seder(){
- payment = (3.13).toString();
- pay2 = (2).toString();
- const data =    fetchJSONData();
- payment = data.seder[1].parasha;
- papy2   = data.seder[1].verseseder;
- return [payment, pay2]; 
+                      payment = data.seder[1].parasha;
+                      papy2   = data.seder[1].verseseder;
+                      return [payment, pay2];
+       .catch((error) => 
+                  console.error("Unable to fetch data:", error));  
+  
 }
 
 
