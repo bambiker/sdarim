@@ -18,6 +18,7 @@ function chapter2seder(){
                       payment = data.seder[1].parasha;
                       papy2   = data.seder[1].verseseder;
                       return [payment, pay2];
+               )
        .catch((error) => 
                   console.error("Unable to fetch data:", error));  
   
