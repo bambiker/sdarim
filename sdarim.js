@@ -5,7 +5,7 @@ async function chapter2seder(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
     console.log(json);
-    console.log(seder[1].parasha);
+    console.log(seder[1]);
 
     payment = seder[1].parasha;
     papy2   = seder[1].verseseder;
