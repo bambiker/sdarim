@@ -1,7 +1,7 @@
 function chapter2seder(){
  payment = (3.13).toString();
  pay2 = (2).toString();
- import data from 'sdarim.json' assert { type: 'json' };
+ const data = require('./sdarim.json');
  payment = data.seder[1].parasha;
  papy2   = data.seder[1].verseseder;
  return [payment, pay2]; 
