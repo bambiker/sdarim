@@ -8,10 +8,9 @@ function fetchJSONData() {
                return res.json();
            })
            .then((data) => 
-                 console.log(data))
+                 return data;
            .catch((error) => 
                   console.error("Unable to fetch data:", error));
-       return data;
    }
 
 function chapter2seder(){
