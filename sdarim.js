@@ -7,7 +7,7 @@ async function chapter2seder(){
     console.log(json);
     console.log(json.seder[3].bookseder);
 
-    payment = json.seder[3].bookseder;
+    payment = await json.seder[3].bookseder;
     pay2   = 'gg'; //seder[1].[verseseder];
     return payment;
 
