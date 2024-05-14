@@ -13,6 +13,10 @@ async function chapter2seder(){
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
     
+    const filt = [{label: 'bookchapter', value: 'שמות'}, {label: 'chapter', value: 'יח'}, {label: 'versechapter', value: 'ג'}];
+    const filtArray = json.seder.filt(item => filters.every(filt => item[filt.label] === filt.value))
+    console.log(filtArray);
+    
     
     payment = await json.seder[3].bookseder;
     pay2   = 'gg'; //seder[1].[verseseder];
