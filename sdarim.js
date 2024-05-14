@@ -4,7 +4,7 @@ async function chapter2seder(){
 
     const response = await fetch("sdarim.json");
     const json = await response.json();
-    console.log(json);
+ //   console.log(json);
     console.log(json.seder[3].bookseder);
 
     payment = await json.seder[3].bookseder;
