@@ -9,6 +9,7 @@ async function chapter2seder(){
 
     payment = await json.seder[3].bookseder;
     pay2   = 'gg'; //seder[1].[verseseder];
+    document.getElementById("temp").value = payment;
     return payment;
 
 }
