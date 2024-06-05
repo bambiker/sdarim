@@ -1,13 +1,13 @@
 async function chapter2seder(){
     payment = (3.13).toString();
     pay2 = (2).toString();
-  //      var book = document.getElementById("sbook").value;
-  //      var seder = document.getElementById("seder").value;         
-  //      var verse = document.getElementById("sverse").value; 
+        var book = document.getElementById("sbook").value;
+        var seder = document.getElementById("seder").value;         
+        var verse = document.getElementById("sverse").value; 
     
-  //      var book = document.getElementById("cbook").value;
-  //      var seder = document.getElementById("chapter").value;         
-  //      var verse = document.getElementById("cverse").value;  
+        var book = document.getElementById("cbook").value;
+        var seder = document.getElementById("chapter").value;         
+        var verse = document.getElementById("cverse").value;  
     
     
     const response = await fetch("sdarim.json");
@@ -28,7 +28,7 @@ async function chapter2seder(){
     
     payment = await json.seder[3].bookseder;
     pay2   = 'gg'; //seder[1].[verseseder];
-    document.getElementById("status").innerHTML = payment;
+    document.getElementById("status").innerHTML = filtArray[0].seder;
     return payment;
 
 }
