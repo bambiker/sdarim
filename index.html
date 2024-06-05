@@ -200,14 +200,28 @@ https://script.google.com/macros/s/AKfycbz_phXDjLGXKNe5aPOxxEgorM6o_C94biT4N8G4Y
        <button class="button" id = "findchapter"><b>Test</b></button><br/>
        <p id = "status"></p>
 
-        <script>
+    
+      <script>
       function testhtml() {
             const status = document.querySelector('#status');
             ret = chapter2seder();
       }
       document.querySelector('#findchapter').addEventListener('click', testhtml);
-    </script>
+      </script>
    
+      <script>
+      function htmlfindchapter() {
+            ret = chapter2seder();
+      }
+      document.querySelector('#btnfindchapter').addEventListener('click', htmlfindchapter);
+      </script>
+
+          <script>
+      function htmlfindseder() {
+            ret = seder2chapter();
+      }
+      document.querySelector('#btnfindseder').addEventListener('click', htmlfindseder);
+      </script>
 
 
     <script>
