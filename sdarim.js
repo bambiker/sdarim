@@ -31,9 +31,9 @@ async function chapter2seder(){
     payment = await json.seder[3].bookseder;
     pay2   = 'gg'; //seder[1].[verseseder];
     document.getElementById("status").innerHTML = filtArray[0].seder;
-    document.getElementById("sbook").innerHTML = filtArray[0].bookseder;
-    document.getElementById("seder").innerHTML = filtArray[0].seder;
-    document.getElementById("sverse").innerHTML = filtArray[0].verseseder;
+    document.getElementById("sbook").value = filtArray[0].bookseder;
+    document.getElementById("seder").value = filtArray[0].seder;
+    document.getElementById("sverse").value = filtArray[0].verseseder;
 
     return payment;
 
