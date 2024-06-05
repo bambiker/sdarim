@@ -32,7 +32,7 @@ async function chapter2seder(){
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
 
-    return payment;
+    return;
 
 }
 
@@ -51,7 +51,7 @@ async function seder2chapter(){
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
 
-    return payment;
+    return ;
 
 }
 
