@@ -1,7 +1,14 @@
 async function chapter2seder(){
     payment = (3.13).toString();
     pay2 = (2).toString();
-
+        var book = document.getElementById("sbook").value;
+        var seder = document.getElementById("seder").value;         
+        var verse = document.getElementById("sverse").value; 
+    
+        var book = document.getElementById("cbook").value;
+        var seder = document.getElementById("chapter").value;         
+        var verse = document.getElementById("cverse").value;  
+    
     
     const response = await fetch("sdarim.json");
     const json = await response.json();
@@ -14,7 +21,7 @@ async function chapter2seder(){
     
     const filt = [{label: 'bookchapter', value: 'שמות'}, {label: 'chapter', value: 'יח'}, {label: 'versechapter', value: 'ג'}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
-    console.log(filtArray);
+    console.log(filtArray.bookseder);
     
     
     payment = await json.seder[3].bookseder;
