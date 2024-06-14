@@ -66,6 +66,27 @@ async function seder2chapter(){
 
 }
 
+async function findparasha(){
+    document.getElementById("result").innerHTML  = " מציג פרשה ";
+
+    var parasha = document.getElementById("parasha").value;
+
+    const response = await fetch("sdarim.json");
+    const json = await response.json();
+
+    const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}, {label: 'verseseder', value: sverse}];
+    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+    try{
+    document.getElementById("result").innerHTML  = "הסדר נמצא";
+    }
+    catch (err)
+    {
+    document.getElementById("result").innerHTML  = " הסדר לא נמצא ";
+    }
+    return ;
+
+}
+
 
 function mgketer(bookname, chapter, verse)
 {
