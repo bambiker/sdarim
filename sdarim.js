@@ -46,11 +46,16 @@ async function seder2chapter(){
 
     const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}, {label: 'verseseder', value: sverse}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
-    
+    try{
     document.getElementById("cbook").value = filtArray[0].bookchapter;
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
-    document.getElementById("status").value = "הפרק נמצא";
+    document.getElementById("status").innerHTML  = "הפרק נמצא";
+    }
+    catch
+    {
+    document.getElementById("status").innerHTML  = "vdfgkjd kdfg נמצא";
+    }
     return ;
 
 }
