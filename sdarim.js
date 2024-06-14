@@ -28,10 +28,16 @@ async function chapter2seder(){
  //   payment = await json.seder[3].bookseder;
  //   pay2   = 'gg'; //seder[1].[verseseder];
  //   document.getElementById("status").innerHTML = filtArray[0].seder;
+    try{  
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
-
+    document.getElementById("result").innerHTML  = " הפרק נמצא ";
+    }
+    catch (err)
+    {
+    document.getElementById("result").innerHTML  = " הפרק לא נמצא ";
+    }
     return;
 
 }
@@ -50,11 +56,11 @@ async function seder2chapter(){
     document.getElementById("cbook").value = filtArray[0].bookchapter;
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
-    document.getElementById("result").innerHTML  = "הפרק נמצא";
+    document.getElementById("result").innerHTML  = "הסדר נמצא";
     }
     catch (err)
     {
-    document.getElementById("result").innerHTML  = "vdfgkjd kdfg נמצא";
+    document.getElementById("result").innerHTML  = " הסדר לא נמצא ";
     }
     return ;
 
