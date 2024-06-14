@@ -77,13 +77,13 @@ async function findparasha(){
     const filters = [{label: 'parasha', value: parasha}];
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
-    try{
-    document.getElementById("result").innerHTML  = "parasha found נמצא";
+
+    output = ""
+    for (let i = 0; i < filteredArray.length; i++) {
+         output +=  filteredArray[i].versenikud + "<br>";
     }
-    catch (err)
-    {
-    document.getElementById("result").innerHTML  = " parasha not found לא נמצא ";
-    }
+    document.getElementById("result").innerHTML  = output;
+
     return ;
 
 }
