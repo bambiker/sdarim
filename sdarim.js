@@ -50,11 +50,11 @@ async function seder2chapter(){
     document.getElementById("cbook").value = filtArray[0].bookchapter;
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
-    document.getElementById("status").innerHTML  = "הפרק נמצא";
+    document.getElementById("result").innerHTML  = "הפרק נמצא";
     }
     catch (err)
     {
-    document.getElementById("status").innerHTML  = "vdfgkjd kdfg נמצא";
+    document.getElementById("result").innerHTML  = "vdfgkjd kdfg נמצא";
     }
     return ;
 
