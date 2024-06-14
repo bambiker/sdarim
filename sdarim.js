@@ -52,7 +52,7 @@ async function seder2chapter(){
     document.getElementById("cverse").value = filtArray[0].versechapter;
     document.getElementById("status").innerHTML  = "הפרק נמצא";
     }
-    catch
+    catch (err)
     {
     document.getElementById("status").innerHTML  = "vdfgkjd kdfg נמצא";
     }
