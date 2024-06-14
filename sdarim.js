@@ -32,7 +32,7 @@ async function chapter2seder(){
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
-    document.getElementById("result").innerHTML  = " הפרק נמצא ";
+    document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     }
     catch (err)
     {
@@ -56,7 +56,7 @@ async function seder2chapter(){
     document.getElementById("cbook").value = filtArray[0].bookchapter;
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
-    document.getElementById("result").innerHTML  = "הסדר נמצא";
+    document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     }
     catch (err)
     {
