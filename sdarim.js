@@ -74,14 +74,15 @@ async function findparasha(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
 
-    const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}, {label: 'verseseder', value: sverse}];
-    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+    const filters = [{label: 'parasha', value: parasha}];
+    const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
+    console.log(filteredArray);
     try{
-    document.getElementById("result").innerHTML  = "הסדר נמצא";
+    document.getElementById("result").innerHTML  = "parasha found נמצא";
     }
     catch (err)
     {
-    document.getElementById("result").innerHTML  = " הסדר לא נמצא ";
+    document.getElementById("result").innerHTML  = " parasha not found לא נמצא ";
     }
     return ;
 
