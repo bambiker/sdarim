@@ -1,33 +1,13 @@
 async function chapter2seder(){
-//    payment = (3.13).toString();
-//    pay2 = (2).toString();
-//    var sbook = document.getElementById("sbook").value;
-//    var seder = document.getElementById("seder").value;         
-//    var sverse = document.getElementById("sverse").value;    
     var cbook = document.getElementById("cbook").value;
     var chapter = document.getElementById("chapter").value;         
     var cverse = document.getElementById("cverse").value;  
     
     const response = await fetch("sdarim.json");
     const json = await response.json();
-    console.log(json.seder[3].bookseder);
-
- //   const filters = [{label: 'bookchapter', value: 'שמות'}, {label: 'chapter', value: 'יח'}];
- //   const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
- //   console.log(filteredArray);
-    
-    //const filt = [{label: 'bookchapter', value: 'שמות'}, {label: 'chapter', value: 'יח'}, {label: 'versechapter', value: 'ג'}];
     const filt = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}, {label: 'versechapter', value: cverse}];
 
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
-        console.log(filtArray[0].bookseder);
-//    console.log(filtArray[0].seder);
-    console.log(filtArray);
-
-    
- //   payment = await json.seder[3].bookseder;
- //   pay2   = 'gg'; //seder[1].[verseseder];
- //   document.getElementById("status").innerHTML = filtArray[0].seder;
     try{  
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
