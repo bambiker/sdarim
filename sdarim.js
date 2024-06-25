@@ -86,6 +86,7 @@ async function findfree(){
 
     for (index = 0; index < json.seder.length; ++index) {
         entry = json.seder[index];
+        console.log(entry);
         if (entry.versenonikud.indexOf(freetext) !== -1) {
             console.log(entry);
             results.push(entry);
