@@ -81,10 +81,12 @@ async function findfree(){
    // console.log(filteredArray);
 
     var results = [];
+    console.log(json.length);
 
     for (index = 0; index < json.length; ++index) {
         entry = json[index];
-        if (entry && entry.name && entry.versenonikud.indexOf(freetext) !== -1) {
+        if (entry.versenonikud.indexOf(freetext) !== -1) {
+            console.log(entry);
             results.push(entry);
         }
     }
