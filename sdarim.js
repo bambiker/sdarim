@@ -151,7 +151,7 @@ async function findfree(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
 
-    var results = [];
+    var results = "";
 //    console.log(json.seder);
 //    console.log(json.seder.length);
 
@@ -172,7 +172,7 @@ async function findfree(){
         console.log("not found verse text");
     }
     }
-
+    if (results == "") results = "לא נמצאו תוצאות"
     document.getElementById("result").innerHTML  = results;
     console.log(results);
 
