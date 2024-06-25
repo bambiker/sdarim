@@ -17,7 +17,9 @@ async function chapter2seder(){
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
+    console.log("bf");
     userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    console.log("af");
         
     }
     catch (err)
@@ -932,14 +934,18 @@ function cleanverse(para){
 async function userSeder(book, seder, verse){
     //  seder = seder.trim()
     //  verse = verse.trim()
+        console.log("in0");
+
     if (verse=='') verse= 'א'
     
     const response = await fetch("sdarim.json");
     const json = await response.json();
     
+        console.log("in1");
     const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
-    
+            console.log("in2");
+
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filteredArray.length; i++) {
@@ -948,7 +954,8 @@ async function userSeder(book, seder, verse){
          if (filteredArray[i].versechapter==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
-    
+            console.log("in9");
+
     return;
     }
 
