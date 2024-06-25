@@ -97,9 +97,8 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                results += 
-                     '<a href="'+mgketer(entry.bookchapter,entry.chapter,entry.versechapter)+'" target="_blank">' 
-                    "<u>" + entry.bookseder + " סדר " + entry.seder + " פסוק " + entry.verseseder + "</u></a><br>" + entry.versenonikud + "<br>"
+                results += '<a href="'+mgketer(entry.bookchapter,entry.chapter,entry.versechapter)+'" target="_blank">' 
+                    '<u>' + entry.bookseder + ' סדר ' + entry.seder + ' פסוק ' + entry.verseseder + '</u></a><br>' + entry.versenonikud + '<br>'
             }
         }
             catch (err)
