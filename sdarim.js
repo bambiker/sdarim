@@ -1,25 +1,33 @@
 async function start(){
 
    try{
-    book  = decode(GetURLParameter('book'));
-    seder = decode(GetURLParameter('seder'));
-    verse = decode(GetURLParameter('verse'));
-
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
-    const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
-    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
-    userSeder(filtArray2, book, seder, verse)
-
-    urlname = "https://bambiker.github.io/sdarim/?book="+book+"&seder="+seder+"&verse="+verse;
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
-       
-   }
+          book  = decode(GetURLParameter('book'));
+          seder = decode(GetURLParameter('seder'));
+          verse = decode(GetURLParameter('verse'));
+      
+          const response = await fetch("sdarim.json");
+          const json = await response.json();
+          const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
+          const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+          userSeder(filtArray2, book, seder, verse)
+      
+          urlname = "https://bambiker.github.io/sdarim/?book="+book+"&seder="+seder+"&verse="+verse;
+          document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+      }
       catch (err)
     {
-    urlname = "https://bambiker.github.io/sdarim";
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
-    document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
+       try{
+          parasha  = decode(GetURLParameter('parasha'));
+          document.getElementById("parasha").value = parasha;
+          findparasha();
+       //   urlname = "https://bambiker.github.io/sdarim/?parasha="+parasha;
+       //   document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+       }
+          catch{
+       urlname = "https://bambiker.github.io/sdarim";
+       document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
+       document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
+               }
     }
 
     return;
@@ -130,6 +138,9 @@ async function findparasha(){
     }
     document.getElementById("result").innerHTML  = output;
 
+    urlname = "https://bambiker.github.io/sdarim/?parasha="+parasha;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+   
     return ;
 
 }
