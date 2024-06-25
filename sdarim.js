@@ -163,7 +163,9 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                results += '<a href="'+mgketer(entry.bookchapter,entry.chapter,entry.versechapter)+'" target="_blank">' +
+                urltext = "https://bambiker.github.io/sdarim/?book="+addunderscore(entry.bookseder)+"&seder="+entry.seder+"&verse="+entry.verseseder;
+
+                results += '<a href="'+urltext+'">' +
                     '<u>' + entry.bookseder + ' סדר ' + entry.seder + ' פסוק ' + entry.verseseder + '</u></a><br>' + entry.versenonikud + '<br>'
             }
         }
@@ -175,6 +177,9 @@ async function findfree(){
 
     document.getElementById("result").innerHTML  = results;
     console.log(results);
+
+    urlname = "https://bambiker.github.io/sdarim;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
 
     return ;
 
