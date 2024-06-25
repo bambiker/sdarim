@@ -1,8 +1,8 @@
 async function start(){
 
-    book = decode(GetURLParameter('book'));
-    seder = GetURLParameter('seder');
-    verse = GetURLParameter('verse');
+    book  = decode(GetURLParameter('book'));
+    seder = decode(GetURLParameter('seder'));
+    verse = decode(GetURLParameter('verse'));
         console.log(book+seder+verse);
 
    try{
