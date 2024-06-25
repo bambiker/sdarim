@@ -69,7 +69,7 @@ async function findparasha(){
     output = "<h1>" + "פרשת " + parasha + "</h1>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
-         if (filteredArray[i].seder!=oldseder) output += "<h2>("+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + ")</h2>";
+         if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
          output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
          oldseder = filteredArray[i].seder
     }
@@ -97,7 +97,9 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                results += "<u>" + entry.bookseder + " סדר " + entry.seder + " פסוק " + entry.verseseder + "</u><br>" + entry.versenonikud + "<br>"
+                results += 
+                     '<a href="'+mgketer(entry.bookchapter,entry.chapter,entry.versechapter)+'" target="_blank">' 
+                    "<u>" + entry.bookseder + " סדר " + entry.seder + " פסוק " + entry.verseseder + "</u></a><br>" + entry.versenonikud + "<br>"
             }
         }
             catch (err)
