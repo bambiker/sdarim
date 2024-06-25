@@ -944,9 +944,9 @@ function userSeder(filtArray2, book, seder, verse){
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filtArray2.length; i++) {
-         if (filtArray2[i].versechapter==verse) output += "<mark>"
+         if (filtArray2[i].verseseder==verse) output += "<mark>"
          output +=  '<a href="'+mgketer(filtArray2[i].bookchapter,filtArray2[i].chapter,filtArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filtArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filtArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
-         if (filtArray2[i].versechapter==verse) output += "</mark>"
+         if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
     console.log("in9");
