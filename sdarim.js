@@ -68,7 +68,7 @@ async function findparasha(){
 
     output = ""
     for (let i = 0; i < filteredArray.length; i++) {
-         output +=  + '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
     }
     document.getElementById("result").innerHTML  = output;
 
