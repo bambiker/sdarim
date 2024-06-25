@@ -931,7 +931,7 @@ function cleanverse(para){
   return paraclean;  
 }
 
-function userSeder(book, seder, verse){
+async function userSeder(book, seder, verse){
     //  seder = seder.trim()
     //  verse = verse.trim()
         console.log("in0");
