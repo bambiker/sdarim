@@ -68,7 +68,7 @@ async function findparasha(){
 
     output = ""
     for (let i = 0; i < filteredArray.length; i++) {
-         output +=  filteredArray[i].versenikud + "<br>";
+         output +=  + '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(values[i][7])//filteredArray[i].versenikud + "<br>";
     }
     document.getElementById("result").innerHTML  = output;
 
@@ -898,31 +898,6 @@ function clean(word){
   return newword
 }
 
-
-function userFree(word){
-  var url = "https://docs.google.com/spreadsheets/d/1aI5zgF-ZqoRz7Pb2gU_G_TUOyqNVcesnBFuYN71NhwE/edit#gid=1699385220";
-  var ss = SpreadsheetApp.openByUrl(url);
-  var wss = ss.getSheetByName("seder");
-  var valuesseder = wss.getDataRange().getValues();
-  var book='דדד'
-  var seder='אאא'
-  var verse='בבב'
-  var line='גגג'
-  res = [];
-  for (var i=0; i<valuesseder.length;i++)
-  {
-    if (valuesseder[i][8].indexOf(word)>-1)
-    {
-         book = valuesseder[i][3];
-         seder = valuesseder[i][4];
-         verse = valuesseder[i][5];
-         line = valuesseder[i][8];
-      opt = [book, seder, verse, ":", line].join(' ');
-         res.push(opt);
-    }
-  }
-  return res;
-}
 
 function cleanverse(para){
   paraclean = '';
