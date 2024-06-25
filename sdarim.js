@@ -81,7 +81,8 @@ async function findfree(){
    // console.log(filteredArray);
 
     var results = [];
-    console.log(json.length);
+    console.log(json.seder);
+    console.log(json.seder.length);
 
     for (index = 0; index < json.length; ++index) {
         entry = json[index];
