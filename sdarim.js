@@ -941,7 +941,12 @@ function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
     console.log("in2");
+    const response = await fetch("sdarim.json");
+    const json = await response.json();
 
+    const filt2 = [{label: 'bookchapter', value: book}, {label: 'seder', value: seder}];
+    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+    
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filtArray2.length; i++) {
