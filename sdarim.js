@@ -1,23 +1,26 @@
 async function start(){
 
+   try{
     book  = decode(GetURLParameter('book'));
     seder = decode(GetURLParameter('seder'));
     verse = decode(GetURLParameter('verse'));
-    console.log(book+seder+verse);
 
-   try{
     const response = await fetch("sdarim.json");
     const json = await response.json();
     const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, book, seder, verse)
+
+    urlname = "https://bambiker.github.io/sdarim/?book="+book+"&seder="+seder+"&verse="+verse;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+       
    }
       catch (err)
     {
+    urlname = "https://bambiker.github.io/sdarim;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
     document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
     }
-
-            console.log('fff');
 
     return;
  }
@@ -95,6 +98,8 @@ async function seder2chapter(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    urlname = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     }
     catch (err)
     {
