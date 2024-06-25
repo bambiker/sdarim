@@ -78,7 +78,9 @@ async function findfree(){
 
    // const filters = [{label: 'parasha', value: "בראשית"}];
    // const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
-    console.log(filteredArray);
+   // console.log(filteredArray);
+
+    var results = [];
 
     for (index = 0; index < json.length; ++index) {
         entry = json[index];
@@ -87,7 +89,7 @@ async function findfree(){
         }
     }
 
-//    document.getElementById("result").innerHTML  = output;
+    document.getElementById("result").innerHTML  = results;
 
     return ;
 
