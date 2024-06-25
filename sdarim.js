@@ -88,8 +88,8 @@ async function findfree(){
     const json = await response.json();
 
     var results = [];
-    console.log(json.seder);
-    console.log(json.seder.length);
+//    console.log(json.seder);
+//    console.log(json.seder.length);
 
     for (index = 0; index < json.seder.length; ++index) {
         entry = json.seder[index];
@@ -108,6 +108,7 @@ async function findfree(){
     }
 
     document.getElementById("result").innerHTML  = results;
+    console.log(results);
 
     return ;
 
@@ -975,32 +976,3 @@ function userSeder(book, seder, verse, type){
      return [line, cbook, chapter, cverse]
 }
 
-function userParasha(parasha){
-  var url = "https://docs.google.com/spreadsheets/d/1aI5zgF-ZqoRz7Pb2gU_G_TUOyqNVcesnBFuYN71NhwE/edit#gid=1699385220";
-  var ss = SpreadsheetApp.openByUrl(url);
-  var wsf = ss.getSheetByName("seder");
-  var values = wsf.getDataRange().getValues();
-  for (var i=values.length-1;i>=0;i--)
-    if (values[i][6]==parasha)
-    {
-      pbook = values[i][3];
-      pseder = values[i][4];
-      pverse = values[i][5];     
-    }
-  line = "<h1>" + "פרשת " + parasha + "</h1>";
-  oldseder='-1'
-  for (var i=0; i<values.length;i++)
-    if (values[i][6]==parasha)
-    {
-      mcbook = values[i][0]
-      mchapter = values[i][1]
-      mcverse = values[i][2]
-      seder = values[i][4]
-      if (seder!=oldseder) line += "<mark>("+ mcbook +" סדר " + seder + ")</mark>";
-      line = line + '<a href="'+mgketer(mcbook,mchapter,mcverse)+'" target="_blank">' + "<sup>(" + values[i][5] + ")</sup> " + '</a>'  + cleanverse(values[i][7])
-      oldseder = seder
-    }
-  
-  return [line, pbook, pseder, pverse]
-
-}
