@@ -9,7 +9,7 @@ async function start(){
     const json = await response.json();
     const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}, {label: 'verseseder', value: verse}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
-    userSeder(filtArray2, bookseder, seder, verseseder)
+    userSeder(filtArray2, book, seder, verse)
    }
       catch (err)
     {
