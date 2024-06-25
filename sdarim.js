@@ -12,15 +12,14 @@ async function chapter2seder(){
     const filt = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}, {label: 'versechapter', value: cverse}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
 
-    const filt2 = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}];
-    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
-
     try{  
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     console.log("bf");
+    const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
+    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     console.log("af");
         
@@ -941,12 +940,7 @@ function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
     console.log("in2");
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
 
-    const filt2 = [{label: 'bookchapter', value: book}, {label: 'seder', value: seder}];
-    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
-    
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filtArray2.length; i++) {
