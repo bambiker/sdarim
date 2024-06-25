@@ -18,7 +18,7 @@ async function chapter2seder(){
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     console.log("bf");
-    await userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     console.log("af");
         
     }
