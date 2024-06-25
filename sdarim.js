@@ -94,7 +94,7 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                results += entry.bookseder + " " + entry.seder + " " + entry.verseseder + "<br>" + entry.versenonikud + "<br>"
+                results += "<u>" + entry.bookseder + " סדר " + entry.seder + " פסוק " + entry.verseseder + "</u><br>" + entry.versenonikud + "<br>"
             }
         }
             catch (err)
