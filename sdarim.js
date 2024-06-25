@@ -68,6 +68,28 @@ async function findparasha(){
 
 }
 
+async function findfree(){
+
+    var freetext = document.getElementById("free").value;
+    document.getElementById("result").innerHTML  = " חיפוש חופשי " + freetext;
+
+    const response = await fetch("sdarim.json");
+    const json = await response.json();
+
+    const filters = [{label: 'parasha', value: "בראשית"}];
+    const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
+    console.log(filteredArray);
+
+    output = ""
+    for (let i = 0; i < filteredArray.length; i++) {
+         output +=  filteredArray[i].versenikud + "<br>";
+    }
+    document.getElementById("result").innerHTML  = output;
+
+    return ;
+
+}
+
 
 function mgketer(bookname, chapter, verse)
 {
