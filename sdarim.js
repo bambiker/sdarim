@@ -21,7 +21,7 @@ async function chapter2seder(){
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     console.log("bf");
-    userseder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     console.log("af");
         
     }
@@ -942,7 +942,7 @@ function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
         console.log("in1");
-            console.log("in2");
+        console.log("in2");
 
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
