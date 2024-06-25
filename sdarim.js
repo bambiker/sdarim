@@ -1,7 +1,7 @@
 async function start(){
 
    try{
-          book  = decode(GetURLParameter('book'));
+          book  = removeunderscore(decode(GetURLParameter('book')));
           seder = decode(GetURLParameter('seder'));
           verse = decode(GetURLParameter('verse'));
       
@@ -17,7 +17,7 @@ async function start(){
       catch (err)
     {
        try{
-          parasha  = decode(GetURLParameter('parasha'));
+          parasha  = removeunderscore(decode(GetURLParameter('parasha')));
           document.getElementById("parasha").value = parasha;
           findparasha();
        //   urlname = "https://bambiker.github.io/sdarim/?parasha="+parasha;
@@ -73,7 +73,7 @@ async function chapter2seder(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     
     }
@@ -106,7 +106,7 @@ async function seder2chapter(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     }
     catch (err)
@@ -138,7 +138,7 @@ async function findparasha(){
     }
     document.getElementById("result").innerHTML  = output;
 
-    urlname = "https://bambiker.github.io/sdarim/?parasha="+parasha;
+    urlname = "https://bambiker.github.io/sdarim/?parasha="+addunderscore(parasha);
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
    
     return ;
@@ -180,6 +180,14 @@ async function findfree(){
 
 }
 
+function addunderscore(str)
+{
+     return str.replace(" ", "_");
+}
+function removeunderscore(str)
+{
+     return str.replace("_", " ");
+}
 
 function mgketer(bookname, chapter, verse)
 {
