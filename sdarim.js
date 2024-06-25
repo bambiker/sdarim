@@ -178,7 +178,7 @@ async function findfree(){
     document.getElementById("result").innerHTML  = results;
     console.log(results);
 
-    urlname = "https://bambiker.github.io/sdarim;
+    urlname = "https://bambiker.github.io/sdarim";
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
 
     return ;
