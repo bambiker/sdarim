@@ -1,4 +1,4 @@
- function start(){
+async function start(){
 
     book = GetURLParameter('book');
     seder = GetURLParameter('seder');
