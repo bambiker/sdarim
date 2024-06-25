@@ -17,11 +17,9 @@ async function chapter2seder(){
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
-    console.log("bf");
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    console.log("af");
         
     }
     catch (err)
@@ -50,8 +48,9 @@ async function seder2chapter(){
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
-    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-
+    const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
+    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+    userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     }
     catch (err)
     {
@@ -934,13 +933,8 @@ function cleanverse(para){
 }
 
 function userSeder(filtArray2, book, seder, verse){
-    //  seder = seder.trim()
-    //  verse = verse.trim()
-
     if (verse=='') verse= 'א'
         
-    console.log("in2");
-
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filtArray2.length; i++) {
@@ -949,7 +943,6 @@ function userSeder(filtArray2, book, seder, verse){
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
-    console.log("in9");
 
     return;
     }
