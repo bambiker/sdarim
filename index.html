@@ -109,7 +109,7 @@
 <br>
 
 <input type="text" id="free">
-<button id="btnfree"> חיפוש חופשי</button>
+<button id="btnfindfree"> חיפוש חופשי</button>
     
 <select name="resultSelect" id="resultSelect">
 </select>    
@@ -216,23 +216,17 @@
       document.querySelector('#btnparasha').addEventListener('click', htmlparasha);
       </script>
 
-    
+      <script>
+      function htmlfindffree() {
+            ret = findfree();
+      }
+      document.querySelector('#btnfindfree').addEventListener('click', htmlfindfree);
+      </script>
+
+  
     <script>
-    
- //   document.getElementById("btnfindseder").addEventListener("click",doSeder);
- //   document.getElementById("btnfindchapter").addEventListener("click",doChapter);
-    document.getElementById("btnfree").addEventListener("click",doFree);
     document.getElementById("btnchoosefree").addEventListener("click",doChoose);
-//    document.getElementById("btnparasha").addEventListener("click",doParasha);
-    
-    function start()
-    {
-    if (document.getElementById("parasha").value=="")
-        doSeder();
-    else
-        doParasha();
-    }
-    
+
     function doChoose()
     {
         var res = document.getElementById("resultSelect").value
@@ -250,103 +244,8 @@
         doSeder();
        // document.getElementById('result').innerHTML = sp1*10000 + sp2
     }
-    function doParasha()
-    {
-        var parasha = document.getElementById("parasha").value;
-        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
-        google.script.run.withSuccessHandler(goodresultsparasha).userParasha(parasha);
-        url = "http://tinyurl.com/sdarim?parasha="+parasha;
-        document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
-        document.getElementById('urlname').innerHTML ='('+ 'פרשת ' + parasha + ')';
-    }
-
-    function doFree()
-    {
-        var free = document.getElementById("free").value;
-        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
-        google.script.run.withSuccessHandler(goodresultsfree).userFree(free);
-    }
-
-    function doSeder()
-    {
-        if (document.getElementById("sbook").value!='')
-        {
-        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
-        var book = document.getElementById("sbook").value;
-        var seder = document.getElementById("seder").value;         
-        var verse = document.getElementById("sverse").value;         
-        google.script.run.withSuccessHandler(goodresultsseder).userSeder(book, seder, verse, "seder");
-        url = "http://tinyurl.com/sdarim?book="+book+"&seder="+seder+"&verse="+verse;
-        document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
-        document.getElementById('urlname').innerHTML = '('+ book + ' סדר ' + seder + ' פסוק ' + verse + ')';
-        }
-    }
-    function doChapter()
-    {
-        document.getElementById('result').innerHTML = "אנחנו מחפשים עבורכם את התוצאות, אנא המתינו בסבלנות";
-        var book = document.getElementById("cbook").value;
-        var seder = document.getElementById("chapter").value;         
-        var verse = document.getElementById("cverse").value;         
-        google.script.run.withSuccessHandler(goodresultschapter).userSeder(book, seder, verse, "chapter");
-    }
-    
-    function goodresultsparasha(res)
-    {
-    document.getElementById('result').innerHTML = res[0];
-    document.getElementById('sbook').value = res[1];
-    document.getElementById('seder').value = res[2];
-    document.getElementById('sverse').value = res[3];
-    }
-    
-    function goodresultsseder(res)
-    {
-    document.getElementById('result').innerHTML = res[0];
-    document.getElementById('cbook').value = res[1];
-    document.getElementById('chapter').value = res[2];
-    document.getElementById('cverse').value = res[3];
-    }
-    
-    function goodresultschapter(res)
-    {
-       if (res[2]=='')
-          document.getElementById('result').innerHTML = 'הפרק לא נמצא';
-       else
-       {
-       document.getElementById('result').innerHTML = res[0];
-       document.getElementById('sbook').value = res[1];
-       document.getElementById('seder').value = res[2];
-       document.getElementById('sverse').value = res[3];
-       url = "http://tinyurl.com/sdarim?book="+res[1]+"&seder="+res[2]+"&verse="+res[3];
-       document.getElementById('url').innerHTML = '<a href="'+url+'">'+url+'</a>';
-       }
-    }
-    function goodresultsfree(res)
-    {
-       if (res.length==0)
-          document.getElementById('result').innerHTML = 'המילה המבוקשת לא נמצאה בתנ"ך';      
-       else
-          document.getElementById('result').innerHTML = "תוצאות החיפוש התעדכנו בתיבת התוצאות, יש לבחור את התוצאה הרצויה ואז ניתן יהיה להציגה באמצעות הכפתור 'בחר תוצאות חיפוש'";
-       var select = document.getElementById("resultSelect");
-       
-       var i, L = select.options.length - 1;
-       for(i = L; i >= 0; i--) {
-       select.remove(i);
-       }
-
-       for(var i=0;i<res.length;i++)
-       {
-       var option = document.createElement("option");
-       option.text = res[i];
-       select.add(option);
-       }
-    }
     </script>
     
-    <!--  
-
-        <img src="https://drive.google.com/uc?export=download&id=14IrzqZVTfONbRvoilLsTPxzlIhegzyU3"> 
--->
-
         <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://bambiker.github.io/bifnim/">
 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -361,6 +260,7 @@
 </div>
 <script async src="https://static.addtoany.com/menu/page.js"></script>
 <!-- AddToAny END -->
+
     
   </body>
 
