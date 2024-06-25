@@ -1,9 +1,21 @@
  function start(){
 
-    document.getElementById("result").innerHTML  = GetURLParameter('book');
+    book = GetURLParameter('book');
+    seder = GetURLParameter('seder');
+    verse = GetURLParameter('verse');
+
+   try{
+    const response = await fetch("sdarim.json");
+    const json = await response.json();
+    const filt2 = [{label: 'bookseder', value: .bookseder}, {label: 'seder', value: seder, {label: 'verseseder', value: verseseder}}];
+    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+    userSeder(filtArray2, bookseder, seder, verseseder)
+   }
+      catch (err)
+    {
+    document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
+    }
     return;
-
-
  }
 
 function GetURLParameter(sParam)
