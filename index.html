@@ -111,10 +111,6 @@
 <input type="text" id="free">
 <button id="btnfindfree"> חיפוש חופשי</button>
     
-<select name="resultSelect" id="resultSelect">
-</select>    
-
-<button id="btnchoosefree">בחר תוצאת חיפוש</button>
 <br>
 
 <select name="parasha" id="parasha">
@@ -223,29 +219,6 @@
       document.querySelector('#btnfindfree').addEventListener('click', htmlfindfree);
       </script>
 
-  
-    <script>
-    document.getElementById("btnchoosefree").addEventListener("click",doChoose);
-
-    function doChoose()
-    {
-        var res = document.getElementById("resultSelect").value
-        var twodots = res.indexOf(":")
-        var place = res.substring(0,twodots).trim()
-        var sp1 = place.lastIndexOf(" ")  //8
-        var verse = place.substring(sp1,132).trim()
-        var trim1 = place.substring(0,sp1)
-        var sp2 = trim1.lastIndexOf(" ")  //8
-        var seder = trim1.substring(sp2,132).trim()
-        var book = trim1.substring(0,sp2)
-        document.getElementById('sbook').value = book;
-        document.getElementById('seder').value = seder;
-        document.getElementById('sverse').value = verse;
-        doSeder();
-       // document.getElementById('result').innerHTML = sp1*10000 + sp2
-    }
-    </script>
-    
         <!-- AddToAny BEGIN -->
 <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://bambiker.github.io/bifnim/">
 <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
