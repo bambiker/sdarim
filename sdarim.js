@@ -11,7 +11,7 @@ async function start(){
           const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
           userSeder(filtArray2, book, seder, verse)
       
-          urlname = "https://bambiker.github.io/sdarim/?book="+book+"&seder="+seder+"&verse="+verse;
+          urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
           document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
       }
       catch (err)
@@ -20,8 +20,6 @@ async function start(){
           parasha  = removeunderscore(decode(GetURLParameter('parasha')));
           document.getElementById("parasha").value = parasha;
           findparasha();
-       //   urlname = "https://bambiker.github.io/sdarim/?parasha="+parasha;
-       //   document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
        }
           catch{
        urlname = "https://bambiker.github.io/sdarim";
