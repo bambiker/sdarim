@@ -17,13 +17,14 @@ async function chapter2seder(){
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
+    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+        
     }
     catch (err)
     {
     document.getElementById("result").innerHTML  = " הפרק לא נמצא ";
     }
     return;
-
 }
 
 async function seder2chapter(){
@@ -45,6 +46,8 @@ async function seder2chapter(){
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
+    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+
     }
     catch (err)
     {
@@ -926,53 +929,26 @@ function cleanverse(para){
   return paraclean;  
 }
 
-function userSeder(book, seder, verse, type){
-  var url = "https://docs.google.com/spreadsheets/d/1aI5zgF-ZqoRz7Pb2gU_G_TUOyqNVcesnBFuYN71NhwE/edit#gid=1699385220";
-  var ss = SpreadsheetApp.openByUrl(url);
-  var wsf = ss.getSheetByName("seder");
-  var values = wsf.getDataRange().getValues();
-  seder = seder.trim()
-  verse = verse.trim()
-  if (verse=='') verse= 'א'
-  if (type=="chapter")
-  {
-  for (var i=0; i<values.length;i++)
-    if (values[i][0]==book & values[i][1]==seder & values[i][2]==verse)
-    {
-      fbook = values[i][3];
-      fseder = values[i][4];
-      fverse = values[i][5];     
+function userSeder(book, seder, verse){
+    //  seder = seder.trim()
+    //  verse = verse.trim()
+    if (verse=='') verse= 'א'
+    
+    const response = await fetch("sdarim.json");
+    const json = await response.json();
+    
+    const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}];
+    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+    
+    output = "<h1>"+book+" סדר " + seder + "</h1>";
+    
+    for (let i = 0; i < filteredArray.length; i++) {
+         if (filteredArray[i].versechapter==verse) output += "<mark>"
+         output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         if (filteredArray[i].versechapter==verse) output += "</mark>"
     }
-    book = fbook;
-    seder = fseder;
-    verse = fverse;
-  }
-  line = "<h1>"+book+" סדר " + seder + "</h1>";
-  cbook=""; // if we didn't find anything
-  chapter="";
-  cverse="";
-  for (var i=0; i<values.length;i++)
-    if (values[i][3]==book & values[i][4]==seder)
-    {
-      mcbook = values[i][0]
-      mchapter = values[i][1]
-      mcverse = values[i][2]
-
-    if (values[i][5]==verse)
-         {line = line + '<mark>'
-          cbook = mcbook;
-          chapter = mchapter;
-          cverse = mcverse;
-         }
-     line = line + '<a href="'+mgketer(mcbook,mchapter,mcverse)+'" target="_blank">' + "<sup>(" + values[i][5] + ")</sup> " + '</a>'  + cleanverse(values[i][7])
-      if (values[i][5]==verse)
-      {line = line + '</mark>'}
+    document.getElementById("result").innerHTML  = output;
+    
+    return;
     }
-  
-  // we return the other type 
-  if (type=="chapter")
-     return [line, book, seder, verse]
-  else // seder
-     return [line, cbook, chapter, cverse]
-}
 
