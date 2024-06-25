@@ -3,12 +3,12 @@ async function start(){
     book  = decode(GetURLParameter('book'));
     seder = decode(GetURLParameter('seder'));
     verse = decode(GetURLParameter('verse'));
-        console.log(book+seder+verse);
+    console.log(book+seder+verse);
 
    try{
     const response = await fetch("sdarim.json");
     const json = await response.json();
-    const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}, {label: 'verseseder', value: verse}];
+    const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, book, seder, verse)
    }
@@ -62,7 +62,8 @@ async function chapter2seder(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-        
+    document.getElementById("urlname").innerHTML  = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    
     }
     catch (err)
     {
