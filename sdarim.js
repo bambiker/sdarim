@@ -1,6 +1,6 @@
 async function start(){
 
-    book = GetURLParameter('book');
+    book = decode(GetURLParameter('book'));
     seder = GetURLParameter('seder');
     verse = GetURLParameter('verse');
         console.log(book+seder+verse);
@@ -21,6 +21,10 @@ async function start(){
 
     return;
  }
+
+  function decode(str) {
+            return decodeURIComponent(str.replace(/\+/g,  " "));
+   }
 
 function GetURLParameter(sParam)
 {
