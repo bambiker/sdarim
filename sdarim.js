@@ -3,6 +3,7 @@ async function start(){
     book = GetURLParameter('book');
     seder = GetURLParameter('seder');
     verse = GetURLParameter('verse');
+        console.log(book+seder+verse);
 
    try{
     const response = await fetch("sdarim.json");
@@ -15,6 +16,9 @@ async function start(){
     {
     document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
     }
+
+            console.log('fff');
+
     return;
  }
 
