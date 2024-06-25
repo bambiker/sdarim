@@ -1,4 +1,8 @@
 async function chapter2seder(){
+
+    document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
+
+    
     var cbook = document.getElementById("cbook").value;
     var chapter = document.getElementById("chapter").value;         
     var cverse = document.getElementById("cverse").value;  
@@ -23,6 +27,10 @@ async function chapter2seder(){
 }
 
 async function seder2chapter(){
+
+        document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
+
+    
     var sbook = document.getElementById("sbook").value;
     var seder = document.getElementById("seder").value;         
     var sverse = document.getElementById("sverse").value; 
@@ -47,7 +55,7 @@ async function seder2chapter(){
 }
 
 async function findparasha(){
-    document.getElementById("result").innerHTML  = " מציג פרשה ";
+    document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
 
     var parasha = document.getElementById("parasha").value;
 
@@ -71,7 +79,7 @@ async function findparasha(){
 async function findfree(){
 
     var freetext = document.getElementById("free").value;
-    document.getElementById("result").innerHTML  = " חיפוש חופשי " + freetext;
+    document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
 
     const response = await fetch("sdarim.json");
     const json = await response.json();
@@ -86,7 +94,7 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                results += entry.versenonikud
+                results += entry.bookseder + " " + entry.seder + " " + entry.verseseder + "<br>" + entry.versenonikud + "<br>"
             }
         }
             catch (err)
