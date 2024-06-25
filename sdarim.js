@@ -76,10 +76,6 @@ async function findfree(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
 
-   // const filters = [{label: 'parasha', value: "בראשית"}];
-   // const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
-   // console.log(filteredArray);
-
     var results = [];
     console.log(json.seder);
     console.log(json.seder.length);
@@ -87,10 +83,16 @@ async function findfree(){
     for (index = 0; index < json.seder.length; ++index) {
         entry = json.seder[index];
         console.log(entry);
-        if (entry.versenonikud.indexOf(freetext) !== -1) {
-            console.log(entry);
-            results.push(entry);
+        try{        
+            if (entry.versenonikud.indexOf(freetext) !== -1) {
+                console.log(entry);
+                results += entry.versenonikud
+            }
         }
+            catch (err)
+    {
+        console.log("not found verse text");
+    }
     }
 
     document.getElementById("result").innerHTML  = results;
