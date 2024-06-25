@@ -76,12 +76,12 @@ async function findfree(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
 
-    const filters = [{label: 'parasha', value: "בראשית"}];
-    const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
+   // const filters = [{label: 'parasha', value: "בראשית"}];
+   // const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
 
-    for (index = 0; index < filteredArray.length; ++index) {
-        entry = filteredArray[index];
+    for (index = 0; index < json.length; ++index) {
+        entry = json[index];
         if (entry && entry.name && entry.versenonikud.indexOf(freetext) !== -1) {
             results.push(entry);
         }
