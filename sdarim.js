@@ -10,15 +10,18 @@ async function chapter2seder(){
     const response = await fetch("sdarim.json");
     const json = await response.json();
     const filt = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}, {label: 'versechapter', value: cverse}];
-
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+
+    const filt2 = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}];
+    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+
     try{  
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     console.log("bf");
-    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    userseder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     console.log("af");
         
     }
@@ -931,27 +934,22 @@ function cleanverse(para){
   return paraclean;  
 }
 
-async function userSeder(book, seder, verse){
+function userSeder(filtArray2, book, seder, verse){
     //  seder = seder.trim()
     //  verse = verse.trim()
         console.log("in0");
 
     if (verse=='') verse= 'א'
-    
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
-    
+        
         console.log("in1");
-    const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}];
-    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
             console.log("in2");
 
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
-    for (let i = 0; i < filteredArray.length; i++) {
-         if (filteredArray[i].versechapter==verse) output += "<mark>"
-         output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
-         if (filteredArray[i].versechapter==verse) output += "</mark>"
+    for (let i = 0; i < filteredArray2.length; i++) {
+         if (filteredArray2[i].versechapter==verse) output += "<mark>"
+         output +=  '<a href="'+mgketer(filteredArray2[i].bookchapter,filteredArray2[i].chapter,filteredArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         if (filteredArray2[i].versechapter==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
             console.log("in9");
