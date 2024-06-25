@@ -7,7 +7,7 @@ async function start(){
    try{
     const response = await fetch("sdarim.json");
     const json = await response.json();
-    const filt2 = [{label: 'bookseder', value: .bookseder}, {label: 'seder', value: seder, {label: 'verseseder', value: verseseder}}];
+    const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder, {label: 'verseseder', value: verse}}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, bookseder, seder, verseseder)
    }
