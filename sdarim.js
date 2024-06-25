@@ -80,11 +80,14 @@ async function findfree(){
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
 
-    output = ""
-    for (let i = 0; i < filteredArray.length; i++) {
-         output +=  filteredArray[i].versenikud + "<br>";
+    for (index = 0; index < filteredArray.length; ++index) {
+        entry = filteredArray[index];
+        if (entry && entry.name && entry.versenonikud.indexOf(freetext) !== -1) {
+            results.push(entry);
+        }
     }
-    document.getElementById("result").innerHTML  = output;
+
+//    document.getElementById("result").innerHTML  = output;
 
     return ;
 
