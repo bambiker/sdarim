@@ -69,9 +69,9 @@ async function findparasha(){
     output = "<h1>" + "פרשת " + parasha + "</h1>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
-         if (seder!=oldseder) output += "<mark>("+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + ")</mark>";
+         if (filteredArray[i].seder!=oldseder) output += "<h2>("+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + ")</h2>";
          output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
-         oldseder = seder
+         oldseder = filteredArray[i].seder
     }
     document.getElementById("result").innerHTML  = output;
 
