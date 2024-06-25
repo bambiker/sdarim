@@ -17,7 +17,7 @@ async function start(){
    }
       catch (err)
     {
-    urlname = "https://bambiker.github.io/sdarim;
+    urlname = "https://bambiker.github.io/sdarim";
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
     document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
     }
