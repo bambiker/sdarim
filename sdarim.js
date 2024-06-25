@@ -19,7 +19,7 @@ function GetURLParameter(sParam)
         }
     }
 }
-​
+
 async function chapter2seder(){
 
     document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
