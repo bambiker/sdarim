@@ -18,7 +18,7 @@ async function chapter2seder(){
     document.getElementById("sverse").value = filtArray[0].verseseder;
     document.getElementById("result").innerHTML  = filtArray[0].versenikud;
     console.log("bf");
-    userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
+    await userseder(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     console.log("af");
         
     }
@@ -931,7 +931,7 @@ function cleanverse(para){
   return paraclean;  
 }
 
-async function userSeder(book, seder, verse){
+function userSeder(book, seder, verse){
     //  seder = seder.trim()
     //  verse = verse.trim()
         console.log("in0");
