@@ -62,7 +62,8 @@ async function chapter2seder(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    document.getElementById("urlname").innerHTML  = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = "https://bambiker.github.io/sdarim/?book="+filtArray[0].bookseder+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     
     }
     catch (err)
