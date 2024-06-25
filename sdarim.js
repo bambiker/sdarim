@@ -937,22 +937,20 @@ function cleanverse(para){
 function userSeder(filtArray2, book, seder, verse){
     //  seder = seder.trim()
     //  verse = verse.trim()
-        console.log("in0");
 
     if (verse=='') verse= 'א'
         
-        console.log("in1");
-        console.log("in2");
+    console.log("in2");
 
     output = "<h1>"+book+" סדר " + seder + "</h1>";
     
     for (let i = 0; i < filteredArray2.length; i++) {
-         if (filteredArray2[i].versechapter==verse) output += "<mark>"
-         output +=  '<a href="'+mgketer(filteredArray2[i].bookchapter,filteredArray2[i].chapter,filteredArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
-         if (filteredArray2[i].versechapter==verse) output += "</mark>"
+         if (filtArray2[i].versechapter==verse) output += "<mark>"
+         output +=  '<a href="'+mgketer(filtArray2[i].bookchapter,filtArray2[i].chapter,filtArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filtArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filtArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         if (filtArray2[i].versechapter==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
-            console.log("in9");
+    console.log("in9");
 
     return;
     }
