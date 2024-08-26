@@ -13,6 +13,9 @@ async function start(){
       
           urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
           document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+          document.getElementById("sbook").value  = book;
+          document.getElementById("seder").value  = seder;
+          document.getElementById("sverse").value  = verse;      
       }
       catch (err)
     {
