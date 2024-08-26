@@ -24,7 +24,13 @@
 
 <a href="https://bambiker.github.io/sdarim/"> <H1> מסדירים</H1></a>
     <H2>חוזרים לחלוקת התנ"ך היהודית לסדרים </H1>
-<h3>חלוקה לפרקים</h3>    
+    <table>
+      <tr>
+<th>חלוקה לפרקים</th>
+<th>חלוקה לסדרים</th> 
+      </tr>
+      <tr>
+        <tc>
     <label>ספר</label>
   <select name="cbook" id="cbook">
   <option value=""></option>
@@ -67,17 +73,10 @@
   <option value="נחמיה">נחמיה</option>
   <option value="דברי הימים א">דברי הימים א</option>
   <option value="דברי הימים ב">דברי הימים ב</option>
-</select>  
-    <br>
-    <label>פרק</label>
-    <input type="text" id="chapter" size="3"><br>
-    <label>פסוק</label>
-    <input type="text" id="cverse" size="3"><br>
-    <button id="btnfindchapter">המר / חפש את הפרק</button><br>
-    <br>   
-<h3>חלוקה לסדרים</h3>   
+</select>            
+        </tc>
+        <tc>
     <label>ספר</label>
-    
 <select name="sbook" id="sbook">
   <option value=""></option>
   <option value="בראשית">בראשית</option>
@@ -104,15 +103,39 @@
   <option value="דניאל">דניאל</option>
   <option value="עזרא ונחמיה">עזרא ונחמיה</option>
   <option value="דברי הימים">דברי הימים</option>
-</select>  <br>  
+</select> 
+        </tc>
+      </tr>
+      <tr>
+        <tc>
+    <label>פרק</label>
+    <input type="text" id="chapter" size="3">      
+        </tc>
+        <tc>
     <label>סדר</label>
-    <input type="text" id="seder" value="" size="3" ><br>
+    <input type="text" id="seder" value="" size="3" >          
+        </tc>
+      </tr>
+      <tr>
+        <tc>
     <label>פסוק</label>
-    <input type="text" id="sverse" value="" size="3" ><br>
-    <button id="btnfindseder">המר / חפש את הסדר</button>
-    <br>
-<br>
-
+    <input type="text" id="cverse" size="3">    
+        </tc>
+        <tc>
+    <label>פסוק</label>
+    <input type="text" id="sverse" value="" size="3" >          
+        </tc>
+      </tr>
+      <tr>
+        <tc>
+    <button id="btnfindchapter">המר / חפש את הפרק</button>
+        </tc>
+        <tc>
+    <button id="btnfindseder">המר / חפש את הסדר</button>          
+        </tc>
+      </tr>
+    </table>
+    
 <input type="text" id="free">
 <button id="btnfindfree"> חיפוש מילים בתנ"ך</button>
     
