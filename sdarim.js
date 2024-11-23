@@ -11,7 +11,7 @@ async function start(){
           const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
           userSeder(filtArray2, book, seder, verse)
       
-          urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
+          urlname = "https://www.masdirim.org/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
           document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
           document.getElementById("sbook").value  = book;
           document.getElementById("seder").value  = seder;
@@ -25,7 +25,7 @@ async function start(){
           findparasha();
        }
           catch{
-       urlname = "https://bambiker.github.io/sdarim";
+       urlname = "https://www.masdirim.org";
        document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
        document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
                }
@@ -74,7 +74,7 @@ async function chapter2seder(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     
     }
@@ -179,7 +179,7 @@ async function findfree(){
     document.getElementById("result").innerHTML  = results;
     console.log(results);
 
-    urlname = "https://bambiker.github.io/sdarim";
+    urlname = "https://www.masdirim.org";
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
 
     return ;
