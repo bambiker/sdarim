@@ -107,7 +107,7 @@ async function seder2chapter(){
     const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://bambiker.github.io/sdarim/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
     }
     catch (err)
@@ -139,7 +139,7 @@ async function findparasha(){
     }
     document.getElementById("result").innerHTML  = output;
 
-    urlname = "https://bambiker.github.io/sdarim/?parasha="+addunderscore(parasha);
+    urlname = "https://www.masdirim.org/?parasha="+addunderscore(parasha);
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
    
     return ;
@@ -164,7 +164,7 @@ async function findfree(){
         try{        
             if (entry.versenonikud.indexOf(freetext) !== -1) {
                 console.log(entry);
-                urltext = "https://bambiker.github.io/sdarim/?book="+addunderscore(entry.bookseder)+"&seder="+entry.seder+"&verse="+entry.verseseder;
+                urltext = "https://www.masdirim.org/?book="+addunderscore(entry.bookseder)+"&seder="+entry.seder+"&verse="+entry.verseseder;
 
                 results += '<a href="'+urltext+'">' +
                     '<u>' + entry.bookseder + ' סדר ' + entry.seder + ' פסוק ' + entry.verseseder + '</u></a><br>' + entry.versenonikud + '<br>'
