@@ -130,7 +130,7 @@ async function findparasha(){
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
 
-    output = "<h1>" + "פרשת " + parasha + "</h1>";
+    output = "<h2>" + "פרשת " + parasha + "</h2>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
          if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
@@ -1009,7 +1009,7 @@ function cleanverse(para){
 function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
-    output = "<h1>"+book+" סדר " + seder + "</h1>";
+    output = "<h3>"+book+" סדר " + seder + "</h3>";
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
