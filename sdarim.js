@@ -27,7 +27,7 @@ async function start(){
           catch{
        urlname = "https://www.masdirim.org";
        document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
-       document.getElementById("result").innerHTML  = " כאן יופיעו תוצאות החיפוש ";
+       document.getElementById("result").innerHTML  = "";
                }
     }
 
