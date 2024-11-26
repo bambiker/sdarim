@@ -1,6 +1,6 @@
 #secup {
       background-color: #11235A;
-      height: 165px;
+      height: 185px;
       font-size: 24px;
       color: white;
       top: 0;
@@ -8,6 +8,7 @@
       width: 100%;
       text-align: center;
     }
+body {margin:10;padding:0}
 
 h1 {
   font-size: 88px;
