@@ -8,7 +8,10 @@
       width: 100%;
       text-align: center;
     }
-body {margin:80;padding:20}
+body {
+    margin-right: 50px;
+    margin-left: 50px;
+}
 
 h1 {
   font-size: 88px;
