@@ -184,7 +184,7 @@ async function findfree(){
 
     urlname = "https://www.masdirim.org";
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
-    document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי";
+    document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי של " + freetext;
     return ;
 
 }
