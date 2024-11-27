@@ -76,7 +76,8 @@ async function chapter2seder(){
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
-    
+    document.title = "מסדירים - ספר " + filtArray[0].bookseder + " סדר " + filtArray[0].seder;
+ 
     }
     catch (err)
     {
@@ -109,6 +110,8 @@ async function seder2chapter(){
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+    document.title = " ספר " + sbook + " סדר " + seder;
+
     }
     catch (err)
     {
@@ -181,7 +184,7 @@ async function findfree(){
 
     urlname = "https://www.masdirim.org";
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
-
+    document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי";
     return ;
 
 }
@@ -1017,7 +1020,6 @@ function userSeder(filtArray2, book, seder, verse){
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
-    document.title = " ספר " + book + " סדר " + seder;
     return;
     }
 
