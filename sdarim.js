@@ -141,7 +141,7 @@ async function findparasha(){
 
     urlname = "https://www.masdirim.org/?parasha="+addunderscore(parasha);
     document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
-   
+    document.title = "לפי החלוקה לסדרים " + parasha + " פרשת";
     return ;
 
 }
