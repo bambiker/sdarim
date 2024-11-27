@@ -1017,7 +1017,7 @@ function userSeder(filtArray2, book, seder, verse){
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     document.getElementById("result").innerHTML  = output;
-
+    document.title = " ספר " + book + " סדר " + seder;
     return;
     }
 
