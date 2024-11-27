@@ -10,7 +10,7 @@ async function start(){
           const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
           const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
           userSeder(filtArray2, book, seder, verse)
-      
+          document.title=" מסדירים בספר " + book + " סדר " + seder;
           urlname = "https://www.masdirim.org/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
           document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
           document.getElementById("sbook").value  = book;
