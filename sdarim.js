@@ -60,6 +60,7 @@ async function chapter2seder(){
     var cbook = document.getElementById("cbook").value;
     var chapter = document.getElementById("chapter").value;         
     var cverse = document.getElementById("cverse").value;  
+    if (cverse=="") cverse="א";
     
     const response = await fetch("sdarim.json");
     const json = await response.json();
@@ -94,6 +95,7 @@ async function seder2chapter(){
     var sbook = document.getElementById("sbook").value;
     var seder = document.getElementById("seder").value;         
     var sverse = document.getElementById("sverse").value; 
+    if (sverse=="") sverse="א";
 
     const response = await fetch("sdarim.json");
     const json = await response.json();
