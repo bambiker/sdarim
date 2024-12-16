@@ -39,6 +39,15 @@
   
 <input type="submit" value="חיפוש מילים" id="btnfindfree" STYLE="cursor: pointer; color: white; font-family: 'Heebo'; font-weight: bold; font-size: 20px; background-color: #92d050;border-radius: 12px;" size="24" maxlength="30">
 <label for="free">  </label>  
+  <script>
+var freeinput=document.getElementById("free");
+freeinput.addEventListener("krypress", function (event) {
+  if (event.key=="Enter") {
+    event.preventDefault();
+    document.getElementById("btnfindfree").click();
+  }
+});
+  </script>
 <br>
 <br>
     <table>
