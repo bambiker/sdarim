@@ -4,5 +4,23 @@
   </head>
   <body>
     <h1>test</h1>
+    <script>
+           let myObject = {
+                name: "John Doe",
+                age: 30,
+                isStudent: false,
+                courses: ["Math", "Science", "History"],
+                address: {
+                    street: "123 Main St",
+                    city: "Somewhere",
+                    zip: "12345"
+                }
+            };
+
+            // Convert JavaScript object to JSON string
+
+     document.getElementById("responseOutput").textContent = JSON.stringify(myObject, null, 2);
+      
+    </script>
   </body>
 </html>
