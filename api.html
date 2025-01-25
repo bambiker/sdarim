@@ -3,7 +3,7 @@
     
   </head>
   <body>
-    <h1>test1</h1>
+    <h1>test2</h1>
     <script>
            let myObject = {
                 name: "John Doe",
@@ -19,7 +19,7 @@
 
             // Convert JavaScript object to JSON string
 
-     document.getElementById("responseOutput").textContent = JSON.stringify(myObject, null, 2);
+                  document.body.innerHTML = `<pre>${JSON.stringify(myObject, null, 2)}</pre>`;
       
     </script>
   </body>
