@@ -2,9 +2,11 @@
   <head>
     
   </head>
-  <body>
-    <h1>test2</h1>
+    <body onload="runOnLoadFunction()">
+    <h1>Welcome to the Page</h1>
+
     <script>
+        function runOnLoadFunction() {
            let myObject = {
                 name: "John Doe",
                 age: 30,
@@ -20,7 +22,7 @@
             // Convert JavaScript object to JSON string
 
                   document.body.innerHTML = `<pre>${JSON.stringify(myObject, null, 2)}</pre>`;
-      
+        }
     </script>
-  </body>
+    </body>
 </html>
