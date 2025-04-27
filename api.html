@@ -1,30 +1,90 @@
-<html>
+<!DOCTYPE html>
+<html lang="he">
   <head>
-    
+    <title>מסדירים - חוזרים לחלוקת התנ"ך היהודית</title>
+    <link rel="canonical" href="https://www.masdirim.org" />
+    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <base target="_top">
+    <meta name="description" content='החלוקה לפרקים אינה יהודית אלא נוצרית המייצרת פרשנות שלא תמיד מתאימה לרוח היהדות. אתר מסדירים מאפשר להמיר בקלות בין החלוקות, ולקרוא ולחפש בתנ"ך לפי החלוקה לסדרים.'>
+      <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="sdarim.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JETFHY33T0');
+</script>  
+
   </head>
-    <body onload="runOnLoadFunction()">
-    <h1>Welcome to the Page</h1>
+  <body dir="rtl" onload="start()" >
+    <script type="text/javascript" src="sdarim.js"></script>
 
-    <script>
-        function runOnLoadFunction() {
-           let myObject = {
-                name: "John Doe",
-                age: 31,
-                isStudent: false,
-                courses: ["Math", "Science", "History"],
-                address: {
-                    street: "123 Main St",
-                    city: "Somewhere",
-                    zip: "12345"
-                }
-            };
+<section id="secup">
+<H1> מסדירים</H1>
+<H3>חוזרים לחלוקת התנ"ך היהודית </H3>
+  <br>
+  <br>
+</section>  
+<br>
 
-            // Convert JavaScript object to JSON string
-          
-            //      document.body.innerHTML = `<pre>${JSON.stringify(myObject, null, 2)}</pre>`;
-                  document.body.innerHTML = myObject;
-                  document.write('<meta http-equiv="Content-Type" content="application/json">');
-        }
-    </script>
-    </body>
+    
+    <br>
+ 
+    החלוקה לתנ"ך לסדרים זמינה גם דרך אתר מסדירים www.masdirim.org באמצעות הממשק למשתמש,  וניתן לגשת למידע גם באמצעות API וקבצי JSON. קובץ JSON המלא המכיל את כל פסוקי התנ"ך זמין להורדה בכתובת:
+    <br>
+    https://github.com/bambiker/sdarim/blob/main/sdarim.json<br>
+    ניתן דרך API לגשת לכל פסוק בנפרד לפי החלוקה לפרקים בכתובת:<br>
+    https://github.com/bambiker/sdarim/blob/main/API/chapter_פסוק_פרק_ספר.json<br>
+    לדוגמה, עבור ספר דברי הימים א', פרק ב', פסוק ג' (לפי החלוקה לפרקים)<br>
+    https://github.com/bambiker/sdarim/blob/main/API/chapter_ג_ב_דברי הימים_א.json<br>
+בנוסף, ניתן לגשת גם לפי החלוקה לסדרים בכתובת<br>
+    https://github.com/bambiker/sdarim/blob/main/API/seder_פסוק_פרק_סדר.json<br>
+למשל, עבור ספר דברי הימים, סדר א', פסוק נז' (לפי החלוקה לסדרים)<br>
+    https://github.com/bambiker/sdarim/blob/main/API/seder_נז_א_דברי הימים.json<br>
+מבנה התשובה של ה-API יהיה כך:<br>
+{<br>
+    "bookchapter": "דברי הימים א",<br>
+    "chapter": "ב",<br>
+    "versechapter": "ג",<br>
+    "bookseder": "דברי הימים",<br>
+    "seder": "א",<br>
+    "verseseder": "נז",<br>
+    "versenikud": "בְּנֵ֣י יְהוּדָ֗ה עֵ֤ר וְאוֹנָן֙ וְשֵׁלָ֔ה שְׁלוֹשָׁה֙ נ֣וֹלַד ל֔וֹ מִבַּת־ שׁ֖וּעַ הַֽכְּנַעֲנִ֑ית וַיְהִ֞י עֵ֣ר ׀ בְּכ֣וֹר יְהוּדָ֗ה רַ֛ע בְּעֵינֵ֥י יְהוָ֖ה וַיְמִיתֵֽהוּ׃ ",<br>
+    "versenonikud": "בני יהודה ער ואונן ושלה שלושה נולד לו מבת שוע הכנענית ויהי ער  בכור יהודה רע בעיני יהוה וימיתהו "<br>
+}<br>
+    <br>
+רשימת הספרים נמצאת בכתובת<br>
+    https://github.com/bambiker/sdarim/blob/main/API/book_names.json<br>
+    <br>
+המידע הזה ניתן לשימוש חופשי, הן עבור תוכנה והן עבור שימוש מסחרי. נשמח אם תציינו שאתר מסדירים הוא המקור לנתונים.<br>
+    <br>
+    
+    <br>
+  
+<br>
+
+<?var url = getScriptUrl();?><a href='https://www.masdirim.org' target="_blank"> <input type='button' name='button' value='חזרה'  STYLE="cursor: pointer; color: white; font-family: Heebo; font-weight: bold; font-size: 20px; background-color: #92d050;border-radius: 12px;" size="24" maxlength="30"></a>
+<br>
+<br>
+        <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://www.masdirim.org">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_copy_link"></a>
+<a class="a2a_button_x"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_email"></a>
+<a class="a2a_button_telegram"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_facebook_messenger"></a>
+<a class="a2a_button_google_gmail"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+
+  </body>
 </html>
