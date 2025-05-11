@@ -1,0 +1,662 @@
+[
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "א",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "מה",
+        "versenikud": "אֲנִ֤י הַגֶּ֙בֶר֙ רָאָ֣ה עֳנִ֔י בְּשֵׁ֖בֶט עֶבְרָתֽוֹ׃ ",
+        "versenonikud": "אני הגבר ראה עני בשבט עברתו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "מו",
+        "versenikud": "אוֹתִ֥י נָהַ֛ג וַיֹּלַ֖ךְ חֹ֥שֶׁךְ וְלֹא־ אֽוֹר׃ ",
+        "versenonikud": "אותי נהג וילך חשך ולא אור "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "מז",
+        "versenikud": "אַ֣ךְ בִּ֥י יָשֻׁ֛ב יַהֲפֹ֥ךְ יָד֖וֹ כָּל־ הַיּֽוֹם׃ ",
+        "versenonikud": "אך בי ישב יהפך ידו כל היום "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "מח",
+        "versenikud": "בִּלָּ֤ה בְשָׂרִי֙ וְעוֹרִ֔י שִׁבַּ֖ר עַצְמוֹתָֽי׃ ",
+        "versenonikud": "בלה בשרי ועורי שבר עצמותי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "מט",
+        "versenikud": "בָּנָ֥ה עָלַ֛י וַיַּקַּ֖ף רֹ֥אשׁ וּתְלָאָֽה׃ ",
+        "versenonikud": "בנה עלי ויקף ראש ותלאה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נ",
+        "versenikud": "בְּמַחֲשַׁכִּ֥ים הוֹשִׁיבַ֖נִי כְּמֵתֵ֥י עוֹלָֽם׃ ",
+        "versenonikud": "במחשכים הושיבני כמתי עולם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נא",
+        "versenikud": "גָּדַ֧ר בַּעֲדִ֛י וְלֹ֥א אֵצֵ֖א הִכְבִּ֥יד נְחָשְׁתִּֽי׃ ",
+        "versenonikud": "גדר בעדי ולא אצא הכביד נחשתי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נב",
+        "versenikud": "גַּ֣ם כִּ֤י אֶזְעַק֙ וַאֲשַׁוֵּ֔עַ שָׂתַ֖ם תְּפִלָּתִֽי׃ ",
+        "versenonikud": "גם כי אזעק ואשוע שתם תפלתי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נג",
+        "versenikud": "גָּדַ֤ר דְּרָכַי֙ בְּגָזִ֔ית נְתִיבֹתַ֖י עִוָּֽה׃ ",
+        "versenonikud": "גדר דרכי בגזית נתיבתי עוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "י",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נד",
+        "versenikud": "דֹּ֣ב אֹרֵ֥ב הוּא֙ לִ֔י אריה אֲרִ֖י בְּמִסְתָּרִֽים׃ ",
+        "versenonikud": "דב ארב הוא לי אריה ארי במסתרים "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נה",
+        "versenikud": "דְּרָכַ֥י סוֹרֵ֛ר וַֽיְפַשְּׁחֵ֖נִי שָׂמַ֥נִי שֹׁמֵֽם׃ ",
+        "versenonikud": "דרכי סורר ויפשחני שמני שמם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נו",
+        "versenikud": "דָּרַ֤ךְ קַשְׁתוֹ֙ וַיַּצִּיבֵ֔נִי כַּמַּטָּרָ֖א לַחֵֽץ׃ ",
+        "versenonikud": "דרך קשתו ויציבני כמטרא לחץ "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נז",
+        "versenikud": "הֵבִיא֙ בְּכִלְיוֹתָ֔י בְּנֵ֖י אַשְׁפָּתֽוֹ׃ ",
+        "versenonikud": "הביא בכליותי בני אשפתו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נח",
+        "versenikud": "הָיִ֤יתִי שְּׂחֹק֙ לְכָל־ עַמִּ֔י נְגִינָתָ֖ם כָּל־ הַיּֽוֹם׃ ",
+        "versenonikud": "הייתי שחק לכל עמי נגינתם כל היום "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "טו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "נט",
+        "versenikud": "הִשְׂבִּיעַ֥נִי בַמְּרוֹרִ֖ים הִרְוַ֥נִי לַעֲנָֽה׃ ",
+        "versenonikud": "השביעני במרורים הרוני לענה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "טז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "ס",
+        "versenikud": "וַיַּגְרֵ֤ס בֶּֽחָצָץ֙ שִׁנָּ֔י הִכְפִּישַׁ֖נִי בָּאֵֽפֶר׃ ",
+        "versenonikud": "ויגרס בחצץ שני הכפישני באפר "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סא",
+        "versenikud": "וַתִּזְנַ֧ח מִשָּׁל֛וֹם נַפְשִׁ֖י נָשִׁ֥יתִי טוֹבָֽה׃ ",
+        "versenonikud": "ותזנח משלום נפשי נשיתי טובה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סב",
+        "versenikud": "וָאֹמַר֙ אָבַ֣ד נִצְחִ֔י וְתוֹחַלְתִּ֖י מֵיְהוָֽה׃ ",
+        "versenonikud": "ואמר אבד נצחי ותוחלתי מיהוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "יט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סג",
+        "versenikud": "זְכָר־ עָנְיִ֥י וּמְרוּדִ֖י לַעֲנָ֥ה וָרֹֽאשׁ׃ ",
+        "versenonikud": "זכר עניי ומרודי לענה וראש "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כ",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סד",
+        "versenikud": "זָכ֣וֹר תִּזְכּ֔וֹר ותשיח וְתָשׁ֥וֹחַ עָלַ֖י נַפְשִֽׁי׃ ",
+        "versenonikud": "זכור תזכור ותשיח ותשוח עלי נפשי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סה",
+        "versenikud": "זֹ֛את אָשִׁ֥יב אֶל־ לִבִּ֖י עַל־ כֵּ֥ן אוֹחִֽיל׃ ",
+        "versenonikud": "זאת אשיב אל לבי על כן אוחיל "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סו",
+        "versenikud": "חַֽסְדֵ֤י יְהוָה֙ כִּ֣י לֹא־ תָ֔מְנוּ כִּ֥י לֹא־ כָל֖וּ רַחֲמָֽיו׃ ",
+        "versenonikud": "חסדי יהוה כי לא תמנו כי לא כלו רחמיו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סז",
+        "versenikud": "חֲדָשִׁים֙ לַבְּקָרִ֔ים רַבָּ֖ה אֱמוּנָתֶֽךָ׃ ",
+        "versenonikud": "חדשים לבקרים רבה אמונתך "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סח",
+        "versenikud": "חֶלְקִ֤י יְהוָה֙ אָמְרָ֣ה נַפְשִׁ֔י עַל־ כֵּ֖ן אוֹחִ֥יל לֽוֹ׃ ",
+        "versenonikud": "חלקי יהוה אמרה נפשי על כן אוחיל לו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "סט",
+        "versenikud": "ט֤וֹב יְהוָה֙ לְקוָֹ֔ו לְנֶ֖פֶשׁ תִּדְרְשֶֽׁנּוּ׃ ",
+        "versenonikud": "טוב יהוה לקוו לנפש תדרשנו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "ע",
+        "versenikud": "ט֤וֹב וְיָחִיל֙ וְדוּמָ֔ם לִתְשׁוּעַ֖ת יְהוָֽה׃ ",
+        "versenonikud": "טוב ויחיל ודומם לתשועת יהוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עא",
+        "versenikud": "ט֣וֹב לַגֶּ֔בֶר כִּֽי־ יִשָּׂ֥א עֹ֖ל בִּנְעוּרָֽיו׃ ",
+        "versenonikud": "טוב לגבר כי ישא על בנעוריו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עב",
+        "versenikud": "יֵשֵׁ֤ב בָּדָד֙ וְיִדֹּ֔ם כִּ֥י נָטַ֖ל עָלָֽיו׃ ",
+        "versenonikud": "ישב בדד וידם כי נטל עליו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "כט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עג",
+        "versenikud": "יִתֵּ֤ן בֶּֽעָפָר֙ פִּ֔יהוּ אוּלַ֖י יֵ֥שׁ תִּקְוָֽה׃ ",
+        "versenonikud": "יתן בעפר פיהו אולי יש תקוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ל",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עד",
+        "versenikud": "יִתֵּ֧ן לְמַכֵּ֛הוּ לֶ֖חִי יִשְׂבַּ֥ע בְּחֶרְפָּֽה׃ ",
+        "versenonikud": "יתן למכהו לחי ישבע בחרפה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עה",
+        "versenikud": "כִּ֣י לֹ֥א יִזְנַ֛ח לְעוֹלָ֖ם אֲדֹנָֽי׃ ",
+        "versenonikud": "כי לא יזנח לעולם אדני "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עו",
+        "versenikud": "כִּ֣י אִם־ הוֹגָ֔ה וְרִחַ֖ם כְּרֹ֥ב חסדו חֲסָדָֽיו׃ ",
+        "versenonikud": "כי אם הוגה ורחם כרב חסדו חסדיו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עז",
+        "versenikud": "כִּ֣י לֹ֤א עִנָּה֙ מִלִּבּ֔וֹ וַיַּגֶּ֖ה בְנֵי־ אִֽישׁ׃ ",
+        "versenonikud": "כי לא ענה מלבו ויגה בני איש "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עח",
+        "versenikud": "לְדַכֵּא֙ תַּ֣חַת רַגְלָ֔יו כֹּ֖ל אֲסִ֥ירֵי אָֽרֶץ׃ ",
+        "versenonikud": "לדכא תחת רגליו כל אסירי ארץ "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "עט",
+        "versenikud": "לְהַטּוֹת֙ מִשְׁפַּט־ גָּ֔בֶר נֶ֖גֶד פְּנֵ֥י עֶלְיֽוֹן׃ ",
+        "versenonikud": "להטות משפט גבר נגד פני עליון "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פ",
+        "versenikud": "לְעַוֵּ֤ת אָדָם֙ בְּרִיב֔וֹ אֲדֹנָ֖י לֹ֥א רָאָֽה׃ ",
+        "versenonikud": "לעות אדם בריבו אדני לא ראה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פא",
+        "versenikud": "מִ֣י זֶ֤ה אָמַר֙ וַתֶּ֔הִי אֲדֹנָ֖י לֹ֥א צִוָּֽה׃ ",
+        "versenonikud": "מי זה אמר ותהי אדני לא צוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פב",
+        "versenikud": "מִפִּ֤י עֶלְיוֹן֙ לֹ֣א תֵצֵ֔א הָרָע֖וֹת וְהַטּֽוֹב׃ ",
+        "versenonikud": "מפי עליון לא תצא הרעות והטוב "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "לט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פג",
+        "versenikud": "מַה־ יִּתְאוֹנֵן֙ אָדָ֣ם חָ֔י גֶּ֖בֶר עַל־ חטאו חֲטָאָֽיו׃ ",
+        "versenonikud": "מה יתאונן אדם חי גבר על חטאו חטאיו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מ",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פד",
+        "versenikud": "נַחְפְּשָׂ֤ה דְרָכֵ֙ינוּ֙ וְֽנַחְקֹ֔רָה וְנָשׁ֖וּבָה עַד־ יְהוָֽה׃ ",
+        "versenonikud": "נחפשה דרכינו ונחקרה ונשובה עד יהוה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פה",
+        "versenikud": "נִשָּׂ֤א לְבָבֵ֙נוּ֙ אֶל־ כַּפָּ֔יִם אֶל־ אֵ֖ל בַּשָּׁמָֽיִם׃ ",
+        "versenonikud": "נשא לבבנו אל כפים אל אל בשמים "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פו",
+        "versenikud": "נַ֤חְנוּ פָשַׁ֙עְנוּ֙ וּמָרִ֔ינוּ אַתָּ֖ה לֹ֥א סָלָֽחְתָּ׃ ",
+        "versenonikud": "נחנו פשענו ומרינו אתה לא סלחת "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פז",
+        "versenikud": "סַכֹּ֤תָה בָאַף֙ וַֽתִּרְדְּפֵ֔נוּ הָרַ֖גְתָּ לֹ֥א חָמָֽלְתָּ׃ ",
+        "versenonikud": "סכתה באף ותרדפנו הרגת לא חמלת "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פח",
+        "versenikud": "סַכּ֤וֹתָה בֶֽעָנָן֙ לָ֔ךְ מֵעֲב֖וֹר תְּפִלָּֽה׃ ",
+        "versenonikud": "סכותה בענן לך מעבור תפלה "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "פט",
+        "versenikud": "סְחִ֧י וּמָא֛וֹס תְּשִׂימֵ֖נוּ בְּקֶ֥רֶב הָעַמִּֽים׃ ",
+        "versenonikud": "סחי ומאוס תשימנו בקרב העמים "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צ",
+        "versenikud": "פָּצ֥וּ עָלֵ֛ינוּ פִּיהֶ֖ם כָּל־ אֹיְבֵֽינוּ׃ ",
+        "versenonikud": "פצו עלינו פיהם כל איבינו "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צא",
+        "versenikud": "פַּ֧חַד וָפַ֛חַת הָ֥יָה לָ֖נוּ הַשֵּׁ֥את וְהַשָּֽׁבֶר׃ ",
+        "versenonikud": "פחד ופחת היה לנו השאת והשבר "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צב",
+        "versenikud": "פַּלְגֵי־ מַ֙יִם֙ תֵּרַ֣ד עֵינִ֔י עַל־ שֶׁ֖בֶר בַּת־ עַמִּֽי׃ ",
+        "versenonikud": "פלגי מים תרד עיני על שבר בת עמי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "מט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צג",
+        "versenikud": "עֵינִ֧י נִגְּרָ֛ה וְלֹ֥א תִדְמֶ֖ה מֵאֵ֥ין הֲפֻגֽוֹת׃ ",
+        "versenonikud": "עיני נגרה ולא תדמה מאין הפגות "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נ",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צד",
+        "versenikud": "עַד־ יַשְׁקִ֣יף וְיֵ֔רֶא יְהוָ֖ה מִשָּׁמָֽיִם׃ ",
+        "versenonikud": "עד ישקיף וירא יהוה משמים "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צה",
+        "versenikud": "עֵינִי֙ עֽוֹלְלָ֣ה לְנַפְשִׁ֔י מִכֹּ֖ל בְּנ֥וֹת עִירִֽי׃ ",
+        "versenonikud": "עיני עוללה לנפשי מכל בנות עירי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צו",
+        "versenikud": "צ֥וֹד צָד֛וּנִי כַּצִּפּ֖וֹר אֹיְבַ֥י חִנָּֽם׃ ",
+        "versenonikud": "צוד צדוני כצפור איבי חנם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צז",
+        "versenikud": "צָֽמְת֤וּ בַבּוֹר֙ חַיָּ֔י וַיַּדּוּ־ אֶ֖בֶן בִּֽי׃ ",
+        "versenonikud": "צמתו בבור חיי וידו אבן בי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צח",
+        "versenikud": "צָֽפוּ־ מַ֥יִם עַל־ רֹאשִׁ֖י אָמַ֥רְתִּי נִגְזָֽרְתִּי׃ ",
+        "versenonikud": "צפו מים על ראשי אמרתי נגזרתי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "צט",
+        "versenikud": "קָרָ֤אתִי שִׁמְךָ֙ יְהוָ֔ה מִבּ֖וֹר תַּחְתִּיּֽוֹת׃ ",
+        "versenonikud": "קראתי שמך יהוה מבור תחתיות "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "ק",
+        "versenikud": "קוֹלִ֖י שָׁמָ֑עְתָּ אַל־ תַּעְלֵ֧ם אָזְנְךָ֛ לְרַוְחָתִ֖י לְשַׁוְעָתִֽי׃ ",
+        "versenonikud": "קולי שמעת אל תעלם אזנך לרוחתי לשועתי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נז",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קא",
+        "versenikud": "קָרַ֙בְתָּ֙ בְּי֣וֹם אֶקְרָאֶ֔ךָּ אָמַ֖רְתָּ אַל־ תִּירָֽא׃ ",
+        "versenonikud": "קרבת ביום אקראך אמרת אל תירא "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נח",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קב",
+        "versenikud": "רַ֧בְתָּ אֲדֹנָ֛י רִיבֵ֥י נַפְשִׁ֖י גָּאַ֥לְתָּ חַיָּֽי׃ ",
+        "versenonikud": "רבת אדני ריבי נפשי גאלת חיי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "נט",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קג",
+        "versenikud": "רָאִ֤יתָה יְהוָה֙ עַוָּ֣תָתִ֔י שָׁפְטָ֖ה מִשְׁפָּטִֽי׃ ",
+        "versenonikud": "ראיתה יהוה עותתי שפטה משפטי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "ס",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קד",
+        "versenikud": "רָאִ֙יתָה֙ כָּל־ נִקְמָתָ֔ם כָּל־ מַחְשְׁבֹתָ֖ם לִֽי׃ ",
+        "versenonikud": "ראיתה כל נקמתם כל מחשבתם לי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סא",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קה",
+        "versenikud": "שָׁמַ֤עְתָּ חֶרְפָּתָם֙ יְהוָ֔ה כָּל־ מַחְשְׁבֹתָ֖ם עָלָֽי׃ ",
+        "versenonikud": "שמעת חרפתם יהוה כל מחשבתם עלי "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סב",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קו",
+        "versenikud": "שִׂפְתֵ֤י קָמַי֙ וְהֶגְיוֹנָ֔ם עָלַ֖י כָּל־ הַיּֽוֹם׃ ",
+        "versenonikud": "שפתי קמי והגיונם עלי כל היום "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סג",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קז",
+        "versenikud": "שִׁבְתָּ֤ם וְקִֽימָתָם֙ הַבִּ֔יטָה אֲנִ֖י מַנְגִּינָתָֽם׃ ",
+        "versenonikud": "שבתם וקימתם הביטה אני מנגינתם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סד",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קח",
+        "versenikud": "תָּשִׁ֨יב לָהֶ֥ם גְּמ֛וּל יְהוָ֖ה כְּמַעֲשֵׂ֥ה יְדֵיהֶֽם׃ ",
+        "versenonikud": "תשיב להם גמול יהוה כמעשה ידיהם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סה",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קט",
+        "versenikud": "תִּתֵּ֤ן לָהֶם֙ מְגִנַּת־ לֵ֔ב תַּאֲלָֽתְךָ֖ לָהֶֽם׃ ",
+        "versenonikud": "תתן להם מגנת לב תאלתך להם "
+    },
+    {
+        "bookchapter": "קהלת",
+        "chapter": "ג",
+        "versechapter": "סו",
+        "bookseder": "קהלת",
+        "seder": "א",
+        "verseseder": "קי",
+        "versenikud": "תִּרְדֹּ֤ף בְּאַף֙ וְתַשְׁמִידֵ֔ם מִתַּ֖חַת שְׁמֵ֥י יְהוָֽה׃ ",
+        "versenonikud": "תרדף באף ותשמידם מתחת שמי יהוה "
+    }
+]
