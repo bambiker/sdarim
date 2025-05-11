@@ -1,0 +1,532 @@
+[
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "א",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "נט",
+        "versenikud": "מַ֝שְׂכִּ֗יל לְאֵיתָ֥ן הָֽאֶזְרָחִֽי׃ ",
+        "versenonikud": "משכיל לאיתן האזרחי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "ס",
+        "versenikud": "חַֽסְדֵ֣י יְ֭הוָה עוֹלָ֣ם אָשִׁ֑ירָה לְדֹ֥ר וָדֹ֓ר ׀ אוֹדִ֖יעַ אֱמוּנָתְךָ֣ בְּפִֽי׃ ",
+        "versenonikud": "חסדי יהוה עולם אשירה לדר ודר  אודיע אמונתך בפי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סא",
+        "versenikud": "כִּֽי־ אָמַ֗רְתִּי ע֭וֹלָם חֶ֣סֶד יִבָּנֶ֑ה שָׁמַ֓יִם ׀ תָּכִ֖ן אֱמוּנָתְךָ֣ בָהֶֽם׃ ",
+        "versenonikud": "כי אמרתי עולם חסד יבנה שמים  תכן אמונתך בהם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ד",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סב",
+        "versenikud": "כָּרַ֣תִּֽי בְ֭רִית לִבְחִירִ֑י נִ֝שְׁבַּ֗עְתִּי לְדָוִ֥ד עַבְדִּֽי׃ ",
+        "versenonikud": "כרתי ברית לבחירי נשבעתי לדוד עבדי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ה",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סג",
+        "versenikud": "עַד־ ע֭וֹלָם אָכִ֣ין זַרְעֶ֑ךָ וּבָנִ֨יתִי לְדֹר־ וָד֖וֹר כִּסְאֲךָ֣ סֶֽלָה׃ ",
+        "versenonikud": "עד עולם אכין זרעך ובניתי לדר ודור כסאך סלה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ו",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סד",
+        "versenikud": "וְי֘וֹד֤וּ שָׁמַ֣יִם פִּלְאֲךָ֣ יְהוָ֑ה אַף־ אֱ֝מֽוּנָתְךָ֗ בִּקְהַ֥ל קְדֹשִֽׁים׃ ",
+        "versenonikud": "ויודו שמים פלאך יהוה אף אמונתך בקהל קדשים "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סה",
+        "versenikud": "כִּ֤י מִ֣י בַ֭שַּׁחַק יַעֲרֹ֣ךְ לַיהוָ֑ה יִדְמֶ֥ה לַ֝יהוָ֗ה בִּבְנֵ֥י אֵלִים׃ ",
+        "versenonikud": "כי מי בשחק יערך ליהוה ידמה ליהוה בבני אלים "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ח",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סו",
+        "versenikud": "אֵ֣ל נַ֭עֲרָץ בְּסוֹד־ קְדֹשִׁ֣ים רַבָּ֑ה וְ֝נוֹרָ֗א עַל־ כָּל־ סְבִיבָֽיו׃ ",
+        "versenonikud": "אל נערץ בסוד קדשים רבה ונורא על כל סביביו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ט",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סז",
+        "versenikud": "יְהוָ֤ה ׀ אֱלֹ֘הֵ֤י צְבָא֗וֹת מִֽי־ כָֽמ֖וֹךָ חֲסִ֥ין ׀ יָ֑הּ וֶ֝אֱמֽוּנָתְךָ֗ סְבִיבוֹתֶֽיךָ׃ ",
+        "versenonikud": "יהוה  אלהי צבאות מי כמוך חסין  יה ואמונתך סביבותיך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "י",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סח",
+        "versenikud": "אַתָּ֣ה מ֭וֹשֵׁל בְּגֵא֣וּת הַיָּ֑ם בְּשׂ֥וֹא גַ֝לָּ֗יו אַתָּ֥ה תְשַׁבְּחֵֽם׃ ",
+        "versenonikud": "אתה מושל בגאות הים בשוא גליו אתה תשבחם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יא",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "סט",
+        "versenikud": "אַתָּ֤ה דִכִּ֣אתָ כֶחָלָ֣ל רָ֑הַב בִּזְר֥וֹעַ עֻ֝זְּךָ֗ פִּזַּ֥רְתָּ אוֹיְבֶֽיךָ׃ ",
+        "versenonikud": "אתה דכאת כחלל רהב בזרוע עזך פזרת אויביך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "ע",
+        "versenikud": "לְךָ֣ שָׁ֭מַיִם אַף־ לְךָ֥ אָ֑רֶץ תֵּבֵ֥ל וּ֝מְלֹאָ֗הּ אַתָּ֥ה יְסַדְתָּֽם׃ ",
+        "versenonikud": "לך שמים אף לך ארץ תבל ומלאה אתה יסדתם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עא",
+        "versenikud": "צָפ֣וֹן וְ֭יָמִין אַתָּ֣ה בְרָאתָ֑ם תָּב֥וֹר וְ֝חֶרְמ֗וֹן בְּשִׁמְךָ֥ יְרַנֵּֽנוּ׃ ",
+        "versenonikud": "צפון וימין אתה בראתם תבור וחרמון בשמך ירננו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יד",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עב",
+        "versenikud": "לְךָ֣ זְ֭רוֹעַ עִם־ גְּבוּרָ֑ה תָּעֹ֥ז יָ֝דְךָ֗ תָּר֥וּם יְמִינֶֽךָ׃ ",
+        "versenonikud": "לך זרוע עם גבורה תעז ידך תרום ימינך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "טו",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עג",
+        "versenikud": "צֶ֣דֶק וּ֭מִשְׁפָּט מְכ֣וֹן כִּסְאֶ֑ךָ חֶ֥סֶד וֶ֝אֱמֶ֗ת יְֽקַדְּמ֥וּ פָנֶֽיךָ׃ ",
+        "versenonikud": "צדק ומשפט מכון כסאך חסד ואמת יקדמו פניך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "טז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עד",
+        "versenikud": "אַשְׁרֵ֣י הָ֭עָם יוֹדְעֵ֣י תְרוּעָ֑ה יְ֝הוָ֗ה בְּֽאוֹר־ פָּנֶ֥יךָ יְהַלֵּכֽוּן׃ ",
+        "versenonikud": "אשרי העם יודעי תרועה יהוה באור פניך יהלכון "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עה",
+        "versenikud": "בְּ֭שִׁמְךָ יְגִיל֣וּן כָּל־ הַיּ֑וֹם וּבְצִדְקָתְךָ֥ יָרֽוּמוּ׃ ",
+        "versenonikud": "בשמך יגילון כל היום ובצדקתך ירומו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יח",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עו",
+        "versenikud": "כִּֽי־ תִפְאֶ֣רֶת עֻזָּ֣מוֹ אָ֑תָּה וּ֝בִרְצֹנְךָ֗ תרים תָּר֥וּם קַרְנֵֽנוּ׃ ",
+        "versenonikud": "כי תפארת עזמו אתה וברצנך תרים תרום קרננו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "יט",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עז",
+        "versenikud": "כִּ֣י לַֽ֭יהוָה מָֽגִנֵּ֑נוּ וְלִקְד֖וֹשׁ יִשְׂרָאֵ֣ל מַלְכֵּֽנוּ׃ ",
+        "versenonikud": "כי ליהוה מגננו ולקדוש ישראל מלכנו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כ",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עח",
+        "versenikud": "אָ֤ז דִּבַּ֥רְתָּֽ־ בְחָ֡זוֹן לַֽחֲסִידֶ֗יךָ וַתֹּ֗אמֶר שִׁוִּ֣יתִי עֵ֭זֶר עַל־ גִּבּ֑וֹר הֲרִימ֖וֹתִי בָח֣וּר מֵעָֽם׃ ",
+        "versenonikud": "אז דברת בחזון לחסידיך ותאמר שויתי עזר על גבור הרימותי בחור מעם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כא",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "עט",
+        "versenikud": "מָ֭צָאתִי דָּוִ֣ד עַבְדִּ֑י בְּשֶׁ֖מֶן קָדְשִׁ֣י מְשַׁחְתִּֽיו׃ ",
+        "versenonikud": "מצאתי דוד עבדי בשמן קדשי משחתיו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פ",
+        "versenikud": "אֲשֶׁ֣ר יָ֭דִי תִּכּ֣וֹן עִמּ֑וֹ אַף־ זְרוֹעִ֥י תְאַמְּצֶֽנּוּ׃ ",
+        "versenonikud": "אשר ידי תכון עמו אף זרועי תאמצנו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פא",
+        "versenikud": "לֹֽא־ יַשִּׁ֣א אוֹיֵ֣ב בּ֑וֹ וּבֶן־ עַ֝וְלָ֗ה לֹ֣א יְעַנֶּֽנּוּ׃ ",
+        "versenonikud": "לא ישא אויב בו ובן עולה לא יעננו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כד",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פב",
+        "versenikud": "וְכַתּוֹתִ֣י מִפָּנָ֣יו צָרָ֑יו וּמְשַׂנְאָ֥יו אֶגּֽוֹף׃ ",
+        "versenonikud": "וכתותי מפניו צריו ומשנאיו אגוף "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כה",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פג",
+        "versenikud": "וֶֽאֶֽמוּנָתִ֣י וְחַסְדִּ֣י עִמּ֑וֹ וּ֝בִשְׁמִ֗י תָּר֥וּם קַרְנֽוֹ׃ ",
+        "versenonikud": "ואמונתי וחסדי עמו ובשמי תרום קרנו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כו",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פד",
+        "versenikud": "וְשַׂמְתִּ֣י בַיָּ֣ם יָד֑וֹ וּֽבַנְּהָר֥וֹת יְמִינֽוֹ׃ ",
+        "versenonikud": "ושמתי בים ידו ובנהרות ימינו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פה",
+        "versenikud": "ה֣וּא יִ֭קְרָאֵנִי אָ֣בִי אָ֑תָּה אֵ֝לִ֗י וְצ֣וּר יְשׁוּעָתִֽי׃ ",
+        "versenonikud": "הוא יקראני אבי אתה אלי וצור ישועתי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כח",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פו",
+        "versenikud": "אַף־ אָ֭נִי בְּכ֣וֹר אֶתְּנֵ֑הוּ עֶ֝לְי֗וֹן לְמַלְכֵי־ אָֽרֶץ׃ ",
+        "versenonikud": "אף אני בכור אתנהו עליון למלכי ארץ "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "כט",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פז",
+        "versenikud": "לְ֭עוֹלָ֗ם אשמור־ אֶשְׁמָר־ ל֣וֹ חַסְדִּ֑י וּ֝בְרִיתִ֗י נֶאֱמֶ֥נֶת לֽוֹ׃ ",
+        "versenonikud": "לעולם אשמור אשמר לו חסדי ובריתי נאמנת לו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "ל",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פח",
+        "versenikud": "וְשַׂמְתִּ֣י לָעַ֣ד זַרְע֑וֹ וְ֝כִסְא֗וֹ כִּימֵ֥י שָׁמָֽיִם׃ ",
+        "versenonikud": "ושמתי לעד זרעו וכסאו כימי שמים "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לא",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "פט",
+        "versenikud": "אִם־ יַֽעַזְב֣וּ בָ֭נָיו תּוֹרָתִ֑י וּ֝בְמִשְׁפָּטַ֗י לֹ֣א יֵלֵכֽוּן׃ ",
+        "versenonikud": "אם יעזבו בניו תורתי ובמשפטי לא ילכון "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צ",
+        "versenikud": "אִם־ חֻקֹּתַ֥י יְחַלֵּ֑לוּ וּ֝מִצְוֺתַ֗י לֹ֣א יִשְׁמֹֽרוּ׃ ",
+        "versenonikud": "אם חקתי יחללו ומצותי לא ישמרו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צא",
+        "versenikud": "וּפָקַדְתִּ֣י בְשֵׁ֣בֶט פִּשְׁעָ֑ם וּבִנְגָעִ֥ים עֲוֺנָֽם׃ ",
+        "versenonikud": "ופקדתי בשבט פשעם ובנגעים עונם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לד",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צב",
+        "versenikud": "וְ֭חַסְדִּי לֹֽא־ אָפִ֣יר מֵֽעִמּ֑וֹ וְלֹֽא־ אֲ֝שַׁקֵּ֗ר בֶּאֱמוּנָתִֽי׃ ",
+        "versenonikud": "וחסדי לא אפיר מעמו ולא אשקר באמונתי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לה",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צג",
+        "versenikud": "לֹא־ אֲחַלֵּ֥ל בְּרִיתִ֑י וּמוֹצָ֥א שְׂ֝פָתַ֗י לֹ֣א אֲשַׁנֶּֽה׃ ",
+        "versenonikud": "לא אחלל בריתי ומוצא שפתי לא אשנה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לו",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צד",
+        "versenikud": "אַ֭חַת נִשְׁבַּ֣עְתִּי בְקָדְשִׁ֑י אִֽם־ לְדָוִ֥ד אֲכַזֵּֽב׃ ",
+        "versenonikud": "אחת נשבעתי בקדשי אם לדוד אכזב "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צה",
+        "versenikud": "זַ֭רְעוֹ לְעוֹלָ֣ם יִהְיֶ֑ה וְכִסְא֖וֹ כַשֶּׁ֣מֶשׁ נֶגְדִּֽי׃ ",
+        "versenonikud": "זרעו לעולם יהיה וכסאו כשמש נגדי "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לח",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צו",
+        "versenikud": "כְּ֭יָרֵחַ יִכּ֣וֹן עוֹלָ֑ם וְעֵ֥ד בַּ֝שַּׁ֗חַק נֶאֱמָ֥ן סֶֽלָה׃ ",
+        "versenonikud": "כירח יכון עולם ועד בשחק נאמן סלה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "לט",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צז",
+        "versenikud": "וְאַתָּ֣ה זָ֭נַחְתָּ וַתִּמְאָ֑ס הִ֝תְעַבַּ֗רְתָּ עִם־ מְשִׁיחֶֽךָ׃ ",
+        "versenonikud": "ואתה זנחת ותמאס התעברת עם משיחך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מ",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צח",
+        "versenikud": "נֵ֭אַרְתָּה בְּרִ֣ית עַבְדֶּ֑ךָ חִלַּ֖לְתָּ לָאָ֣רֶץ נִזְרֽוֹ׃ ",
+        "versenonikud": "נארתה ברית עבדך חללת לארץ נזרו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מא",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "צט",
+        "versenikud": "פָּרַ֥צְתָּ כָל־ גְּדֵרֹתָ֑יו שַׂ֖מְתָּ מִבְצָרָ֣יו מְחִתָּה׃ ",
+        "versenonikud": "פרצת כל גדרתיו שמת מבצריו מחתה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "ק",
+        "versenikud": "שַׁ֭סֻּהוּ כָּל־ עֹ֣בְרֵי דָ֑רֶךְ הָיָ֥ה חֶ֝רְפָּ֗ה לִשְׁכֵנָֽיו׃ ",
+        "versenonikud": "שסהו כל עברי דרך היה חרפה לשכניו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קא",
+        "versenikud": "הֲ֭רִימוֹתָ יְמִ֣ין צָרָ֑יו הִ֝שְׂמַ֗חְתָּ כָּל־ אוֹיְבָֽיו׃ ",
+        "versenonikud": "הרימות ימין צריו השמחת כל אויביו "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מד",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קב",
+        "versenikud": "אַף־ תָּ֭שִׁיב צ֣וּר חַרְבּ֑וֹ וְלֹ֥א הֲ֝קֵימֹת֗וֹ בַּמִּלְחָמָֽה׃ ",
+        "versenonikud": "אף תשיב צור חרבו ולא הקימתו במלחמה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מה",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קג",
+        "versenikud": "הִשְׁבַּ֥תָּ מִטְּהָר֑וֹ וְ֝כִסְא֗וֹ לָאָ֥רֶץ מִגַּֽרְתָּה׃ ",
+        "versenonikud": "השבת מטהרו וכסאו לארץ מגרתה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מו",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קד",
+        "versenikud": "הִ֭קְצַרְתָּ יְמֵ֣י עֲלוּמָ֑יו הֶֽעֱטִ֨יתָ עָלָ֖יו בּוּשָׁ֣ה סֶֽלָה׃ ",
+        "versenonikud": "הקצרת ימי עלומיו העטית עליו בושה סלה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מז",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קה",
+        "versenikud": "עַד־ מָ֣ה יְ֭הוָה תִּסָּתֵ֣ר לָנֶ֑צַח תִּבְעַ֖ר כְּמוֹ־ אֵ֣שׁ חֲמָתֶֽךָ׃ ",
+        "versenonikud": "עד מה יהוה תסתר לנצח תבער כמו אש חמתך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מח",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קו",
+        "versenikud": "זְכָר־ אֲנִ֥י מֶה־ חָ֑לֶד עַל־ מַה־ שָּׁ֝֗וְא בָּרָ֥אתָ כָל־ בְּנֵי־ אָדָֽם׃ ",
+        "versenonikud": "זכר אני מה חלד על מה שוא בראת כל בני אדם "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "מט",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קז",
+        "versenikud": "מִ֤י גֶ֣בֶר יִֽ֭חְיֶה וְלֹ֣א יִרְאֶה־ מָּ֑וֶת יְמַלֵּ֨ט נַפְשׁ֖וֹ מִיַּד־ שְׁא֣וֹל סֶֽלָה׃ ",
+        "versenonikud": "מי גבר יחיה ולא יראה מות ימלט נפשו מיד שאול סלה "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "נ",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קח",
+        "versenikud": "אַיֵּ֤ה ׀ חֲסָדֶ֖יךָ הָרִאשֹׁנִ֥ים ׀ אֲדֹנָ֑י נִשְׁבַּ֥עְתָּ לְ֝דָוִ֗ד בֶּאֱמוּנָתֶֽךָ׃ ",
+        "versenonikud": "איה  חסדיך הראשנים  אדני נשבעת לדוד באמונתך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "נא",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קט",
+        "versenikud": "זְכֹ֣ר אֲ֭דֹנָי חֶרְפַּ֣ת עֲבָדֶ֑יךָ שְׂאֵתִ֥י בְ֝חֵיקִ֗י כָּל־ רַבִּ֥ים עַמִּֽים׃ ",
+        "versenonikud": "זכר אדני חרפת עבדיך שאתי בחיקי כל רבים עמים "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "נב",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קי",
+        "versenikud": "אֲשֶׁ֤ר חֵרְפ֖וּ אוֹיְבֶ֥יךָ ׀ יְהוָ֑ה אֲשֶׁ֥ר חֵ֝רְפ֗וּ עִקְּב֥וֹת מְשִׁיחֶֽךָ׃ ",
+        "versenonikud": "אשר חרפו אויביך  יהוה אשר חרפו עקבות משיחך "
+    },
+    {
+        "bookchapter": "תהילים",
+        "chapter": "פט",
+        "versechapter": "נג",
+        "bookseder": "תהילים",
+        "seder": "יב",
+        "verseseder": "קיא",
+        "versenikud": "בָּר֖וּךְ יְהוָ֥ה לְ֝עוֹלָ֗ם אָ֘מֵ֥ן ׀ וְאָמֵֽן׃ ",
+        "versenonikud": "ברוך יהוה לעולם אמן  ואמן "
+    }
+]
