@@ -1,0 +1,162 @@
+[
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "א",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "לט",
+        "versenikud": "וַיַּ֥עַן אֱלִיה֗וּ וַיֹּאמַֽר׃ ",
+        "versenonikud": "ויען אליהו ויאמר "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ב",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מ",
+        "versenikud": "הֲ֭זֹאת חָשַׁ֣בְתָּ לְמִשְׁפָּ֑ט אָ֝מַ֗רְתָּ צִדְקִ֥י מֵאֵֽל׃ ",
+        "versenonikud": "הזאת חשבת למשפט אמרת צדקי מאל "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ג",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מא",
+        "versenikud": "כִּֽי־ תֹ֭אמַר מַה־ יִּסְכָּן־ לָ֑ךְ מָֽה־ אֹ֝עִ֗יל מֵֽחַטָּאתִֽי׃ ",
+        "versenonikud": "כי תאמר מה יסכן לך מה אעיל מחטאתי "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ד",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מב",
+        "versenikud": "אֲ֭נִי אֲשִֽׁיבְךָ֣ מִלִּ֑ין וְֽאֶת־ רֵעֶ֥יךָ עִמָּֽךְ׃ ",
+        "versenonikud": "אני אשיבך מלין ואת רעיך עמך "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ה",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מג",
+        "versenikud": "הַבֵּ֣ט שָׁמַ֣יִם וּרְאֵ֑ה וְשׁ֥וּר שְׁ֝חָקִ֗ים גָּבְה֥וּ מִמֶּֽךָּ׃ ",
+        "versenonikud": "הבט שמים וראה ושור שחקים גבהו ממך "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ו",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מד",
+        "versenikud": "אִם־ חָ֭טָאתָ מַה־ תִּפְעָל־ בּ֑וֹ וְרַבּ֥וּ פְ֝שָׁעֶ֗יךָ מַה־ תַּעֲשֶׂה־ לּֽוֹ׃ ",
+        "versenonikud": "אם חטאת מה תפעל בו ורבו פשעיך מה תעשה לו "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ז",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מה",
+        "versenikud": "אִם־ צָ֭דַקְתָּ מַה־ תִּתֶּן־ ל֑וֹ א֥וֹ מַה־ מִיָּדְךָ֥ יִקָּֽח׃ ",
+        "versenonikud": "אם צדקת מה תתן לו או מה מידך יקח "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ח",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מו",
+        "versenikud": "לְאִישׁ־ כָּמ֥וֹךָ רִשְׁעֶ֑ךָ וּלְבֶן־ אָ֝דָ֗ם צִדְקָתֶֽךָ׃ ",
+        "versenonikud": "לאיש כמוך רשעך ולבן אדם צדקתך "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "ט",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מז",
+        "versenikud": "מֵ֭רֹב עֲשׁוּקִ֣ים יַזְעִ֑יקוּ יְשַׁוְּע֖וּ מִזְּר֣וֹעַ רַבִּֽים׃ ",
+        "versenonikud": "מרב עשוקים יזעיקו ישועו מזרוע רבים "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "י",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מח",
+        "versenikud": "וְֽלֹא־ אָמַ֗ר אַ֭יֵּה אֱל֣וֹהַּ עֹשָׂ֑י נֹתֵ֖ן זְמִר֣וֹת בַּלָּֽיְלָה׃ ",
+        "versenonikud": "ולא אמר איה אלוה עשי נתן זמרות בלילה "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "יא",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "מט",
+        "versenikud": "מַ֭לְּפֵנוּ מִבַּהֲמ֣וֹת אָ֑רֶץ וּמֵע֖וֹף הַשָּׁמַ֣יִם יְחַכְּמֵֽנוּ׃ ",
+        "versenonikud": "מלפנו מבהמות ארץ ומעוף השמים יחכמנו "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "יב",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "נ",
+        "versenikud": "שָׁ֣ם יִ֭צְעֲקוּ וְלֹ֣א יַעֲנֶ֑ה מִ֝פְּנֵ֗י גְּא֣וֹן רָעִֽים׃ ",
+        "versenonikud": "שם יצעקו ולא יענה מפני גאון רעים "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "יג",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "נא",
+        "versenikud": "אַךְ־ שָׁ֭וְא לֹא־ יִשְׁמַ֥ע ׀ אֵ֑ל וְ֝שַׁדַּ֗י לֹ֣א יְשׁוּרֶֽנָּה׃ ",
+        "versenonikud": "אך שוא לא ישמע  אל ושדי לא ישורנה "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "יד",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "נב",
+        "versenikud": "אַ֣ף כִּֽי־ תֹ֭אמַר לֹ֣א תְשׁוּרֶ֑נּוּ דִּ֥ין לְ֝פָנָ֗יו וּתְח֥וֹלֵֽל לֽוֹ׃ ",
+        "versenonikud": "אף כי תאמר לא תשורנו דין לפניו ותחולל לו "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "טו",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "נג",
+        "versenikud": "וְעַתָּ֗ה כִּי־ אַ֭יִן פָּקַ֣ד אַפּ֑וֹ וְלֹֽא־ יָדַ֖ע בַּפַּ֣שׁ מְאֹֽד׃ ",
+        "versenonikud": "ועתה כי אין פקד אפו ולא ידע בפש מאד "
+    },
+    {
+        "bookchapter": "איוב",
+        "chapter": "לה",
+        "versechapter": "טז",
+        "bookseder": "איוב",
+        "seder": "ז",
+        "verseseder": "נד",
+        "versenikud": "וְ֭אִיּוֹב הֶ֣בֶל יִפְצֶה־ פִּ֑יהוּ בִּבְלִי־ דַ֝֗עַת מִלִּ֥ין יַכְבִּֽר׃ ",
+        "versenonikud": "ואיוב הבל יפצה פיהו בבלי דעת מלין יכבר "
+    }
+]
