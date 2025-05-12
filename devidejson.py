@@ -155,7 +155,7 @@ print(data)
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 # Save to a text file
-with open("sitemap.txt", "w") as file:
+with open("sitemap.xml", "w") as file:
     file.write('<?xml version="1.0" encoding="UTF-8"?>' + '\n')
     file.write('<urlset' + '\n')
     file.write('      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' + '\n')
@@ -196,7 +196,7 @@ with open("sitemap.txt", "w") as file:
         sbname1 = bookseder.replace(" ", "_")
         file.write('<url>' + '\n')
         parashan = iparasha.replace(" ", "_")
-        file.write('<loc>https://www.masdirim.org/?book='+sbname1+'&seder='+seder+'&verse=א'+'</loc>' + '\n')
+        file.write('<loc>https://www.masdirim.org/?book='+sbname1+'&amp;seder='+seder+'&amp;verse=א'+'</loc>' + '\n')
         file.write('<lastmod>2025-05-11T11:35:24+00:00</lastmod>' + '\n')
         file.write('<priority>0.60</priority>' + '\n')
         file.write('</url>' + '\n')
