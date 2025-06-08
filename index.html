@@ -2,7 +2,6 @@
 <html lang="he">
   <head>
     <title>מסדירים - חוזרים לחלוקת התנ"ך היהודית</title>
-    <!-- <link rel="canonical" href="https://www.masdirim.org" /> -->
 
     <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +19,10 @@
 
   gtag('config', 'G-JETFHY33T0');
 </script>  
+
     
+<!-- <link rel="canonical" href="https://www.masdirim.org" /> -->
+<!--    
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     var link = document.createElement('link');
@@ -29,6 +31,17 @@
     document.head.appendChild(link);
   });
 </script>
+-->
+
+  <!-- Canonical URL handling -->
+  <link id="canonical" rel="canonical" href="https://www.masdirim.org" />
+  <script>
+    (function () {
+      var canonical = document.getElementById("canonical");
+      var url = window.location.href.split('#')[0];
+      canonical.setAttribute("href", url);
+    })();
+  </script>    
 
   </head>
   <body dir="rtl" onload="start()" >
