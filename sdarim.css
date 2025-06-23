@@ -20,6 +20,21 @@ h1 {
   margin:0;
 }
 
+h1 a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  margin:inherit;
+
+}
+
+h3 a {
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  margin:inherit;
+}
+
 h2 {
       color:#4f009e;
       margin:0;
