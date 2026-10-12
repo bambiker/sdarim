@@ -26,7 +26,8 @@ async function start(){
           catch{
        urlname = "https://www.masdirim.org";
        setUrlLink(urlname); 
-       document.getElementById("result").innerHTML  = "";
+       const result = document.getElementById("result");
+       if (result) result.innerHTML  = "";
                }
     }
 
@@ -50,7 +51,9 @@ function setUrlLink(url) {
     const a = document.createElement("a");
     a.href = url;
     a.textContent = url;
-    document.getElementById("urlname").replaceChildren(a);
+    // api.html and fame.html share this script but have no link area
+    const urlname = document.getElementById("urlname");
+    if (urlname) urlname.replaceChildren(a);
 }
 
   function decode(str) {
@@ -151,7 +154,6 @@ async function findparasha(){
 
     const filters = [{label: 'parasha', value: parasha}];
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
-    console.log(filteredArray);
 
     output = "<h2>" + "פרשת " + escapeHtml(parasha) + "</h2>";
     oldseder='-1' 
@@ -177,16 +179,14 @@ async function findfree(){
     const json = await loadSdarim();
 
     var results = "";
-//    console.log(json.seder);
-//    console.log(json.seder.length);
+    // the search runs on the text without nikud, so remove nikud, cantillation and maqaf from the query too
+    const searchtext = removenikud(freetext);
 
-    for (index = 0; index < json.seder.length; ++index) {
-        entry = json.seder[index];
-    //    console.log(entry);
+    for (let index = 0; index < json.seder.length; ++index) {
+        const entry = json.seder[index];
         try{        
-            if (entry.versenonikud.indexOf(freetext) !== -1) {
-                console.log(entry);
-                urltext = "https://www.masdirim.org/?book="+addunderscore(entry.bookseder)+"&seder="+entry.seder+"&verse="+entry.verseseder;
+            if (entry.versenonikud.indexOf(searchtext) !== -1) {
+                const urltext = "https://www.masdirim.org/?book="+addunderscore(entry.bookseder)+"&seder="+entry.seder+"&verse="+entry.verseseder;
 
                 results += '<a href="'+urltext+'">' +
                     '<u>' + entry.bookseder + ' סדר ' + entry.seder + ' פסוק ' + entry.verseseder + '</u></a><br>' + entry.versenonikud + '<br>'
@@ -194,18 +194,22 @@ async function findfree(){
         }
             catch (err)
     {
-        console.log("not found verse text");
+        // verse without text
     }
     }
     if (results == "") results = "לא נמצאו תוצאות"
     document.getElementById("result").innerHTML  = results;
-    console.log(results);
 
     urlname = "https://www.masdirim.org";
     setUrlLink(urlname);
     document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי של " + freetext;
     return ;
 
+}
+
+function removenikud(str)
+{
+     return str.replace(/[\u0591-\u05BD\u05BF-\u05C7]/g, "").replace(/\u05BE/g, " ").replace(/\s+/g, " ").trim();
 }
 
 function addunderscore(str)
@@ -1006,8 +1010,15 @@ function clean(word){
 }
 
 
+// a word written without nikud is a ketiv (written form); the vocalized qere (reading) follows it.
+// show the ketiv in parentheses and grey so it is not read as part of the verse
+function markketiv(para){
+  return para.replace(/(^|\s)([\u05D0-\u05EA]{2,}(?:\s+[\u05D0-\u05EA]{2,})*)(?=[\s\u05BE]|$)/g, '$1<span class="ketiv" title="כתיב">($2)</span>');
+}
+
 function cleanverse(para){
   if (!para) return '';
+  para = markketiv(para);
   paraclean = '';
   for (var m=0;m<para.length;m++)
   {
