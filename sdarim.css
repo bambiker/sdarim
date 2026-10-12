@@ -42,26 +42,3 @@ h2 {
 h3 {
   margin:0;
 }
-
-.commentary {
-  display: block;
-  margin: 6px 0 10px;
-  padding: 8px 12px;
-  border-right: 4px solid #92d050;
-  background-color: #f5f9ef;
-  font-size: 15px;
-  line-height: 1.6;
-}
-
-.commentary .commentator {
-  margin-bottom: 6px;
-}
-
-.commentary strong {
-  color: #4f009e;
-}
-
-.commentary .commentary-source {
-  font-size: 13px;
-  color: #555;
-}
