@@ -992,6 +992,7 @@ function clean(word){
 
 
 function cleanverse(para){
+  if (!para) return '';
   paraclean = '';
   for (var m=0;m<para.length;m++)
   {
