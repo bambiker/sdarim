@@ -1007,10 +1007,11 @@ function clean(word){
 
 
 function cleanverse(para){
+  if (!para) return '';
   paraclean = '';
   for (var m=0;m<para.length;m++)
   {
-    if (para.substr(m,3)=='{פ}')     
+    if (para.substr(m,3)=='{פ}' || para.substr(m,3)=='{ש}')
     {
       paraclean = paraclean + '<br>';
       m+=2

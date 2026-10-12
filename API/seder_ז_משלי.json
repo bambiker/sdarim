@@ -1,0 +1,862 @@
+[
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "יג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "א",
+        "versenikud": "כְּצִנַּת־ שֶׁ֨לֶג ׀ בְּי֬וֹם קָצִ֗יר צִ֣יר נֶ֭אֱמָן לְשֹׁלְחָ֑יו וְנֶ֖פֶשׁ אֲדֹנָ֣יו יָשִֽׁיב׃ ",
+        "versenonikud": "כצנת שלג  ביום קציר ציר נאמן לשלחיו ונפש אדניו ישיב "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "יד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ב",
+        "versenikud": "נְשִׂיאִ֣ים וְ֭רוּחַ וְגֶ֣שֶׁם אָ֑יִן אִ֥ישׁ מִ֝תְהַלֵּ֗ל בְּמַתַּת־ שָֽׁקֶר׃ ",
+        "versenonikud": "נשיאים ורוח וגשם אין איש מתהלל במתת שקר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "טו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ג",
+        "versenikud": "בְּאֹ֣רֶךְ אַ֭פַּיִם יְפֻתֶּ֣ה קָצִ֑ין וְלָשׁ֥וֹן רַ֝כָּ֗ה תִּשְׁבָּר־ גָּֽרֶם׃ ",
+        "versenonikud": "בארך אפים יפתה קצין ולשון רכה תשבר גרם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "טז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ד",
+        "versenikud": "דְּבַ֣שׁ מָ֭צָאתָ אֱכֹ֣ל דַּיֶּ֑ךָּ פֶּן־ תִּ֝שְׂבָּעֶ֗נּוּ וַהֲקֵֽאתֽוֹ׃ ",
+        "versenonikud": "דבש מצאת אכל דיך פן תשבענו והקאתו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "יז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ה",
+        "versenikud": "הֹקַ֣ר רַ֭גְלְךָ מִבֵּ֣ית רֵעֶ֑ךָ פֶּן־ יִ֝שְׂבָּעֲךָ֗ וּשְׂנֵאֶֽךָ׃ ",
+        "versenonikud": "הקר רגלך מבית רעך פן ישבעך ושנאך "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "יח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ו",
+        "versenikud": "מֵפִ֣יץ וְ֭חֶרֶב וְחֵ֣ץ שָׁנ֑וּן אִ֥ישׁ עֹנֶ֥ה בְ֝רֵעֵ֗הוּ עֵ֣ד שָֽׁקֶר׃ ",
+        "versenonikud": "מפיץ וחרב וחץ שנון איש ענה ברעהו עד שקר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "יט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ז",
+        "versenikud": "שֵׁ֣ן רֹ֭עָה וְרֶ֣גֶל מוּעָ֑דֶת מִבְטָ֥ח בּ֝וֹגֵ֗ד בְּי֣וֹם צָרָֽה׃ ",
+        "versenonikud": "שן רעה ורגל מועדת מבטח בוגד ביום צרה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כ",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ח",
+        "versenikud": "מַ֥עֲדֶה בֶּ֨גֶד ׀ בְּי֣וֹם קָ֭רָה חֹ֣מֶץ עַל־ נָ֑תֶר וְשָׁ֥ר בַּ֝שִּׁרִ֗ים עַ֣ל לֶב־ רָֽע׃ ",
+        "versenonikud": "מעדה בגד  ביום קרה חמץ על נתר ושר בשרים על לב רע "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ט",
+        "versenikud": "אִם־ רָעֵ֣ב שֹׂ֭נַאֲךָ הַאֲכִלֵ֣הוּ לָ֑חֶם וְאִם־ צָ֝מֵ֗א הַשְׁקֵ֥הוּ מָֽיִם׃ ",
+        "versenonikud": "אם רעב שנאך האכלהו לחם ואם צמא השקהו מים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "י",
+        "versenikud": "כִּ֤י גֶֽחָלִ֗ים אַ֭תָּה חֹתֶ֣ה עַל־ רֹאשׁ֑וֹ וַֽ֝יהוָ֗ה יְשַׁלֶּם־ לָֽךְ׃ ",
+        "versenonikud": "כי גחלים אתה חתה על ראשו ויהוה ישלם לך "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יא",
+        "versenikud": "ר֣וּחַ צָ֭פוֹן תְּח֣וֹלֵֽל גָּ֑שֶׁם וּפָנִ֥ים נִ֝זְעָמִ֗ים לְשׁ֣וֹן סָֽתֶר׃ ",
+        "versenonikud": "רוח צפון תחולל גשם ופנים נזעמים לשון סתר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יב",
+        "versenikud": "ט֗וֹב שֶׁ֥בֶת עַל־ פִּנַּת־ גָּ֑ג מֵאֵ֥שֶׁת מדונים מִ֝דְיָנִ֗ים וּבֵ֥ית חָֽבֶר׃ ",
+        "versenonikud": "טוב שבת על פנת גג מאשת מדונים מדינים ובית חבר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יג",
+        "versenikud": "מַ֣יִם קָ֭רִים עַל־ נֶ֣פֶשׁ עֲיֵפָ֑ה וּשְׁמוּעָ֥ה ט֝וֹבָ֗ה מֵאֶ֥רֶץ מֶרְחָֽק׃ ",
+        "versenonikud": "מים קרים על נפש עיפה ושמועה טובה מארץ מרחק "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יד",
+        "versenikud": "מַעְיָ֣ן נִ֭רְפָּשׂ וּמָק֣וֹר מָשְׁחָ֑ת צַ֝דִּ֗יק מָ֣ט לִפְנֵֽי־ רָשָֽׁע׃ ",
+        "versenonikud": "מעין נרפש ומקור משחת צדיק מט לפני רשע "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "טו",
+        "versenikud": "אָ֘כֹ֤ל דְּבַ֣שׁ הַרְבּ֣וֹת לֹא־ ט֑וֹב וְחֵ֖קֶר כְּבֹדָ֣ם כָּבֽוֹד׃ ",
+        "versenonikud": "אכל דבש הרבות לא טוב וחקר כבדם כבוד "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כה",
+        "versechapter": "כח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "טז",
+        "versenikud": "עִ֣יר פְּ֭רוּצָה אֵ֣ין חוֹמָ֑ה אִ֝֗ישׁ אֲשֶׁ֤ר אֵ֖ין מַעְצָ֣ר לְרוּחֽוֹ׃ ",
+        "versenonikud": "עיר פרוצה אין חומה איש אשר אין מעצר לרוחו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "א",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יז",
+        "versenikud": "כַּשֶּׁ֤לֶג ׀ בַּקַּ֗יִץ וְכַמָּטָ֥ר בַּקָּצִ֑יר כֵּ֤ן לֹא־ נָאוֶ֖ה לִכְסִ֣יל כָּבֽוֹד׃ ",
+        "versenonikud": "כשלג  בקיץ וכמטר בקציר כן לא נאוה לכסיל כבוד "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יח",
+        "versenikud": "כַּצִּפּ֣וֹר לָ֭נוּד כַּדְּר֣וֹר לָע֑וּף כֵּ֥ן קִֽלְלַ֥ת חִ֝נָּ֗ם לא ל֣וֹ תָבֹֽא׃ ",
+        "versenonikud": "כצפור לנוד כדרור לעוף כן קללת חנם לא לו תבא "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "יט",
+        "versenikud": "שׁ֣וֹט לַ֭סּוּס מֶ֣תֶג לַחֲמ֑וֹר וְ֝שֵׁ֗בֶט לְגֵ֣ו כְּסִילִֽים׃ ",
+        "versenonikud": "שוט לסוס מתג לחמור ושבט לגו כסילים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כ",
+        "versenikud": "אַל־ תַּ֣עַן כְּ֭סִיל כְּאִוַּלְתּ֑וֹ פֶּֽן־ תִּשְׁוֶה־ לּ֥וֹ גַם־ אָֽתָּה׃ ",
+        "versenonikud": "אל תען כסיל כאולתו פן תשוה לו גם אתה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כא",
+        "versenikud": "עֲנֵ֣ה כְ֭סִיל כְּאִוַּלְתּ֑וֹ פֶּן־ יִהְיֶ֖ה חָכָ֣ם בְּעֵינָֽיו׃ ",
+        "versenonikud": "ענה כסיל כאולתו פן יהיה חכם בעיניו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כב",
+        "versenikud": "מְקַצֶּ֣ה רַ֭גְלַיִם חָמָ֣ס שֹׁתֶ֑ה שֹׁלֵ֖חַ דְּבָרִ֣ים בְּיַד־ כְּסִֽיל׃ ",
+        "versenonikud": "מקצה רגלים חמס שתה שלח דברים ביד כסיל "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כג",
+        "versenikud": "דַּלְי֣וּ שֹׁ֭קַיִם מִפִּסֵּ֑חַ וּ֝מָשָׁ֗ל בְּפִ֣י כְסִילִֽים׃ ",
+        "versenonikud": "דליו שקים מפסח ומשל בפי כסילים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כד",
+        "versenikud": "כִּצְר֣וֹר אֶ֭בֶן בְּמַרְגֵּמָ֑ה כֵּן־ נוֹתֵ֖ן לִכְסִ֣יל כָּבֽוֹד׃ ",
+        "versenonikud": "כצרור אבן במרגמה כן נותן לכסיל כבוד "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "ט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כה",
+        "versenikud": "ח֭וֹחַ עָלָ֣ה בְיַד־ שִׁכּ֑וֹר וּ֝מָשָׁ֗ל בְּפִ֣י כְסִילִֽים׃ ",
+        "versenonikud": "חוח עלה ביד שכור ומשל בפי כסילים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "י",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כו",
+        "versenikud": "רַ֥ב מְחֽוֹלֵֽל־ כֹּ֑ל וְשֹׂכֵ֥ר כְּ֝סִ֗יל וְשֹׂכֵ֥ר עֹבְרִֽים׃ ",
+        "versenonikud": "רב מחולל כל ושכר כסיל ושכר עברים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כז",
+        "versenikud": "כְּ֭כֶלֶב שָׁ֣ב עַל־ קֵא֑וֹ כְּ֝סִ֗יל שׁוֹנֶ֥ה בְאִוַּלְתּֽוֹ׃ ",
+        "versenonikud": "ככלב שב על קאו כסיל שונה באולתו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כח",
+        "versenikud": "רָאִ֗יתָ אִ֭ישׁ חָכָ֣ם בְּעֵינָ֑יו תִּקְוָ֖ה לִכְסִ֣יל מִמֶּֽנּוּ׃ ",
+        "versenonikud": "ראית איש חכם בעיניו תקוה לכסיל ממנו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "כט",
+        "versenikud": "אָמַ֣ר עָ֭צֵל שַׁ֣חַל בַּדָּ֑רֶךְ אֲ֝רִ֗י בֵּ֣ין הָרְחֹבֽוֹת׃ ",
+        "versenonikud": "אמר עצל שחל בדרך ארי בין הרחבות "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ל",
+        "versenikud": "הַ֭דֶּלֶת תִּסּ֣וֹב עַל־ צִירָ֑הּ וְ֝עָצֵ֗ל עַל־ מִטָּתֽוֹ׃ ",
+        "versenonikud": "הדלת תסוב על צירה ועצל על מטתו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "טו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לא",
+        "versenikud": "טָ֘מַ֤ן עָצֵ֣ל יָ֭דוֹ בַּצַּלָּ֑חַת נִ֝לְאָ֗ה לַֽהֲשִׁיבָ֥הּ אֶל־ פִּֽיו׃ ",
+        "versenonikud": "טמן עצל ידו בצלחת נלאה להשיבה אל פיו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "טז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לב",
+        "versenikud": "חָכָ֣ם עָצֵ֣ל בְּעֵינָ֑יו מִ֝שִּׁבְעָ֗ה מְשִׁ֣יבֵי טָֽעַם׃ ",
+        "versenonikud": "חכם עצל בעיניו משבעה משיבי טעם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לג",
+        "versenikud": "מַחֲזִ֥יק בְּאָזְנֵי־ כָ֑לֶב עֹבֵ֥ר מִ֝תְעַבֵּ֗ר עַל־ רִ֥יב לֹּֽא־ לֽוֹ׃ ",
+        "versenonikud": "מחזיק באזני כלב עבר מתעבר על ריב לא לו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לד",
+        "versenikud": "כְּֽ֭מִתְלַהְלֵהַּ הַיֹּרֶ֥ה זִקִּ֗ים חִצִּ֥ים וָמָֽוֶת׃ ",
+        "versenonikud": "כמתלהלה הירה זקים חצים ומות "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "יט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לה",
+        "versenikud": "כֵּֽן־ אִ֭ישׁ רִמָּ֣ה אֶת־ רֵעֵ֑הוּ וְ֝אָמַ֗ר הֲ‍ֽלֹא־ מְשַׂחֵ֥ק אָֽנִי׃ ",
+        "versenonikud": "כן איש רמה את רעהו ואמר הלא משחק אני "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כ",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לו",
+        "versenikud": "בְּאֶ֣פֶס עֵ֭צִים תִּכְבֶּה־ אֵ֑שׁ וּבְאֵ֥ין נִ֝רְגָּ֗ן יִשְׁתֹּ֥ק מָדֽוֹן׃ ",
+        "versenonikud": "באפס עצים תכבה אש ובאין נרגן ישתק מדון "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לז",
+        "versenikud": "פֶּחָ֣ם לְ֭גֶחָלִים וְעֵצִ֣ים לְאֵ֑שׁ וְאִ֥ישׁ מדונים מִ֝דְיָנִ֗ים לְחַרְחַר־ רִֽיב׃ ",
+        "versenonikud": "פחם לגחלים ועצים לאש ואיש מדונים מדינים לחרחר ריב "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לח",
+        "versenikud": "דִּבְרֵ֣י נִ֭רְגָּן כְּמִֽתְלַהֲמִ֑ים וְ֝הֵ֗ם יָרְד֥וּ חַדְרֵי־ בָֽטֶן׃ ",
+        "versenonikud": "דברי נרגן כמתלהמים והם ירדו חדרי בטן "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "לט",
+        "versenikud": "כֶּ֣סֶף סִ֭יגִים מְצֻפֶּ֣ה עַל־ חָ֑רֶשׂ שְׂפָתַ֖יִם דֹּלְקִ֣ים וְלֶב־ רָֽע׃ ",
+        "versenonikud": "כסף סיגים מצפה על חרש שפתים דלקים ולב רע "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מ",
+        "versenikud": "בשפתו בִּ֭שְׂפָתָיו יִנָּכֵ֣ר שׂוֹנֵ֑א וּ֝בְקִרְבּ֗וֹ יָשִׁ֥ית מִרְמָֽה׃ ",
+        "versenonikud": "בשפתו בשפתיו ינכר שונא ובקרבו ישית מרמה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מא",
+        "versenikud": "כִּֽי־ יְחַנֵּ֣ן ק֭וֹלוֹ אַל־ תַּֽאֲמֶן־ בּ֑וֹ כִּ֤י שֶׁ֖בַע תּוֹעֵב֣וֹת בְּלִבּֽוֹ׃ ",
+        "versenonikud": "כי יחנן קולו אל תאמן בו כי שבע תועבות בלבו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מב",
+        "versenikud": "תִּכַּסֶּ֣ה שִׂ֭נְאָה בְּמַשָּׁא֑וֹן תִּגָּלֶ֖ה רָעָת֣וֹ בְקָהָֽל׃ ",
+        "versenonikud": "תכסה שנאה במשאון תגלה רעתו בקהל "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מג",
+        "versenikud": "כֹּֽרֶה־ שַּׁ֭חַת בָּ֣הּ יִפֹּ֑ל וְגֹ֥לֵ֥ל אֶ֝בֶן אֵלָ֥יו תָּשֽׁוּב׃ ",
+        "versenonikud": "כרה שחת בה יפל וגלל אבן אליו תשוב "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כו",
+        "versechapter": "כח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מד",
+        "versenikud": "לְֽשׁוֹן־ שֶׁ֭קֶר יִשְׂנָ֣א דַכָּ֑יו וּפֶ֥ה חָ֝לָ֗ק יַעֲשֶׂ֥ה מִדְחֶֽה׃ ",
+        "versenonikud": "לשון שקר ישנא דכיו ופה חלק יעשה מדחה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "א",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מה",
+        "versenikud": "אַֽל־ תִּ֭תְהַלֵּל בְּי֣וֹם מָחָ֑ר כִּ֤י לֹא־ תֵ֝דַ֗ע מַה־ יֵּ֥לֶד יֽוֹם׃ ",
+        "versenonikud": "אל תתהלל ביום מחר כי לא תדע מה ילד יום "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מו",
+        "versenikud": "יְהַלֶּלְךָ֣ זָ֣ר וְלֹא־ פִ֑יךָ נָ֝כְרִ֗י וְאַל־ שְׂפָתֶֽיךָ׃ ",
+        "versenonikud": "יהללך זר ולא פיך נכרי ואל שפתיך "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מז",
+        "versenikud": "כֹּֽבֶד־ אֶ֭בֶן וְנֵ֣טֶל הַח֑וֹל וְכַ֥עַס אֱ֝וִ֗יל כָּבֵ֥ד מִשְּׁנֵיהֶֽם׃ ",
+        "versenonikud": "כבד אבן ונטל החול וכעס אויל כבד משניהם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מח",
+        "versenikud": "אַכְזְרִיּ֣וּת חֵ֭מָה וְשֶׁ֣טֶף אָ֑ף וּמִ֥י יַ֝עֲמֹד לִפְנֵ֥י קִנְאָֽה׃ ",
+        "versenonikud": "אכזריות חמה ושטף אף ומי יעמד לפני קנאה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "מט",
+        "versenikud": "ט֭וֹבָה תּוֹכַ֣חַת מְגֻלָּ֑ה מֵֽאַהֲבָ֥ה מְסֻתָּֽרֶת׃ ",
+        "versenonikud": "טובה תוכחת מגלה מאהבה מסתרת "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נ",
+        "versenikud": "נֶ֭אֱמָנִים פִּצְעֵ֣י אוֹהֵ֑ב וְ֝נַעְתָּר֗וֹת נְשִׁיק֥וֹת שׂוֹנֵֽא׃ ",
+        "versenonikud": "נאמנים פצעי אוהב ונעתרות נשיקות שונא "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נא",
+        "versenikud": "נֶ֣פֶשׁ שְׂ֭בֵעָה תָּב֣וּס נֹ֑פֶת וְנֶ֥פֶשׁ רְ֝עֵבָ֗ה כָּל־ מַ֥ר מָתֽוֹק׃ ",
+        "versenonikud": "נפש שבעה תבוס נפת ונפש רעבה כל מר מתוק "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נב",
+        "versenikud": "כְּ֭צִפּוֹר נוֹדֶ֣דֶת מִן־ קִנָּ֑הּ כֵּֽן־ אִ֝֗ישׁ נוֹדֵ֥ד מִמְּקוֹמֽוֹ׃ ",
+        "versenonikud": "כצפור נודדת מן קנה כן איש נודד ממקומו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "ט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נג",
+        "versenikud": "שֶׁ֣מֶן וּ֭קְטֹרֶת יְשַׂמַּֽח־ לֵ֑ב וּמֶ֥תֶק רֵ֝עֵ֗הוּ מֵֽעֲצַת־ נָֽפֶשׁ׃ ",
+        "versenonikud": "שמן וקטרת ישמח לב ומתק רעהו מעצת נפש "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "י",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נד",
+        "versenikud": "רֵֽעֲךָ֨ ורעה וְרֵ֪עַ אָבִ֡יךָ אַֽל־ תַּעֲזֹ֗ב וּבֵ֥ית אָחִ֗יךָ אַל־ תָּ֭בוֹא בְּי֣וֹם אֵידֶ֑ךָ ט֥וֹב שָׁכֵ֥ן קָ֝ר֗וֹב מֵאָ֥ח רָחֽוֹק׃ ",
+        "versenonikud": "רעך ורעה ורע אביך אל תעזב ובית אחיך אל תבוא ביום אידך טוב שכן קרוב מאח רחוק "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נה",
+        "versenikud": "חֲכַ֣ם בְּ֭נִי וְשַׂמַּ֣ח לִבִּ֑י וְאָשִׁ֖יבָה חֹרְפִ֣י דָבָֽר׃ ",
+        "versenonikud": "חכם בני ושמח לבי ואשיבה חרפי דבר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נו",
+        "versenikud": "עָר֤וּם רָאָ֣ה רָעָ֣ה נִסְתָּ֑ר פְּ֝תָאיִ֗ם עָבְר֥וּ נֶעֱנָֽשׁוּ׃ ",
+        "versenonikud": "ערום ראה רעה נסתר פתאים עברו נענשו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נז",
+        "versenikud": "קַח־ בִּ֭גְדוֹ כִּי־ עָ֣רַב זָ֑ר וּבְעַ֖ד נָכְרִיָּ֣ה חַבְלֵֽהוּ׃ ",
+        "versenonikud": "קח בגדו כי ערב זר ובעד נכריה חבלהו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נח",
+        "versenikud": "מְבָ֘רֵ֤ךְ רֵעֵ֨הוּ ׀ בְּק֣וֹל גָּ֭דוֹל בַּבֹּ֣קֶר הַשְׁכֵּ֑ים קְ֝לָלָ֗ה תֵּחָ֥שֶׁב לֽוֹ׃ ",
+        "versenonikud": "מברך רעהו  בקול גדול בבקר השכים קללה תחשב לו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "טו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "נט",
+        "versenikud": "דֶּ֣לֶף ט֭וֹרֵד בְּי֣וֹם סַגְרִ֑יר וְאֵ֥שֶׁת מדונים מִ֝דְיָנִ֗ים נִשְׁתָּוָֽה׃ ",
+        "versenonikud": "דלף טורד ביום סגריר ואשת מדונים מדינים נשתוה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "טז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ס",
+        "versenikud": "צֹפְנֶ֥יהָ צָֽפַן־ ר֑וּחַ וְשֶׁ֖מֶן יְמִינ֣וֹ יִקְרָֽא׃ ",
+        "versenonikud": "צפניה צפן רוח ושמן ימינו יקרא "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סא",
+        "versenikud": "בַּרְזֶ֣ל בְּבַרְזֶ֣ל יָ֑חַד וְ֝אִ֗ישׁ יַ֣חַד פְּנֵֽי־ רֵעֵֽהוּ׃ ",
+        "versenonikud": "ברזל בברזל יחד ואיש יחד פני רעהו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סב",
+        "versenikud": "נֹצֵ֣ר תְּ֭אֵנָה יֹאכַ֣ל פִּרְיָ֑הּ וְשֹׁמֵ֖ר אֲדֹנָ֣יו יְכֻבָּֽד׃ ",
+        "versenonikud": "נצר תאנה יאכל פריה ושמר אדניו יכבד "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "יט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סג",
+        "versenikud": "כַּ֭מַּיִם הַפָּנִ֣ים לַפָּנִ֑ים כֵּ֤ן לֵֽב־ הָ֝אָדָ֗ם לָאָדָֽם׃ ",
+        "versenonikud": "כמים הפנים לפנים כן לב האדם לאדם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כ",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סד",
+        "versenikud": "שְׁא֣וֹל ואבדה וַ֭אֲבַדּוֹ לֹ֣א תִשְׂבַּ֑עְנָה וְעֵינֵ֥י הָ֝אָדָ֗ם לֹ֣א תִשְׂבַּֽעְנָה׃ ",
+        "versenonikud": "שאול ואבדה ואבדו לא תשבענה ועיני האדם לא תשבענה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סה",
+        "versenikud": "מַצְרֵ֣ף לַ֭כֶּסֶף וְכ֣וּר לַזָּהָ֑ב וְ֝אִ֗ישׁ לְפִ֣י מַהֲלָלֽוֹ׃ ",
+        "versenonikud": "מצרף לכסף וכור לזהב ואיש לפי מהללו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סו",
+        "versenikud": "אִ֥ם תִּכְתּֽוֹשׁ־ אֶת־ הָאֱוִ֨יל ׀ בַּֽמַּכְתֵּ֡שׁ בְּת֣וֹךְ הָ֭רִיפוֹת בַּֽעֱלִ֑י לֹא־ תָס֥וּר מֵ֝עָלָ֗יו אִוַּלְתּֽוֹ׃ ",
+        "versenonikud": "אם תכתוש את האויל  במכתש בתוך הריפות בעלי לא תסור מעליו אולתו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סז",
+        "versenikud": "יָדֹ֣עַ תֵּ֭דַע פְּנֵ֣י צֹאנֶ֑ךָ שִׁ֥ית לִ֝בְּךָ֗ לַעֲדָרִֽים׃ ",
+        "versenonikud": "ידע תדע פני צאנך שית לבך לעדרים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סח",
+        "versenikud": "כִּ֤י לֹ֣א לְעוֹלָ֣ם חֹ֑סֶן וְאִם־ נֵ֝֗זֶר לְד֣וֹר דור וָדֽוֹר׃ ",
+        "versenonikud": "כי לא לעולם חסן ואם נזר לדור דור ודור "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "סט",
+        "versenikud": "גָּלָ֣ה חָ֭צִיר וְנִרְאָה־ דֶ֑שֶׁא וְ֝נֶאֶסְפ֗וּ עִשְּׂב֥וֹת הָרִֽים׃ ",
+        "versenonikud": "גלה חציר ונראה דשא ונאספו עשבות הרים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "ע",
+        "versenikud": "כְּבָשִׂ֥ים לִלְבוּשֶׁ֑ךָ וּמְחִ֥יר שָׂ֝דֶ֗ה עַתּוּדִֽים׃ ",
+        "versenonikud": "כבשים ללבושך ומחיר שדה עתודים "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כז",
+        "versechapter": "כז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עא",
+        "versenikud": "וְדֵ֤י ׀ חֲלֵ֬ב עִזִּ֗ים לְֽ֭לַחְמְךָ לְלֶ֣חֶם בֵּיתֶ֑ךָ וְ֝חַיִּ֗ים לְנַעֲרוֹתֶֽיךָ׃ ",
+        "versenonikud": "ודי  חלב עזים ללחמך ללחם ביתך וחיים לנערותיך "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "א",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עב",
+        "versenikud": "נָ֣סוּ וְאֵין־ רֹדֵ֣ף רָשָׁ֑ע וְ֝צַדִּיקִ֗ים כִּכְפִ֥יר יִבְטָֽח׃ ",
+        "versenonikud": "נסו ואין רדף רשע וצדיקים ככפיר יבטח "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עג",
+        "versenikud": "בְּפֶ֣שַֽׁע אֶ֭רֶץ רַבִּ֣ים שָׂרֶ֑יהָ וּבְאָדָ֥ם מֵבִ֥ין יֹ֝דֵ֗עַ כֵּ֣ן יַאֲרִֽיךְ׃ ",
+        "versenonikud": "בפשע ארץ רבים שריה ובאדם מבין ידע כן יאריך "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עד",
+        "versenikud": "גֶּ֣בֶר רָ֭שׁ וְעֹשֵׁ֣ק דַּלִּ֑ים מָטָ֥ר סֹ֝חֵ֗ף וְאֵ֣ין לָֽחֶם׃ ",
+        "versenonikud": "גבר רש ועשק דלים מטר סחף ואין לחם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עה",
+        "versenikud": "עֹזְבֵ֣י ת֭וֹרָה יְהַֽלְל֣וּ רָשָׁ֑ע וְשֹׁמְרֵ֥י ת֝וֹרָ֗ה יִתְגָּ֥רוּ בָֽם׃ ",
+        "versenonikud": "עזבי תורה יהללו רשע ושמרי תורה יתגרו בם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ה",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עו",
+        "versenikud": "אַנְשֵׁי־ רָ֭ע לֹא־ יָבִ֣ינוּ מִשְׁפָּ֑ט וּמְבַקְשֵׁ֥י יְ֝הוָ֗ה יָבִ֥ינוּ כֹֽל׃ ",
+        "versenonikud": "אנשי רע לא יבינו משפט ומבקשי יהוה יבינו כל "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עז",
+        "versenikud": "טֽוֹב־ רָ֭שׁ הוֹלֵ֣ךְ בְּתֻמּ֑וֹ מֵעִקֵּ֥שׁ דְּ֝רָכַ֗יִם וְה֣וּא עָשִֽׁיר׃ ",
+        "versenonikud": "טוב רש הולך בתמו מעקש דרכים והוא עשיר "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ז",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עח",
+        "versenikud": "נוֹצֵ֣ר תּ֭וֹרָה בֵּ֣ן מֵבִ֑ין וְרֹעֶה זֽ֝וֹלְלִ֗ים יַכְלִ֥ים אָבִֽיו׃ ",
+        "versenonikud": "נוצר תורה בן מבין ורעה זוללים יכלים אביו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ח",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "עט",
+        "versenikud": "מַרְבֶּ֣ה ה֭וֹנוֹ בְּנֶ֣שֶׁךְ ובתרבית וְתַרְבִּ֑ית לְחוֹנֵ֖ן דַּלִּ֣ים יִקְבְּצֶֽנּוּ׃ ",
+        "versenonikud": "מרבה הונו בנשך ובתרבית ותרבית לחונן דלים יקבצנו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "ט",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פ",
+        "versenikud": "מֵסִ֣יר אָ֭זְנוֹ מִשְּׁמֹ֣עַ תּוֹרָ֑ה גַּֽם־ תְּ֝פִלָּת֗וֹ תּוֹעֵבָֽה׃ ",
+        "versenonikud": "מסיר אזנו משמע תורה גם תפלתו תועבה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "י",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פא",
+        "versenikud": "מַשְׁגֶּ֤ה יְשָׁרִ֨ים ׀ בְּדֶ֥רֶךְ רָ֗ע בִּשְׁחוּת֥וֹ הֽוּא־ יִפּ֑וֹל וּ֝תְמִימִ֗ים יִנְחֲלוּ־ טֽוֹב׃ ",
+        "versenonikud": "משגה ישרים  בדרך רע בשחותו הוא יפול ותמימים ינחלו טוב "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "יא",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פב",
+        "versenikud": "חָכָ֣ם בְּ֭עֵינָיו אִ֣ישׁ עָשִׁ֑יר וְדַ֖ל מֵבִ֣ין יַחְקְרֶֽנּוּ׃ ",
+        "versenonikud": "חכם בעיניו איש עשיר ודל מבין יחקרנו "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "יב",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פג",
+        "versenikud": "בַּעֲלֹ֣ץ צַ֭דִּיקִים רַבָּ֣ה תִפְאָ֑רֶת וּבְק֥וּם רְ֝שָׁעִ֗ים יְחֻפַּ֥שׂ אָדָֽם׃ ",
+        "versenonikud": "בעלץ צדיקים רבה תפארת ובקום רשעים יחפש אדם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "יג",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פד",
+        "versenikud": "מְכַסֶּ֣ה פְ֭שָׁעָיו לֹ֣א יַצְלִ֑יחַ וּמוֹדֶ֖ה וְעֹזֵ֣ב יְרֻחָֽם׃ ",
+        "versenonikud": "מכסה פשעיו לא יצליח ומודה ועזב ירחם "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "יד",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פה",
+        "versenikud": "אַשְׁרֵ֣י אָ֭דָם מְפַחֵ֣ד תָּמִ֑יד וּמַקְשֶׁ֥ה לִ֝בּ֗וֹ יִפּ֥וֹל בְּרָעָֽה׃ ",
+        "versenonikud": "אשרי אדם מפחד תמיד ומקשה לבו יפול ברעה "
+    },
+    {
+        "bookchapter": "משלי",
+        "chapter": "כח",
+        "versechapter": "טו",
+        "bookseder": "משלי",
+        "seder": "ז",
+        "verseseder": "פו",
+        "versenikud": "אֲרִי־ נֹ֭הֵם וְדֹ֣ב שׁוֹקֵ֑ק מֹשֵׁ֥ל רָ֝שָׁ֗ע עַ֣ל עַם־ דָּֽל׃ ",
+        "versenonikud": "ארי נהם ודב שוקק משל רשע על עם דל "
+    }
+]
