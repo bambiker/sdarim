@@ -5,14 +5,13 @@ async function start(){
           seder = decode(GetURLParameter('seder'));
           verse = decode(GetURLParameter('verse'));
       
-          const response = await fetch("sdarim.json");
-          const json = await response.json();
+          const json = await loadSdarim();
           const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
           const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
           userSeder(filtArray2, book, seder, verse)
           document.title=" מסדירים בספר " + book + " סדר " + seder;
           urlname = "https://www.masdirim.org/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
-          document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+          setUrlLink(urlname);
           document.getElementById("sbook").value  = book;
           document.getElementById("seder").value  = seder;
           document.getElementById("sverse").value  = verse;      
@@ -26,13 +25,33 @@ async function start(){
        }
           catch{
        urlname = "https://www.masdirim.org";
-       document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>'; 
+       setUrlLink(urlname); 
        document.getElementById("result").innerHTML  = "";
                }
     }
 
     return;
  }
+
+let sdarimPromise = null;
+function loadSdarim() {
+    if (!sdarimPromise) {
+        sdarimPromise = fetch("sdarim.json").then(response => response.json());
+        sdarimPromise.catch(() => { sdarimPromise = null; });
+    }
+    return sdarimPromise;
+}
+
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
+}
+
+function setUrlLink(url) {
+    const a = document.createElement("a");
+    a.href = url;
+    a.textContent = url;
+    document.getElementById("urlname").replaceChildren(a);
+}
 
   function decode(str) {
             return decodeURIComponent(str.replace(/\+/g,  " "));
@@ -63,8 +82,7 @@ async function chapter2seder(){
     if (chapter.trim()=="") chapter="א";
     if (cverse.trim()=="") cverse="א";
     
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
+    const json = await loadSdarim();
     const filt = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}, {label: 'versechapter', value: cverse}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
 
@@ -77,7 +95,7 @@ async function chapter2seder(){
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+    setUrlLink(urlname);
     document.title = "מסדירים - ספר " + filtArray[0].bookseder + " סדר " + filtArray[0].seder;
  
     }
@@ -99,8 +117,7 @@ async function seder2chapter(){
     if (seder.trim()=="") seder="א";
     if (sverse.trim()=="") sverse="א";
    
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
+    const json = await loadSdarim();
 
     const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}, {label: 'verseseder', value: sverse}];
     const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
@@ -113,7 +130,7 @@ async function seder2chapter(){
     const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+    setUrlLink(urlname);
     document.title = " ספר " + sbook + " סדר " + seder;
 
     }
@@ -130,14 +147,13 @@ async function findparasha(){
 
     var parasha = document.getElementById("parasha").value;
 
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
+    const json = await loadSdarim();
 
     const filters = [{label: 'parasha', value: parasha}];
     const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
     console.log(filteredArray);
 
-    output = "<h2>" + "פרשת " + parasha + "</h2>";
+    output = "<h2>" + "פרשת " + escapeHtml(parasha) + "</h2>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
          if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
@@ -147,7 +163,7 @@ async function findparasha(){
     document.getElementById("result").innerHTML  = output;
 
     urlname = "https://www.masdirim.org/?parasha="+addunderscore(parasha);
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+    setUrlLink(urlname);
     document.title = " פרשת " + parasha + " לפי החלוקה לסדרים ";
     return ;
 
@@ -158,8 +174,7 @@ async function findfree(){
     var freetext = document.getElementById("free").value;
     document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
 
-    const response = await fetch("sdarim.json");
-    const json = await response.json();
+    const json = await loadSdarim();
 
     var results = "";
 //    console.log(json.seder);
@@ -187,7 +202,7 @@ async function findfree(){
     console.log(results);
 
     urlname = "https://www.masdirim.org";
-    document.getElementById("urlname").innerHTML  = '<a href ='+urlname+'>'+urlname+'</a>';
+    setUrlLink(urlname);
     document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי של " + freetext;
     return ;
 
@@ -195,11 +210,11 @@ async function findfree(){
 
 function addunderscore(str)
 {
-     return str.replace(" ", "_");
+     return str.replace(/ /g, "_");
 }
 function removeunderscore(str)
 {
-     return str.replace("_", " ");
+     return str.replace(/_/g, " ");
 }
 
 function mgketer(bookname, chapter, verse)
@@ -1016,7 +1031,7 @@ function cleanverse(para){
 function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
-    output = "<h3>"+book+" סדר " + seder + "</h3>";
+    output = "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + "</h3>";
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
