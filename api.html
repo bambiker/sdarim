@@ -116,6 +116,77 @@
     <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json</a><br>
     </div>
     <br>
+    <h2 id="sedarim">רשימת כל הסדרים</h2>
+    <div dir="rtl">
+קובץ אחד קטן עם כל 447 הסדרים: היכן כל סדר מתחיל ונגמר לפי החלוקה לפרקים, כמה פסוקים יש בו ובאילו פרשות הוא נמצא. מתאים ללוחות לימוד, לאפליקציות ולכל מי שצריך לדעת את גבולות הסדרים בלי להוריד את הטקסט.<br>
+    </div>
+    <div dir="ltr">
+    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json</a><br>
+    </div>
+    <div dir="rtl">
+כל סדר נראה כך (בראשית סדר יג):<br>
+    </div>
+<pre dir="ltr">{
+    "book": "בראשית",
+    "seder": "יג",
+    "seder_number": 13,
+    "start": {"book": "בראשית", "chapter": "טז", "verse": "א", "chapter_number": 16, "verse_number": 1},
+    "end": {"book": "בראשית", "chapter": "טז", "verse": "טז", "chapter_number": 16, "verse_number": 16},
+    "verses": 16,
+    "parashot": ["לך לך"]
+}</pre>
+    <div dir="rtl">
+book הוא שם הספר לפי החלוקה לסדרים, seder ו-seder_number הם מספר הסדר באותיות ובמספר,
+start ו-end הם הפסוק הראשון והאחרון בסדר לפי החלוקה לפרקים (שם הספר, הפרק והפסוק באותיות ובמספרים),
+verses הוא מספר הפסוקים בסדר, ו-parashot הן הפרשות שהסדר נמצא בהן (בתורה בלבד).<br>
+    </div>
+    <br>
+
+    <h2 id="map">טבלת המרה בין פרקים לסדרים</h2>
+    <div dir="rtl">
+המיקום של כל פסוק בתנ"ך גם לפי הפרקים וגם לפי הסדרים, בלי הטקסט. הקובץ קטן פי 10 מהקובץ המלא, ומתאים לאתר שרוצה להמיר הפניות מפרקים לסדרים בעצמו.<br>
+    </div>
+    <div dir="ltr">
+    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json</a><br>
+    </div>
+    <div dir="rtl">
+כל שורה ב-verses היא פסוק אחד, לפי הסדר של השדות ב-fields:<br>
+    </div>
+<pre dir="ltr">{"fields":["bookchapter","chapter","versechapter","bookseder","seder","verseseder"],
+"verses":[
+["בראשית","א","א","בראשית","א","א"],
+["בראשית","א","ב","בראשית","א","ב"],
+...]}</pre>
+    <br>
+
+    <h2 id="examples">דוגמאות קוד</h2>
+    <div dir="rtl">
+אפשר לקרוא את כל הקבצים ישירות מהדפדפן של אתר אחר (השרת מאפשר זאת), בלי שרת ביניים.<br>
+המרת פסוק מפרקים לסדרים ב-JavaScript:<br>
+    </div>
+<pre dir="ltr">const res = await fetch('https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json');
+const map = await res.json();
+// בראשית פרק טז פסוק א
+const row = map.verses.find(v =&gt; v[0] == 'בראשית' &amp;&amp; v[1] == 'טז' &amp;&amp; v[2] == 'א');
+console.log(row[3] + ' סדר ' + row[4] + ' פסוק ' + row[5]);   // בראשית סדר יג פסוק א</pre>
+    <div dir="rtl">
+הצגת תחילת כל סדר בספר שמואל ב-Python:<br>
+    </div>
+<pre dir="ltr">import requests
+
+sedarim = requests.get('https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json').json()
+for s in sedarim:
+    if s['book'] == 'שמואל':
+        print(s['seder'], s['start']['book'], s['start']['chapter_number'], s['start']['verse_number'])
+# א שמואל א 1 1
+# ב שמואל א 2 10
+# ...</pre>
+    <br>
+
+    <div dir="rtl">
+כשאתם מציגים מידע מהאתר, נשמח לקרדיט בנוסח: "החלוקה לסדרים: מסדירים, www.masdirim.org".<br>
+    </div>
+    <br>
     <div dir="rtl">
 המידע הזה ניתן לשימוש חופשי, הן עבור תוכנה והן עבור שימוש מסחרי. נשמח אם תציינו שאתר מסדירים הוא המקור לנתונים.<br>
     </div>
