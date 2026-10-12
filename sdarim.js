@@ -1080,12 +1080,36 @@ function sefariaRef(book, chapter, verse) {
 }
 
 const commentaryCache = {};
+// Sefaria's API sends no CORS headers, so fetch() is blocked from masdirim.org;
+// it supports JSONP (a callback= parameter) instead
+let jsonpCounter = 0;
+function jsonp(url) {
+    return new Promise((resolve, reject) => {
+        const name = 'sefariaCallback' + (++jsonpCounter);
+        const script = document.createElement('script');
+        const timer = setTimeout(() => { cleanup(); reject(new Error('timeout')); }, 20000);
+        function cleanup() {
+            clearTimeout(timer);
+            delete window[name];
+            script.remove();
+        }
+        window[name] = data => {
+            cleanup();
+            if (data && data.error) reject(new Error(data.error));
+            else resolve(data);
+        };
+        script.onerror = () => { cleanup(); reject(new Error('load failed')); };
+        script.src = url + (url.includes('?') ? '&' : '?') + 'callback=' + name;
+        document.head.appendChild(script);
+    });
+}
+
 function loadCommentary(ref) {
     if (!commentaryCache[ref]) {
-        commentaryCache[ref] = fetch('https://www.sefaria.org/api/links/' + encodeURIComponent(ref) + '?with_text=1')
-            .then(response => {
-                if (!response.ok) throw new Error(response.status);
-                return response.json();
+        commentaryCache[ref] = jsonp('https://www.sefaria.org/api/links/' + encodeURIComponent(ref) + '?with_text=1')
+            .then(links => {
+                if (!Array.isArray(links)) throw new Error('unexpected response');
+                return links;
             });
         commentaryCache[ref].catch(() => { delete commentaryCache[ref]; });
     }
