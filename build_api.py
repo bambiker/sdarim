@@ -13,6 +13,8 @@ Files written (spaces in book names become underscores):
     API/chapter_<chapter>_<book>.json           all verses of a chapter
     API/seder_<verse>_<seder>_<book>.json       one verse, by seder numbering
     API/seder_<seder>_<book>.json               all verses of a seder
+    API/sedarim.json                            index of all sedarim: where each starts and ends
+    API/map.json                                chapter <-> seder location of every verse, no text
 """
 import json
 import os
@@ -28,6 +30,44 @@ def name(*parts):
     return '_'.join(parts).replace(' ', '_') + '.json'
 
 
+GEMATRIA = {'א': 1, 'ב': 2, 'ג': 3, 'ד': 4, 'ה': 5, 'ו': 6, 'ז': 7, 'ח': 8, 'ט': 9,
+            'י': 10, 'כ': 20, 'ל': 30, 'מ': 40, 'נ': 50, 'ס': 60, 'ע': 70, 'פ': 80, 'צ': 90,
+            'ק': 100, 'ר': 200}
+
+
+def number(hebrew):
+    return sum(GEMATRIA[c] for c in hebrew)
+
+
+def location(v):
+    return {'book': v['bookchapter'], 'chapter': v['chapter'], 'verse': v['versechapter'],
+            'chapter_number': number(v['chapter']), 'verse_number': number(v['versechapter'])}
+
+
+def sedarim_index(verses):
+    index = []
+    for v in verses:
+        if not index or (index[-1]['book'], index[-1]['seder']) != (v['bookseder'], v['seder']):
+            index.append({'book': v['bookseder'], 'seder': v['seder'], 'seder_number': number(v['seder']),
+                          'start': location(v), 'end': None, 'verses': 0, 'parashot': []})
+        seder = index[-1]
+        seder['end'] = location(v)
+        seder['verses'] += 1
+        if v.get('parasha') and v['parasha'] not in seder['parashot']:
+            seder['parashot'].append(v['parasha'])
+    return index
+
+
+MAP_FIELDS = ['bookchapter', 'chapter', 'versechapter', 'bookseder', 'seder', 'verseseder']
+
+
+def verse_map(verses):
+    # one verse per line, without the text, so the file stays small (about 1.3MB)
+    rows = [json.dumps([v[k] for k in MAP_FIELDS], ensure_ascii=False, separators=(',', ':')) for v in verses]
+    return ('{"fields":' + json.dumps(MAP_FIELDS, separators=(',', ':')) + ',\n"verses":[\n'
+            + ',\n'.join(rows) + '\n]}\n')
+
+
 def expected_files(verses):
     files = {}
     chapters = defaultdict(list)
@@ -39,6 +79,8 @@ def expected_files(verses):
         seders[name('seder', v['seder'], v['bookseder'])].append(v)
     files.update(chapters)
     files.update(seders)
+    files['sedarim.json'] = sedarim_index(verses)
+    files['map.json'] = verse_map(verses)
     return files
 
 
@@ -51,7 +93,7 @@ def main():
     written = 0
     for fname, content in files.items():
         path = os.path.join(API, fname)
-        text = json.dumps(content, indent=4, ensure_ascii=False)
+        text = content if isinstance(content, str) else json.dumps(content, indent=4, ensure_ascii=False)
         if os.path.exists(path):
             with open(path, encoding='utf-8') as f:
                 if f.read() == text:
