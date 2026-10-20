@@ -1,6 +1,403 @@
 {
+ "Targum|Genesis": {
+  "commentator": "תרגום אונקלוס",
+  "open": true,
+  "book": "Genesis",
+  "edition": "Onkelos Genesis",
+  "source": "http://toratemetfreeware.com/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Exodus": {
+  "commentator": "תרגום אונקלוס",
+  "open": true,
+  "book": "Exodus",
+  "edition": "Onkelos Exodus",
+  "source": "http://toratemetfreeware.com/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Leviticus": {
+  "commentator": "תרגום אונקלוס",
+  "open": true,
+  "book": "Leviticus",
+  "edition": "Onkelos Leviticus",
+  "source": "http://toratemetfreeware.com/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Numbers": {
+  "commentator": "תרגום אונקלוס",
+  "open": true,
+  "book": "Numbers",
+  "edition": "Onkelos Numbers",
+  "source": "http://toratemetfreeware.com/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Deuteronomy": {
+  "commentator": "תרגום אונקלוס",
+  "open": true,
+  "book": "Deuteronomy",
+  "edition": "Onkelos Deuteronomy",
+  "source": "http://toratemetfreeware.com/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Joshua": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Joshua",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Judges": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Judges",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|I Samuel": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "I Samuel",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|II Samuel": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "II Samuel",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|I Kings": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "I Kings",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|II Kings": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "II Kings",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Isaiah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Isaiah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Jeremiah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Jeremiah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Ezekiel": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Ezekiel",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Hosea": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Hosea",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Joel": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Joel",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Amos": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Amos",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Obadiah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Obadiah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Jonah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Jonah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Micah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Micah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Nahum": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Nahum",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Habakkuk": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Habakkuk",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Zephaniah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Zephaniah",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Haggai": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Haggai",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Zechariah": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Zechariah",
+  "edition": "Mikraot Gedolot",
+  "source": "Mikraot Gedolot",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Malachi": {
+  "commentator": "תרגום יונתן",
+  "open": true,
+  "book": "Malachi",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Psalms": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Psalms",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Proverbs": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Proverbs",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Job": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Job",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Song of Songs": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Song of Songs",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Ruth": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Ruth",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Lamentations": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Lamentations",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Ecclesiastes": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Ecclesiastes",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|Esther": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "Esther",
+  "edition": "Mikraot Gedolot",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|I Chronicles": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "I Chronicles",
+  "edition": "Wikisource Aramaic Targum to Chronicles",
+  "source": "https://he.wikisource.org/wiki/%D7%AA%D7%A8%D7%92%D7%95%D7%9D_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Targum|II Chronicles": {
+  "commentator": "תרגום",
+  "open": true,
+  "book": "II Chronicles",
+  "edition": "Wikisource Aramaic Targum to Chronicles",
+  "source": "https://he.wikisource.org/wiki/%D7%AA%D7%A8%D7%92%D7%95%D7%9D_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
  "Rashi|Genesis": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Genesis",
   "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
@@ -11,6 +408,7 @@
  },
  "Rashi|Exodus": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Exodus",
   "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
@@ -21,6 +419,7 @@
  },
  "Rashi|Leviticus": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Leviticus",
   "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
@@ -31,6 +430,7 @@
  },
  "Rashi|Numbers": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Numbers",
   "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann -- corrected vocalization",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
@@ -41,6 +441,7 @@
  },
  "Rashi|Deuteronomy": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Deuteronomy",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -51,6 +452,7 @@
  },
  "Rashi|Joshua": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Joshua",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -61,6 +463,7 @@
  },
  "Rashi|Judges": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Judges",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -71,6 +474,7 @@
  },
  "Rashi|I Samuel": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "I Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -81,6 +485,7 @@
  },
  "Rashi|II Samuel": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "II Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -91,6 +496,7 @@
  },
  "Rashi|I Kings": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "I Kings",
   "edition": "On Your Way -- new",
   "source": "http://mobile.tora.ws/",
@@ -101,6 +507,7 @@
  },
  "Rashi|II Kings": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "II Kings",
   "edition": "On Your Way -- new",
   "source": "http://mobile.tora.ws/",
@@ -111,6 +518,7 @@
  },
  "Rashi|Isaiah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Isaiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -121,6 +529,7 @@
  },
  "Rashi|Jeremiah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Jeremiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -131,6 +540,7 @@
  },
  "Rashi|Ezekiel": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Ezekiel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -141,6 +551,7 @@
  },
  "Rashi|Hosea": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Hosea",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -151,6 +562,7 @@
  },
  "Rashi|Joel": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Joel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -161,6 +573,7 @@
  },
  "Rashi|Amos": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Amos",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -171,6 +584,7 @@
  },
  "Rashi|Obadiah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Obadiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -181,6 +595,7 @@
  },
  "Rashi|Jonah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Jonah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -191,6 +606,7 @@
  },
  "Rashi|Micah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Micah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -201,6 +617,7 @@
  },
  "Rashi|Nahum": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Nahum",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -211,6 +628,7 @@
  },
  "Rashi|Habakkuk": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Habakkuk",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -221,6 +639,7 @@
  },
  "Rashi|Zephaniah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Zephaniah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -231,6 +650,7 @@
  },
  "Rashi|Haggai": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Haggai",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -241,6 +661,7 @@
  },
  "Rashi|Zechariah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Zechariah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -251,6 +672,7 @@
  },
  "Rashi|Malachi": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Malachi",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -261,6 +683,7 @@
  },
  "Rashi|Psalms": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Psalms",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -271,6 +694,7 @@
  },
  "Rashi|Proverbs": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Proverbs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -281,6 +705,7 @@
  },
  "Rashi|Job": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Job",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -291,6 +716,7 @@
  },
  "Rashi|Song of Songs": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Song of Songs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -301,6 +727,7 @@
  },
  "Rashi|Ruth": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Ruth",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -311,6 +738,7 @@
  },
  "Rashi|Lamentations": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Lamentations",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -321,6 +749,7 @@
  },
  "Rashi|Ecclesiastes": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Ecclesiastes",
   "edition": "The Metsudah Five Megillot, Lakewood, N.J., 2001",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH002162036",
@@ -331,6 +760,7 @@
  },
  "Rashi|Esther": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Esther",
   "edition": "The Metsudah Five Megillot, Lakewood, N.J., 2001",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH002162036",
@@ -341,6 +771,7 @@
  },
  "Rashi|Daniel": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Daniel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -351,6 +782,7 @@
  },
  "Rashi|Ezra": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Ezra",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -361,6 +793,7 @@
  },
  "Rashi|Nehemiah": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "Nehemiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -371,6 +804,7 @@
  },
  "Rashi|I Chronicles": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "I Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -381,6 +815,7 @@
  },
  "Rashi|II Chronicles": {
   "commentator": "רש\"י",
+  "open": true,
   "book": "II Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -389,8 +824,64 @@
   "license_url": "",
   "via": "Sefaria (ספריא), https://www.sefaria.org"
  },
+ "Rashbam|Genesis": {
+  "commentator": "רשב\"ם",
+  "open": false,
+  "book": "Genesis",
+  "edition": "daat",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/tnh_text.asp?id=130",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashbam|Exodus": {
+  "commentator": "רשב\"ם",
+  "open": false,
+  "book": "Exodus",
+  "edition": "Rashbam on Torah -- Daat",
+  "source": "http://www.daat.ac.il/daat/tanach/parshanut/rashbam.htm",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashbam|Leviticus": {
+  "commentator": "רשב\"ם",
+  "open": false,
+  "book": "Leviticus",
+  "edition": "Rashbam on Leviticus - Daat",
+  "source": "http://www.daat.ac.il/daat/tanach/parshanut/rashbam.htm",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashbam|Numbers": {
+  "commentator": "רשב\"ם",
+  "open": false,
+  "book": "Numbers",
+  "edition": "Rashbam on Numbers -- Daat",
+  "source": "http://www.daat.ac.il/daat/tanach/parshanut/rashbam.htm",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashbam|Deuteronomy": {
+  "commentator": "רשב\"ם",
+  "open": false,
+  "book": "Deuteronomy",
+  "edition": "Rashbam on Deuteronomy -- Daat",
+  "source": "http://www.daat.ac.il/daat/tanach/parshanut/rashbam.htm",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
  "Ibn Ezra|Exodus": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Exodus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -401,6 +892,7 @@
  },
  "Ibn Ezra|Leviticus": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Leviticus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -411,6 +903,7 @@
  },
  "Ibn Ezra|Numbers": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Numbers",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -421,6 +914,7 @@
  },
  "Ibn Ezra|Deuteronomy": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Deuteronomy",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -431,6 +925,7 @@
  },
  "Ibn Ezra|Hosea": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Hosea",
   "edition": "Ibn Ezra on Hosea -- Daat",
   "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=15&perek=1&mefaresh=ezra",
@@ -441,6 +936,7 @@
  },
  "Ibn Ezra|Joel": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Joel",
   "edition": "Ibn Ezra on Joel -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/yoel",
@@ -451,6 +947,7 @@
  },
  "Ibn Ezra|Amos": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Amos",
   "edition": "Ibn Ezra on Amos -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/amos",
@@ -461,6 +958,7 @@
  },
  "Ibn Ezra|Obadiah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Obadiah",
   "edition": "Ibn Ezra on Obadiah -- Daat",
   "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=18&perek=1&mefaresh=ezra",
@@ -471,6 +969,7 @@
  },
  "Ibn Ezra|Jonah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Jonah",
   "edition": "Ibn Ezra on Jonah -- Daat",
   "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=19&perek=1&mefaresh=ezra",
@@ -481,6 +980,7 @@
  },
  "Ibn Ezra|Micah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Micah",
   "edition": "Ibn Ezra on Micah -- Daat",
   "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=20&perek=1&mefaresh=ezra",
@@ -491,6 +991,7 @@
  },
  "Ibn Ezra|Nahum": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Nahum",
   "edition": "Ibn Ezra on Nahum -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/nachum",
@@ -501,6 +1002,7 @@
  },
  "Ibn Ezra|Habakkuk": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Habakkuk",
   "edition": "Ibn Ezra on Habakkuk -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/havakuk",
@@ -511,6 +1013,7 @@
  },
  "Ibn Ezra|Zephaniah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Zephaniah",
   "edition": "Ibn Ezra on Zephaniah -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/zfanya",
@@ -521,6 +1024,7 @@
  },
  "Ibn Ezra|Haggai": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Haggai",
   "edition": "Ibn Ezra on Haggai -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/hagai",
@@ -531,6 +1035,7 @@
  },
  "Ibn Ezra|Zechariah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Zechariah",
   "edition": "Ibn Ezra on Zecharia -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/zecharya",
@@ -541,6 +1046,7 @@
  },
  "Ibn Ezra|Malachi": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Malachi",
   "edition": "Ibn Ezra on Malachi -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/malachi",
@@ -551,6 +1057,7 @@
  },
  "Ibn Ezra|Proverbs": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Proverbs",
   "edition": "Ibn Ezra on Proverbs -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/mishley/",
@@ -561,6 +1068,7 @@
  },
  "Ibn Ezra|Job": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Job",
   "edition": "Ibn Ezra on Job -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/eyov/",
@@ -571,6 +1079,7 @@
  },
  "Ibn Ezra|Ruth": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Ruth",
   "edition": "Ibn Ezra on Ruth -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/ruth",
@@ -581,6 +1090,7 @@
  },
  "Ibn Ezra|Esther": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Esther",
   "edition": "Kol Sason, Krotoschin, 1840",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001728315",
@@ -591,6 +1101,7 @@
  },
  "Ibn Ezra|Daniel": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Daniel",
   "edition": "Ibn Ezra on Daniel - Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/daniel",
@@ -601,6 +1112,7 @@
  },
  "Ibn Ezra|Ezra": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Ezra",
   "edition": "Ibn Ezra on Ezra -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/ezra",
@@ -611,6 +1123,7 @@
  },
  "Ibn Ezra|Nehemiah": {
   "commentator": "אבן עזרא",
+  "open": false,
   "book": "Nehemiah",
   "edition": "Ibn Ezra on Nehemiah -- Daat",
   "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/nechemya",
@@ -621,6 +1134,7 @@
  },
  "Radak|Psalms": {
   "commentator": "רד\"ק",
+  "open": false,
   "book": "Psalms",
   "edition": "Derekh Mesilah, Furth 1843",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH001803579&context=L&vid=NLI&lang=iw_IL",
@@ -631,6 +1145,7 @@
  },
  "Sforno|Exodus": {
   "commentator": "ספורנו",
+  "open": false,
   "book": "Exodus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -641,6 +1156,7 @@
  },
  "Sforno|Leviticus": {
   "commentator": "ספורנו",
+  "open": false,
   "book": "Leviticus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -651,6 +1167,7 @@
  },
  "Sforno|Numbers": {
   "commentator": "ספורנו",
+  "open": false,
   "book": "Numbers",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -661,6 +1178,7 @@
  },
  "Sforno|Deuteronomy": {
   "commentator": "ספורנו",
+  "open": false,
   "book": "Deuteronomy",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -671,6 +1189,7 @@
  },
  "Or HaChaim|Exodus": {
   "commentator": "אור החיים",
+  "open": false,
   "book": "Exodus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -681,6 +1200,7 @@
  },
  "Or HaChaim|Leviticus": {
   "commentator": "אור החיים",
+  "open": false,
   "book": "Leviticus",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -691,6 +1211,7 @@
  },
  "Or HaChaim|Numbers": {
   "commentator": "אור החיים",
+  "open": false,
   "book": "Numbers",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -701,6 +1222,7 @@
  },
  "Or HaChaim|Deuteronomy": {
   "commentator": "אור החיים",
+  "open": false,
   "book": "Deuteronomy",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -709,8 +1231,284 @@
   "license_url": "",
   "via": "Sefaria (ספריא), https://www.sefaria.org"
  },
+ "Kli Yakar|Exodus": {
+  "commentator": "כלי יקר",
+  "open": false,
+  "book": "Exodus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kli Yakar|Leviticus": {
+  "commentator": "כלי יקר",
+  "open": false,
+  "book": "Leviticus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kli Yakar|Numbers": {
+  "commentator": "כלי יקר",
+  "open": false,
+  "book": "Numbers",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kli Yakar|Deuteronomy": {
+  "commentator": "כלי יקר",
+  "open": false,
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Da'at Zekenim|Genesis": {
+  "commentator": "דעת זקנים",
+  "open": false,
+  "book": "Genesis",
+  "edition": "daat zekenim",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Da'at Zekenim|Exodus": {
+  "commentator": "דעת זקנים",
+  "open": false,
+  "book": "Exodus",
+  "edition": "daat zekenim",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Da'at Zekenim|Leviticus": {
+  "commentator": "דעת זקנים",
+  "open": false,
+  "book": "Leviticus",
+  "edition": "daat zekenim",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Da'at Zekenim|Numbers": {
+  "commentator": "דעת זקנים",
+  "open": false,
+  "book": "Numbers",
+  "edition": "daat zekenim",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Da'at Zekenim|Deuteronomy": {
+  "commentator": "דעת זקנים",
+  "open": false,
+  "book": "Deuteronomy",
+  "edition": "daat zekenim",
+  "source": "https://www.sefaria.org",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kitzur Ba'al HaTurim|Genesis": {
+  "commentator": "בעל הטורים",
+  "open": false,
+  "book": "Genesis",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kitzur Ba'al HaTurim|Exodus": {
+  "commentator": "בעל הטורים",
+  "open": false,
+  "book": "Exodus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kitzur Ba'al HaTurim|Leviticus": {
+  "commentator": "בעל הטורים",
+  "open": false,
+  "book": "Leviticus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kitzur Ba'al HaTurim|Numbers": {
+  "commentator": "בעל הטורים",
+  "open": false,
+  "book": "Numbers",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Kitzur Ba'al HaTurim|Deuteronomy": {
+  "commentator": "בעל הטורים",
+  "open": false,
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Psalms": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Psalms",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Song of Songs": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Song of Songs",
+  "edition": "Torah Temimah, Vilna, 1904",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001750892",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Ruth": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Ruth",
+  "edition": "Torah Temimah, Vilna, 1904",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001750892",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Lamentations": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Lamentations",
+  "edition": "Torah Temimah, Vilna, 1904",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001750892",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Ecclesiastes": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Ecclesiastes",
+  "edition": "Torah Temimah, Vilna, 1904",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001750892",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Torah Temimah|Esther": {
+  "commentator": "תורה תמימה",
+  "open": false,
+  "book": "Esther",
+  "edition": "Torah Temimah, Vilna, 1904",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001750892",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Shadal|Genesis": {
+  "commentator": "שד\"ל",
+  "open": false,
+  "book": "Genesis",
+  "edition": "Shadal 1st Edition",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002094617",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Shadal|Exodus": {
+  "commentator": "שד\"ל",
+  "open": false,
+  "book": "Exodus",
+  "edition": "Shadal first edition, Padua 1871",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969139",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Shadal|Leviticus": {
+  "commentator": "שד\"ל",
+  "open": false,
+  "book": "Leviticus",
+  "edition": "Shadal first edition, Padua 1871",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969139",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Shadal|Numbers": {
+  "commentator": "שד\"ל",
+  "open": false,
+  "book": "Numbers",
+  "edition": "Shadal first edition, Padua 1871",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969139",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Shadal|Deuteronomy": {
+  "commentator": "שד\"ל",
+  "open": false,
+  "book": "Deuteronomy",
+  "edition": "Shadal first edition, Padua 1871",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969139",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
  "Ralbag|Joshua": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "Joshua",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -721,6 +1519,7 @@
  },
  "Ralbag|Judges": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "Judges",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -731,6 +1530,7 @@
  },
  "Ralbag|I Samuel": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "I Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -741,6 +1541,7 @@
  },
  "Ralbag|II Samuel": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "II Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -751,6 +1552,7 @@
  },
  "Ralbag|I Kings": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "I Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -761,6 +1563,7 @@
  },
  "Ralbag|II Kings": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "II Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -771,6 +1574,7 @@
  },
  "Ralbag|Proverbs": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "Proverbs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -781,6 +1585,7 @@
  },
  "Ralbag|Ezra": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "Ezra",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -791,6 +1596,7 @@
  },
  "Ralbag|Nehemiah": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "Nehemiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -801,6 +1607,7 @@
  },
  "Ralbag|I Chronicles": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "I Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -811,6 +1618,7 @@
  },
  "Ralbag|II Chronicles": {
   "commentator": "רלב\"ג",
+  "open": false,
   "book": "II Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -821,6 +1629,7 @@
  },
  "Malbim|Genesis": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Genesis",
   "edition": "Malbim on Genesis -- Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA",
@@ -831,6 +1640,7 @@
  },
  "Malbim|Exodus": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Exodus",
   "edition": "Mikraei Kodesh, Vilna, 1891",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
@@ -841,6 +1651,7 @@
  },
  "Malbim|Numbers": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Numbers",
   "edition": "Mikraei Kodesh, Vilna, 1891",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
@@ -851,6 +1662,7 @@
  },
  "Malbim|Deuteronomy": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Deuteronomy",
   "edition": "Mikraei Kodesh, Vilna, 1891",
   "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
@@ -861,6 +1673,7 @@
  },
  "Malbim|Judges": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Judges",
   "edition": "Wikisource",
   "source": "https://he.wikisource.org/",
@@ -871,6 +1684,7 @@
  },
  "Malbim|II Samuel": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "II Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -881,6 +1695,7 @@
  },
  "Malbim|I Kings": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "I Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -891,6 +1706,7 @@
  },
  "Malbim|II Kings": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "II Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -901,6 +1717,7 @@
  },
  "Malbim|Jeremiah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Jeremiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -911,6 +1728,7 @@
  },
  "Malbim|Hosea": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Hosea",
   "edition": "Malbim on Hosea--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -921,6 +1739,7 @@
  },
  "Malbim|Joel": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Joel",
   "edition": "Malbim on Joel--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -931,6 +1750,7 @@
  },
  "Malbim|Amos": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Amos",
   "edition": "Malbim on Amos--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -941,6 +1761,7 @@
  },
  "Malbim|Obadiah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Obadiah",
   "edition": "Malbim on Obadiah--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -951,6 +1772,7 @@
  },
  "Malbim|Jonah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Jonah",
   "edition": "Malbim on Jonah--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -961,6 +1783,7 @@
  },
  "Malbim|Micah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Micah",
   "edition": "Malbim on Micah--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -971,6 +1794,7 @@
  },
  "Malbim|Nahum": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Nahum",
   "edition": "Malbim on Nahum--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -981,6 +1805,7 @@
  },
  "Malbim|Habakkuk": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Habakkuk",
   "edition": "Malbim on Habakkuk--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -991,6 +1816,7 @@
  },
  "Malbim|Zephaniah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Zephaniah",
   "edition": "Malbim on Zephaniah--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -1001,6 +1827,7 @@
  },
  "Malbim|Haggai": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Haggai",
   "edition": "Malbim on Haggai--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -1011,6 +1838,7 @@
  },
  "Malbim|Zechariah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Zechariah",
   "edition": "Malbim on Zechariah--Wikisource",
   "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=25&perek=5&mefaresh=malbim",
@@ -1021,6 +1849,7 @@
  },
  "Malbim|Malachi": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Malachi",
   "edition": "Malbim on Malachi--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -1031,6 +1860,7 @@
  },
  "Malbim|Proverbs": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Proverbs",
   "edition": "Malbim on Proverbs--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -1041,6 +1871,7 @@
  },
  "Malbim|Ruth": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Ruth",
   "edition": "Malbim on Ruth--Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
@@ -1051,6 +1882,7 @@
  },
  "Malbim|Esther": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Esther",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1061,6 +1893,7 @@
  },
  "Malbim|Daniel": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Daniel",
   "edition": "Malbim on Daniel -- Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%A0%D7%99%D7%90%D7%9C",
@@ -1071,6 +1904,7 @@
  },
  "Malbim|Ezra": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Ezra",
   "edition": "Wikisource",
   "source": "https://he.wikisource.org/",
@@ -1081,6 +1915,7 @@
  },
  "Malbim|Nehemiah": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "Nehemiah",
   "edition": "Malbim on Nehemiah -- Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%A0%D7%97%D7%9E%D7%99%D7%94",
@@ -1091,6 +1926,7 @@
  },
  "Malbim|I Chronicles": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "I Chronicles",
   "edition": "Malbim on I Chronicles -- Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D_%D7%90",
@@ -1101,6 +1937,7 @@
  },
  "Malbim|II Chronicles": {
   "commentator": "מלבי\"ם",
+  "open": false,
   "book": "II Chronicles",
   "edition": "Malbim on II Chronicles -- Wikisource",
   "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D_%D7%91",
@@ -1109,8 +1946,174 @@
   "license_url": "",
   "via": "Sefaria (ספריא), https://www.sefaria.org"
  },
+ "Malbim Beur Hamilot|Isaiah": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Isaiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Jeremiah": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Jeremiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Ezekiel": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Ezekiel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Hosea": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Hosea",
+  "edition": "Malbim on Hosea--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Joel": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Joel",
+  "edition": "Malbim on Joel--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Amos": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Amos",
+  "edition": "Malbim on Amos--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Obadiah": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Obadiah",
+  "edition": "Malbim on Obadiah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Micah": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Micah",
+  "edition": "Malbim on Micah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Nahum": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Nahum",
+  "edition": "Malbim on Nahum--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Habakkuk": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Habakkuk",
+  "edition": "Malbim on Habakkuk--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Zephaniah": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Zephaniah",
+  "edition": "Malbim Beur Hamilot on Zephaniah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Haggai": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Haggai",
+  "edition": "Malbim on Haggai--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Malachi": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Malachi",
+  "edition": "Malbim on Malachi--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Proverbs": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Proverbs",
+  "edition": "Malbim on Proverbs--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim Beur Hamilot|Job": {
+  "commentator": "מלבי\"ם, ביאור המילות",
+  "open": false,
+  "book": "Job",
+  "edition": "Malbim on Job -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%90%D7%99%D7%95%D7%91",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
  "Metzudat David|Joshua": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Joshua",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1121,6 +2124,7 @@
  },
  "Metzudat David|Judges": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Judges",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1131,6 +2135,7 @@
  },
  "Metzudat David|I Samuel": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "I Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1141,6 +2146,7 @@
  },
  "Metzudat David|II Samuel": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "II Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1151,6 +2157,7 @@
  },
  "Metzudat David|I Kings": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "I Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1161,6 +2168,7 @@
  },
  "Metzudat David|II Kings": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "II Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1171,6 +2179,7 @@
  },
  "Metzudat David|Isaiah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Isaiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1181,6 +2190,7 @@
  },
  "Metzudat David|Jeremiah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Jeremiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1191,6 +2201,7 @@
  },
  "Metzudat David|Ezekiel": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Ezekiel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1201,6 +2212,7 @@
  },
  "Metzudat David|Hosea": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Hosea",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1211,6 +2223,7 @@
  },
  "Metzudat David|Joel": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Joel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1221,6 +2234,7 @@
  },
  "Metzudat David|Amos": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Amos",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1231,6 +2245,7 @@
  },
  "Metzudat David|Obadiah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Obadiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1241,6 +2256,7 @@
  },
  "Metzudat David|Jonah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Jonah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1251,6 +2267,7 @@
  },
  "Metzudat David|Micah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Micah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1261,6 +2278,7 @@
  },
  "Metzudat David|Nahum": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Nahum",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1271,6 +2289,7 @@
  },
  "Metzudat David|Habakkuk": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Habakkuk",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1281,6 +2300,7 @@
  },
  "Metzudat David|Zephaniah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Zephaniah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1291,6 +2311,7 @@
  },
  "Metzudat David|Haggai": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Haggai",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1301,6 +2322,7 @@
  },
  "Metzudat David|Zechariah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Zechariah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1311,6 +2333,7 @@
  },
  "Metzudat David|Malachi": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Malachi",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1321,6 +2344,7 @@
  },
  "Metzudat David|Psalms": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Psalms",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1331,6 +2355,7 @@
  },
  "Metzudat David|Proverbs": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Proverbs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1341,6 +2366,7 @@
  },
  "Metzudat David|Job": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Job",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1351,6 +2377,7 @@
  },
  "Metzudat David|Song of Songs": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Song of Songs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1361,6 +2388,7 @@
  },
  "Metzudat David|Ecclesiastes": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Ecclesiastes",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1371,6 +2399,7 @@
  },
  "Metzudat David|Daniel": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Daniel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1381,6 +2410,7 @@
  },
  "Metzudat David|Ezra": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Ezra",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1391,6 +2421,7 @@
  },
  "Metzudat David|Nehemiah": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "Nehemiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1401,6 +2432,7 @@
  },
  "Metzudat David|I Chronicles": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "I Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1411,6 +2443,7 @@
  },
  "Metzudat David|II Chronicles": {
   "commentator": "מצודת דוד",
+  "open": false,
   "book": "II Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1421,6 +2454,7 @@
  },
  "Metzudat Zion|Joshua": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Joshua",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1431,6 +2465,7 @@
  },
  "Metzudat Zion|Judges": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Judges",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1441,6 +2476,7 @@
  },
  "Metzudat Zion|I Samuel": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "I Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1451,6 +2487,7 @@
  },
  "Metzudat Zion|II Samuel": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "II Samuel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1461,6 +2498,7 @@
  },
  "Metzudat Zion|I Kings": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "I Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1471,6 +2509,7 @@
  },
  "Metzudat Zion|II Kings": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "II Kings",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1481,6 +2520,7 @@
  },
  "Metzudat Zion|Isaiah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Isaiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1491,6 +2531,7 @@
  },
  "Metzudat Zion|Jeremiah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Jeremiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1501,6 +2542,7 @@
  },
  "Metzudat Zion|Ezekiel": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Ezekiel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1511,6 +2553,7 @@
  },
  "Metzudat Zion|Hosea": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Hosea",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1521,6 +2564,7 @@
  },
  "Metzudat Zion|Joel": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Joel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1531,6 +2575,7 @@
  },
  "Metzudat Zion|Amos": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Amos",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1541,6 +2586,7 @@
  },
  "Metzudat Zion|Obadiah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Obadiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1551,6 +2597,7 @@
  },
  "Metzudat Zion|Jonah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Jonah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1561,6 +2608,7 @@
  },
  "Metzudat Zion|Micah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Micah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1571,6 +2619,7 @@
  },
  "Metzudat Zion|Nahum": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Nahum",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1581,6 +2630,7 @@
  },
  "Metzudat Zion|Habakkuk": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Habakkuk",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1591,6 +2641,7 @@
  },
  "Metzudat Zion|Zephaniah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Zephaniah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1601,6 +2652,7 @@
  },
  "Metzudat Zion|Haggai": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Haggai",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1611,6 +2663,7 @@
  },
  "Metzudat Zion|Zechariah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Zechariah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1621,6 +2674,7 @@
  },
  "Metzudat Zion|Malachi": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Malachi",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1631,6 +2685,7 @@
  },
  "Metzudat Zion|Psalms": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Psalms",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1641,6 +2696,7 @@
  },
  "Metzudat Zion|Proverbs": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Proverbs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1651,6 +2707,7 @@
  },
  "Metzudat Zion|Job": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Job",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1661,6 +2718,7 @@
  },
  "Metzudat Zion|Song of Songs": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Song of Songs",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1671,6 +2729,7 @@
  },
  "Metzudat Zion|Ecclesiastes": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Ecclesiastes",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1681,6 +2740,7 @@
  },
  "Metzudat Zion|Daniel": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Daniel",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1691,6 +2751,7 @@
  },
  "Metzudat Zion|Ezra": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Ezra",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1701,6 +2762,7 @@
  },
  "Metzudat Zion|Nehemiah": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "Nehemiah",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1711,6 +2773,7 @@
  },
  "Metzudat Zion|I Chronicles": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "I Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",
@@ -1721,6 +2784,7 @@
  },
  "Metzudat Zion|II Chronicles": {
   "commentator": "מצודת ציון",
+  "open": false,
   "book": "II Chronicles",
   "edition": "On Your Way",
   "source": "http://mobile.tora.ws/",

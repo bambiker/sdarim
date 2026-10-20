@@ -186,6 +186,20 @@ footer {
   color: #4f009e;
 }
 
+/* commentators that open on click: their names sit side by side until opened */
+.commentary details.commentator:not([open]) {
+  display: inline-block;
+  margin: 0 0 6px 14px;
+}
+
+.commentary details.commentator summary {
+  cursor: pointer;
+}
+
+.commentary details.commentator[open] summary {
+  margin-bottom: 2px;
+}
+
 .commentary .commentary-source {
   font-size: 12px;
   color: #666;

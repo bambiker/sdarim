@@ -24,16 +24,26 @@
             return;
         }
         const used = [];
+        // the Aramaic translation and Rashi are shown; the other commentators open on click
         entries.forEach(e => {
             const src = sources[e.source] || {};
-            const div = document.createElement('div');
-            div.className = 'commentator';
-            const name = document.createElement('strong');
-            name.textContent = (src.commentator || '') + ': ';
             const text = document.createElement('span');
             text.innerHTML = e.comments.join(' • ');   // cleaned at build time: only b, i, br, small
-            div.append(name, text);
-            panel.appendChild(div);
+            const name = document.createElement('strong');
+            let item;
+            if (src.open) {
+                item = document.createElement('div');
+                name.textContent = (src.commentator || '') + ': ';
+                item.append(name, text);
+            } else {
+                item = document.createElement('details');
+                const summary = document.createElement('summary');
+                name.textContent = src.commentator || '';
+                summary.appendChild(name);
+                item.append(summary, text);
+            }
+            item.className = 'commentator';
+            panel.appendChild(item);
             if (!used.includes(e.source)) used.push(e.source);
         });
         const credit = document.createElement('div');

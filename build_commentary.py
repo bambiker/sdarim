@@ -35,10 +35,29 @@ LICENSE_URLS = {'CC-BY': 'https://creativecommons.org/licenses/by/3.0/',
                 'CC0': 'https://creativecommons.org/publicdomain/zero/1.0/'}
 LICENSE_HE = {'Public Domain': 'נחלת הכלל', 'CC0': 'CC0', 'CC-BY': 'CC-BY', 'CC-BY-SA': 'CC-BY-SA'}
 
-# shown in this order
-COMMENTATORS = [('Rashi', 'רש"י'), ('Ibn Ezra', 'אבן עזרא'), ('Radak', 'רד"ק'), ('Sforno', 'ספורנו'),
-                ('Or HaChaim', 'אור החיים'), ('Ralbag', 'רלב"ג'), ('Malbim', 'מלבי"ם'),
-                ('Metzudat David', 'מצודת דוד'), ('Metzudat Zion', 'מצודת ציון')]
+# Shown in this order: (key, shown open, [(Sefaria title, Hebrew name), ...]).
+# The titles are tried in order for each book and the first with a permitted edition is used;
+# commentators that are not shown open appear as a title that opens on click.
+COMMENTATORS = [
+    ('Targum', True, [('Onkelos {}', 'תרגום אונקלוס'), ('Targum Jonathan on {}', 'תרגום יונתן'),
+                      ('Aramaic Targum to {}', 'תרגום'), ('Targum of {}', 'תרגום')]),
+    ('Rashi', True, [('Rashi on {}', 'רש"י')]),
+    ('Rashbam', False, [('Rashbam on {}', 'רשב"ם')]),
+    ('Ibn Ezra', False, [('Ibn Ezra on {}', 'אבן עזרא')]),
+    ('Radak', False, [('Radak on {}', 'רד"ק')]),
+    ('Sforno', False, [('Sforno on {}', 'ספורנו')]),
+    ('Or HaChaim', False, [('Or HaChaim on {}', 'אור החיים')]),
+    ('Kli Yakar', False, [('Kli Yakar on {}', 'כלי יקר')]),
+    ("Da'at Zekenim", False, [("Da'at Zekenim on {}", 'דעת זקנים')]),
+    ("Kitzur Ba'al HaTurim", False, [("Kitzur Ba'al HaTurim on {}", 'בעל הטורים')]),
+    ('Torah Temimah', False, [('Torah Temimah on {}', 'תורה תמימה')]),
+    ('Shadal', False, [('Shadal on {}', 'שד"ל')]),
+    ('Ralbag', False, [('Ralbag on {}', 'רלב"ג')]),
+    ('Malbim', False, [('Malbim on {}', 'מלבי"ם')]),
+    ('Malbim Beur Hamilot', False, [('Malbim Beur Hamilot on {}', 'מלבי"ם, ביאור המילות')]),
+    ('Metzudat David', False, [('Metzudat David on {}', 'מצודת דוד')]),
+    ('Metzudat Zion', False, [('Metzudat Zion on {}', 'מצודת ציון')]),
+]
 
 # book names in sdarim.json (chapter division) -> Sefaria
 BOOKS = OrderedDict(zip(
@@ -124,36 +143,40 @@ def comment_count(text):
     return 1 if isinstance(text, str) and text.strip() else 0
 
 
-def is_chapter_verse_comment(text):
-    # chapter -> verse -> comment (string); the few versions shaped otherwise are skipped
-    return (isinstance(text, list) and any(isinstance(c, list) and any(isinstance(v, list) and any(
-        isinstance(x, str) and x.strip() for x in v) for v in c) for c in text))
+def is_chapter_verse(text):
+    # chapter -> verse -> comments (strings), or chapter -> verse (a string, as in a translation);
+    # the few versions shaped otherwise are skipped
+    def verse_ok(v):
+        return (isinstance(v, str) and v.strip()) or (isinstance(v, list) and any(
+            isinstance(x, str) and x.strip() for x in v))
+    chapters = [c for c in text if c] if isinstance(text, list) else []
+    return bool(chapters) and all(isinstance(c, list) for c in chapters) and any(
+        verse_ok(v) for c in chapters for v in c)
 
 
 def choose_versions(cache):
-    books = fetch(BOOKS_JSON, cache)['books']
-    candidates = {}
-    for b in books:
-        m = re.match(r'^(.*) on (.*)$', b['title'])
-        if (b['language'] != 'Hebrew' or 'Tanakh' not in b['categories'] or not m
-                or b['versionTitle'] in ('merged', 'test')):
-            continue
-        who, book = m.groups()
-        if who in dict(COMMENTATORS) and book in BOOKS.values():
-            candidates.setdefault((who, book), []).append(b['json_url'])
+    """{(key, book): (version, Hebrew name)}: for each commentator and book, the edition with a
+    permitted license and the most comments, from the first title that has one."""
+    by_title = {}
+    for b in fetch(BOOKS_JSON, cache)['books']:
+        if b['language'] == 'Hebrew' and 'Tanakh' in b['categories'] and b['versionTitle'] not in ('merged', 'test'):
+            by_title.setdefault(b['title'], []).append(b['json_url'])
     chosen = {}
-    for (who, book), urls in sorted(candidates.items()):
-        best = None
-        for u in urls:
-            v = fetch(u, cache)
-            if v.get('license') not in ALLOWED_LICENSES or not is_chapter_verse_comment(v.get('text')):
-                continue
-            n = comment_count(v['text'])
-            if not best or n > best[0]:
-                best = (n, u, v)
-        if best:
-            chosen[(who, book)] = best[2]
-            print(f'{who} on {book}: {best[2]["versionTitle"]} ({best[2]["license"]})')
+    for key, _, titles in COMMENTATORS:
+        for book in BOOKS.values():
+            for title, he in titles:
+                best = None
+                for u in by_title.get(title.format(book), []):
+                    v = fetch(u, cache)
+                    if v.get('license') not in ALLOWED_LICENSES or not is_chapter_verse(v.get('text')):
+                        continue
+                    n = comment_count(v['text'])
+                    if not best or n > best[0]:
+                        best = (n, v)
+                if best:
+                    chosen[(key, book)] = (best[1], he)
+                    print(f'{title.format(book)}: {best[1]["versionTitle"]} ({best[1]["license"]})')
+                    break
     return chosen
 
 
@@ -166,12 +189,12 @@ def main():
     chosen = choose_versions(cache)
 
     sources = OrderedDict()
-    for who, he in COMMENTATORS:
+    for who, shown_open, _ in COMMENTATORS:
         for book in BOOKS.values():
-            v = chosen.get((who, book))
-            if v:
+            if (who, book) in chosen:
+                v, he = chosen[(who, book)]
                 sources[f'{who}|{book}'] = {
-                    'commentator': he, 'book': book, 'edition': v.get('versionTitle', ''),
+                    'commentator': he, 'open': shown_open, 'book': book, 'edition': v.get('versionTitle', ''),
                     'source': v.get('versionSource', ''), 'license': v['license'],
                     'license_he': LICENSE_HE[v['license']], 'license_url': LICENSE_URLS.get(v['license'], ''),
                     'via': 'Sefaria (ספריא), https://www.sefaria.org'}
@@ -182,11 +205,10 @@ def main():
         en = BOOKS[v['bookchapter']]
         ch, vs = number(v['chapter']) - 1, number(v['versechapter']) - 1
         entries = []
-        for who, he in COMMENTATORS:
-            ver = chosen.get((who, en))
-            if not ver:
+        for who, _, _ in COMMENTATORS:
+            if (who, en) not in chosen:
                 continue
-            text = ver['text']
+            text = chosen[(who, en)][0]['text']
             comments = text[ch][vs] if ch < len(text) and isinstance(text[ch], list) and vs < len(text[ch]) else []
             comments = [clean(c) for c in (comments if isinstance(comments, list) else [comments])
                         if isinstance(c, str) and c.strip()]
