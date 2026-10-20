@@ -22,6 +22,10 @@
     <meta name="description" content='החלוקה לפרקים אינה יהודית אלא נוצרית המייצרת פרשנות שלא תמיד מתאימה לרוח היהדות. אתר מסדירים מאפשר להמיר בקלות בין החלוקות, ולקרוא ולחפש בתנ"ך לפי החלוקה לסדרים.'>
       <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="sdarim.css">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#11235A">
+    <meta name="apple-mobile-web-app-title" content="מסדירים">
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
 <script>
@@ -64,7 +68,8 @@
   <a href="#agree">הסכמות </a>&ensp;&ensp;
   <a href="#contact">יצירת קשר </a>&ensp;&ensp;
   <a href="/seder/">כל הסדרים, הפרקים והפרשות</a>&ensp;&ensp;
-  <a href="/faq.html">שאלות ותשובות</a>
+  <a href="/faq.html">שאלות ותשובות</a>&ensp;&ensp;
+  <button type="button" class="install" data-install hidden>התקנה כאפליקציה</button>
     
 <section id="secup">
 <H1> <a href="https://www.masdirim.org">מסדירים</a></H1>
@@ -72,7 +77,8 @@
   <br>
   <br>
 </section>
-<center>    
+<center>
+<p class="continue" id="continue" hidden></p>    
 <br>
 <input type="text" id="free">
   
@@ -297,6 +303,7 @@ freeinput.addEventListener("keypress", function (event) {
 מחפשים מילה / מילים? רשמו בשורת החיפוש ותקבלו רשימה של כל הפסוקים בתנ"ך המכילים את המילה / המילים. <br>
 רוצים לשלוח קישור? בכל חיפוש פסוק יתקבל קישור שניתן לשמור או לשלוח כדי להגיע אליו ישירות בלי צורך לחפש מחדש.<br> 
 רוצים פרשנות? לחיצה על מספר הפסוק תציג מתחת לפסוק את התרגום לארמית ואת פירוש רש"י, ולחיצה על שם של פרשן נוסף תפתח את פירושו. <br>
+רוצים את האתר כאפליקציה? בטלפון או במחשב אפשר להוסיף את מסדירים למסך הבית או לשולחן העבודה: בכרום ובאדג' לחצו על "התקנה כאפליקציה" בראש הדף, ובאייפון בחרו בתפריט השיתוף "הוספה למסך הבית". כשתפתחו את האתר שוב, הוא יציע לכם להמשיך מהמקום שעצרתם. <br>
 <br>
 <b>למה אי אפשר להציג פרק מסוים?</b><br>
 כדי שלא נושפע מהפרשנות האוטומטית שנובעת מהחלוקה הנוצרית, אבל כן ניתן לבחור פסוק מתוך פרק. אם בוחרים את פרשת השבוע המערכת תציג אותה עם החלוקה לסדרים ללא החלוקה לפרקים.  <br>
@@ -932,6 +939,7 @@ freeinput.addEventListener("keypress", function (event) {
   <option value="קנ">
 </datalist>
     
+    <script src="app.js"></script>
   </body>
 
 </html>
