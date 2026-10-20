@@ -15,11 +15,16 @@ Files written (spaces in book names become underscores):
     API/seder_<seder>_<book>.json               all verses of a seder
     API/sedarim.json                            index of all sedarim: where each starts and ends
     API/map.json                                chapter <-> seder location of every verse, no text
+It also writes the static pages made by build_pages.py (seder/, perek/, parasha/, book/,
+sitemap.xml, robots.txt, llms.txt).
 """
 import json
 import os
 import sys
 from collections import defaultdict
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from build_pages import GENERATED_DIRS, build_pages  # noqa: E402
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 API = os.path.join(ROOT, 'API')
@@ -84,15 +89,11 @@ def expected_files(verses):
     return files
 
 
-def main():
-    check_only = '--check' in sys.argv
-    with open(os.path.join(ROOT, 'sdarim.json'), encoding='utf-8-sig') as f:
-        verses = json.load(f)['seder']
-
-    files = expected_files(verses)
+def sync(files, check_only):
+    """Write {path relative to ROOT: content}; return how many were wrong or missing."""
     written = 0
     for fname, content in files.items():
-        path = os.path.join(API, fname)
+        path = os.path.join(ROOT, fname)
         text = content if isinstance(content, str) else json.dumps(content, indent=4, ensure_ascii=False)
         if os.path.exists(path):
             with open(path, encoding='utf-8') as f:
@@ -102,15 +103,38 @@ def main():
         if check_only:
             print('wrong or missing:', fname)
         else:
+            os.makedirs(os.path.dirname(path), exist_ok=True)
             with open(path, 'w', encoding='utf-8') as f:
                 f.write(text)
+    return written
 
-    stale = sorted(set(os.listdir(API)) - set(files) - KEEP)
+
+def remove_stale(stale, check_only):
     for fname in stale:
         if check_only:
             print('not in sdarim.json:', fname)
         else:
-            os.remove(os.path.join(API, fname))
+            os.remove(os.path.join(ROOT, fname))
+
+
+def main():
+    check_only = '--check' in sys.argv
+    with open(os.path.join(ROOT, 'sdarim.json'), encoding='utf-8-sig') as f:
+        verses = json.load(f)['seder']
+
+    api_files = expected_files(verses)
+    files = {'API/' + name: content for name, content in api_files.items()}
+    files.update(build_pages(verses, api_files['sedarim.json']))
+    written = sync(files, check_only)
+
+    stale = ['API/' + name for name in sorted(set(os.listdir(API)) - set(api_files) - KEEP)]
+    for folder in GENERATED_DIRS:
+        for dirpath, _, names in os.walk(os.path.join(ROOT, folder)):
+            for name in names:
+                rel = os.path.relpath(os.path.join(dirpath, name), ROOT).replace(os.sep, '/')
+                if rel not in files:
+                    stale.append(rel)
+    remove_stale(stale, check_only)
 
     verb = 'to fix' if check_only else 'fixed'
     print(f'{len(files)} files expected, {written} {verb}, {len(stale)} stale')

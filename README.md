@@ -8,3 +8,10 @@
 https://www.masdirim.org
 
 כדי ליצור איתנו קשר השתמשו ב-ISSUE של GITHUB או בצור קשר של האתר.
+
+## עדכון הנתונים
+אחרי כל שינוי ב-`sdarim.json` יש להריץ:
+
+    python3 build_api.py
+
+הסקריפט מעדכן את קבצי ה-API (`API/`), את הדפים הסטטיים של הסדרים, הפרקים, הפרשות והספרים (`seder/`, `perek/`, `parasha/`, `book/`) ואת `sitemap.xml`, `robots.txt` ו-`llms.txt`. בדיקה בלבד, בלי לשנות קבצים: `python3 build_api.py --check`.
