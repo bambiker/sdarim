@@ -109,6 +109,12 @@ function sederPageUrl(book, seder, verse) {
     return "https://www.masdirim.org/seder/" + addunderscore(book) + "/" + seder + ".html" + (verse && verse != 'א' ? "#" + verse : "");
 }
 
+// tell search engines that the static page is the main copy of what is shown here
+function setCanonical(url) {
+    const link = document.getElementById("canonical");
+    if (link) link.href = url;
+}
+
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';
 
 function setUrlLink(url) {
@@ -222,6 +228,7 @@ async function findparasha(){
     document.getElementById("result").innerHTML  = output;
 
     urlname = "https://www.masdirim.org/parasha/" + addunderscore(parasha) + ".html";
+    setCanonical(urlname);
     setUrlLink(urlname);
     document.title = " פרשת " + parasha + " לפי החלוקה לסדרים ";
     return ;
@@ -263,6 +270,7 @@ async function findfree(){
 
     urlname = "https://www.masdirim.org";
     setUrlLink(urlname);
+    setCanonical("https://www.masdirim.org/");
     document.title = "מסדירים - חלוקת התנך היהודית, חיפוש חופשי של " + freetext;
     return ;
 
@@ -1113,6 +1121,7 @@ function userSeder(filtArray2, book, seder, verse){
     }
     output += '<div class="seder-nav"></div>';
     document.getElementById("result").innerHTML  = output;
+    setCanonical(sederPageUrl(book, seder));
     fillSederNav(book, seder);
     return;
     }

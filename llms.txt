@@ -3,6 +3,8 @@
 > The Hebrew Bible (Tanakh) divided into sedarim, the traditional Jewish division (447 sedarim), instead of the chapters introduced by Christian printers. The site converts between chapter:verse and seder:verse references, and shows every seder, chapter and weekly parasha with full vocalized text (nikud and cantillation). Hebrew. Free to use with attribution: "החלוקה לסדרים: מסדירים, www.masdirim.org".
 
 ## Pages
+- [Questions and answers about the sedarim](https://www.masdirim.org/faq.html) (Hebrew)
+- [Every seder with its start and end, in plain text](https://www.masdirim.org/llms-full.txt)
 - [All sedarim, chapters and parashot](https://www.masdirim.org/seder/): index of every page below
 - One seder: https://www.masdirim.org/seder/<book>/<seder>.html, e.g. https://www.masdirim.org/seder/בראשית/יג.html (Bereshit seder 13 = Genesis 16:1-16)
 - One chapter, showing which seder(s) it is in: https://www.masdirim.org/perek/<book>/<chapter>.html, e.g. https://www.masdirim.org/perek/בראשית/טז.html

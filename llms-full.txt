@@ -1,0 +1,523 @@
+# מסדירים (Masdirim): all 447 sedarim of the Tanakh
+
+> The traditional Jewish division of the Hebrew Bible into sedarim, with where each seder starts and ends in the chapter:verse numbering (given only to help locate the text). Source: https://www.masdirim.org (credit: "החלוקה לסדרים: מסדירים, www.masdirim.org"). Each line links to the seder's page with the full text. More: https://www.masdirim.org/llms.txt
+
+
+## Genesis (בראשית): 43 sedarim
+
+- Genesis seder 1 (בראשית סדר א): Genesis 1:1 - Genesis 2:3, 34 verses; parasha בראשית. https://www.masdirim.org/seder/בראשית/א.html
+- Genesis seder 2 (בראשית סדר ב): Genesis 2:4 - Genesis 3:21, 43 verses; parasha בראשית. https://www.masdirim.org/seder/בראשית/ב.html
+- Genesis seder 3 (בראשית סדר ג): Genesis 3:22 - Genesis 4:26, 29 verses; parasha בראשית. https://www.masdirim.org/seder/בראשית/ג.html
+- Genesis seder 4 (בראשית סדר ד): Genesis 5:1 - Genesis 6:8, 40 verses; parasha בראשית. https://www.masdirim.org/seder/בראשית/ד.html
+- Genesis seder 5 (בראשית סדר ה): Genesis 6:9 - Genesis 7:24, 38 verses; parasha נח. https://www.masdirim.org/seder/בראשית/ה.html
+- Genesis seder 6 (בראשית סדר ו): Genesis 8:1 - Genesis 8:14, 14 verses; parasha נח. https://www.masdirim.org/seder/בראשית/ו.html
+- Genesis seder 7 (בראשית סדר ז): Genesis 8:15 - Genesis 9:17, 25 verses; parasha נח. https://www.masdirim.org/seder/בראשית/ז.html
+- Genesis seder 8 (בראשית סדר ח): Genesis 9:18 - Genesis 10:32, 44 verses; parasha נח. https://www.masdirim.org/seder/בראשית/ח.html
+- Genesis seder 9 (בראשית סדר ט): Genesis 11:1 - Genesis 11:32, 32 verses; parasha נח. https://www.masdirim.org/seder/בראשית/ט.html
+- Genesis seder 10 (בראשית סדר י): Genesis 12:1 - Genesis 13:18, 38 verses; parasha לך לך. https://www.masdirim.org/seder/בראשית/י.html
+- Genesis seder 11 (בראשית סדר יא): Genesis 14:1 - Genesis 14:24, 24 verses; parasha לך לך. https://www.masdirim.org/seder/בראשית/יא.html
+- Genesis seder 12 (בראשית סדר יב): Genesis 15:1 - Genesis 15:21, 21 verses; parasha לך לך. https://www.masdirim.org/seder/בראשית/יב.html
+- Genesis seder 13 (בראשית סדר יג): Genesis 16:1 - Genesis 16:16, 16 verses; parasha לך לך. https://www.masdirim.org/seder/בראשית/יג.html
+- Genesis seder 14 (בראשית סדר יד): Genesis 17:1 - Genesis 17:27, 27 verses; parasha לך לך. https://www.masdirim.org/seder/בראשית/יד.html
+- Genesis seder 15 (בראשית סדר טו): Genesis 18:1 - Genesis 18:33, 33 verses; parasha וירא. https://www.masdirim.org/seder/בראשית/טו.html
+- Genesis seder 16 (בראשית סדר טז): Genesis 19:1 - Genesis 19:38, 38 verses; parasha וירא. https://www.masdirim.org/seder/בראשית/טז.html
+- Genesis seder 17 (בראשית סדר יז): Genesis 20:1 - Genesis 20:18, 18 verses; parasha וירא. https://www.masdirim.org/seder/בראשית/יז.html
+- Genesis seder 18 (בראשית סדר יח): Genesis 21:1 - Genesis 21:34, 34 verses; parasha וירא. https://www.masdirim.org/seder/בראשית/יח.html
+- Genesis seder 19 (בראשית סדר יט): Genesis 22:1 - Genesis 23:20, 44 verses; parasha וירא; parasha חיי שרה. https://www.masdirim.org/seder/בראשית/יט.html
+- Genesis seder 20 (בראשית סדר כ): Genesis 24:1 - Genesis 24:41, 41 verses; parasha חיי שרה. https://www.masdirim.org/seder/בראשית/כ.html
+- Genesis seder 21 (בראשית סדר כא): Genesis 24:42 - Genesis 24:67, 26 verses; parasha חיי שרה. https://www.masdirim.org/seder/בראשית/כא.html
+- Genesis seder 22 (בראשית סדר כב): Genesis 25:1 - Genesis 25:18, 18 verses; parasha חיי שרה. https://www.masdirim.org/seder/בראשית/כב.html
+- Genesis seder 23 (בראשית סדר כג): Genesis 25:19 - Genesis 26:35, 51 verses; parasha תולדות. https://www.masdirim.org/seder/בראשית/כג.html
+- Genesis seder 24 (בראשית סדר כד): Genesis 27:1 - Genesis 27:27, 27 verses; parasha תולדות. https://www.masdirim.org/seder/בראשית/כד.html
+- Genesis seder 25 (בראשית סדר כה): Genesis 27:28 - Genesis 28:9, 28 verses; parasha תולדות. https://www.masdirim.org/seder/בראשית/כה.html
+- Genesis seder 26 (בראשית סדר כו): Genesis 28:10 - Genesis 29:30, 43 verses; parasha ויצא. https://www.masdirim.org/seder/בראשית/כו.html
+- Genesis seder 27 (בראשית סדר כז): Genesis 29:31 - Genesis 30:21, 26 verses; parasha ויצא. https://www.masdirim.org/seder/בראשית/כז.html
+- Genesis seder 28 (בראשית סדר כח): Genesis 30:22 - Genesis 31:2, 24 verses; parasha ויצא. https://www.masdirim.org/seder/בראשית/כח.html
+- Genesis seder 29 (בראשית סדר כט): Genesis 31:3 - Genesis 32:3, 55 verses; parasha ויצא. https://www.masdirim.org/seder/בראשית/כט.html
+- Genesis seder 30 (בראשית סדר ל): Genesis 32:4 - Genesis 33:17, 47 verses; parasha וישלח. https://www.masdirim.org/seder/בראשית/ל.html
+- Genesis seder 31 (בראשית סדר לא): Genesis 33:18 - Genesis 35:8, 42 verses; parasha וישלח. https://www.masdirim.org/seder/בראשית/לא.html
+- Genesis seder 32 (בראשית סדר לב): Genesis 35:9 - Genesis 36:43, 64 verses; parasha וישלח. https://www.masdirim.org/seder/בראשית/לב.html
+- Genesis seder 33 (בראשית סדר לג): Genesis 37:1 - Genesis 37:36, 36 verses; parasha וישב. https://www.masdirim.org/seder/בראשית/לג.html
+- Genesis seder 34 (בראשית סדר לד): Genesis 38:1 - Genesis 38:30, 30 verses; parasha וישב. https://www.masdirim.org/seder/בראשית/לד.html
+- Genesis seder 35 (בראשית סדר לה): Genesis 39:1 - Genesis 40:23, 46 verses; parasha וישב. https://www.masdirim.org/seder/בראשית/לה.html
+- Genesis seder 36 (בראשית סדר לו): Genesis 41:1 - Genesis 41:37, 37 verses; parasha מקץ. https://www.masdirim.org/seder/בראשית/לו.html
+- Genesis seder 37 (בראשית סדר לז): Genesis 41:38 - Genesis 42:17, 37 verses; parasha מקץ. https://www.masdirim.org/seder/בראשית/לז.html
+- Genesis seder 38 (בראשית סדר לח): Genesis 42:18 - Genesis 43:13, 34 verses; parasha מקץ. https://www.masdirim.org/seder/בראשית/לח.html
+- Genesis seder 39 (בראשית סדר לט): Genesis 43:14 - Genesis 44:17, 38 verses; parasha מקץ. https://www.masdirim.org/seder/בראשית/לט.html
+- Genesis seder 40 (בראשית סדר מ): Genesis 44:18 - Genesis 46:27, 72 verses; parasha ויגש. https://www.masdirim.org/seder/בראשית/מ.html
+- Genesis seder 41 (בראשית סדר מא): Genesis 46:28 - Genesis 47:31, 38 verses; parasha ויגש; parasha ויחי. https://www.masdirim.org/seder/בראשית/מא.html
+- Genesis seder 42 (בראשית סדר מב): Genesis 48:1 - Genesis 48:22, 22 verses; parasha ויחי. https://www.masdirim.org/seder/בראשית/מב.html
+- Genesis seder 43 (בראשית סדר מג): Genesis 49:1 - Genesis 50:26, 59 verses; parasha ויחי. https://www.masdirim.org/seder/בראשית/מג.html
+
+## Exodus (שמות): 29 sedarim
+
+- Exodus seder 1 (שמות סדר א): Exodus 1:1 - Exodus 2:25, 47 verses; parasha שמות. https://www.masdirim.org/seder/שמות/א.html
+- Exodus seder 2 (שמות סדר ב): Exodus 3:1 - Exodus 4:17, 39 verses; parasha שמות. https://www.masdirim.org/seder/שמות/ב.html
+- Exodus seder 3 (שמות סדר ג): Exodus 4:18 - Exodus 6:1, 38 verses; parasha שמות. https://www.masdirim.org/seder/שמות/ג.html
+- Exodus seder 4 (שמות סדר ד): Exodus 6:2 - Exodus 7:7, 36 verses; parasha וארא. https://www.masdirim.org/seder/שמות/ד.html
+- Exodus seder 5 (שמות סדר ה): Exodus 7:8 - Exodus 8:15, 37 verses; parasha וארא. https://www.masdirim.org/seder/שמות/ה.html
+- Exodus seder 6 (שמות סדר ו): Exodus 8:16 - Exodus 9:35, 48 verses; parasha וארא. https://www.masdirim.org/seder/שמות/ו.html
+- Exodus seder 7 (שמות סדר ז): Exodus 10:1 - Exodus 10:29, 29 verses; parasha בא. https://www.masdirim.org/seder/שמות/ז.html
+- Exodus seder 8 (שמות סדר ח): Exodus 11:1 - Exodus 12:28, 38 verses; parasha בא. https://www.masdirim.org/seder/שמות/ח.html
+- Exodus seder 9 (שמות סדר ט): Exodus 12:29 - Exodus 12:51, 23 verses; parasha בא. https://www.masdirim.org/seder/שמות/ט.html
+- Exodus seder 10 (שמות סדר י): Exodus 13:1 - Exodus 14:14, 36 verses; parasha בא; parasha בשלח. https://www.masdirim.org/seder/שמות/י.html
+- Exodus seder 11 (שמות סדר יא): Exodus 14:15 - Exodus 16:3, 47 verses; parasha בשלח. https://www.masdirim.org/seder/שמות/יא.html
+- Exodus seder 12 (שמות סדר יב): Exodus 16:4 - Exodus 16:27, 24 verses; parasha בשלח. https://www.masdirim.org/seder/שמות/יב.html
+- Exodus seder 13 (שמות סדר יג): Exodus 16:28 - Exodus 17:16, 25 verses; parasha בשלח. https://www.masdirim.org/seder/שמות/יג.html
+- Exodus seder 14 (שמות סדר יד): Exodus 18:1 - Exodus 19:5, 32 verses; parasha יתרו. https://www.masdirim.org/seder/שמות/יד.html
+- Exodus seder 15 (שמות סדר טו): Exodus 19:6 - Exodus 20:22, 42 verses; parasha יתרו. https://www.masdirim.org/seder/שמות/טו.html
+- Exodus seder 16 (שמות סדר טז): Exodus 21:1 - Exodus 22:23, 60 verses; parasha משפטים. https://www.masdirim.org/seder/שמות/טז.html
+- Exodus seder 17 (שמות סדר יז): Exodus 22:24 - Exodus 24:18, 58 verses; parasha משפטים. https://www.masdirim.org/seder/שמות/יז.html
+- Exodus seder 18 (שמות סדר יח): Exodus 25:1 - Exodus 25:40, 40 verses; parasha תרומה. https://www.masdirim.org/seder/שמות/יח.html
+- Exodus seder 19 (שמות סדר יט): Exodus 26:1 - Exodus 26:30, 30 verses; parasha תרומה. https://www.masdirim.org/seder/שמות/יט.html
+- Exodus seder 20 (שמות סדר כ): Exodus 26:31 - Exodus 27:19, 26 verses; parasha תרומה. https://www.masdirim.org/seder/שמות/כ.html
+- Exodus seder 21 (שמות סדר כא): Exodus 27:20 - Exodus 28:43, 45 verses; parasha תצוה. https://www.masdirim.org/seder/שמות/כא.html
+- Exodus seder 22 (שמות סדר כב): Exodus 29:1 - Exodus 29:46, 46 verses; parasha תצוה. https://www.masdirim.org/seder/שמות/כב.html
+- Exodus seder 23 (שמות סדר כג): Exodus 30:1 - Exodus 30:38, 38 verses; parasha תצוה; parasha כי תשא. https://www.masdirim.org/seder/שמות/כג.html
+- Exodus seder 24 (שמות סדר כד): Exodus 31:1 - Exodus 32:14, 32 verses; parasha כי תשא. https://www.masdirim.org/seder/שמות/כד.html
+- Exodus seder 25 (שמות סדר כה): Exodus 32:15 - Exodus 34:26, 70 verses; parasha כי תשא. https://www.masdirim.org/seder/שמות/כה.html
+- Exodus seder 26 (שמות סדר כו): Exodus 34:27 - Exodus 36:38, 82 verses; parasha כי תשא; parasha ויקהל. https://www.masdirim.org/seder/שמות/כו.html
+- Exodus seder 27 (שמות סדר כז): Exodus 37:1 - Exodus 38:20, 49 verses; parasha ויקהל. https://www.masdirim.org/seder/שמות/כז.html
+- Exodus seder 28 (שמות סדר כח): Exodus 38:21 - Exodus 39:32, 43 verses; parasha פקודי. https://www.masdirim.org/seder/שמות/כח.html
+- Exodus seder 29 (שמות סדר כט): Exodus 39:33 - Exodus 40:38, 49 verses; parasha פקודי. https://www.masdirim.org/seder/שמות/כט.html
+
+## Leviticus (ויקרא): 23 sedarim
+
+- Leviticus seder 1 (ויקרא סדר א): Leviticus 1:1 - Leviticus 3:17, 50 verses; parasha ויקרא. https://www.masdirim.org/seder/ויקרא/א.html
+- Leviticus seder 2 (ויקרא סדר ב): Leviticus 4:1 - Leviticus 6:11, 72 verses; parasha ויקרא; parasha צו. https://www.masdirim.org/seder/ויקרא/ב.html
+- Leviticus seder 3 (ויקרא סדר ג): Leviticus 6:12 - Leviticus 7:38, 50 verses; parasha צו. https://www.masdirim.org/seder/ויקרא/ג.html
+- Leviticus seder 4 (ויקרא סדר ד): Leviticus 8:1 - Leviticus 10:7, 67 verses; parasha צו; parasha שמיני. https://www.masdirim.org/seder/ויקרא/ד.html
+- Leviticus seder 5 (ויקרא סדר ה): Leviticus 10:8 - Leviticus 10:20, 13 verses; parasha שמיני. https://www.masdirim.org/seder/ויקרא/ה.html
+- Leviticus seder 6 (ויקרא סדר ו): Leviticus 11:1 - Leviticus 11:47, 47 verses; parasha שמיני. https://www.masdirim.org/seder/ויקרא/ו.html
+- Leviticus seder 7 (ויקרא סדר ז): Leviticus 12:1 - Leviticus 13:28, 36 verses; parasha תזריע. https://www.masdirim.org/seder/ויקרא/ז.html
+- Leviticus seder 8 (ויקרא סדר ח): Leviticus 13:29 - Leviticus 13:59, 31 verses; parasha תזריע. https://www.masdirim.org/seder/ויקרא/ח.html
+- Leviticus seder 9 (ויקרא סדר ט): Leviticus 14:1 - Leviticus 14:32, 32 verses; parasha מצורע. https://www.masdirim.org/seder/ויקרא/ט.html
+- Leviticus seder 10 (ויקרא סדר י): Leviticus 14:33 - Leviticus 14:57, 25 verses; parasha מצורע. https://www.masdirim.org/seder/ויקרא/י.html
+- Leviticus seder 11 (ויקרא סדר יא): Leviticus 15:1 - Leviticus 15:24, 24 verses; parasha מצורע. https://www.masdirim.org/seder/ויקרא/יא.html
+- Leviticus seder 12 (ויקרא סדר יב): Leviticus 15:25 - Leviticus 16:34, 43 verses; parasha מצורע; parasha אחרי מות. https://www.masdirim.org/seder/ויקרא/יב.html
+- Leviticus seder 13 (ויקרא סדר יג): Leviticus 17:1 - Leviticus 17:16, 16 verses; parasha אחרי מות. https://www.masdirim.org/seder/ויקרא/יג.html
+- Leviticus seder 14 (ויקרא סדר יד): Leviticus 18:1 - Leviticus 18:30, 30 verses; parasha אחרי מות. https://www.masdirim.org/seder/ויקרא/יד.html
+- Leviticus seder 15 (ויקרא סדר טו): Leviticus 19:1 - Leviticus 19:22, 22 verses; parasha קדשים. https://www.masdirim.org/seder/ויקרא/טו.html
+- Leviticus seder 16 (ויקרא סדר טז): Leviticus 19:23 - Leviticus 20:27, 42 verses; parasha קדשים. https://www.masdirim.org/seder/ויקרא/טז.html
+- Leviticus seder 17 (ויקרא סדר יז): Leviticus 21:1 - Leviticus 22:16, 40 verses; parasha אמר. https://www.masdirim.org/seder/ויקרא/יז.html
+- Leviticus seder 18 (ויקרא סדר יח): Leviticus 22:17 - Leviticus 23:14, 31 verses; parasha אמר. https://www.masdirim.org/seder/ויקרא/יח.html
+- Leviticus seder 19 (ויקרא סדר יט): Leviticus 23:15 - Leviticus 25:13, 66 verses; parasha אמר; parasha בהר. https://www.masdirim.org/seder/ויקרא/יט.html
+- Leviticus seder 20 (ויקרא סדר כ): Leviticus 25:14 - Leviticus 25:34, 21 verses; parasha בהר. https://www.masdirim.org/seder/ויקרא/כ.html
+- Leviticus seder 21 (ויקרא סדר כא): Leviticus 25:35 - Leviticus 26:2, 23 verses; parasha בהר. https://www.masdirim.org/seder/ויקרא/כא.html
+- Leviticus seder 22 (ויקרא סדר כב): Leviticus 26:3 - Leviticus 26:46, 44 verses; parasha בחקתי. https://www.masdirim.org/seder/ויקרא/כב.html
+- Leviticus seder 23 (ויקרא סדר כג): Leviticus 27:1 - Leviticus 27:34, 34 verses; parasha בחקתי. https://www.masdirim.org/seder/ויקרא/כג.html
+
+## Numbers (במדבר): 32 sedarim
+
+- Numbers seder 1 (במדבר סדר א): Numbers 1:1 - Numbers 1:54, 54 verses; parasha במדבר. https://www.masdirim.org/seder/במדבר/א.html
+- Numbers seder 2 (במדבר סדר ב): Numbers 2:1 - Numbers 2:34, 34 verses; parasha במדבר. https://www.masdirim.org/seder/במדבר/ב.html
+- Numbers seder 3 (במדבר סדר ג): Numbers 3:1 - Numbers 4:16, 67 verses; parasha במדבר. https://www.masdirim.org/seder/במדבר/ג.html
+- Numbers seder 4 (במדבר סדר ד): Numbers 4:17 - Numbers 5:10, 43 verses; parasha במדבר; parasha נשא. https://www.masdirim.org/seder/במדבר/ד.html
+- Numbers seder 5 (במדבר סדר ה): Numbers 5:11 - Numbers 6:21, 42 verses; parasha נשא. https://www.masdirim.org/seder/במדבר/ה.html
+- Numbers seder 6 (במדבר סדר ו): Numbers 6:22 - Numbers 7:47, 53 verses; parasha נשא. https://www.masdirim.org/seder/במדבר/ו.html
+- Numbers seder 7 (במדבר סדר ז): Numbers 7:48 - Numbers 7:89, 42 verses; parasha נשא. https://www.masdirim.org/seder/במדבר/ז.html
+- Numbers seder 8 (במדבר סדר ח): Numbers 8:1 - Numbers 9:23, 49 verses; parasha בהעלתך. https://www.masdirim.org/seder/במדבר/ח.html
+- Numbers seder 9 (במדבר סדר ט): Numbers 10:1 - Numbers 11:15, 51 verses; parasha בהעלתך. https://www.masdirim.org/seder/במדבר/ט.html
+- Numbers seder 10 (במדבר סדר י): Numbers 11:16 - Numbers 11:22, 7 verses; parasha בהעלתך. https://www.masdirim.org/seder/במדבר/י.html
+- Numbers seder 11 (במדבר סדר יא): Numbers 11:23 - Numbers 12:16, 29 verses; parasha בהעלתך. https://www.masdirim.org/seder/במדבר/יא.html
+- Numbers seder 12 (במדבר סדר יב): Numbers 13:1 - Numbers 14:10, 43 verses; parasha שלח לך. https://www.masdirim.org/seder/במדבר/יב.html
+- Numbers seder 13 (במדבר סדר יג): Numbers 14:11 - Numbers 14:45, 35 verses; parasha שלח לך. https://www.masdirim.org/seder/במדבר/יג.html
+- Numbers seder 14 (במדבר סדר יד): Numbers 15:1 - Numbers 15:41, 41 verses; parasha שלח לך. https://www.masdirim.org/seder/במדבר/יד.html
+- Numbers seder 15 (במדבר סדר טו): Numbers 16:1 - Numbers 17:15, 50 verses; parasha קרח. https://www.masdirim.org/seder/במדבר/טו.html
+- Numbers seder 16 (במדבר סדר טז): Numbers 17:16 - Numbers 18:24, 37 verses; parasha קרח. https://www.masdirim.org/seder/במדבר/טז.html
+- Numbers seder 17 (במדבר סדר יז): Numbers 18:25 - Numbers 20:13, 43 verses; parasha קרח; parasha חקת. https://www.masdirim.org/seder/במדבר/יז.html
+- Numbers seder 18 (במדבר סדר יח): Numbers 20:14 - Numbers 22:1, 52 verses; parasha חקת. https://www.masdirim.org/seder/במדבר/יח.html
+- Numbers seder 19 (במדבר סדר יט): Numbers 22:2 - Numbers 23:9, 49 verses; parasha בלק. https://www.masdirim.org/seder/במדבר/יט.html
+- Numbers seder 20 (במדבר סדר כ): Numbers 23:10 - Numbers 24:25, 46 verses; parasha בלק. https://www.masdirim.org/seder/במדבר/כ.html
+- Numbers seder 21 (במדבר סדר כא): Numbers 25:1 - Numbers 25:9, 9 verses; parasha בלק. https://www.masdirim.org/seder/במדבר/כא.html
+- Numbers seder 22 (במדבר סדר כב): Numbers 25:10 - Numbers 26:51, 60 verses; parasha פינחס. https://www.masdirim.org/seder/במדבר/כב.html
+- Numbers seder 23 (במדבר סדר כג): Numbers 26:52 - Numbers 27:14, 28 verses; parasha פינחס. https://www.masdirim.org/seder/במדבר/כג.html
+- Numbers seder 24 (במדבר סדר כד): Numbers 27:15 - Numbers 28:25, 34 verses; parasha פינחס. https://www.masdirim.org/seder/במדבר/כד.html
+- Numbers seder 25 (במדבר סדר כה): Numbers 28:26 - Numbers 30:1, 46 verses; parasha פינחס. https://www.masdirim.org/seder/במדבר/כה.html
+- Numbers seder 26 (במדבר סדר כו): Numbers 30:2 - Numbers 30:17, 16 verses; parasha מטות. https://www.masdirim.org/seder/במדבר/כו.html
+- Numbers seder 27 (במדבר סדר כז): Numbers 31:1 - Numbers 31:24, 24 verses; parasha מטות. https://www.masdirim.org/seder/במדבר/כז.html
+- Numbers seder 28 (במדבר סדר כח): Numbers 31:25 - Numbers 31:54, 30 verses; parasha מטות. https://www.masdirim.org/seder/במדבר/כח.html
+- Numbers seder 29 (במדבר סדר כט): Numbers 32:1 - Numbers 32:42, 42 verses; parasha מטות. https://www.masdirim.org/seder/במדבר/כט.html
+- Numbers seder 30 (במדבר סדר ל): Numbers 33:1 - Numbers 33:56, 56 verses; parasha מסעי. https://www.masdirim.org/seder/במדבר/ל.html
+- Numbers seder 31 (במדבר סדר לא): Numbers 34:1 - Numbers 35:8, 37 verses; parasha מסעי. https://www.masdirim.org/seder/במדבר/לא.html
+- Numbers seder 32 (במדבר סדר לב): Numbers 35:9 - Numbers 36:13, 39 verses; parasha מסעי. https://www.masdirim.org/seder/במדבר/לב.html
+
+## Deuteronomy (דברים): 27 sedarim
+
+- Deuteronomy seder 1 (דברים סדר א): Deuteronomy 1:1 - Deuteronomy 2:1, 47 verses; parasha דברים. https://www.masdirim.org/seder/דברים/א.html
+- Deuteronomy seder 2 (דברים סדר ב): Deuteronomy 2:2 - Deuteronomy 2:30, 29 verses; parasha דברים. https://www.masdirim.org/seder/דברים/ב.html
+- Deuteronomy seder 3 (דברים סדר ג): Deuteronomy 2:31 - Deuteronomy 3:22, 29 verses; parasha דברים. https://www.masdirim.org/seder/דברים/ג.html
+- Deuteronomy seder 4 (דברים סדר ד): Deuteronomy 3:23 - Deuteronomy 4:40, 47 verses; parasha ואתחנן. https://www.masdirim.org/seder/דברים/ד.html
+- Deuteronomy seder 5 (דברים סדר ה): Deuteronomy 4:41 - Deuteronomy 6:3, 41 verses; parasha ואתחנן. https://www.masdirim.org/seder/דברים/ה.html
+- Deuteronomy seder 6 (דברים סדר ו): Deuteronomy 6:4 - Deuteronomy 7:11, 33 verses; parasha ואתחנן. https://www.masdirim.org/seder/דברים/ו.html
+- Deuteronomy seder 7 (דברים סדר ז): Deuteronomy 7:12 - Deuteronomy 8:20, 35 verses; parasha עקב. https://www.masdirim.org/seder/דברים/ז.html
+- Deuteronomy seder 8 (דברים סדר ח): Deuteronomy 9:1 - Deuteronomy 9:29, 29 verses; parasha עקב. https://www.masdirim.org/seder/דברים/ח.html
+- Deuteronomy seder 9 (דברים סדר ט): Deuteronomy 10:1 - Deuteronomy 11:9, 31 verses; parasha עקב. https://www.masdirim.org/seder/דברים/ט.html
+- Deuteronomy seder 10 (דברים סדר י): Deuteronomy 11:10 - Deuteronomy 12:19, 42 verses; parasha עקב; parasha ראה. https://www.masdirim.org/seder/דברים/י.html
+- Deuteronomy seder 11 (דברים סדר יא): Deuteronomy 12:20 - Deuteronomy 13:19, 31 verses; parasha ראה. https://www.masdirim.org/seder/דברים/יא.html
+- Deuteronomy seder 12 (דברים סדר יב): Deuteronomy 14:1 - Deuteronomy 15:6, 35 verses; parasha ראה. https://www.masdirim.org/seder/דברים/יב.html
+- Deuteronomy seder 13 (דברים סדר יג): Deuteronomy 15:7 - Deuteronomy 16:17, 34 verses; parasha ראה. https://www.masdirim.org/seder/דברים/יג.html
+- Deuteronomy seder 14 (דברים סדר יד): Deuteronomy 16:18 - Deuteronomy 17:13, 18 verses; parasha שפטים. https://www.masdirim.org/seder/דברים/יד.html
+- Deuteronomy seder 15 (דברים סדר טו): Deuteronomy 17:14 - Deuteronomy 20:9, 59 verses; parasha שפטים. https://www.masdirim.org/seder/דברים/טו.html
+- Deuteronomy seder 16 (דברים סדר טז): Deuteronomy 20:10 - Deuteronomy 22:5, 39 verses; parasha שפטים; parasha כי תצא. https://www.masdirim.org/seder/דברים/טז.html
+- Deuteronomy seder 17 (דברים סדר יז): Deuteronomy 22:6 - Deuteronomy 23:9, 33 verses; parasha כי תצא. https://www.masdirim.org/seder/דברים/יז.html
+- Deuteronomy seder 18 (דברים סדר יח): Deuteronomy 23:10 - Deuteronomy 23:21, 12 verses; parasha כי תצא. https://www.masdirim.org/seder/דברים/יח.html
+- Deuteronomy seder 19 (דברים סדר יט): Deuteronomy 23:22 - Deuteronomy 24:18, 23 verses; parasha כי תצא. https://www.masdirim.org/seder/דברים/יט.html
+- Deuteronomy seder 20 (דברים סדר כ): Deuteronomy 24:19 - Deuteronomy 25:19, 23 verses; parasha כי תצא. https://www.masdirim.org/seder/דברים/כ.html
+- Deuteronomy seder 21 (דברים סדר כא): Deuteronomy 26:1 - Deuteronomy 27:26, 45 verses; parasha כי תבוא. https://www.masdirim.org/seder/דברים/כא.html
+- Deuteronomy seder 22 (דברים סדר כב): Deuteronomy 28:1 - Deuteronomy 29:8, 77 verses; parasha כי תבוא. https://www.masdirim.org/seder/דברים/כב.html
+- Deuteronomy seder 23 (דברים סדר כג): Deuteronomy 29:9 - Deuteronomy 30:10, 30 verses; parasha נצבים. https://www.masdirim.org/seder/דברים/כג.html
+- Deuteronomy seder 24 (דברים סדר כד): Deuteronomy 30:11 - Deuteronomy 31:13, 23 verses; parasha נצבים; parasha וילך. https://www.masdirim.org/seder/דברים/כד.html
+- Deuteronomy seder 25 (דברים סדר כה): Deuteronomy 31:14 - Deuteronomy 31:30, 17 verses; parasha וילך. https://www.masdirim.org/seder/דברים/כה.html
+- Deuteronomy seder 26 (דברים סדר כו): Deuteronomy 32:1 - Deuteronomy 32:52, 52 verses; parasha האזינו. https://www.masdirim.org/seder/דברים/כו.html
+- Deuteronomy seder 27 (דברים סדר כז): Deuteronomy 33:1 - Deuteronomy 34:12, 41 verses; parasha וזאת הברכה. https://www.masdirim.org/seder/דברים/כז.html
+
+## Joshua (יהושע): 14 sedarim
+
+- Joshua seder 1 (יהושע סדר א): Joshua 1:1 - Joshua 3:6, 48 verses. https://www.masdirim.org/seder/יהושע/א.html
+- Joshua seder 2 (יהושע סדר ב): Joshua 3:7 - Joshua 4:23, 34 verses. https://www.masdirim.org/seder/יהושע/ב.html
+- Joshua seder 3 (יהושע סדר ג): Joshua 4:24 - Joshua 6:26, 42 verses. https://www.masdirim.org/seder/יהושע/ג.html
+- Joshua seder 4 (יהושע סדר ד): Joshua 6:27 - Joshua 8:32, 59 verses. https://www.masdirim.org/seder/יהושע/ד.html
+- Joshua seder 5 (יהושע סדר ה): Joshua 8:33 - Joshua 10:7, 37 verses. https://www.masdirim.org/seder/יהושע/ה.html
+- Joshua seder 6 (יהושע סדר ו): Joshua 10:8 - Joshua 10:41, 34 verses. https://www.masdirim.org/seder/יהושע/ו.html
+- Joshua seder 7 (יהושע סדר ז): Joshua 10:42 - Joshua 12:24, 49 verses. https://www.masdirim.org/seder/יהושע/ז.html
+- Joshua seder 8 (יהושע סדר ח): Joshua 13:1 - Joshua 14:14, 47 verses. https://www.masdirim.org/seder/יהושע/ח.html
+- Joshua seder 9 (יהושע סדר ט): Joshua 14:15 - Joshua 17:3, 77 verses. https://www.masdirim.org/seder/יהושע/ט.html
+- Joshua seder 10 (יהושע סדר י): Joshua 17:4 - Joshua 18:27, 42 verses. https://www.masdirim.org/seder/יהושע/י.html
+- Joshua seder 11 (יהושע סדר יא): Joshua 18:28 - Joshua 19:50, 51 verses. https://www.masdirim.org/seder/יהושע/יא.html
+- Joshua seder 12 (יהושע סדר יב): Joshua 19:51 - Joshua 21:40, 50 verses. https://www.masdirim.org/seder/יהושע/יב.html
+- Joshua seder 13 (יהושע סדר יג): Joshua 21:41 - Joshua 22:33, 38 verses. https://www.masdirim.org/seder/יהושע/יג.html
+- Joshua seder 14 (יהושע סדר יד): Joshua 22:34 - Joshua 24:33, 50 verses. https://www.masdirim.org/seder/יהושע/יד.html
+
+## Judges (שופטים): 14 sedarim
+
+- Judges seder 1 (שופטים סדר א): Judges 1:1 - Judges 2:6, 42 verses. https://www.masdirim.org/seder/שופטים/א.html
+- Judges seder 2 (שופטים סדר ב): Judges 2:7 - Judges 3:30, 47 verses. https://www.masdirim.org/seder/שופטים/ב.html
+- Judges seder 3 (שופטים סדר ג): Judges 3:31 - Judges 5:30, 55 verses. https://www.masdirim.org/seder/שופטים/ג.html
+- Judges seder 4 (שופטים סדר ד): Judges 5:31 - Judges 6:39, 40 verses. https://www.masdirim.org/seder/שופטים/ד.html
+- Judges seder 5 (שופטים סדר ה): Judges 6:40 - Judges 8:2, 28 verses. https://www.masdirim.org/seder/שופטים/ה.html
+- Judges seder 6 (שופטים סדר ו): Judges 8:3 - Judges 9:6, 39 verses. https://www.masdirim.org/seder/שופטים/ו.html
+- Judges seder 7 (שופטים סדר ז): Judges 9:7 - Judges 9:57, 51 verses. https://www.masdirim.org/seder/שופטים/ז.html
+- Judges seder 8 (שופטים סדר ח): Judges 10:1 - Judges 11:31, 49 verses. https://www.masdirim.org/seder/שופטים/ח.html
+- Judges seder 9 (שופטים סדר ט): Judges 11:32 - Judges 13:23, 47 verses. https://www.masdirim.org/seder/שופטים/ט.html
+- Judges seder 10 (שופטים סדר י): Judges 13:24 - Judges 16:2, 44 verses. https://www.masdirim.org/seder/שופטים/י.html
+- Judges seder 11 (שופטים סדר יא): Judges 16:3 - Judges 18:5, 47 verses. https://www.masdirim.org/seder/שופטים/יא.html
+- Judges seder 12 (שופטים סדר יב): Judges 18:6 - Judges 19:19, 45 verses. https://www.masdirim.org/seder/שופטים/יב.html
+- Judges seder 13 (שופטים סדר יג): Judges 19:20 - Judges 20:26, 37 verses. https://www.masdirim.org/seder/שופטים/יג.html
+- Judges seder 14 (שופטים סדר יד): Judges 20:27 - Judges 21:25, 47 verses. https://www.masdirim.org/seder/שופטים/יד.html
+
+## Samuel (שמואל): 34 sedarim
+
+- Samuel seder 1 (שמואל סדר א): I Samuel 1:1 - I Samuel 2:9, 37 verses. https://www.masdirim.org/seder/שמואל/א.html
+- Samuel seder 2 (שמואל סדר ב): I Samuel 2:10 - I Samuel 3:19, 46 verses. https://www.masdirim.org/seder/שמואל/ב.html
+- Samuel seder 3 (שמואל סדר ג): I Samuel 3:20 - I Samuel 6:13, 49 verses. https://www.masdirim.org/seder/שמואל/ג.html
+- Samuel seder 4 (שמואל סדר ד): I Samuel 6:14 - I Samuel 9:1, 48 verses. https://www.masdirim.org/seder/שמואל/ד.html
+- Samuel seder 5 (שמואל סדר ה): I Samuel 9:2 - I Samuel 10:23, 49 verses. https://www.masdirim.org/seder/שמואל/ה.html
+- Samuel seder 6 (שמואל סדר ו): I Samuel 10:24 - I Samuel 12:21, 40 verses. https://www.masdirim.org/seder/שמואל/ו.html
+- Samuel seder 7 (שמואל סדר ז): I Samuel 12:22 - I Samuel 14:22, 49 verses. https://www.masdirim.org/seder/שמואל/ז.html
+- Samuel seder 8 (שמואל סדר ח): I Samuel 14:23 - I Samuel 15:16, 46 verses. https://www.masdirim.org/seder/שמואל/ח.html
+- Samuel seder 9 (שמואל סדר ט): I Samuel 15:17 - I Samuel 16:17, 36 verses. https://www.masdirim.org/seder/שמואל/ט.html
+- Samuel seder 10 (שמואל סדר י): I Samuel 16:18 - I Samuel 17:36, 42 verses. https://www.masdirim.org/seder/שמואל/י.html
+- Samuel seder 11 (שמואל סדר יא): I Samuel 17:37 - I Samuel 18:13, 35 verses. https://www.masdirim.org/seder/שמואל/יא.html
+- Samuel seder 12 (שמואל סדר יב): I Samuel 18:14 - I Samuel 20:3, 44 verses. https://www.masdirim.org/seder/שמואל/יב.html
+- Samuel seder 13 (שמואל סדר יג): I Samuel 20:4 - I Samuel 20:41, 38 verses. https://www.masdirim.org/seder/שמואל/יג.html
+- Samuel seder 14 (שמואל סדר יד): I Samuel 20:42 - I Samuel 23:3, 43 verses. https://www.masdirim.org/seder/שמואל/יד.html
+- Samuel seder 15 (שמואל סדר טו): I Samuel 23:4 - I Samuel 24:19, 44 verses. https://www.masdirim.org/seder/שמואל/טו.html
+- Samuel seder 16 (שמואל סדר טז): I Samuel 24:20 - I Samuel 25:32, 36 verses. https://www.masdirim.org/seder/שמואל/טז.html
+- Samuel seder 17 (שמואל סדר יז): I Samuel 25:33 - I Samuel 26:24, 36 verses. https://www.masdirim.org/seder/שמואל/יז.html
+- Samuel seder 18 (שמואל סדר יח): I Samuel 26:25 - I Samuel 28:23, 36 verses. https://www.masdirim.org/seder/שמואל/יח.html
+- Samuel seder 19 (שמואל סדר יט): I Samuel 28:24 - I Samuel 30:24, 37 verses. https://www.masdirim.org/seder/שמואל/יט.html
+- Samuel seder 20 (שמואל סדר כ): I Samuel 30:25 - II Samuel 2:6, 53 verses. https://www.masdirim.org/seder/שמואל/כ.html
+- Samuel seder 21 (שמואל סדר כא): II Samuel 2:7 - II Samuel 3:20, 46 verses. https://www.masdirim.org/seder/שמואל/כא.html
+- Samuel seder 22 (שמואל סדר כב): II Samuel 3:21 - II Samuel 5:9, 40 verses. https://www.masdirim.org/seder/שמואל/כב.html
+- Samuel seder 23 (שמואל סדר כג): II Samuel 5:10 - II Samuel 7:15, 54 verses. https://www.masdirim.org/seder/שמואל/כג.html
+- Samuel seder 24 (שמואל סדר כד): II Samuel 7:16 - II Samuel 10:12, 57 verses. https://www.masdirim.org/seder/שמואל/כד.html
+- Samuel seder 25 (שמואל סדר כה): II Samuel 10:13 - II Samuel 12:12, 46 verses. https://www.masdirim.org/seder/שמואל/כה.html
+- Samuel seder 26 (שמואל סדר כו): II Samuel 12:13 - II Samuel 13:24, 43 verses. https://www.masdirim.org/seder/שמואל/כו.html
+- Samuel seder 27 (שמואל סדר כז): II Samuel 13:25 - II Samuel 14:32, 47 verses. https://www.masdirim.org/seder/שמואל/כז.html
+- Samuel seder 28 (שמואל סדר כח): II Samuel 14:33 - II Samuel 15:36, 37 verses. https://www.masdirim.org/seder/שמואל/כח.html
+- Samuel seder 29 (שמואל סדר כט): II Samuel 15:37 - II Samuel 17:19, 43 verses. https://www.masdirim.org/seder/שמואל/כט.html
+- Samuel seder 30 (שמואל סדר ל): II Samuel 17:20 - II Samuel 18:26, 36 verses. https://www.masdirim.org/seder/שמואל/ל.html
+- Samuel seder 31 (שמואל סדר לא): II Samuel 18:27 - II Samuel 19:39, 45 verses. https://www.masdirim.org/seder/שמואל/לא.html
+- Samuel seder 32 (שמואל סדר לב): II Samuel 19:40 - II Samuel 21:6, 37 verses. https://www.masdirim.org/seder/שמואל/לב.html
+- Samuel seder 33 (שמואל סדר לג): II Samuel 21:7 - II Samuel 22:50, 66 verses. https://www.masdirim.org/seder/שמואל/לג.html
+- Samuel seder 34 (שמואל סדר לד): II Samuel 22:51 - II Samuel 24:25, 65 verses. https://www.masdirim.org/seder/שמואל/לד.html
+
+## Kings (מלכים): 35 sedarim
+
+- Kings seder 1 (מלכים סדר א): I Kings 1:1 - I Kings 1:47, 47 verses. https://www.masdirim.org/seder/מלכים/א.html
+- Kings seder 2 (מלכים סדר ב): I Kings 1:48 - I Kings 2:44, 50 verses. https://www.masdirim.org/seder/מלכים/ב.html
+- Kings seder 3 (מלכים סדר ג): I Kings 2:45 - I Kings 4:19, 49 verses. https://www.masdirim.org/seder/מלכים/ג.html
+- Kings seder 4 (מלכים סדר ד): I Kings 4:20 - I Kings 6:12, 45 verses. https://www.masdirim.org/seder/מלכים/ד.html
+- Kings seder 5 (מלכים סדר ה): I Kings 6:13 - I Kings 7:20, 46 verses. https://www.masdirim.org/seder/מלכים/ה.html
+- Kings seder 6 (מלכים סדר ו): I Kings 7:21 - I Kings 8:10, 41 verses. https://www.masdirim.org/seder/מלכים/ו.html
+- Kings seder 7 (מלכים סדר ז): I Kings 8:11 - I Kings 8:57, 47 verses. https://www.masdirim.org/seder/מלכים/ז.html
+- Kings seder 8 (מלכים סדר ח): I Kings 8:58 - I Kings 10:8, 45 verses. https://www.masdirim.org/seder/מלכים/ח.html
+- Kings seder 9 (מלכים סדר ט): I Kings 10:9 - I Kings 11:27, 48 verses. https://www.masdirim.org/seder/מלכים/ט.html
+- Kings seder 10 (מלכים סדר י): I Kings 11:28 - I Kings 12:23, 39 verses. https://www.masdirim.org/seder/מלכים/י.html
+- Kings seder 11 (מלכים סדר יא): I Kings 12:24 - I Kings 13:30, 40 verses. https://www.masdirim.org/seder/מלכים/יא.html
+- Kings seder 12 (מלכים סדר יב): I Kings 13:31 - I Kings 15:7, 42 verses. https://www.masdirim.org/seder/מלכים/יב.html
+- Kings seder 13 (מלכים סדר יג): I Kings 15:8 - I Kings 16:14, 41 verses. https://www.masdirim.org/seder/מלכים/יג.html
+- Kings seder 14 (מלכים סדר יד): I Kings 16:15 - I Kings 17:23, 43 verses. https://www.masdirim.org/seder/מלכים/יד.html
+- Kings seder 15 (מלכים סדר טו): I Kings 17:24 - I Kings 18:38, 39 verses. https://www.masdirim.org/seder/מלכים/טו.html
+- Kings seder 16 (מלכים סדר טז): I Kings 18:39 - I Kings 20:12, 41 verses. https://www.masdirim.org/seder/מלכים/טז.html
+- Kings seder 17 (מלכים סדר יז): I Kings 20:13 - I Kings 21:17, 48 verses. https://www.masdirim.org/seder/מלכים/יז.html
+- Kings seder 18 (מלכים סדר יח): I Kings 21:18 - I Kings 22:42, 54 verses. https://www.masdirim.org/seder/מלכים/יח.html
+- Kings seder 19 (מלכים סדר יט): I Kings 22:43 - II Kings 2:14, 44 verses. https://www.masdirim.org/seder/מלכים/יט.html
+- Kings seder 20 (מלכים סדר כ): II Kings 2:15 - II Kings 4:25, 63 verses. https://www.masdirim.org/seder/מלכים/כ.html
+- Kings seder 21 (מלכים סדר כא): II Kings 4:26 - II Kings 6:22, 68 verses. https://www.masdirim.org/seder/מלכים/כא.html
+- Kings seder 22 (מלכים סדר כב): II Kings 6:23 - II Kings 7:15, 26 verses. https://www.masdirim.org/seder/מלכים/כב.html
+- Kings seder 23 (מלכים סדר כג): II Kings 7:16 - II Kings 9:12, 46 verses. https://www.masdirim.org/seder/מלכים/כג.html
+- Kings seder 24 (מלכים סדר כד): II Kings 9:13 - II Kings 10:14, 39 verses. https://www.masdirim.org/seder/מלכים/כד.html
+- Kings seder 25 (מלכים סדר כה): II Kings 10:15 - II Kings 12:2, 44 verses. https://www.masdirim.org/seder/מלכים/כה.html
+- Kings seder 26 (מלכים סדר כו): II Kings 12:3 - II Kings 13:22, 42 verses. https://www.masdirim.org/seder/מלכים/כו.html
+- Kings seder 27 (מלכים סדר כז): II Kings 13:23 - II Kings 15:6, 38 verses. https://www.masdirim.org/seder/מלכים/כז.html
+- Kings seder 28 (מלכים סדר כח): II Kings 15:7 - II Kings 16:19, 51 verses. https://www.masdirim.org/seder/מלכים/כח.html
+- Kings seder 29 (מלכים סדר כט): II Kings 16:20 - II Kings 18:5, 47 verses. https://www.masdirim.org/seder/מלכים/כט.html
+- Kings seder 30 (מלכים סדר ל): II Kings 18:6 - II Kings 19:18, 50 verses. https://www.masdirim.org/seder/מלכים/ל.html
+- Kings seder 31 (מלכים סדר לא): II Kings 19:19 - II Kings 20:7, 26 verses. https://www.masdirim.org/seder/מלכים/לא.html
+- Kings seder 32 (מלכים סדר לב): II Kings 20:8 - II Kings 22:1, 41 verses. https://www.masdirim.org/seder/מלכים/לב.html
+- Kings seder 33 (מלכים סדר לג): II Kings 22:2 - II Kings 23:24, 43 verses. https://www.masdirim.org/seder/מלכים/לג.html
+- Kings seder 34 (מלכים סדר לד): II Kings 23:25 - II Kings 24:17, 30 verses. https://www.masdirim.org/seder/מלכים/לד.html
+- Kings seder 35 (מלכים סדר לה): II Kings 24:18 - II Kings 25:30, 33 verses. https://www.masdirim.org/seder/מלכים/לה.html
+
+## Isaiah (ישעיהו): 26 sedarim
+
+- Isaiah seder 1 (ישעיהו סדר א): Isaiah 1:1 - Isaiah 4:2, 81 verses. https://www.masdirim.org/seder/ישעיהו/א.html
+- Isaiah seder 2 (ישעיהו סדר ב): Isaiah 4:3 - Isaiah 6:2, 36 verses. https://www.masdirim.org/seder/ישעיהו/ב.html
+- Isaiah seder 3 (ישעיהו סדר ג): Isaiah 6:3 - Isaiah 9:5, 64 verses. https://www.masdirim.org/seder/ישעיהו/ג.html
+- Isaiah seder 4 (ישעיהו סדר ד): Isaiah 9:6 - Isaiah 11:1, 50 verses. https://www.masdirim.org/seder/ישעיהו/ד.html
+- Isaiah seder 5 (ישעיהו סדר ה): Isaiah 11:2 - Isaiah 14:1, 44 verses. https://www.masdirim.org/seder/ישעיהו/ה.html
+- Isaiah seder 6 (ישעיהו סדר ו): Isaiah 14:2 - Isaiah 16:4, 44 verses. https://www.masdirim.org/seder/ישעיהו/ו.html
+- Isaiah seder 7 (ישעיהו סדר ז): Isaiah 16:5 - Isaiah 19:24, 55 verses. https://www.masdirim.org/seder/ישעיהו/ז.html
+- Isaiah seder 8 (ישעיהו סדר ח): Isaiah 19:25 - Isaiah 22:22, 46 verses. https://www.masdirim.org/seder/ישעיהו/ח.html
+- Isaiah seder 9 (ישעיהו סדר ט): Isaiah 22:23 - Isaiah 24:22, 43 verses. https://www.masdirim.org/seder/ישעיהו/ט.html
+- Isaiah seder 10 (ישעיהו סדר י): Isaiah 24:23 - Isaiah 27:11, 45 verses. https://www.masdirim.org/seder/ישעיהו/י.html
+- Isaiah seder 11 (ישעיהו סדר יא): Isaiah 27:12 - Isaiah 29:22, 53 verses. https://www.masdirim.org/seder/ישעיהו/יא.html
+- Isaiah seder 12 (ישעיהו סדר יב): Isaiah 29:23 - Isaiah 32:17, 61 verses. https://www.masdirim.org/seder/ישעיהו/יב.html
+- Isaiah seder 13 (ישעיהו סדר יג): Isaiah 32:18 - Isaiah 35:9, 53 verses. https://www.masdirim.org/seder/ישעיהו/יג.html
+- Isaiah seder 14 (ישעיהו סדר יד): Isaiah 35:10 - Isaiah 37:19, 42 verses. https://www.masdirim.org/seder/ישעיהו/יד.html
+- Isaiah seder 15 (ישעיהו סדר טו): Isaiah 37:20 - Isaiah 39:8, 49 verses. https://www.masdirim.org/seder/ישעיהו/טו.html
+- Isaiah seder 16 (ישעיהו סדר טז): Isaiah 40:1 - Isaiah 41:26, 57 verses. https://www.masdirim.org/seder/ישעיהו/טז.html
+- Isaiah seder 17 (ישעיהו סדר יז): Isaiah 41:27 - Isaiah 44:5, 61 verses. https://www.masdirim.org/seder/ישעיהו/יז.html
+- Isaiah seder 18 (ישעיהו סדר יח): Isaiah 44:6 - Isaiah 45:16, 39 verses. https://www.masdirim.org/seder/ישעיהו/יח.html
+- Isaiah seder 19 (ישעיהו סדר יט): Isaiah 45:17 - Isaiah 48:1, 38 verses. https://www.masdirim.org/seder/ישעיהו/יט.html
+- Isaiah seder 20 (ישעיהו סדר כ): Isaiah 48:2 - Isaiah 49:25, 46 verses. https://www.masdirim.org/seder/ישעיהו/כ.html
+- Isaiah seder 21 (ישעיהו סדר כא): Isaiah 49:26 - Isaiah 52:6, 41 verses. https://www.masdirim.org/seder/ישעיהו/כא.html
+- Isaiah seder 22 (ישעיהו סדר כב): Isaiah 52:7 - Isaiah 55:12, 50 verses. https://www.masdirim.org/seder/ישעיהו/כב.html
+- Isaiah seder 23 (ישעיהו סדר כג): Isaiah 55:13 - Isaiah 58:13, 47 verses. https://www.masdirim.org/seder/ישעיהו/כג.html
+- Isaiah seder 24 (ישעיהו סדר כד): Isaiah 58:14 - Isaiah 61:8, 52 verses. https://www.masdirim.org/seder/ישעיהו/כד.html
+- Isaiah seder 25 (ישעיהו סדר כה): Isaiah 61:9 - Isaiah 65:8, 53 verses. https://www.masdirim.org/seder/ישעיהו/כה.html
+- Isaiah seder 26 (ישעיהו סדר כו): Isaiah 65:9 - Isaiah 66:24, 41 verses. https://www.masdirim.org/seder/ישעיהו/כו.html
+
+## Jeremiah (ירמיהו): 31 sedarim
+
+- Jeremiah seder 1 (ירמיהו סדר א): Jeremiah 1:1 - Jeremiah 3:3, 59 verses. https://www.masdirim.org/seder/ירמיהו/א.html
+- Jeremiah seder 2 (ירמיהו סדר ב): Jeremiah 3:4 - Jeremiah 4:31, 53 verses. https://www.masdirim.org/seder/ירמיהו/ב.html
+- Jeremiah seder 3 (ירמיהו סדר ג): Jeremiah 5:1 - Jeremiah 6:2, 33 verses. https://www.masdirim.org/seder/ירמיהו/ג.html
+- Jeremiah seder 4 (ירמיהו סדר ד): Jeremiah 6:3 - Jeremiah 7:22, 50 verses. https://www.masdirim.org/seder/ירמיהו/ד.html
+- Jeremiah seder 5 (ירמיהו סדר ה): Jeremiah 7:23 - Jeremiah 9:22, 57 verses. https://www.masdirim.org/seder/ירמיהו/ה.html
+- Jeremiah seder 6 (ירמיהו סדר ו): Jeremiah 9:23 - Jeremiah 12:14, 65 verses. https://www.masdirim.org/seder/ירמיהו/ו.html
+- Jeremiah seder 7 (ירמיהו סדר ז): Jeremiah 12:15 - Jeremiah 14:21, 51 verses. https://www.masdirim.org/seder/ירמיהו/ז.html
+- Jeremiah seder 8 (ירמיהו סדר ח): Jeremiah 14:22 - Jeremiah 17:6, 49 verses. https://www.masdirim.org/seder/ירמיהו/ח.html
+- Jeremiah seder 9 (ירמיהו סדר ט): Jeremiah 17:7 - Jeremiah 18:18, 39 verses. https://www.masdirim.org/seder/ירמיהו/ט.html
+- Jeremiah seder 10 (ירמיהו סדר י): Jeremiah 18:19 - Jeremiah 20:12, 32 verses. https://www.masdirim.org/seder/ירמיהו/י.html
+- Jeremiah seder 11 (ירמיהו סדר יא): Jeremiah 20:13 - Jeremiah 23:5, 55 verses. https://www.masdirim.org/seder/ירמיהו/יא.html
+- Jeremiah seder 12 (ירמיהו סדר יב): Jeremiah 23:6 - Jeremiah 24:6, 41 verses. https://www.masdirim.org/seder/ירמיהו/יב.html
+- Jeremiah seder 13 (ירמיהו סדר יג): Jeremiah 24:7 - Jeremiah 25:38, 42 verses. https://www.masdirim.org/seder/ירמיהו/יג.html
+- Jeremiah seder 14 (ירמיהו סדר יד): Jeremiah 26:1 - Jeremiah 27:4, 28 verses. https://www.masdirim.org/seder/ירמיהו/יד.html
+- Jeremiah seder 15 (ירמיהו סדר טו): Jeremiah 27:5 - Jeremiah 29:6, 41 verses. https://www.masdirim.org/seder/ירמיהו/טו.html
+- Jeremiah seder 16 (ירמיהו סדר טז): Jeremiah 29:7 - Jeremiah 30:8, 34 verses. https://www.masdirim.org/seder/ירמיהו/טז.html
+- Jeremiah seder 17 (ירמיהו סדר יז): Jeremiah 30:9 - Jeremiah 31:31, 47 verses. https://www.masdirim.org/seder/ירמיהו/יז.html
+- Jeremiah seder 18 (ירמיהו סדר יח): Jeremiah 31:32 - Jeremiah 32:21, 30 verses. https://www.masdirim.org/seder/ירמיהו/יח.html
+- Jeremiah seder 19 (ירמיהו סדר יט): Jeremiah 32:22 - Jeremiah 33:15, 38 verses. https://www.masdirim.org/seder/ירמיהו/יט.html
+- Jeremiah seder 20 (ירמיהו סדר כ): Jeremiah 33:16 - Jeremiah 35:9, 42 verses. https://www.masdirim.org/seder/ירמיהו/כ.html
+- Jeremiah seder 21 (ירמיהו סדר כא): Jeremiah 35:10 - Jeremiah 36:25, 35 verses. https://www.masdirim.org/seder/ירמיהו/כא.html
+- Jeremiah seder 22 (ירמיהו סדר כב): Jeremiah 36:26 - Jeremiah 38:7, 35 verses. https://www.masdirim.org/seder/ירמיהו/כב.html
+- Jeremiah seder 23 (ירמיהו סדר כג): Jeremiah 38:8 - Jeremiah 39:17, 38 verses. https://www.masdirim.org/seder/ירמיהו/כג.html
+- Jeremiah seder 24 (ירמיהו סדר כד): Jeremiah 39:18 - Jeremiah 42:11, 46 verses. https://www.masdirim.org/seder/ירמיהו/כד.html
+- Jeremiah seder 25 (ירמיהו סדר כה): Jeremiah 42:12 - Jeremiah 44:19, 43 verses. https://www.masdirim.org/seder/ירמיהו/כה.html
+- Jeremiah seder 26 (ירמיהו סדר כו): Jeremiah 44:20 - Jeremiah 46:26, 42 verses. https://www.masdirim.org/seder/ירמיהו/כו.html
+- Jeremiah seder 27 (ירמיהו סדר כז): Jeremiah 46:27 - Jeremiah 49:1, 57 verses. https://www.masdirim.org/seder/ירמיהו/כז.html
+- Jeremiah seder 28 (ירמיהו סדר כח): Jeremiah 49:2 - Jeremiah 50:4, 42 verses. https://www.masdirim.org/seder/ירמיהו/כח.html
+- Jeremiah seder 29 (ירמיהו סדר כט): Jeremiah 50:5 - Jeremiah 51:9, 51 verses. https://www.masdirim.org/seder/ירמיהו/כט.html
+- Jeremiah seder 30 (ירמיהו סדר ל): Jeremiah 51:10 - Jeremiah 51:58, 49 verses. https://www.masdirim.org/seder/ירמיהו/ל.html
+- Jeremiah seder 31 (ירמיהו סדר לא): Jeremiah 51:59 - Jeremiah 52:34, 40 verses. https://www.masdirim.org/seder/ירמיהו/לא.html
+
+## Ezekiel (יחזקאל): 29 sedarim
+
+- Ezekiel seder 1 (יחזקאל סדר א): Ezekiel 1:1 - Ezekiel 3:11, 49 verses. https://www.masdirim.org/seder/יחזקאל/א.html
+- Ezekiel seder 2 (יחזקאל סדר ב): Ezekiel 3:12 - Ezekiel 5:17, 50 verses. https://www.masdirim.org/seder/יחזקאל/ב.html
+- Ezekiel seder 3 (יחזקאל סדר ג): Ezekiel 6:1 - Ezekiel 7:27, 41 verses. https://www.masdirim.org/seder/יחזקאל/ג.html
+- Ezekiel seder 4 (יחזקאל סדר ד): Ezekiel 8:1 - Ezekiel 9:11, 29 verses. https://www.masdirim.org/seder/יחזקאל/ד.html
+- Ezekiel seder 5 (יחזקאל סדר ה): Ezekiel 10:1 - Ezekiel 11:19, 41 verses. https://www.masdirim.org/seder/יחזקאל/ה.html
+- Ezekiel seder 6 (יחזקאל סדר ו): Ezekiel 11:20 - Ezekiel 13:23, 57 verses. https://www.masdirim.org/seder/יחזקאל/ו.html
+- Ezekiel seder 7 (יחזקאל סדר ז): Ezekiel 14:1 - Ezekiel 16:13, 44 verses. https://www.masdirim.org/seder/יחזקאל/ז.html
+- Ezekiel seder 8 (יחזקאל סדר ח): Ezekiel 16:14 - Ezekiel 16:59, 46 verses. https://www.masdirim.org/seder/יחזקאל/ח.html
+- Ezekiel seder 9 (יחזקאל סדר ט): Ezekiel 16:60 - Ezekiel 18:8, 36 verses. https://www.masdirim.org/seder/יחזקאל/ט.html
+- Ezekiel seder 10 (יחזקאל סדר י): Ezekiel 18:9 - Ezekiel 19:14, 38 verses. https://www.masdirim.org/seder/יחזקאל/י.html
+- Ezekiel seder 11 (יחזקאל סדר יא): Ezekiel 20:1 - Ezekiel 20:40, 40 verses. https://www.masdirim.org/seder/יחזקאל/יא.html
+- Ezekiel seder 12 (יחזקאל סדר יב): Ezekiel 20:41 - Ezekiel 22:15, 56 verses. https://www.masdirim.org/seder/יחזקאל/יב.html
+- Ezekiel seder 13 (יחזקאל סדר יג): Ezekiel 22:16 - Ezekiel 23:26, 42 verses. https://www.masdirim.org/seder/יחזקאל/יג.html
+- Ezekiel seder 14 (יחזקאל סדר יד): Ezekiel 23:27 - Ezekiel 24:23, 46 verses. https://www.masdirim.org/seder/יחזקאל/יד.html
+- Ezekiel seder 15 (יחזקאל סדר טו): Ezekiel 24:24 - Ezekiel 26:19, 40 verses. https://www.masdirim.org/seder/יחזקאל/טו.html
+- Ezekiel seder 16 (יחזקאל סדר טז): Ezekiel 26:20 - Ezekiel 28:12, 50 verses. https://www.masdirim.org/seder/יחזקאל/טז.html
+- Ezekiel seder 17 (יחזקאל סדר יז): Ezekiel 28:13 - Ezekiel 29:20, 34 verses. https://www.masdirim.org/seder/יחזקאל/יז.html
+- Ezekiel seder 18 (יחזקאל סדר יח): Ezekiel 29:21 - Ezekiel 31:18, 45 verses. https://www.masdirim.org/seder/יחזקאל/יח.html
+- Ezekiel seder 19 (יחזקאל סדר יט): Ezekiel 32:1 - Ezekiel 33:15, 47 verses. https://www.masdirim.org/seder/יחזקאל/יט.html
+- Ezekiel seder 20 (יחזקאל סדר כ): Ezekiel 33:16 - Ezekiel 34:25, 43 verses. https://www.masdirim.org/seder/יחזקאל/כ.html
+- Ezekiel seder 21 (יחזקאל סדר כא): Ezekiel 34:26 - Ezekiel 36:24, 45 verses. https://www.masdirim.org/seder/יחזקאל/כא.html
+- Ezekiel seder 22 (יחזקאל סדר כב): Ezekiel 36:25 - Ezekiel 37:27, 41 verses. https://www.masdirim.org/seder/יחזקאל/כב.html
+- Ezekiel seder 23 (יחזקאל סדר כג): Ezekiel 37:28 - Ezekiel 39:21, 45 verses. https://www.masdirim.org/seder/יחזקאל/כג.html
+- Ezekiel seder 24 (יחזקאל סדר כד): Ezekiel 39:22 - Ezekiel 40:44, 52 verses. https://www.masdirim.org/seder/יחזקאל/כד.html
+- Ezekiel seder 25 (יחזקאל סדר כה): Ezekiel 40:45 - Ezekiel 42:12, 43 verses. https://www.masdirim.org/seder/יחזקאל/כה.html
+- Ezekiel seder 26 (יחזקאל סדר כו): Ezekiel 42:13 - Ezekiel 43:26, 34 verses. https://www.masdirim.org/seder/יחזקאל/כו.html
+- Ezekiel seder 27 (יחזקאל סדר כז): Ezekiel 43:27 - Ezekiel 45:14, 46 verses. https://www.masdirim.org/seder/יחזקאל/כז.html
+- Ezekiel seder 28 (יחזקאל סדר כח): Ezekiel 45:15 - Ezekiel 47:11, 46 verses. https://www.masdirim.org/seder/יחזקאל/כח.html
+- Ezekiel seder 29 (יחזקאל סדר כט): Ezekiel 47:12 - Ezekiel 48:35, 47 verses. https://www.masdirim.org/seder/יחזקאל/כט.html
+
+## The Twelve Prophets (תרי עשר): 21 sedarim
+
+- The Twelve Prophets seder 1 (תרי עשר סדר א): Hosea 1:1 - Hosea 5:1, 59 verses. https://www.masdirim.org/seder/תרי_עשר/א.html
+- The Twelve Prophets seder 2 (תרי עשר סדר ב): Hosea 5:2 - Hosea 10:11, 83 verses. https://www.masdirim.org/seder/תרי_עשר/ב.html
+- The Twelve Prophets seder 3 (תרי עשר סדר ג): Hosea 10:12 - Hosea 14:5, 50 verses. https://www.masdirim.org/seder/תרי_עשר/ג.html
+- The Twelve Prophets seder 4 (תרי עשר סדר ד): Hosea 14:6 - Joel 2:26, 51 verses. https://www.masdirim.org/seder/תרי_עשר/ד.html
+- The Twelve Prophets seder 5 (תרי עשר סדר ה): Joel 2:27 - Amos 2:9, 51 verses. https://www.masdirim.org/seder/תרי_עשר/ה.html
+- The Twelve Prophets seder 6 (תרי עשר סדר ו): Amos 2:10 - Amos 5:13, 48 verses. https://www.masdirim.org/seder/תרי_עשר/ו.html
+- The Twelve Prophets seder 7 (תרי עשר סדר ז): Amos 5:14 - Amos 7:14, 42 verses. https://www.masdirim.org/seder/תרי_עשר/ז.html
+- The Twelve Prophets seder 8 (תרי עשר סדר ח): Amos 7:15 - Obadiah 1:20, 52 verses. https://www.masdirim.org/seder/תרי_עשר/ח.html
+- The Twelve Prophets seder 9 (תרי עשר סדר ט): Obadiah 1:21 - Jonah 4:11, 49 verses. https://www.masdirim.org/seder/תרי_עשר/ט.html
+- The Twelve Prophets seder 10 (תרי עשר סדר י): Micah 1:1 - Micah 4:4, 45 verses. https://www.masdirim.org/seder/תרי_עשר/י.html
+- The Twelve Prophets seder 11 (תרי עשר סדר יא): Micah 4:5 - Micah 7:19, 59 verses. https://www.masdirim.org/seder/תרי_עשר/יא.html
+- The Twelve Prophets seder 12 (תרי עשר סדר יב): Micah 7:20 - Nahum 3:19, 48 verses. https://www.masdirim.org/seder/תרי_עשר/יב.html
+- The Twelve Prophets seder 13 (תרי עשר סדר יג): Habakkuk 1:1 - Habakkuk 3:19, 56 verses. https://www.masdirim.org/seder/תרי_עשר/יג.html
+- The Twelve Prophets seder 14 (תרי עשר סדר יד): Zephaniah 1:1 - Zephaniah 3:19, 52 verses. https://www.masdirim.org/seder/תרי_עשר/יד.html
+- The Twelve Prophets seder 15 (תרי עשר סדר טו): Zephaniah 3:20 - Haggai 2:22, 38 verses. https://www.masdirim.org/seder/תרי_עשר/טו.html
+- The Twelve Prophets seder 16 (תרי עשר סדר טז): Haggai 2:23 - Zechariah 4:1, 46 verses. https://www.masdirim.org/seder/תרי_עשר/טז.html
+- The Twelve Prophets seder 17 (תרי עשר סדר יז): Zechariah 4:2 - Zechariah 6:13, 37 verses. https://www.masdirim.org/seder/תרי_עשר/יז.html
+- The Twelve Prophets seder 18 (תרי עשר סדר יח): Zechariah 6:14 - Zechariah 8:22, 38 verses. https://www.masdirim.org/seder/תרי_עשר/יח.html
+- The Twelve Prophets seder 19 (תרי עשר סדר יט): Zechariah 8:23 - Zechariah 11:17, 47 verses. https://www.masdirim.org/seder/תרי_עשר/יט.html
+- The Twelve Prophets seder 20 (תרי עשר סדר כ): Zechariah 12:1 - Zechariah 14:20, 43 verses. https://www.masdirim.org/seder/תרי_עשר/כ.html
+- The Twelve Prophets seder 21 (תרי עשר סדר כא): Zechariah 14:21 - Malachi 3:24, 56 verses. https://www.masdirim.org/seder/תרי_עשר/כא.html
+
+## Psalms (תהילים): 19 sedarim
+
+- Psalms seder 1 (תהילים סדר א): Psalms 1:1 - Psalms 11:6, 133 verses. https://www.masdirim.org/seder/תהילים/א.html
+- Psalms seder 2 (תהילים סדר ב): Psalms 11:7 - Psalms 20:9, 129 verses. https://www.masdirim.org/seder/תהילים/ב.html
+- Psalms seder 3 (תהילים סדר ג): Psalms 20:10 - Psalms 29:10, 130 verses. https://www.masdirim.org/seder/תהילים/ג.html
+- Psalms seder 4 (תהילים סדר ד): Psalms 29:11 - Psalms 35:27, 122 verses. https://www.masdirim.org/seder/תהילים/ד.html
+- Psalms seder 5 (תהילים סדר ה): Psalms 35:28 - Psalms 41:13, 122 verses. https://www.masdirim.org/seder/תהילים/ה.html
+- Psalms seder 6 (תהילים סדר ו): Psalms 41:14 - Psalms 49:18, 118 verses. https://www.masdirim.org/seder/תהילים/ו.html
+- Psalms seder 7 (תהילים סדר ז): Psalms 49:19 - Psalms 57:11, 123 verses. https://www.masdirim.org/seder/תהילים/ז.html
+- Psalms seder 8 (תהילים סדר ח): Psalms 57:12 - Psalms 67:7, 131 verses. https://www.masdirim.org/seder/תהילים/ח.html
+- Psalms seder 9 (תהילים סדר ט): Psalms 67:8 - Psalms 72:19, 123 verses. https://www.masdirim.org/seder/תהילים/ט.html
+- Psalms seder 10 (תהילים סדר י): Psalms 72:20 - Psalms 78:37, 134 verses. https://www.masdirim.org/seder/תהילים/י.html
+- Psalms seder 11 (תהילים סדר יא): Psalms 78:38 - Psalms 84:12, 124 verses. https://www.masdirim.org/seder/תהילים/יא.html
+- Psalms seder 12 (תהילים סדר יב): Psalms 84:13 - Psalms 90:16, 127 verses. https://www.masdirim.org/seder/תהילים/יב.html
+- Psalms seder 13 (תהילים סדר יג): Psalms 90:17 - Psalms 100:5, 120 verses. https://www.masdirim.org/seder/תהילים/יג.html
+- Psalms seder 14 (תהילים סדר יד): Psalms 101:1 - Psalms 105:44, 138 verses. https://www.masdirim.org/seder/תהילים/יד.html
+- Psalms seder 15 (תהילים סדר טו): Psalms 105:45 - Psalms 111:9, 153 verses. https://www.masdirim.org/seder/תהילים/טו.html
+- Psalms seder 16 (תהילים סדר טז): Psalms 111:10 - Psalms 119:71, 167 verses. https://www.masdirim.org/seder/תהילים/טז.html
+- Psalms seder 17 (תהילים סדר יז): Psalms 119:72 - Psalms 128:5, 162 verses. https://www.masdirim.org/seder/תהילים/יז.html
+- Psalms seder 18 (תהילים סדר יח): Psalms 128:6 - Psalms 140:13, 145 verses. https://www.masdirim.org/seder/תהילים/יח.html
+- Psalms seder 19 (תהילים סדר יט): Psalms 140:14 - Psalms 150:6, 126 verses. https://www.masdirim.org/seder/תהילים/יט.html
+
+## Proverbs (משלי): 8 sedarim
+
+- Proverbs seder 1 (משלי סדר א): Proverbs 1:1 - Proverbs 5:17, 134 verses. https://www.masdirim.org/seder/משלי/א.html
+- Proverbs seder 2 (משלי סדר ב): Proverbs 5:18 - Proverbs 9:10, 114 verses. https://www.masdirim.org/seder/משלי/ב.html
+- Proverbs seder 3 (משלי סדר ג): Proverbs 9:11 - Proverbs 14:3, 127 verses. https://www.masdirim.org/seder/משלי/ג.html
+- Proverbs seder 4 (משלי סדר ד): Proverbs 14:4 - Proverbs 18:9, 135 verses. https://www.masdirim.org/seder/משלי/ד.html
+- Proverbs seder 5 (משלי סדר ה): Proverbs 18:10 - Proverbs 22:20, 125 verses. https://www.masdirim.org/seder/משלי/ה.html
+- Proverbs seder 6 (משלי סדר ו): Proverbs 22:21 - Proverbs 25:12, 90 verses. https://www.masdirim.org/seder/משלי/ו.html
+- Proverbs seder 7 (משלי סדר ז): Proverbs 25:13 - Proverbs 28:15, 86 verses. https://www.masdirim.org/seder/משלי/ז.html
+- Proverbs seder 8 (משלי סדר ח): Proverbs 28:16 - Proverbs 31:31, 104 verses. https://www.masdirim.org/seder/משלי/ח.html
+
+## Job (איוב): 8 sedarim
+
+- Job seder 1 (איוב סדר א): Job 1:1 - Job 5:26, 108 verses. https://www.masdirim.org/seder/איוב/א.html
+- Job seder 2 (איוב סדר ב): Job 5:27 - Job 11:18, 149 verses. https://www.masdirim.org/seder/איוב/ב.html
+- Job seder 3 (איוב סדר ג): Job 11:19 - Job 17:8, 142 verses. https://www.masdirim.org/seder/איוב/ג.html
+- Job seder 4 (איוב סדר ד): Job 17:9 - Job 22:29, 150 verses. https://www.masdirim.org/seder/איוב/ד.html
+- Job seder 5 (איוב סדר ה): Job 22:30 - Job 29:13, 127 verses. https://www.masdirim.org/seder/איוב/ה.html
+- Job seder 6 (איוב סדר ו): Job 29:14 - Job 33:32, 137 verses. https://www.masdirim.org/seder/איוב/ו.html
+- Job seder 7 (איוב סדר ז): Job 33:33 - Job 38:34, 145 verses. https://www.masdirim.org/seder/איוב/ז.html
+- Job seder 8 (איוב סדר ח): Job 38:35 - Job 42:17, 112 verses. https://www.masdirim.org/seder/איוב/ח.html
+
+## Song of Songs (שיר השירים): 1 sedarim
+
+- Song of Songs seder 1 (שיר השירים סדר א): Song of Songs 1:1 - Song of Songs 8:14, 117 verses. https://www.masdirim.org/seder/שיר_השירים/א.html
+
+## Ruth (רות): 1 sedarim
+
+- Ruth seder 1 (רות סדר א): Ruth 1:1 - Ruth 4:22, 85 verses. https://www.masdirim.org/seder/רות/א.html
+
+## Lamentations (איכה): 1 sedarim
+
+- Lamentations seder 1 (איכה סדר א): Lamentations 1:1 - Lamentations 5:22, 154 verses. https://www.masdirim.org/seder/איכה/א.html
+
+## Ecclesiastes (קהלת): 4 sedarim
+
+- Ecclesiastes seder 1 (קהלת סדר א): Ecclesiastes 1:1 - Ecclesiastes 3:12, 56 verses. https://www.masdirim.org/seder/קהלת/א.html
+- Ecclesiastes seder 2 (קהלת סדר ב): Ecclesiastes 3:13 - Ecclesiastes 6:12, 58 verses. https://www.masdirim.org/seder/קהלת/ב.html
+- Ecclesiastes seder 3 (קהלת סדר ג): Ecclesiastes 7:1 - Ecclesiastes 9:6, 52 verses. https://www.masdirim.org/seder/קהלת/ג.html
+- Ecclesiastes seder 4 (קהלת סדר ד): Ecclesiastes 9:7 - Ecclesiastes 12:14, 56 verses. https://www.masdirim.org/seder/קהלת/ד.html
+
+## Esther (אסתר): 5 sedarim
+
+- Esther seder 1 (אסתר סדר א): Esther 1:1 - Esther 2:4, 26 verses. https://www.masdirim.org/seder/אסתר/א.html
+- Esther seder 2 (אסתר סדר ב): Esther 2:5 - Esther 3:7, 26 verses. https://www.masdirim.org/seder/אסתר/ב.html
+- Esther seder 3 (אסתר סדר ג): Esther 3:8 - Esther 6:10, 49 verses. https://www.masdirim.org/seder/אסתר/ג.html
+- Esther seder 4 (אסתר סדר ד): Esther 6:11 - Esther 8:15, 29 verses. https://www.masdirim.org/seder/אסתר/ד.html
+- Esther seder 5 (אסתר סדר ה): Esther 8:16 - Esther 10:3, 37 verses. https://www.masdirim.org/seder/אסתר/ה.html
+
+## Daniel (דניאל): 7 sedarim
+
+- Daniel seder 1 (דניאל סדר א): Daniel 1:1 - Daniel 2:34, 55 verses. https://www.masdirim.org/seder/דניאל/א.html
+- Daniel seder 2 (דניאל סדר ב): Daniel 2:35 - Daniel 3:29, 44 verses. https://www.masdirim.org/seder/דניאל/ב.html
+- Daniel seder 3 (דניאל סדר ג): Daniel 3:30 - Daniel 5:11, 49 verses. https://www.masdirim.org/seder/דניאל/ג.html
+- Daniel seder 4 (דניאל סדר ד): Daniel 5:12 - Daniel 6:10, 29 verses. https://www.masdirim.org/seder/דניאל/ד.html
+- Daniel seder 5 (דניאל סדר ה): Daniel 6:11 - Daniel 9:3, 77 verses. https://www.masdirim.org/seder/דניאל/ה.html
+- Daniel seder 6 (דניאל סדר ו): Daniel 9:4 - Daniel 10:20, 44 verses. https://www.masdirim.org/seder/דניאל/ו.html
+- Daniel seder 7 (דניאל סדר ז): Daniel 10:21 - Daniel 12:13, 59 verses. https://www.masdirim.org/seder/דניאל/ז.html
+
+## Ezra-Nehemiah (עזרא ונחמיה): 10 sedarim
+
+- Ezra-Nehemiah seder 1 (עזרא ונחמיה סדר א): Ezra 1:1 - Ezra 3:12, 93 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/א.html
+- Ezra-Nehemiah seder 2 (עזרא ונחמיה סדר ב): Ezra 3:13 - Ezra 6:17, 59 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ב.html
+- Ezra-Nehemiah seder 3 (עזרא ונחמיה סדר ג): Ezra 6:18 - Ezra 8:34, 67 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ג.html
+- Ezra-Nehemiah seder 4 (עזרא ונחמיה סדר ד): Ezra 8:35 - Nehemiah 1:10, 71 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ד.html
+- Ezra-Nehemiah seder 5 (עזרא ונחמיה סדר ה): Nehemiah 1:11 - Nehemiah 3:37, 58 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ה.html
+- Ezra-Nehemiah seder 6 (עזרא ונחמיה סדר ו): Nehemiah 3:38 - Nehemiah 6:14, 51 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ו.html
+- Ezra-Nehemiah seder 7 (עזרא ונחמיה סדר ז): Nehemiah 6:15 - Nehemiah 8:9, 86 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ז.html
+- Ezra-Nehemiah seder 8 (עזרא ונחמיה סדר ח): Nehemiah 8:10 - Nehemiah 9:37, 46 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ח.html
+- Ezra-Nehemiah seder 9 (עזרא ונחמיה סדר ט): Nehemiah 10:1 - Nehemiah 12:26, 102 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/ט.html
+- Ezra-Nehemiah seder 10 (עזרא ונחמיה סדר י): Nehemiah 12:27 - Nehemiah 13:31, 52 verses. https://www.masdirim.org/seder/עזרא_ונחמיה/י.html
+
+## Chronicles (דברי הימים): 25 sedarim
+
+- Chronicles seder 1 (דברי הימים סדר א): I Chronicles 1:1 - I Chronicles 4:9, 142 verses. https://www.masdirim.org/seder/דברי_הימים/א.html
+- Chronicles seder 2 (דברי הימים סדר ב): I Chronicles 4:10 - I Chronicles 6:33, 108 verses. https://www.masdirim.org/seder/דברי_הימים/ב.html
+- Chronicles seder 3 (דברי הימים סדר ג): I Chronicles 6:34 - I Chronicles 8:39, 112 verses. https://www.masdirim.org/seder/דברי_הימים/ג.html
+- Chronicles seder 4 (דברי הימים סדר ד): I Chronicles 8:40 - I Chronicles 11:8, 67 verses. https://www.masdirim.org/seder/דברי_הימים/ד.html
+- Chronicles seder 5 (דברי הימים סדר ה): I Chronicles 11:9 - I Chronicles 12:40, 79 verses. https://www.masdirim.org/seder/דברי_הימים/ה.html
+- Chronicles seder 6 (דברי הימים סדר ו): I Chronicles 12:41 - I Chronicles 16:35, 96 verses. https://www.masdirim.org/seder/דברי_הימים/ו.html
+- Chronicles seder 7 (דברי הימים סדר ז): I Chronicles 16:36 - I Chronicles 19:12, 64 verses. https://www.masdirim.org/seder/דברי_הימים/ז.html
+- Chronicles seder 8 (דברי הימים סדר ח): I Chronicles 19:13 - I Chronicles 22:18, 63 verses. https://www.masdirim.org/seder/דברי_הימים/ח.html
+- Chronicles seder 9 (דברי הימים סדר ט): I Chronicles 22:19 - I Chronicles 26:4, 99 verses. https://www.masdirim.org/seder/דברי_הימים/ט.html
+- Chronicles seder 10 (דברי הימים סדר י): I Chronicles 26:5 - I Chronicles 28:9, 71 verses. https://www.masdirim.org/seder/דברי_הימים/י.html
+- Chronicles seder 11 (דברי הימים סדר יא): I Chronicles 28:10 - II Chronicles 2:2, 62 verses. https://www.masdirim.org/seder/דברי_הימים/יא.html
+- Chronicles seder 12 (דברי הימים סדר יב): II Chronicles 2:3 - II Chronicles 5:13, 67 verses. https://www.masdirim.org/seder/דברי_הימים/יב.html
+- Chronicles seder 13 (דברי הימים סדר יג): II Chronicles 5:14 - II Chronicles 7:10, 53 verses. https://www.masdirim.org/seder/דברי_הימים/יג.html
+- Chronicles seder 14 (דברי הימים סדר יד): II Chronicles 7:11 - II Chronicles 9:23, 53 verses. https://www.masdirim.org/seder/דברי_הימים/יד.html
+- Chronicles seder 15 (דברי הימים סדר טו): II Chronicles 9:24 - II Chronicles 12:11, 61 verses. https://www.masdirim.org/seder/דברי_הימים/טו.html
+- Chronicles seder 16 (דברי הימים סדר טז): II Chronicles 12:12 - II Chronicles 15:14, 56 verses. https://www.masdirim.org/seder/דברי_הימים/טז.html
+- Chronicles seder 17 (דברי הימים סדר יז): II Chronicles 15:15 - II Chronicles 18:17, 55 verses. https://www.masdirim.org/seder/דברי_הימים/יז.html
+- Chronicles seder 18 (דברי הימים סדר יח): II Chronicles 18:18 - II Chronicles 20:30, 58 verses. https://www.masdirim.org/seder/דברי_הימים/יח.html
+- Chronicles seder 19 (דברי הימים סדר יט): II Chronicles 20:31 - II Chronicles 23:10, 49 verses. https://www.masdirim.org/seder/דברי_הימים/יט.html
+- Chronicles seder 20 (דברי הימים סדר כ): II Chronicles 23:11 - II Chronicles 26:1, 67 verses. https://www.masdirim.org/seder/דברי_הימים/כ.html
+- Chronicles seder 21 (דברי הימים סדר כא): II Chronicles 26:2 - II Chronicles 29:10, 68 verses. https://www.masdirim.org/seder/דברי_הימים/כא.html
+- Chronicles seder 22 (דברי הימים סדר כב): II Chronicles 29:11 - II Chronicles 31:9, 62 verses. https://www.masdirim.org/seder/דברי_הימים/כב.html
+- Chronicles seder 23 (דברי הימים סדר כג): II Chronicles 31:10 - II Chronicles 34:1, 71 verses. https://www.masdirim.org/seder/דברי_הימים/כג.html
+- Chronicles seder 24 (דברי הימים סדר כד): II Chronicles 34:2 - II Chronicles 35:5, 37 verses. https://www.masdirim.org/seder/דברי_הימים/כד.html
+- Chronicles seder 25 (דברי הימים סדר כה): II Chronicles 35:6 - II Chronicles 36:23, 45 verses. https://www.masdirim.org/seder/דברי_הימים/כה.html

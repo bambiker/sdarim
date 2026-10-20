@@ -18,13 +18,16 @@ Files written (spaces in book names become underscores):
 It also writes the static pages made by build_pages.py (seder/, perek/, parasha/, book/,
 sitemap.xml, robots.txt, llms.txt).
 """
+import datetime
 import json
 import os
+import re
 import sys
 from collections import defaultdict
+from urllib.parse import quote
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_pages import GENERATED_DIRS, build_pages  # noqa: E402
+from build_pages import GENERATED_DIRS, STATIC_PAGES, build_pages, sitemap  # noqa: E402
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 API = os.path.join(ROOT, 'API')
@@ -89,6 +92,27 @@ def expected_files(verses):
     return files
 
 
+def sitemap_entries(pages):
+    """[(path, lastmod)]: a generated page's date changes only when its content changes,
+    so running the script again without changes leaves sitemap.xml as it is."""
+    previous = {}
+    path = os.path.join(ROOT, 'sitemap.xml')
+    if os.path.exists(path):
+        with open(path, encoding='utf-8') as f:
+            previous = dict(re.findall(r'<loc>([^<]*)</loc><lastmod>([^<]*)</lastmod>', f.read()))
+    today = datetime.datetime.now(datetime.timezone.utc).date().isoformat()
+    entries = [(p, None) for p in STATIC_PAGES]
+    for name, text in pages.items():
+        if not name.endswith('.html'):
+            continue
+        loc = name[:-len('index.html')] if name.endswith('/index.html') else name
+        existing = os.path.join(ROOT, name)
+        unchanged = os.path.exists(existing) and open(existing, encoding='utf-8').read() == text
+        old = previous.get('https://www.masdirim.org/' + quote(loc))
+        entries.append((loc, old if unchanged and old else today))
+    return entries
+
+
 def sync(files, check_only):
     """Write {path relative to ROOT: content}; return how many were wrong or missing."""
     written = 0
@@ -124,7 +148,9 @@ def main():
 
     api_files = expected_files(verses)
     files = {'API/' + name: content for name, content in api_files.items()}
-    files.update(build_pages(verses, api_files['sedarim.json']))
+    pages = build_pages(verses, api_files['sedarim.json'])
+    files.update(pages)
+    files['sitemap.xml'] = sitemap(sitemap_entries(pages))
     written = sync(files, check_only)
 
     stale = ['API/' + name for name in sorted(set(os.listdir(API)) - set(api_files) - KEEP)]
