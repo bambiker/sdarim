@@ -271,6 +271,17 @@ a {
   background: var(--navy-2);
 }
 
+.btn-outline {
+  background: transparent;
+  color: var(--heading);
+  border: 2px solid var(--gold);
+}
+
+.btn-outline:hover {
+  background: var(--gold);
+  color: var(--navy);
+}
+
 .btn-link, .btn-icon {
   font: inherit;
   font-size: 14px;
@@ -627,6 +638,10 @@ h2 {
 
 .agree {
   max-width: 1100px;
+}
+
+.more {
+  text-align: center;
 }
 
 .lead {
