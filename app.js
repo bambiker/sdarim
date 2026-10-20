@@ -1,4 +1,5 @@
-// On every page: the site as an installable app, and "continue where you stopped".
+// On every page: the site as an installable app, "continue where you stopped", and the Google Analytics
+// events that show how the site is used.
 
 const masdirimApp = (function () {
     function stored(key) {
@@ -7,6 +8,50 @@ const masdirimApp = (function () {
     function store(key, value) {
         try { localStorage.setItem(key, value); } catch (e) { /* private mode: not remembered */ }
     }
+
+    // ~~~ Google Analytics events (gtag is loaded in the head of every page) ~~~
+
+    function track(name, params) {
+        try {
+            if (typeof gtag == 'function') gtag('event', name, params || {});
+        } catch (e) { /* analytics must never break the site */ }
+    }
+
+    // the direct link shown under the text, readable (Hebrew, not %D7...)
+    function shownUrl() {
+        const link = document.querySelector('#urlname a');
+        try { return decodeURI(link ? link.href : location.href); } catch (e) { return link ? link.href : location.href; }
+    }
+
+    // where the text on the home page came from: the button pressed just before it is drawn
+    let source = null;
+    document.addEventListener('click', event => {
+        const target = event.target.closest && event.target;
+        if (!target) return;
+        if (target.closest('#btnfindseder')) source = 'form';
+        else if (target.closest('#btnfindchapter')) source = 'chapter';
+        else if (target.closest('.seder-nav a')) source = 'arrows';
+        else if (target.closest('#continue a')) track('continue_reading', {page: target.closest('a').getAttribute('href')});
+        else if (target.closest('#whatsapp')) track('share_whatsapp', {page_title: document.title.trim(), page_url: shownUrl()});
+        else if (target.closest('#copylink')) track('copy_link', {page_title: document.title.trim(), page_url: shownUrl()});
+        else if (target.closest('a.vnum[data-seder]')) {
+            const v = target.closest('a.vnum');
+            // the click opens the commentary panel, or closes it if it is open
+            const anchor = v.closest('.verse') || v;
+            const box = (anchor.parentElement && anchor.parentElement.tagName == 'MARK' ? anchor.parentElement : anchor).nextElementSibling;
+            if (!(box && box.classList.contains('commentary')))
+                track('open_commentary', {book: v.dataset.book, seder: v.dataset.seder, verse: v.dataset.verse});
+        }
+    }, true);
+    // a commentator other than the Targum and Rashi, opened under a verse
+    document.addEventListener('toggle', event => {
+        const item = event.target;
+        if (item.matches && item.matches('details.commentator') && item.open) {
+            const name = item.querySelector('summary');
+            track('open_commentator', {commentator: name ? name.textContent.trim() : ''});
+        }
+    }, true);
+    window.addEventListener('beforeprint', () => track('print', {page_title: document.title.trim()}));
 
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
@@ -29,6 +74,14 @@ const masdirimApp = (function () {
         const renderSeder = userSeder;
         window.userSeder = function (verses, book, seder, verse) {
             renderSeder(verses, book, seder, verse);
+            if (verses.length) {
+                const from = source || 'link';
+                source = null;
+                track('open_seder', {book: book, seder: seder, verse: verse || 'א', source: from});
+                if (from == 'chapter') track('convert_chapter', {
+                    book: document.getElementById('cbook').value, chapter: document.getElementById('chapter').value,
+                    verse: document.getElementById('cverse').value, seder_book: book, seder: seder});
+            }
             if (verses.length) remember('/?book=' + addunderscore(book) + '&seder=' + seder + '&verse=' + (verse || 'א'),
                 book + ' סדר ' + seder);
         };
@@ -39,6 +92,7 @@ const masdirimApp = (function () {
             const parasha = document.getElementById('parasha').value;
             return renderParasha().then(result => {
                 if (parasha) remember('/?parasha=' + addunderscore(parasha), 'פרשת ' + parasha);
+                if (parasha) track('open_parasha', {parasha: parasha});
                 return result;
             });
         };
@@ -53,6 +107,15 @@ const masdirimApp = (function () {
     }
     window.addEventListener('load', centerVerse);
     window.addEventListener('hashchange', centerVerse);
+
+    if (typeof findfree == 'function') {
+        const runSearch = findfree;
+        window.findfree = function () {
+            const text = (document.getElementById('free') || {}).value || '';
+            if (text.trim().length >= 2) track('search', {search_term: text.trim()});
+            return runSearch.apply(this, arguments);
+        };
+    }
 
     function lastPage() {
         try {
@@ -82,6 +145,7 @@ const masdirimApp = (function () {
         showButtons();
     });
     window.addEventListener('appinstalled', () => {
+        track('app_installed');
         prompt = null;
         buttons().forEach(b => { b.hidden = true; });
     });
@@ -107,12 +171,18 @@ const masdirimApp = (function () {
         const button = event.target.closest && event.target.closest('[data-install]');
         if (!button) return;
         if (prompt) {
+            track('install_click', {method: 'prompt'});
             prompt.prompt();
-            prompt.userChoice.finally(() => { prompt = null; });
+            prompt.userChoice.then(choice => track('install_choice', {outcome: choice.outcome}))
+                .finally(() => { prompt = null; });
         } else if (ios) {
+            track('install_click', {method: 'ios_help'});
             iosHelp();
         }
     });
+
+    // opened as the installed app (from the home screen or the desktop): returning readers
+    if (standalone) track('app_launch', {page: location.pathname + location.search});
 
     document.addEventListener('DOMContentLoaded', () => {
         // Safari on iPhone and iPad has no install prompt; the button explains how to add the site instead
@@ -127,6 +197,7 @@ const masdirimApp = (function () {
             a.textContent = last.title;
             box.replaceChildren('להמשיך מהמקום שעצרתם: ', a);
             box.hidden = false;
+            track('continue_offered', {page: last.url});
         }
     });
 
