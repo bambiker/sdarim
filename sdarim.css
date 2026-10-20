@@ -205,6 +205,10 @@ footer {
   color: #666;
 }
 
+.bottom-links {
+  font-size: 16px;
+}
+
 /* ~~~ installing the site as an app, continuing where you stopped (app.js) ~~~ */
 
 .install {
