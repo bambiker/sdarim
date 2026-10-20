@@ -105,6 +105,7 @@ a {
 }
 
 .topnav {
+  min-width: 0;
   display: flex;
   gap: 4px;
   overflow-x: auto;
@@ -122,6 +123,61 @@ a {
 
 .topnav a:hover {
   background: rgba(255, 255, 255, .1);
+  color: #fff;
+}
+
+.install {
+  margin-inline-start: auto;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  color: var(--navy);
+  background: var(--gold);
+  border: 0;
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+
+.install[hidden] {
+  display: none;
+}
+
+.install-help {
+  max-width: 420px;
+  border: 0;
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  background: var(--card);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  font-family: var(--ui);
+  text-align: right;
+}
+
+.install-help::backdrop {
+  background: rgba(17, 35, 90, .5);
+}
+
+.install-help h2 {
+  margin: 0 0 8px;
+  font-size: 22px;
+}
+
+.install-help ol {
+  padding-inline-start: 20px;
+  line-height: 1.8;
+}
+
+.install-help button {
+  font: inherit;
+  font-weight: 700;
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 24px;
+  cursor: pointer;
+  background: var(--navy);
   color: #fff;
 }
 
@@ -372,6 +428,17 @@ a {
   text-overflow: ellipsis;
   white-space: nowrap;
   max-width: 420px;
+}
+
+.whatsapp {
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  background: #25D366;
+  border-radius: 8px;
+  padding: 2px 10px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .font-size {
@@ -662,6 +729,16 @@ h2 {
   .brand {
     font-size: 22px;
   }
+  .install {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+  .wide-only {
+    display: none;
+  }
+  .share {
+    flex-wrap: wrap;
+  }
   .brand-mark {
     width: 28px;
     height: 28px;
@@ -730,6 +807,9 @@ h2 {
 }
 
 .site-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   background: var(--navy);
   color: rgba(255, 255, 255, .8);
   padding: 12px 20px;
@@ -801,6 +881,9 @@ footer {
   }
   .site-header {
     margin: 0 -12px 14px;
+  }
+  .site-tagline {
+    display: none;
   }
   .static-page h1 {
     font-size: 28px;
@@ -915,7 +998,7 @@ body:has(#secup) {
 }
 
 @media print {
-  .no-print, .seder-nav, .print-button, .topbar, .hero, .tools, .features,
+  .no-print, .seder-nav, .print-button, .install, .continue, .topbar, .hero, .tools, .features,
   .prose, .agree, .contact, .site-footer {
     display: none !important;
   }

@@ -1,4 +1,5 @@
-// The home page around sdarim.js: tabs, text size, copying the link and "continue reading".
+// The home page around sdarim.js: tabs, text size, and copying the link.
+// Installing the app and "continue where you stopped" are in app.js, shared with the static pages.
 
 (function () {
     function stored(key) {
@@ -56,26 +57,4 @@
             setTimeout(() => { copy.textContent = 'העתקה'; }, 1500);
         });
     });
-
-    // ~~~ continue reading: remember the last seder shown ~~~
-    const show = window.userSeder;
-    window.userSeder = function (verses, book, seder, verse) {
-        show(verses, book, seder, verse);
-        if (verses.length) store('lastSeder', JSON.stringify({book: book, seder: seder}));
-    };
-    let last = null;
-    try { last = JSON.parse(stored('lastSeder')); } catch (e) { /* ignore */ }
-    if (last && last.book && last.seder && !location.search) {
-        const p = document.getElementById('continue');
-        const a = document.createElement('a');
-        a.href = sederUrl(last);
-        a.textContent = last.book + ' סדר ' + last.seder;
-        a.addEventListener('click', event => {
-            if (event.ctrlKey || event.metaKey || event.shiftKey || event.button != 0) return;
-            event.preventDefault();
-            showSeder(last.book, last.seder);
-        });
-        p.append('להמשיך מהמקום שעצרתם: ', a);
-        p.hidden = false;
-    }
 })();
