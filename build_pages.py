@@ -10,7 +10,8 @@ Run through build_api.py, which writes and checks these files together with API/
     parasha/<parasha>.html        one parasha (54 pages)
     book/<book>.html              a whole book by sedarim, for reading and printing (24 pages)
     seder/index.html              list of all of the above
-    sitemap.xml, robots.txt, llms.txt
+    faq.html                      questions and answers about the sedarim
+    robots.txt, llms.txt, llms-full.txt   (sitemap.xml is written by build_api.py)
 Spaces in names become underscores.
 """
 import html
@@ -103,7 +104,7 @@ def breadcrumbs(crumbs):
     return '    <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>\n'
 
 
-def page(path, title, description, body, crumbs=None):
+def page(path, title, description, body, crumbs=None, head=''):
     canonical = url(path)
     return f'''<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -124,7 +125,7 @@ def page(path, title, description, body, crumbs=None):
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="מסדירים - חוזרים לחלוקת התנ&quot;ך היהודית">
     <meta name="twitter:card" content="summary_large_image">
-{breadcrumbs(crumbs) if crumbs is not None else ''}    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+{breadcrumbs(crumbs) if crumbs is not None else ''}{head}    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link rel="stylesheet" href="/sdarim.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
@@ -143,6 +144,7 @@ def page(path, title, description, body, crumbs=None):
     <footer class="no-print">
       <a href="/">לאתר מסדירים: המרה בין פרקים לסדרים וחיפוש</a> ·
       <a href="/seder/">כל הסדרים, הפרקים והפרשות</a> ·
+      <a href="/faq.html">שאלות ותשובות</a> ·
       <a href="/api.html">API ונתונים</a>
     </footer>
   </body>
@@ -293,14 +295,143 @@ def build_pages(verses, sedarim):
                                      'רשימת כל 447 הסדרים בתנ"ך, כל הפרקים והסדר שבו כל אחד נמצא, וכל פרשות השבוע לפי החלוקה לסדרים.',
                                      body, [])
 
-    # ~~~ sitemap, robots.txt, llms.txt ~~~
-    urls = ['', 'seder/', 'api.html', 'fame.html'] + [p for p in pages if p != 'seder/index.html']
-    pages['sitemap.xml'] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
-                            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
-                            + ''.join(f'<url><loc>{url(u)}</loc></url>\n' for u in urls) + '</urlset>\n')
+    pages['faq.html'] = faq_page(sedarim)
+
+    # ~~~ robots.txt, llms.txt ~~~
     pages['robots.txt'] = f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n'
     pages['llms.txt'] = LLMS_TXT
+    pages['llms-full.txt'] = llms_full(sedarim, by_seder)
     return pages
+
+
+def sitemap(urls_with_dates):
+    """urls_with_dates: [(path, 'YYYY-MM-DD' or None)]"""
+    rows = ''.join(f'<url><loc>{url(u)}</loc>' + (f'<lastmod>{d}</lastmod>' if d else '') + '</url>\n'
+                   for u, d in urls_with_dates)
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + rows + '</urlset>\n')
+
+
+# pages in sitemap.xml that are not generated here
+STATIC_PAGES = ['', 'api.html', 'fame.html']
+
+
+# ~~~ questions and answers ~~~
+# The answers repeat what the site already says (index.html "אודות המיזם" and "הסכמות");
+# the numbers are computed from the data.
+
+TORAH = ['בראשית', 'שמות', 'ויקרא', 'במדבר', 'דברים']
+
+ENDORSEMENTS = [
+    ('הרב יעקב אריאל', 'בעיקר יש לברך על הרעיון ללמוד תנ"ך עפ"י פסקי המסורה ולא עפ"י חלוקת הפרקים הנכרית שחדרה, לצערנו, לספרי התנ"ך'),
+    ('הרב שלמה אבינר', 'יישר כוחו על היוזמה החשובה להדפיס תנ"ך על פי חלוקה יהודית, שכידוע החלוקה הנהוגה עתה היא נוצרית, ומלאה שיבושים וכן פרשנויות נוצריות'),
+    ('הרב זלמן ברוך מלמד', 'בזה הנני לברכך על היוזמה החשובה שנטלת על עצמך להוציא לתורה את כתבי הקודש תורה נביאים וכתובים בסדר חדש שלא על פי חלוקת הפרקים הקימת שנעשתה על ידי נוכרים'),
+    ('הרב יעקב מדן', 'חלוקת הפרקים ונתינת מספר לפסוקים עפ"י חלוקת הפרקים השתרשה בלימודנו בשל קבלת תכתיב החלוקה הנוצרי'),
+    ('הרב דוב ליאור', 'הנושא חשוב מאד שחלוקת ספרי הקודש תיהיה על בסיס קדוש וטהור ולא על השיטה הנוצרית'),
+    ('הרב יואל בן נון', 'והנה אנו יוצאים מן הגלות עם תנ"ך פתוח בידינו, אבל סימון הפרקים חתום בתוכו מראשיתו עד סופו'),
+]
+
+
+def faq_items(sedarim):
+    counts = OrderedDict()
+    for s in sedarim:
+        counts[s['book']] = counts.get(s['book'], 0) + 1
+    torah = sum(n for b, n in counts.items() if b in TORAH)
+    total = len(sedarim)
+    books = ' · '.join(f'<a href="{href(book_path(b))}">{esc(b)}</a> {n}' for b, n in counts.items())
+    quotes = ''.join(f'<li><strong>{esc(name)}</strong>: "...{esc(q)}..."</li>' for name, q in ENDORSEMENTS)
+    return [
+        ('מה הם הסדרים בתנ"ך?',
+         f'הסדרים הם החלוקה היהודית הקדומה של התנ"ך, החלוקה של חז"ל, שנוצרה לפני אלפי שנים. '
+         f'התנ"ך כולו מחולק ל-{total} סדרים, וכל סדר מסומן בשם הספר ובמספר הסדר באותיות, למשל '
+         f'<a href="{href(seder_path("בראשית", "יג"))}">בראשית סדר יג</a>. '
+         f'באתר מסדירים אפשר לקרוא כל סדר, לחפש בתנ"ך ולהמיר בין החלוקה לפרקים לחלוקה לסדרים.'),
+        ('למה לא ללמוד לפי החלוקה לפרקים?',
+         'החלוקה הנפוצה של התנ"ך לפרקים אינה החלוקה היהודית הקדומה אלא חלוקה נוצרית. '
+         'היא השתרשה אצל היהודים כיוון שסייעה בזמנו להתמודד בפולמוסים ובוויכוחים עם הנוצרים. '
+         'כל חלוקה בהכרח מייצרת פרשנות, והחלוקה הנוצרית לא תמיד מתאימה לרוח היהדות.'),
+        ('מה ההבדל בין סדרים, פרשות השבוע ופרשיות פתוחות וסגורות?',
+         'פרשות השבוע נוגעות רק לחמשת חומשי התורה, בלי הנביאים והכתובים. '
+         'הפרשיות הפתוחות והסגורות הן חלוקה מקודשת המוטמעת בספרי התורה, אבל יש בהן פרשיות ארוכות מאוד '
+         'וגם פרשיות קצרות מאוד, אפילו של פסוק אחד. לכן העדפנו את החלוקה של חז"ל לסדרים, חלוקה שנוצרה לפני אלפי שנים.'),
+        ('כמה סדרים יש בכל ספר?',
+         f'בתנ"ך יש {total} סדרים: {torah} בתורה ו-{total - torah} בנביאים ובכתובים. '
+         f'בחלוקה לסדרים שמואל, מלכים, עזרא ונחמיה, דברי הימים ותרי עשר הם ספר אחד כל אחד. '
+         f'מספר הסדרים בכל ספר: {books}.'),
+        ('כמה זמן לוקח ללמוד את כל התנ"ך לפי הסדרים?',
+         'לפי החלוקה לסדרים אפשר ללמוד את התנ"ך יום יום ולסיים אותו בשנה אחת.'),
+        ('איך מוצאים באיזה סדר נמצא פסוק או פרק?',
+         'ב<a href="/">דף הראשי של האתר</a> בוחרים ספר, פרק ופסוק, והאתר מציג את הסדר שבו הפסוק נמצא ומסמן אותו. '
+         'לכל פרק יש גם דף שמראה באילו סדרים הוא נמצא, ברשימה ב<a href="/seder/">כל הסדרים, הפרקים והפרשות</a>.'),
+        ('מה אמרו רבנים על החלוקה לסדרים?',
+         'ההסכמות ניתנו לפרויקטים מקבילים העוסקים במלאכה. מתוכן:'
+         f'<ul>{quotes}</ul>'
+         'כל ההסכמות נמצאות ב<a href="/#agree">דף הראשי</a>.'),
+        ('איך אפשר להשתמש בחלוקה לסדרים באתר או בתוכנה אחרת?',
+         'כל הנתונים זמינים כקבצי JSON ו-API, לשימוש חופשי גם בתוכנה וגם לשימוש מסחרי. '
+         'נשמח אם תציינו שאתר מסדירים הוא המקור לנתונים. הפרטים ב<a href="/api.html">דף ה-API</a>.'),
+        ('אפשר להדפיס סדר, פרשה או ספר שלם?',
+         'כן. בכל סדר ופרשה יש כפתור "הדפסה / שמירה כ-PDF", שמדפיס רק את הטקסט. '
+         'לכל ספר יש גם דף שמכיל את כל הסדרים שלו, למשל <a href="' + href(book_path('רות')) + '">ספר רות</a>.'),
+    ]
+
+
+def faq_page(sedarim):
+    items = faq_items(sedarim)
+    plain_text = lambda h: re.sub(r'\s+', ' ', html.unescape(re.sub(r'<[^>]+>', ' ', h))).strip()
+    data = {'@context': 'https://schema.org', '@type': 'FAQPage', 'mainEntity': [
+        {'@type': 'Question', 'name': q, 'acceptedAnswer': {'@type': 'Answer', 'text': plain_text(a)}}
+        for q, a in items]}
+    head = '    <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>\n'
+    body = '    <h1>שאלות ותשובות על החלוקה לסדרים</h1>\n'
+    for q, a in items:
+        body += f'    <h2>{esc(q)}</h2>\n    <div class="faq-answer">{a}</div>\n'
+    return page('faq.html', 'מה הם הסדרים בתנ"ך? שאלות ותשובות | מסדירים',
+                'מה היא החלוקה היהודית של התנ"ך לסדרים, למה לא לפי הפרקים, כמה סדרים יש בכל ספר ואיך מוצאים באיזה סדר נמצא פסוק.',
+                body, [('שאלות ותשובות', 'faq.html')], head)
+
+
+# ~~~ llms-full.txt: every seder in plain text, for AI tools ~~~
+
+SEDER_BOOKS_EN = {
+    'בראשית': 'Genesis', 'שמות': 'Exodus', 'ויקרא': 'Leviticus', 'במדבר': 'Numbers', 'דברים': 'Deuteronomy',
+    'יהושע': 'Joshua', 'שופטים': 'Judges', 'שמואל': 'Samuel', 'מלכים': 'Kings', 'ישעיהו': 'Isaiah',
+    'ירמיהו': 'Jeremiah', 'יחזקאל': 'Ezekiel', 'תרי עשר': 'The Twelve Prophets', 'תהילים': 'Psalms',
+    'משלי': 'Proverbs', 'איוב': 'Job', 'שיר השירים': 'Song of Songs', 'רות': 'Ruth', 'איכה': 'Lamentations',
+    'קהלת': 'Ecclesiastes', 'אסתר': 'Esther', 'דניאל': 'Daniel', 'עזרא ונחמיה': 'Ezra-Nehemiah',
+    'דברי הימים': 'Chronicles'}
+
+CHAPTER_BOOKS_EN = dict(zip(KETER_BOOKS, [
+    'Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'I Samuel', 'II Samuel',
+    'I Kings', 'II Kings', 'Isaiah', 'Jeremiah', 'Ezekiel', 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah',
+    'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi', 'Psalms', 'Proverbs', 'Job',
+    'Song of Songs', 'Ruth', 'Lamentations', 'Ecclesiastes', 'Esther', 'Daniel', 'Ezra', 'Nehemiah',
+    'I Chronicles', 'II Chronicles']))
+
+
+def llms_full(sedarim, by_seder):
+    def where(v):
+        return f'{CHAPTER_BOOKS_EN[v["bookchapter"]]} {number(v["chapter"])}:{number(v["versechapter"])}'
+    lines = [
+        '# מסדירים (Masdirim): all 447 sedarim of the Tanakh',
+        '',
+        '> The traditional Jewish division of the Hebrew Bible into sedarim, with where each seder starts and ends '
+        'in the chapter:verse numbering (given only to help locate the text). Source: https://www.masdirim.org '
+        '(credit: "החלוקה לסדרים: מסדירים, www.masdirim.org"). Each line links to the seder\'s page with the full text. '
+        'More: https://www.masdirim.org/llms.txt',
+        '']
+    book = None
+    for s in sedarim:
+        if s['book'] != book:
+            book = s['book']
+            count = sum(1 for x in sedarim if x['book'] == book)
+            lines += ['', f'## {SEDER_BOOKS_EN[book]} ({book}): {count} sedarim', '']
+        vs = by_seder[(s['book'], s['seder'])]
+        parashot = ''.join(f'; parasha {p}' for p in s['parashot'])
+        lines.append(f'- {SEDER_BOOKS_EN[book]} seder {s["seder_number"]} ({book} סדר {s["seder"]}): '
+                     f'{where(vs[0])} - {where(vs[-1])}, {len(vs)} verses{parashot}. '
+                     f'{SITE}/{seder_path(book, s["seder"]).replace(" ", "_")}')
+    return '\n'.join(lines) + '\n'
 
 
 LLMS_TXT = '''# מסדירים (Masdirim)
@@ -308,6 +439,8 @@ LLMS_TXT = '''# מסדירים (Masdirim)
 > The Hebrew Bible (Tanakh) divided into sedarim, the traditional Jewish division (447 sedarim), instead of the chapters introduced by Christian printers. The site converts between chapter:verse and seder:verse references, and shows every seder, chapter and weekly parasha with full vocalized text (nikud and cantillation). Hebrew. Free to use with attribution: "החלוקה לסדרים: מסדירים, www.masdirim.org".
 
 ## Pages
+- [Questions and answers about the sedarim](https://www.masdirim.org/faq.html) (Hebrew)
+- [Every seder with its start and end, in plain text](https://www.masdirim.org/llms-full.txt)
 - [All sedarim, chapters and parashot](https://www.masdirim.org/seder/): index of every page below
 - One seder: https://www.masdirim.org/seder/<book>/<seder>.html, e.g. https://www.masdirim.org/seder/בראשית/יג.html (Bereshit seder 13 = Genesis 16:1-16)
 - One chapter, showing which seder(s) it is in: https://www.masdirim.org/perek/<book>/<chapter>.html, e.g. https://www.masdirim.org/perek/בראשית/טז.html

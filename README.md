@@ -14,4 +14,4 @@ https://www.masdirim.org
 
     python3 build_api.py
 
-הסקריפט מעדכן את קבצי ה-API (`API/`), את הדפים הסטטיים של הסדרים, הפרקים, הפרשות והספרים (`seder/`, `perek/`, `parasha/`, `book/`) ואת `sitemap.xml`, `robots.txt` ו-`llms.txt`. בדיקה בלבד, בלי לשנות קבצים: `python3 build_api.py --check`.
+הסקריפט מעדכן את קבצי ה-API (`API/`), את הדפים הסטטיים של הסדרים, הפרקים, הפרשות והספרים (`seder/`, `perek/`, `parasha/`, `book/`) את דף השאלות והתשובות (`faq.html`) ואת `sitemap.xml`, `robots.txt`, `llms.txt` ו-`llms-full.txt`. בדיקה בלבד, בלי לשנות קבצים: `python3 build_api.py --check`.
