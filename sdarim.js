@@ -1178,6 +1178,7 @@ async function showSeder(book, seder) {
     document.getElementById("seder").value = seder;
     document.getElementById("sverse").value = 'א';
     history.pushState(null, '', sederUrl({book: book, seder: seder}));
+    shownSearch = location.search;
     document.getElementById("result").scrollIntoView();
 }
 
@@ -1200,7 +1201,12 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// back / forward between sedarim opened with the arrows. A click on a menu link (#about, #agree...)
+// also fires popstate but changes only the hash: the text shown stays as it is
+let shownSearch = location.search;
 window.addEventListener('popstate', function () {
+    if (location.search == shownSearch) return;
+    shownSearch = location.search;
     start();
 });
 
