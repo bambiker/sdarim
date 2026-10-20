@@ -1,73 +1,93 @@
 <!DOCTYPE html>
 <html lang="he">
   <head>
-    <title>מסדירים - חוזרים לחלוקת התנ"ך היהודית</title>
-    <link rel="canonical" href="https://www.masdirim.org/fame" />
-    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <meta charset="utf-8">
+    <title>מיזמים שמשתמשים בחלוקה לסדרים - מסדירים</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
-    <base target="_top">
-    <meta name="description" content='החלוקה לפרקים אינה יהודית אלא נוצרית המייצרת פרשנות שלא תמיד מתאימה לרוח היהדות. אתר מסדירים מאפשר להמיר בקלות בין החלוקות, ולקרוא ולחפש בתנ"ך לפי החלוקה לסדרים.'>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="sdarim.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JETFHY33T0');
-</script>  
-
+    <meta name="description" content="אתרים, לוחות לימוד ושיעורים שמשתמשים בחלוקת התנ"ך לסדרים.">
+    <link rel="canonical" href="https://www.masdirim.org/fame">
+    <meta name="theme-color" content="#11235A">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/sdarim.css">
+    <script src="/app.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JETFHY33T0');
+    </script>
   </head>
-  <body dir="rtl" onload="start()" >
-    <script type="text/javascript" src="sdarim.js"></script>
+  <body dir="rtl">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">ס</span>מסדירים</a>
+        <nav class="topnav" aria-label="ניווט ראשי">
+          <a href="/#tools">קריאה</a>
+          <a href="/#about">אודות</a>
+          <a class="wide-only" href="/#agree">הסכמות</a>
+          <a class="wide-only" href="/#contact">יצירת קשר</a>
+        </nav>
+        <button type="button" class="install" data-install hidden>התקנה<span class="wide-only"> כאפליקציה</span></button>
+      </div>
+    </header>
 
-<section id="secup">
-<H1> <a href="https://www.masdirim.org">מסדירים</a></H1>
-<H3><a href="https://www.masdirim.org">חוזרים לחלוקת התנ"ך היהודית</a> </H3>
-  <br>
-  <br>
-</section>  
-<br>
+    <main>
+      <section class="hero page-hero">
+        <div class="hero-inner">
+          <h1>מיזמים נוספים</h1>
+          <p class="tagline">אתרים, לוחות לימוד ושיעורים שמשתמשים בחלוקת התנ"ך לסדרים.</p>
+        </div>
+      </section>
 
-    
-    <br><br>
-  <h2 id="agree" style="color:#4f009e;">היכל התהילה</h2>
-    מיזמים אשר משתמשים בחלוקת התנ"ך לסדרים   
-  <ul>
-  <li><a href="https://shivalevitzaron.org/" target="_blank"> שיבה לבצרון</a></li>
-  <li><a href="https://www.sefaria.org.il/calendars" target="_blank">לימוד יומי באתר ספריא</a></li>
-<li><a href="https://www.tanachyomi.co.il/" target="_blank">תנ"ך יומי</a></li>
-<li><a href="https://he.wikipedia.org/wiki/%D7%97%D7%9C%D7%95%D7%A7%D7%AA_%D7%94%D7%AA%D7%A0%22%D7%9A_%D7%9C%D7%A1%D7%93%D7%A8%D7%99%D7%9D" target="_blank">ויקיפדיה</a></li>
-<li><a href="https://he.wikisource.org/wiki/%D7%91%D7%99%D7%90%D7%95%D7%A8:%D7%A1%D7%93%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%A0%22%D7%9A" target="_blank">ויקי טקסט</a></li>
-<li><a href="https://www.sidra.org.il/" target="_blank">מיזם סדרא מבית מחלקי המים, מציג בצורה נאה ונגישה את סדר קריאת התורה ה"תלת שנתי" שהיה נהוג בארץ ישראל בתקופת התלמוד ועד לסוף תקופת הגאונים.</a></li>
-<li><a href="https://ecohen100-collab.github.io/tanach-yomi/" target="_blank">שיעורים מאת הרב אלעד דוקוב, בית מדרש הטכניון, בנביאים ובכתובים לפי החלוקה לסדרים</a></li>
-<li><a href="" target="_blank"></a></li>
-    
-  </ul>
-<br>
-  
-<br>
+      <article class="page card">
+        <div class="projects">
+          <a class="project" href="https://shivalevitzaron.org/" target="_blank" rel="noopener">
+            <strong>שיבה לבצרון</strong>
+          </a>
+          <a class="project" href="https://www.sefaria.org.il/calendars" target="_blank" rel="noopener">
+            <strong>לימוד יומי באתר ספריא</strong>
+          </a>
+          <a class="project" href="https://www.tanachyomi.co.il/" target="_blank" rel="noopener">
+            <strong>תנ"ך יומי</strong>
+          </a>
+          <a class="project" href="https://he.wikipedia.org/wiki/%D7%97%D7%9C%D7%95%D7%A7%D7%AA_%D7%94%D7%AA%D7%A0%22%D7%9A_%D7%9C%D7%A1%D7%93%D7%A8%D7%99%D7%9D" target="_blank" rel="noopener">
+            <strong>ויקיפדיה</strong>
+            <span>הערך "חלוקת התנ"ך לסדרים"</span>
+          </a>
+          <a class="project" href="https://he.wikisource.org/wiki/%D7%91%D7%99%D7%90%D7%95%D7%A8:%D7%A1%D7%93%D7%A8%D7%99%D7%9D_%D7%91%D7%AA%D7%A0%22%D7%9A" target="_blank" rel="noopener">
+            <strong>ויקיטקסט</strong>
+            <span>ביאור: סדרים בתנ"ך</span>
+          </a>
+          <a class="project" href="https://www.sidra.org.il/" target="_blank" rel="noopener">
+            <strong>מיזם סדרא</strong>
+            <span>מבית מחלקי המים. מציג בצורה נאה ונגישה את סדר קריאת התורה ה"תלת שנתי" שהיה נהוג בארץ ישראל בתקופת התלמוד ועד לסוף תקופת הגאונים.</span>
+          </a>
+          <a class="project" href="https://ecohen100-collab.github.io/tanach-yomi/" target="_blank" rel="noopener">
+            <strong>שיעורים בנביאים ובכתובים</strong>
+            <span>מאת הרב אלעד דוקוב, בית מדרש הטכניון, לפי החלוקה לסדרים.</span>
+          </a>
+        </div>
 
-<?var url = getScriptUrl();?><a href='https://www.masdirim.org' target="_blank"> <input type='button' name='button' value='חזרה'  STYLE="cursor: pointer; color: white; font-family: Heebo; font-weight: bold; font-size: 20px; background-color: #92d050;border-radius: 12px;" size="24" maxlength="30"></a>
-<br>
-<br>
-        <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://www.masdirim.org">
-<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-<a class="a2a_button_copy_link"></a>
-<a class="a2a_button_x"></a>
-<a class="a2a_button_whatsapp"></a>
-<a class="a2a_button_email"></a>
-<a class="a2a_button_telegram"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_facebook_messenger"></a>
-<a class="a2a_button_google_gmail"></a>
-</div>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- AddToAny END -->
+        <div class="page-cta">
+          <p>מכירים מיזם נוסף שמשתמש בחלוקה לסדרים? ספרו לנו ונוסיף אותו.</p>
+          <a class="btn btn-gold" href="https://forms.gle/F7b9u28CpURSjwe39" target="_blank" rel="noopener">יצירת קשר</a>
+          <a class="btn btn-outline" href="/">חזרה לאתר</a>
+        </div>
+      </article>
+    </main>
 
+    <footer class="site-footer">
+      <a href="/">לדף הבית</a> ·
+      <a href="/seder/">כל הסדרים, הפרקים והפרשות</a> ·
+      <a href="/faq.html">שאלות ותשובות</a> ·
+      <a href="/api.html">API ונתונים</a> ·
+      <a href="https://github.com/bambiker/sdarim" target="_blank" rel="noopener">קוד פתוח</a>
+    </footer>
   </body>
 </html>

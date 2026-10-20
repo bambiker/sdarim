@@ -1,132 +1,102 @@
 <!DOCTYPE html>
 <html lang="he">
   <head>
-    <title>מסדירים - חוזרים לחלוקת התנ"ך היהודית</title>
-    <link rel="canonical" href="https://www.masdirim.org/api" />
-    <link href='https://fonts.googleapis.com/css?family=Assistant' rel='stylesheet'>
+    <meta charset="utf-8">
+    <title>API ונתונים - מסדירים</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
-    <base target="_top">
-    <meta name="description" content='החלוקה לפרקים אינה יהודית אלא נוצרית המייצרת פרשנות שלא תמיד מתאימה לרוח היהדות. אתר מסדירים מאפשר להמיר בקלות בין החלוקות, ולקרוא ולחפש בתנ"ך לפי החלוקה לסדרים.'>
-      <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="stylesheet" href="sdarim.css">
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JETFHY33T0');
-</script>  
-
+    <meta name="description" content="החלוקה לסדרים כ-API וקבצי JSON חופשיים: פסוקים, סדרים ופרקים, רשימת כל הסדרים וטבלת המרה בין פרקים לסדרים, עם דוגמאות קוד.">
+    <link rel="canonical" href="https://www.masdirim.org/api">
+    <meta name="theme-color" content="#11235A">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/sdarim.css">
+    <script src="/app.js" defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JETFHY33T0');
+    </script>
   </head>
-  <body dir="rtl" onload="start()" >
-    <script type="text/javascript" src="sdarim.js"></script>
+  <body dir="rtl">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">ס</span>מסדירים</a>
+        <nav class="topnav" aria-label="ניווט ראשי">
+          <a href="/#tools">קריאה</a>
+          <a href="/#about">אודות</a>
+          <a class="wide-only" href="/#agree">הסכמות</a>
+          <a class="wide-only" href="/#contact">יצירת קשר</a>
+        </nav>
+        <button type="button" class="install" data-install hidden>התקנה<span class="wide-only"> כאפליקציה</span></button>
+      </div>
+    </header>
 
-<section id="secup">
-<H1> <a href="https://www.masdirim.org">מסדירים</a></H1>
-<H3><a href="https://www.masdirim.org">חוזרים לחלוקת התנ"ך היהודית</a> </H3>
-  <br>
-  <br>
-</section>  
-<br>
+    <main>
+      <section class="hero page-hero">
+        <div class="hero-inner">
+          <h1>API ונתונים</h1>
+          <p class="tagline">כל הנתונים של מסדירים פתוחים לשימוש חופשי: קבצי JSON ו-API לפי הפרקים ולפי הסדרים.</p>
+        </div>
+      </section>
 
-    
-    <br>
- 
-    החלוקה לתנ"ך לסדרים זמינה גם דרך אתר מסדירים www.masdirim.org באמצעות הממשק למשתמש,  וניתן לגשת למידע גם באמצעות API וקבצי JSON. קובץ JSON המלא המכיל את כל פסוקי התנ"ך זמין להורדה בכתובת:
-    <br>
-        <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/sdarim.json" target="blank">
-    https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/sdarim.json</a><br>
-       </div>
-    <div dir="rtl">
-    ניתן דרך API לגשת לכל פסוק בנפרד לפי החלוקה לפרקים בכתובת:<br>
-    </div>
-            <div dir="ltr">
-    https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_פסוק_פרק_ספר.json<br>
-                          </div>
-        <div dir="rtl">
-    לדוגמה, עבור ספר דברי הימים א', פרק ב', פסוק ג' (לפי החלוקה לפרקים)<br>
-                          </div>
-            <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ג_ב_דברי_הימים_א.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ג_ב_דברי_הימים_א.json</a><br>
-            </div>
-        <div dir="rtl">
-    ניתן גם לא לציין את הפסוק ואז לקבל את כל הפסוקים בפרק, לדוגמא<br>
-                          </div>
-            <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ב_דברי_הימים_א.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ב_דברי_הימים_א.json</a><br>
-            </div>
+      <article class="page card">
+        <p>החלוקה לסדרים זמינה באתר מסדירים דרך הממשק למשתמש, וגם כקבצי JSON ו-API שאפשר להשתמש בהם בכל אתר, אפליקציה או תוכנה.</p>
 
-    
-    <div dir="rtl">
-בנוסף, ניתן לגשת גם לפי החלוקה לסדרים בכתובת<br>
-                  </div>
-            <div dir="ltr">
-    https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_פסוק_פרק_סדר.json<br>
-            </div>
-        <div dir="rtl">
-למשל, עבור ספר דברי הימים, סדר א', פסוק נז' (לפי החלוקה לסדרים)<br>
-            </div>
-            <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_נז_א_דברי_הימים.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_נז_א_דברי_הימים.json</a><br>
-            </div>
-        <div dir="rtl">
-    ניתן גם לא לציין את הפסוק ואז לקבל את כל הפסוקים בסדר, לדוגמא<br>
-                          </div>
-            <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_ג_דברי_הימים.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_ג_דברי_הימים.json</a><br>
-            </div>
+        <h2 id="full">הקובץ המלא</h2>
+        <p>קובץ JSON עם כל פסוקי התנ"ך, לפי הפרקים ולפי הסדרים:</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/sdarim.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/sdarim.json</a></p>
 
+        <h2 id="chapter">פסוק או פרק לפי החלוקה לפרקים</h2>
+        <p>כל פסוק בנפרד, לפי הכתובת:</p>
+        <p class="url"><code>https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_פסוק_פרק_ספר.json</code></p>
+        <p>לדוגמה, ספר דברי הימים א, פרק ב, פסוק ג (לפי החלוקה לפרקים):</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ג_ב_דברי_הימים_א.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ג_ב_דברי_הימים_א.json</a></p>
+        <p>בלי פסוק מקבלים את כל הפסוקים בפרק:</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ב_דברי_הימים_א.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/chapter_ב_דברי_הימים_א.json</a></p>
 
+        <h2 id="seder">פסוק או סדר לפי החלוקה לסדרים</h2>
+        <p>כל פסוק בנפרד, לפי הכתובת:</p>
+        <p class="url"><code>https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_פסוק_סדר_ספר.json</code></p>
+        <p>לדוגמה, ספר דברי הימים, סדר א, פסוק נז (לפי החלוקה לסדרים):</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_נז_א_דברי_הימים.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_נז_א_דברי_הימים.json</a></p>
+        <p>בלי פסוק מקבלים את כל הפסוקים בסדר:</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_ג_דברי_הימים.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/seder_ג_דברי_הימים.json</a></p>
 
+        <h2 id="format">מבנה התשובה</h2>
+<pre class="code">{
+    "bookchapter": "דברי הימים א",
+    "chapter": "ב",
+    "versechapter": "ג",
+    "bookseder": "דברי הימים",
+    "seder": "א",
+    "verseseder": "נז",
+    "versenikud": "בְּנֵ֣י יְהוּדָ֗ה עֵ֤ר וְאוֹנָן֙ וְשֵׁלָ֔ה שְׁלוֹשָׁה֙ נ֣וֹלַד ל֔וֹ מִבַּת־ שׁ֖וּעַ הַֽכְּנַעֲנִ֑ית ...",
+    "versenonikud": "בני יהודה ער ואונן ושלה שלושה נולד לו מבת שוע הכנענית ..."
+}</pre>
+        <dl class="fields">
+          <dt>bookchapter</dt><dd>שם הספר לפי החלוקה לפרקים</dd>
+          <dt>chapter</dt><dd>מספר הפרק</dd>
+          <dt>versechapter</dt><dd>מספר הפסוק לפי החלוקה לפרקים</dd>
+          <dt>bookseder</dt><dd>שם הספר לפי החלוקה לסדרים</dd>
+          <dt>seder</dt><dd>מספר הסדר</dd>
+          <dt>verseseder</dt><dd>מספר הפסוק לפי החלוקה לסדרים</dd>
+          <dt>versenikud</dt><dd>הפסוק עם ניקוד וטעמים</dd>
+          <dt>versenonikud</dt><dd>הפסוק בלי ניקוד וטעמים</dd>
+        </dl>
+        <p>רשימת הספרים:</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json</a></p>
 
-    
-        <div dir="rtl">
-מבנה התשובה של ה-API יהיה כך:<br>
-            </div>
-    <div dir="ltr">
-{<br>
-    "bookchapter": "דברי הימים א",<br>
-    "chapter": "ב",<br>
-    "versechapter": "ג",<br>
-    "bookseder": "דברי הימים",<br>
-    "seder": "א",<br>
-    "verseseder": "נז",<br>
-    "versenikud": "בְּנֵ֣י יְהוּדָ֗ה עֵ֤ר וְאוֹנָן֙ וְשֵׁלָ֔ה שְׁלוֹשָׁה֙ נ֣וֹלַד ל֔וֹ מִבַּת־ שׁ֖וּעַ הַֽכְּנַעֲנִ֑ית וַיְהִ֞י עֵ֣ר ׀ בְּכ֣וֹר יְהוּדָ֗ה רַ֛ע בְּעֵינֵ֥י יְהוָ֖ה וַיְמִיתֵֽהוּ׃ ",<br>
-    "versenonikud": "בני יהודה ער ואונן ושלה שלושה נולד לו מבת שוע הכנענית ויהי ער  בכור יהודה רע בעיני יהוה וימיתהו "<br>
-}<br>
-    </div>
-    <br>
-    <div dir="rtl"><br>
-כאשר bookchapter הוא שם הספר לפי החלוקה לפרקים<br>
-    chapter הוא מספר הפרק<br>
-      versechapter הוא מספר הפסוק לפי החלוקה לפרקים<br>
-      bookseder הוא שם הספר לפי החלוקה לסדרים<br>
-      seder הוא מספר הסדר<br>
-      verseseder הוא מספר הפסוק לפי החלוקה לסדרים<br>
-      versenikud הוא הפסוק כולל ניקוד וטעמים<br>
-      versenonikud הוא הפסוק ללא ניקוד וללא טעמים<br>
-      <br>
-רשימת הספרים נמצאת בכתובת<br>
-    </div>
-    <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/book_names.json</a><br>
-    </div>
-    <br>
-    <h2 id="sedarim">רשימת כל הסדרים</h2>
-    <div dir="rtl">
-קובץ אחד קטן עם כל 447 הסדרים: היכן כל סדר מתחיל ונגמר לפי החלוקה לפרקים, כמה פסוקים יש בו ובאילו פרשות הוא נמצא. מתאים ללוחות לימוד, לאפליקציות ולכל מי שצריך לדעת את גבולות הסדרים בלי להוריד את הטקסט.<br>
-    </div>
-    <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json</a><br>
-    </div>
-    <div dir="rtl">
-כל סדר נראה כך (בראשית סדר יג):<br>
-    </div>
-<pre dir="ltr">{
+        <h2 id="sedarim">רשימת כל הסדרים</h2>
+        <p>קובץ אחד קטן עם כל 447 הסדרים: היכן כל סדר מתחיל ונגמר לפי החלוקה לפרקים, כמה פסוקים יש בו ובאילו פרשות הוא נמצא. מתאים ללוחות לימוד, לאפליקציות ולכל מי שצריך לדעת את גבולות הסדרים בלי להוריד את הטקסט.</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json</a></p>
+        <p>כל סדר נראה כך (בראשית סדר יג):</p>
+<pre class="code">{
     "book": "בראשית",
     "seder": "יג",
     "seder_number": 13,
@@ -135,44 +105,30 @@
     "verses": 16,
     "parashot": ["לך לך"]
 }</pre>
-    <div dir="rtl">
-book הוא שם הספר לפי החלוקה לסדרים, seder ו-seder_number הם מספר הסדר באותיות ובמספר,
-start ו-end הם הפסוק הראשון והאחרון בסדר לפי החלוקה לפרקים (שם הספר, הפרק והפסוק באותיות ובמספרים),
-verses הוא מספר הפסוקים בסדר, ו-parashot הן הפרשות שהסדר נמצא בהן (בתורה בלבד).<br>
-    </div>
-    <br>
+        <p><code>book</code> הוא שם הספר לפי החלוקה לסדרים, <code>seder</code> ו-<code>seder_number</code> הם מספר הסדר באותיות ובמספר,
+        <code>start</code> ו-<code>end</code> הם הפסוק הראשון והאחרון בסדר לפי החלוקה לפרקים (שם הספר, הפרק והפסוק באותיות ובמספרים),
+        <code>verses</code> הוא מספר הפסוקים בסדר, ו-<code>parashot</code> הן הפרשות שהסדר נמצא בהן (בתורה בלבד).</p>
 
-    <h2 id="map">טבלת המרה בין פרקים לסדרים</h2>
-    <div dir="rtl">
-המיקום של כל פסוק בתנ"ך גם לפי הפרקים וגם לפי הסדרים, בלי הטקסט. הקובץ קטן פי 10 מהקובץ המלא, ומתאים לאתר שרוצה להמיר הפניות מפרקים לסדרים בעצמו.<br>
-    </div>
-    <div dir="ltr">
-    <a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json" target="blank">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json</a><br>
-    </div>
-    <div dir="rtl">
-כל שורה ב-verses היא פסוק אחד, לפי הסדר של השדות ב-fields:<br>
-    </div>
-<pre dir="ltr">{"fields":["bookchapter","chapter","versechapter","bookseder","seder","verseseder"],
+        <h2 id="map">טבלת המרה בין פרקים לסדרים</h2>
+        <p>המיקום של כל פסוק בתנ"ך גם לפי הפרקים וגם לפי הסדרים, בלי הטקסט. הקובץ קטן פי 10 מהקובץ המלא, ומתאים לאתר שרוצה להמיר הפניות מפרקים לסדרים בעצמו.</p>
+        <p class="url"><a href="https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json" target="_blank" rel="noopener">https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json</a></p>
+        <p>כל שורה ב-<code>verses</code> היא פסוק אחד, לפי סדר השדות ב-<code>fields</code>:</p>
+<pre class="code">{"fields":["bookchapter","chapter","versechapter","bookseder","seder","verseseder"],
 "verses":[
 ["בראשית","א","א","בראשית","א","א"],
 ["בראשית","א","ב","בראשית","א","ב"],
 ...]}</pre>
-    <br>
 
-    <h2 id="examples">דוגמאות קוד</h2>
-    <div dir="rtl">
-אפשר לקרוא את כל הקבצים ישירות מהדפדפן של אתר אחר (השרת מאפשר זאת), בלי שרת ביניים.<br>
-המרת פסוק מפרקים לסדרים ב-JavaScript:<br>
-    </div>
-<pre dir="ltr">const res = await fetch('https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json');
+        <h2 id="examples">דוגמאות קוד</h2>
+        <p>אפשר לקרוא את כל הקבצים ישירות מהדפדפן של אתר אחר (השרת מאפשר זאת), בלי שרת ביניים.</p>
+        <p>המרת פסוק מפרקים לסדרים ב-JavaScript:</p>
+<pre class="code">const res = await fetch('https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/map.json');
 const map = await res.json();
 // בראשית פרק טז פסוק א
 const row = map.verses.find(v =&gt; v[0] == 'בראשית' &amp;&amp; v[1] == 'טז' &amp;&amp; v[2] == 'א');
 console.log(row[3] + ' סדר ' + row[4] + ' פסוק ' + row[5]);   // בראשית סדר יג פסוק א</pre>
-    <div dir="rtl">
-הצגת תחילת כל סדר בספר שמואל ב-Python:<br>
-    </div>
-<pre dir="ltr">import requests
+        <p>הצגת תחילת כל סדר בספר שמואל ב-Python:</p>
+<pre class="code">import requests
 
 sedarim = requests.get('https://raw.githubusercontent.com/bambiker/sdarim/refs/heads/main/API/sedarim.json').json()
 for s in sedarim:
@@ -181,42 +137,24 @@ for s in sedarim:
 # א שמואל א 1 1
 # ב שמואל א 2 10
 # ...</pre>
-    <br>
 
-    <div dir="rtl">
-כשאתם מציגים מידע מהאתר, נשמח לקרדיט בנוסח: "החלוקה לסדרים: מסדירים, www.masdirim.org".<br>
-    </div>
-    <br>
-    <div dir="rtl">
-המידע הזה ניתן לשימוש חופשי, הן עבור תוכנה והן עבור שימוש מסחרי. נשמח אם תציינו שאתר מסדירים הוא המקור לנתונים.<br>
-    </div>
-    <br>
-    
-    <br>
-אם אתם צריכים עזרה, שיפורים (או שאתם הולכים להשתמש ב-API) ,תסדירו איתנו קשר
+        <h2 id="license">שימוש וקרדיט</h2>
+        <p>המידע ניתן לשימוש חופשי, גם בתוכנה וגם בשימוש מסחרי. כשאתם מציגים מידע מהאתר, נשמח לקרדיט בנוסח: "החלוקה לסדרים: מסדירים, www.masdirim.org".</p>
 
-<?var url = getScriptUrl();?><a href='https://forms.gle/F7b9u28CpURSjwe39' target="_blank"> <input type='button' name='button' value='יצירת קשר'  STYLE="cursor: pointer; color: white; font-family: Heebo; font-weight: bold; font-size: 20px; background-color: #92d050;border-radius: 12px;" size="24" maxlength="30"></a>
-  
-<br>
-<br>
+        <div class="page-cta">
+          <p>צריכים עזרה, רוצים שיפור, או הולכים להשתמש ב-API? תסדירו איתנו קשר.</p>
+          <a class="btn btn-gold" href="https://forms.gle/F7b9u28CpURSjwe39" target="_blank" rel="noopener">יצירת קשר</a>
+          <a class="btn btn-outline" href="/">חזרה לאתר</a>
+        </div>
+      </article>
+    </main>
 
-<?var url = getScriptUrl();?><a href='https://www.masdirim.org' target="_blank"> <input type='button' name='button' value='חזרה'  STYLE="cursor: pointer; color: white; font-family: Heebo; font-weight: bold; font-size: 20px; background-color: #92d050;border-radius: 12px;" size="24" maxlength="30"></a>
-<br>
-<br>
-        <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-url="https://www.masdirim.org">
-<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-<a class="a2a_button_copy_link"></a>
-<a class="a2a_button_x"></a>
-<a class="a2a_button_whatsapp"></a>
-<a class="a2a_button_email"></a>
-<a class="a2a_button_telegram"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_facebook_messenger"></a>
-<a class="a2a_button_google_gmail"></a>
-</div>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- AddToAny END -->
-
+    <footer class="site-footer">
+      <a href="/">לדף הבית</a> ·
+      <a href="/seder/">כל הסדרים, הפרקים והפרשות</a> ·
+      <a href="/faq.html">שאלות ותשובות</a> ·
+      <a href="/api.html">API ונתונים</a> ·
+      <a href="https://github.com/bambiker/sdarim" target="_blank" rel="noopener">קוד פתוח</a>
+    </footer>
   </body>
 </html>

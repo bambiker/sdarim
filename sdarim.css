@@ -910,34 +910,137 @@ footer {
   }
 }
 
-/* ~~~ older pages (api.html, fame.html) until they move to the new layout ~~~ */
+/* ~~~ content pages: api.html, fame.html ~~~ */
 
-body:has(#secup) {
-  margin: 0 20px;
-  overflow-wrap: anywhere;
+.page-hero {
+  padding: 40px 20px 84px;
 }
 
-#secup {
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy-2) 100%);
-  color: #fff;
-  margin: 0 -20px 20px;
-  padding: 28px 16px;
-  text-align: center;
+.page {
+  max-width: 860px;
+  margin: -48px auto 0;
+  position: relative;
+  padding: 12px 32px 28px;
+  line-height: 1.8;
 }
 
-#secup h1 {
+.page h2 {
   font-family: var(--text);
-  font-size: 48px;
+  font-size: 26px;
+  margin: 28px 0 6px;
+}
+
+.page code {
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-size: .9em;
+  background: var(--bg);
+  border-radius: 4px;
+  padding: 0 4px;
+}
+
+.url {
+  direction: ltr;
+  text-align: left;
+  overflow-wrap: anywhere;
+  font-size: 15px;
+  margin: 4px 0 12px;
+}
+
+.url code {
+  background: none;
+  padding: 0;
+}
+
+pre.code {
+  direction: ltr;
+  text-align: left;
+  overflow-x: auto;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+dl.fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 4px 16px;
+  margin: 12px 0;
+}
+
+dl.fields dt {
+  direction: ltr;
+  font-family: monospace;
+  font-weight: 700;
+  color: var(--heading);
+}
+
+dl.fields dd {
   margin: 0;
 }
 
-#secup a {
-  color: inherit;
-  text-decoration: none;
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 16px 0 8px;
 }
 
-#secup br {
-  display: none;
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color .15s;
+}
+
+.project:hover {
+  border-color: var(--gold);
+}
+
+.project strong {
+  font-family: var(--text);
+  font-size: 20px;
+  color: var(--heading);
+}
+
+.project span {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.page-cta {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  text-align: center;
+}
+
+.page-cta .btn {
+  margin: 4px;
+}
+
+@media (max-width: 700px) {
+  .page {
+    margin: -48px 12px 0;
+    padding: 8px 18px 20px;
+  }
+  dl.fields {
+    grid-template-columns: 1fr;
+  }
+  dl.fields dt {
+    text-align: right;
+    margin-top: 6px;
+  }
 }
 
 /* ~~~ commentaries under a verse (commentary.js) ~~~ */
