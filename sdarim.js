@@ -8,7 +8,7 @@ async function start(){
           const filtArray2 = await getSederVerses(book, seder);
           userSeder(filtArray2, book, seder, verse)
           document.title=" מסדירים בספר " + book + " סדר " + seder;
-          urlname = "https://www.masdirim.org/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
+          urlname = sederPageUrl(book, seder, verse);
           setUrlLink(urlname);
           document.getElementById("sbook").value  = book;
           document.getElementById("seder").value  = seder;
@@ -101,6 +101,14 @@ function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 }
 
+// the static page of a seder (made by build_pages.py): it has the text in the page itself,
+// so it shows a proper preview when shared and can be found by search engines
+function sederPageUrl(book, seder, verse) {
+    return "https://www.masdirim.org/seder/" + addunderscore(book) + "/" + seder + ".html" + (verse && verse != 'א' ? "#" + verse : "");
+}
+
+const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';
+
 function setUrlLink(url) {
     const a = document.createElement("a");
     a.href = url;
@@ -149,7 +157,7 @@ async function chapter2seder(){
     document.getElementById("sverse").value = filtArray[0].verseseder;
     const filtArray2 = await getSederVerses(filtArray[0].bookseder, filtArray[0].seder);
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = sederPageUrl(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder);
     setUrlLink(urlname);
     document.title = "מסדירים - ספר " + filtArray[0].bookseder + " סדר " + filtArray[0].seder;
  
@@ -179,7 +187,7 @@ async function seder2chapter(){
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
-    urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
+    urlname = sederPageUrl(filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder);
     setUrlLink(urlname);
     document.title = " ספר " + sbook + " סדר " + seder;
 
@@ -202,7 +210,7 @@ async function findparasha(){
     const verses = await Promise.all(sedarim.map(s => getSederVerses(s.book, s.seder)));
     const filteredArray = verses.flat().filter(item => item.parasha === parasha);
 
-    output = "<h2>" + "פרשת " + escapeHtml(parasha) + "</h2>";
+    output = "<h2>" + "פרשת " + escapeHtml(parasha) + " " + PRINT_BUTTON + "</h2>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
          if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
@@ -211,7 +219,7 @@ async function findparasha(){
     }
     document.getElementById("result").innerHTML  = output;
 
-    urlname = "https://www.masdirim.org/?parasha="+addunderscore(parasha);
+    urlname = "https://www.masdirim.org/parasha/" + addunderscore(parasha) + ".html";
     setUrlLink(urlname);
     document.title = " פרשת " + parasha + " לפי החלוקה לסדרים ";
     return ;
@@ -1094,7 +1102,7 @@ function cleanverse(para){
 function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
-    output = '<div class="seder-nav"></div>' + "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + "</h3>";
+    output = '<div class="seder-nav"></div>' + "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + " " + PRINT_BUTTON + "</h3>";
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
@@ -1133,7 +1141,7 @@ async function showSeder(book, seder) {
     if (verses.length == 0) return;
     userSeder(verses, book, seder, 'א');
     document.title = " מסדירים בספר " + book + " סדר " + seder;
-    setUrlLink("https://www.masdirim.org/?book=" + addunderscore(book) + "&seder=" + seder + "&verse=א");
+    setUrlLink(sederPageUrl(book, seder, 'א'));
     document.getElementById("sbook").value = book;
     document.getElementById("seder").value = seder;
     document.getElementById("sverse").value = 'א';

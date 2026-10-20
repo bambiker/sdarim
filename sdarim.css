@@ -63,3 +63,133 @@ h3 {
 .seder-nav a:hover {
   text-decoration: underline;
 }
+
+/* ~~~ static pages: seder/, perek/, parasha/, book/ ~~~ */
+
+.static-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 16px;
+  line-height: 1.9;
+}
+
+.site-header {
+  background-color: #11235A;
+  color: white;
+  padding: 10px 16px;
+  margin: 0 -16px 12px;
+  font-size: 20px;
+}
+
+.site-header a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.static-page h1 {
+  font-size: 32px;
+  color: #4f009e;
+  margin: 8px 0 4px;
+}
+
+.static-page h2 {
+  margin: 20px 0 6px;
+}
+
+.static-page h2 a {
+  color: #4f009e;
+  text-decoration: none;
+}
+
+.seder-info {
+  color: #444;
+  margin: 4px 0;
+}
+
+.verses {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.verse:target {
+  background-color: #fff3a0;
+}
+
+.vnum {
+  text-decoration: none;
+}
+
+.index-list a {
+  margin: 0 2px;
+}
+
+.print-button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: white;
+  background-color: #92d050;
+  border: none;
+  border-radius: 10px;
+  padding: 3px 12px;
+}
+
+footer {
+  margin: 30px 0 20px;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+}
+
+/* ~~~ printing ~~~ */
+
+@page {
+  margin: 15mm;
+}
+
+@media print {
+  .no-print, .seder-nav, .print-button {
+    display: none !important;
+  }
+  /* on the main page, print only the result: hide everything around it,
+     and hide text that sits directly in <body> */
+  body:not(.static-page) {
+    visibility: hidden;
+  }
+  body:not(.static-page) > :not(:has(#result)) {
+    display: none !important;
+  }
+  body:not(.static-page) #result {
+    visibility: visible;
+  }
+  body {
+    margin: 0;
+    font-size: 13pt;
+  }
+  .static-page {
+    max-width: none;
+    padding: 0;
+  }
+  .verses, #result {
+    font-size: 15pt;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  sup {
+    color: #555;
+  }
+  .ketiv {
+    color: #777;
+  }
+  h1, h2, h3 {
+    break-after: avoid;
+  }
+  mark, .verse:target {
+    background: none;
+  }
+}
