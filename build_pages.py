@@ -90,23 +90,20 @@ def plain(v):
     return re.sub(r'\s+', ' ', v.get('versenonikud', '')).strip()
 
 
-def ref(book, chapter, verse):
-    return f'{book} {chapter}, {verse}'
-
-
-def range_text(first, last):
-    start = ref(first['bookchapter'], first['chapter'], first['versechapter'])
-    if first['bookchapter'] == last['bookchapter']:
-        return f'{start} – {last["chapter"]}, {last["versechapter"]}'
-    return f'{start} – {ref(last["bookchapter"], last["chapter"], last["versechapter"])}'
-
-
 def snippet(verses, words=25):
     text = ' '.join(plain(v) for v in verses[:3]).split()
     return ' '.join(text[:words]) + ('...' if len(text) > words else '')
 
 
-def page(path, title, description, body, prev_next=''):
+def breadcrumbs(crumbs):
+    """schema.org BreadcrumbList, so search results show מסדירים › … instead of the long URL."""
+    items = [{'@type': 'ListItem', 'position': i + 1, 'name': name, 'item': url(path)}
+             for i, (name, path) in enumerate([('מסדירים', ''), ('כל הסדרים', 'seder/')] + crumbs)]
+    data = {'@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': items}
+    return '    <script type="application/ld+json">' + json.dumps(data, ensure_ascii=False) + '</script>\n'
+
+
+def page(path, title, description, body, crumbs=None):
     canonical = url(path)
     return f'''<!DOCTYPE html>
 <html lang="he" dir="rtl">
@@ -122,7 +119,12 @@ def page(path, title, description, body, prev_next=''):
     <meta property="og:title" content="{esc(title)}">
     <meta property="og:description" content="{esc(description)}">
     <meta property="og:url" content="{canonical}">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <meta property="og:image" content="{SITE}/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="מסדירים - חוזרים לחלוקת התנ&quot;ך היהודית">
+    <meta name="twitter:card" content="summary_large_image">
+{breadcrumbs(crumbs) if crumbs is not None else ''}    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link rel="stylesheet" href="/sdarim.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
@@ -164,11 +166,12 @@ def verses_html(verses, number_by='seder', anchors=False):
     out = []
     for v in verses:
         n = v['verseseder'] if number_by == 'seder' else v['versechapter']
-        where = (f'{v["bookchapter"]} {v["chapter"]}, {v["versechapter"]}' if number_by == 'seder'
-                 else f'{v["bookseder"]} סדר {v["seder"]} פסוק {v["verseseder"]}')
+        # pages by sedarim don't mention chapters; chapter pages show the seder of each verse
+        tooltip = (f' title="{esc(v["bookseder"])} סדר {esc(v["seder"])} פסוק {esc(v["verseseder"])}"'
+                   if number_by == 'chapter' else '')
         anchor = f' id="{esc(n)}"' if anchors else ''
-        out.append(f'<span class="verse"{anchor}><a class="vnum" href="{keter(v)}" target="_blank" '
-                   f'title="{esc(where)}"><sup>({esc(n)})</sup></a> {verse_text(v)}</span>')
+        out.append(f'<span class="verse"{anchor}><a class="vnum" href="{keter(v)}" target="_blank"{tooltip}>'
+                   f'<sup>({esc(n)})</sup></a> {verse_text(v)}</span>')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
 
@@ -191,22 +194,22 @@ def build_pages(verses, sedarim):
     for i, s in enumerate(sedarim):
         vs = by_seder[(s['book'], s['seder'])]
         name = f'{s["book"]} סדר {s["seder"]}'
-        rng = range_text(vs[0], vs[-1])
         parashot = ''.join(f' · <a href="{href(parasha_path(p))}">פרשת {esc(p)}</a>' for p in s['parashot'])
         prev = sedarim[i - 1] if i > 0 else None
         nxt = sedarim[i + 1] if i + 1 < len(sedarim) else None
         body = (nav(prev and (seder_path(prev['book'], prev['seder']), f'הסדר הקודם: {prev["book"]} סדר {prev["seder"]}'),
                     nxt and (seder_path(nxt['book'], nxt['seder']), f'הסדר הבא: {nxt["book"]} סדר {nxt["seder"]}'))
                 + f'    <h1>{esc(name)}</h1>\n'
-                + f'    <p class="seder-info">לפי החלוקה לפרקים: {esc(rng)} · {len(vs)} פסוקים{parashot}</p>\n'
+                + f'    <p class="seder-info">{len(vs)} פסוקים{parashot}</p>\n'
                 + f'    <p class="seder-tools no-print"><a href="/?book={quote(slug(s["book"]))}&amp;seder={quote(s["seder"])}&amp;verse={quote("א")}">'
                   f'פתיחה באתר</a> · <a href="{href(book_path(s["book"]))}">ספר {esc(s["book"])} כולו</a> · {print_button()}</p>\n'
                 + verses_html(vs, anchors=True)
                 + nav(prev and (seder_path(prev['book'], prev['seder']), f'הסדר הקודם: {prev["book"]} סדר {prev["seder"]}'),
                       nxt and (seder_path(nxt['book'], nxt['seder']), f'הסדר הבא: {nxt["book"]} סדר {nxt["seder"]}')))
-        desc = f'{name} לפי החלוקה היהודית של התנ"ך לסדרים ({rng}, {len(vs)} פסוקים): {snippet(vs)}'
-        pages[seder_path(s['book'], s['seder'])] = page(seder_path(s['book'], s['seder']),
-                                                        f'{name} ({rng}) | מסדירים', desc, body)
+        desc = f'{name} לפי החלוקה היהודית של התנ"ך לסדרים ({len(vs)} פסוקים): {snippet(vs)}'
+        pages[seder_path(s['book'], s['seder'])] = page(
+            seder_path(s['book'], s['seder']), f'{name} | מסדירים', desc, body,
+            [(f'ספר {s["book"]}', book_path(s['book'])), (name, seder_path(s['book'], s['seder']))])
 
     # ~~~ chapter pages ~~~
     chapters = list(by_chapter)
@@ -230,7 +233,8 @@ def build_pages(verses, sedarim):
         body += navs
         desc = f'{book} פרק {chapter} לפי החלוקה היהודית לסדרים: הפרק נמצא ב{where}. {snippet(vs, 15)}'
         pages[perek_path(book, chapter)] = page(perek_path(book, chapter),
-                                                f'{book} פרק {chapter} לפי הסדרים ({where}) | מסדירים', desc, body)
+                                                f'{book} פרק {chapter} לפי הסדרים ({where}) | מסדירים', desc, body,
+                                                [(f'{book} פרק {chapter}', perek_path(book, chapter))])
 
     # ~~~ parasha pages ~~~
     parashot = list(by_parasha)
@@ -244,14 +248,15 @@ def build_pages(verses, sedarim):
         navs = nav(prev and (parasha_path(prev), f'הפרשה הקודמת: {prev}'), nxt and (parasha_path(nxt), f'הפרשה הבאה: {nxt}'))
         where = ', '.join(f'{b} סדר {s}' for b, s in parts)
         body = navs + f'    <h1>פרשת {esc(parasha)} לפי החלוקה לסדרים</h1>\n'
-        body += (f'    <p class="seder-info">{esc(range_text(vs[0], vs[-1]))} · {len(vs)} פסוקים · '
+        body += (f'    <p class="seder-info">{len(vs)} פסוקים · '
                  + ', '.join(f'<a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a>' for b, s in parts)
                  + f'</p>\n    <p class="seder-tools no-print"><a href="/?parasha={quote(slug(parasha))}">פתיחה באתר</a> · {print_button()}</p>\n')
         for (b, s), p in parts.items():
             body += f'    <h2><a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a></h2>\n' + verses_html(p)
         body += navs
         desc = f'פרשת {parasha} לפי החלוקה היהודית של התנ"ך לסדרים: {where}. {snippet(vs, 15)}'
-        pages[parasha_path(parasha)] = page(parasha_path(parasha), f'פרשת {parasha} לפי הסדרים | מסדירים', desc, body)
+        pages[parasha_path(parasha)] = page(parasha_path(parasha), f'פרשת {parasha} לפי הסדרים | מסדירים', desc, body,
+                                            [(f'פרשת {parasha}', parasha_path(parasha))])
 
     # ~~~ whole books, for reading and printing ~~~
     for i, book in enumerate(books):
@@ -266,11 +271,12 @@ def build_pages(verses, sedarim):
                  + f'</p>\n    <p class="seder-tools no-print">{print_button()}</p>\n')
         for s in bs:
             vs = by_seder[(s['book'], s['seder'])]
-            body += (f'    <h2 id="seder-{esc(s["seder"])}"><a href="{href(seder_path(book, s["seder"]))}">{esc(book)} סדר {esc(s["seder"])}</a>'
-                     f' <small>({esc(range_text(vs[0], vs[-1]))})</small></h2>\n' + verses_html(vs))
+            body += (f'    <h2 id="seder-{esc(s["seder"])}"><a href="{href(seder_path(book, s["seder"]))}">{esc(book)} סדר {esc(s["seder"])}</a></h2>\n'
+                     + verses_html(vs))
         body += navs
         desc = f'ספר {book} כולו לפי החלוקה היהודית של התנ"ך לסדרים ({count}), עם ניקוד וטעמים, לקריאה ולהדפסה.'
-        pages[book_path(book)] = page(book_path(book), f'ספר {book} לפי הסדרים | מסדירים', desc, body)
+        pages[book_path(book)] = page(book_path(book), f'ספר {book} לפי הסדרים | מסדירים', desc, body,
+                                      [(f'ספר {book}', book_path(book))])
 
     # ~~~ list of everything ~~~
     body = '    <h1>כל הסדרים, הפרקים והפרשות</h1>\n'
@@ -288,7 +294,7 @@ def build_pages(verses, sedarim):
                  + ' '.join(f'<a href="{href(perek_path(book, c))}">{esc(c)}</a>' for b, c in chapters if b == book) + '</p>\n')
     pages['seder/index.html'] = page('seder/', 'כל הסדרים, הפרקים והפרשות בתנ"ך | מסדירים',
                                      'רשימת כל 447 הסדרים בתנ"ך, כל הפרקים והסדר שבו כל אחד נמצא, וכל פרשות השבוע לפי החלוקה לסדרים.',
-                                     body)
+                                     body, [])
 
     # ~~~ sitemap, robots.txt, llms.txt ~~~
     urls = ['', 'seder/', 'api.html', 'fame.html'] + [p for p in pages if p != 'seder/index.html']

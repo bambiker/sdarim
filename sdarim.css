@@ -64,6 +64,25 @@ h3 {
   text-decoration: underline;
 }
 
+/* ~~~ phones: a smaller header, so the forms and the text start higher ~~~ */
+
+@media (max-width: 600px) {
+  #secup {
+    height: auto;
+    padding: 12px 0 14px;
+    font-size: 18px;
+  }
+  #secup h1 {
+    font-size: 52px;
+  }
+  #secup br {
+    display: none;
+  }
+  .verses {
+    font-size: 18px;
+  }
+}
+
 /* ~~~ static pages: seder/, perek/, parasha/, book/ ~~~ */
 
 .static-page {
