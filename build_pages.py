@@ -194,19 +194,19 @@ def build_pages(verses, sedarim):
     for i, s in enumerate(sedarim):
         vs = by_seder[(s['book'], s['seder'])]
         name = f'{s["book"]} סדר {s["seder"]}'
-        parashot = ''.join(f' · <a href="{href(parasha_path(p))}">פרשת {esc(p)}</a>' for p in s['parashot'])
+        parashot = ' · '.join(f'<a href="{href(parasha_path(p))}">פרשת {esc(p)}</a>' for p in s['parashot'])
         prev = sedarim[i - 1] if i > 0 else None
         nxt = sedarim[i + 1] if i + 1 < len(sedarim) else None
         body = (nav(prev and (seder_path(prev['book'], prev['seder']), f'הסדר הקודם: {prev["book"]} סדר {prev["seder"]}'),
                     nxt and (seder_path(nxt['book'], nxt['seder']), f'הסדר הבא: {nxt["book"]} סדר {nxt["seder"]}'))
                 + f'    <h1>{esc(name)}</h1>\n'
-                + f'    <p class="seder-info">{len(vs)} פסוקים{parashot}</p>\n'
+                + (f'    <p class="seder-info">{parashot}</p>\n' if parashot else '')
                 + f'    <p class="seder-tools no-print"><a href="/?book={quote(slug(s["book"]))}&amp;seder={quote(s["seder"])}&amp;verse={quote("א")}">'
                   f'פתיחה באתר</a> · <a href="{href(book_path(s["book"]))}">ספר {esc(s["book"])} כולו</a> · {print_button()}</p>\n'
                 + verses_html(vs, anchors=True)
                 + nav(prev and (seder_path(prev['book'], prev['seder']), f'הסדר הקודם: {prev["book"]} סדר {prev["seder"]}'),
                       nxt and (seder_path(nxt['book'], nxt['seder']), f'הסדר הבא: {nxt["book"]} סדר {nxt["seder"]}')))
-        desc = f'{name} לפי החלוקה היהודית של התנ"ך לסדרים ({len(vs)} פסוקים): {snippet(vs)}'
+        desc = f'{name} לפי החלוקה היהודית של התנ"ך לסדרים: {snippet(vs)}'
         pages[seder_path(s['book'], s['seder'])] = page(
             seder_path(s['book'], s['seder']), f'{name} | מסדירים', desc, body,
             [(f'ספר {s["book"]}', book_path(s['book'])), (name, seder_path(s['book'], s['seder']))])
@@ -246,15 +246,12 @@ def build_pages(verses, sedarim):
         prev = parashot[i - 1] if i > 0 else None
         nxt = parashot[i + 1] if i + 1 < len(parashot) else None
         navs = nav(prev and (parasha_path(prev), f'הפרשה הקודמת: {prev}'), nxt and (parasha_path(nxt), f'הפרשה הבאה: {nxt}'))
-        where = ', '.join(f'{b} סדר {s}' for b, s in parts)
         body = navs + f'    <h1>פרשת {esc(parasha)} לפי החלוקה לסדרים</h1>\n'
-        body += (f'    <p class="seder-info">{len(vs)} פסוקים · '
-                 + ', '.join(f'<a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a>' for b, s in parts)
-                 + f'</p>\n    <p class="seder-tools no-print"><a href="/?parasha={quote(slug(parasha))}">פתיחה באתר</a> · {print_button()}</p>\n')
+        body += f'    <p class="seder-tools no-print"><a href="/?parasha={quote(slug(parasha))}">פתיחה באתר</a> · {print_button()}</p>\n'
         for (b, s), p in parts.items():
             body += f'    <h2><a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a></h2>\n' + verses_html(p)
         body += navs
-        desc = f'פרשת {parasha} לפי החלוקה היהודית של התנ"ך לסדרים: {where}. {snippet(vs, 15)}'
+        desc = f'פרשת {parasha} לפי החלוקה היהודית של התנ"ך לסדרים: {snippet(vs)}'
         pages[parasha_path(parasha)] = page(parasha_path(parasha), f'פרשת {parasha} לפי הסדרים | מסדירים', desc, body,
                                             [(f'פרשת {parasha}', parasha_path(parasha))])
 
