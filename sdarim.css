@@ -46,3 +46,20 @@ h3 {
 .ketiv {
   color: #888;
 }
+
+.seder-nav {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.seder-nav a {
+  color: #4f009e;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.seder-nav a:hover {
+  text-decoration: underline;
+}
