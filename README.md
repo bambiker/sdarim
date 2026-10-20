@@ -15,3 +15,8 @@ https://www.masdirim.org
     python3 build_api.py
 
 הסקריפט מעדכן את קבצי ה-API (`API/`), את הדפים הסטטיים של הסדרים, הפרקים, הפרשות והספרים (`seder/`, `perek/`, `parasha/`, `book/`) את דף השאלות והתשובות (`faq.html`) ואת `sitemap.xml`, `robots.txt`, `llms.txt` ו-`llms-full.txt`. בדיקה בלבד, בלי לשנות קבצים: `python3 build_api.py --check`.
+
+## פירושים
+הפירושים שמוצגים בלחיצה על מספר פסוק נמצאים בתיקייה `commentary/`. הם נלקחו מהייצוא הציבורי של ספריא (Sefaria), רק ממהדורות שהרישיון שלהן מתיר שימוש חוזר (נחלת הכלל, CC0, CC-BY, CC-BY-SA). המהדורה והרישיון של כל פרשן וספר רשומים ב-`commentary/sources.json` ומוצגים מתחת לכל פירוש. לעדכון הפירושים מספריא (דורש גישה לאינטרנט):
+
+    python3 build_commentary.py

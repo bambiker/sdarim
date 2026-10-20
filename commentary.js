@@ -1,0 +1,94 @@
+// Commentaries under a verse, opened by clicking its number.
+// Used by the main site (sdarim.js renders the verses) and by the static pages.
+// The data comes from commentary/<book>/<seder>.json, made by build_commentary.py from
+// Sefaria's public export (only editions whose license allows reuse); its HTML is already cleaned.
+
+(function () {
+    const cache = {};
+    function load(path) {
+        if (!cache[path]) {
+            cache[path] = fetch(path).then(response => {
+                if (response.status == 404) return {};
+                if (!response.ok) throw new Error(response.status);
+                return response.json();
+            });
+            cache[path].catch(() => { delete cache[path]; });
+        }
+        return cache[path];
+    }
+
+    function render(panel, entries, sources) {
+        panel.replaceChildren();
+        if (!entries || entries.length == 0) {
+            panel.textContent = 'אין פירושים לפסוק זה.';
+            return;
+        }
+        const used = [];
+        entries.forEach(e => {
+            const src = sources[e.source] || {};
+            const div = document.createElement('div');
+            div.className = 'commentator';
+            const name = document.createElement('strong');
+            name.textContent = (src.commentator || '') + ': ';
+            const text = document.createElement('span');
+            text.innerHTML = e.comments.join(' • ');   // cleaned at build time: only b, i, br, small
+            div.append(name, text);
+            panel.appendChild(div);
+            if (!used.includes(e.source)) used.push(e.source);
+        });
+        const credit = document.createElement('div');
+        credit.className = 'commentary-source';
+        credit.append('מקור: ');
+        used.forEach((key, i) => {
+            const src = sources[key];
+            if (!src) return;
+            if (i > 0) credit.append(' · ');
+            credit.append(src.commentator + ', ' + src.edition + ' (');
+            if (src.license_url) {
+                const a = document.createElement('a');
+                a.href = src.license_url;
+                a.target = '_blank';
+                a.rel = 'license noopener';
+                a.textContent = src.license_he;
+                credit.append(a);
+            } else {
+                credit.append(src.license_he);
+            }
+            credit.append(')');
+        });
+        credit.append(', דרך ');
+        const sefaria = document.createElement('a');
+        sefaria.href = 'https://www.sefaria.org.il';
+        sefaria.target = '_blank';
+        sefaria.rel = 'noopener';
+        sefaria.textContent = 'ספריא';
+        credit.append(sefaria);
+        panel.appendChild(credit);
+    }
+
+    function toggle(link) {
+        let anchor = link.closest('.verse') || link;
+        if (anchor.parentElement && anchor.parentElement.tagName == 'MARK') anchor = anchor.parentElement;
+        const next = anchor.nextElementSibling;
+        if (next && next.classList.contains('commentary')) {
+            next.remove();
+            return;
+        }
+        const panel = document.createElement('div');
+        panel.className = 'commentary';
+        panel.textContent = 'טוען פירושים...';
+        anchor.after(panel);
+        const file = '/commentary/' + encodeURIComponent(link.dataset.book.replace(/ /g, '_')) + '/' +
+            encodeURIComponent(link.dataset.seder) + '.json';
+        Promise.all([load(file), load('/commentary/sources.json')])
+            .then(([seder, sources]) => render(panel, seder[link.dataset.verse], sources))
+            .catch(() => { panel.textContent = 'לא ניתן לטעון את הפירושים כרגע.'; });
+    }
+
+    document.addEventListener('click', function (event) {
+        const link = event.target.closest && event.target.closest('a.vnum[data-seder]');
+        if (!link || event.button != 0) return;
+        event.preventDefault();
+        toggle(link);
+    });
+})();

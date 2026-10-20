@@ -161,6 +161,36 @@ footer {
   font-size: 14px;
 }
 
+/* ~~~ commentaries under a verse (commentary.js) ~~~ */
+
+.vnum {
+  cursor: pointer;
+}
+
+.commentary {
+  display: block;
+  margin: 6px 0 10px;
+  padding: 8px 12px;
+  border-right: 4px solid #92d050;
+  background-color: #f5f9ef;
+  font-size: 16px;
+  line-height: 1.7;
+  text-align: right;
+}
+
+.commentary .commentator {
+  margin-bottom: 6px;
+}
+
+.commentary strong {
+  color: #4f009e;
+}
+
+.commentary .commentary-source {
+  font-size: 12px;
+  color: #666;
+}
+
 /* ~~~ printing ~~~ */
 
 @page {

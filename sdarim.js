@@ -115,6 +115,13 @@ function setCanonical(url) {
     if (link) link.href = url;
 }
 
+// a verse with its number; clicking the number opens the commentaries (commentary.js)
+function verseHtml(v) {
+    return '<span class="verse"><a class="vnum" href="#" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
+        '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) + '">' +
+        "<sup>(" + v.verseseder + ")</sup> " + '</a>' + cleanverse(v.versenikud) + '</span>';
+}
+
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';
 
 function setUrlLink(url) {
@@ -222,7 +229,7 @@ async function findparasha(){
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
          if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
-         output +=  '<a href="'+mgketer(filteredArray[i].bookchapter,filteredArray[i].chapter,filteredArray[i].versechapter)+'" target="_blank">' + "<sup>(" + filteredArray[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filteredArray[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         output += verseHtml(filteredArray[i]);
          oldseder = filteredArray[i].seder
     }
     document.getElementById("result").innerHTML  = output;
@@ -1116,7 +1123,7 @@ function userSeder(filtArray2, book, seder, verse){
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
-         output +=  '<a href="'+mgketer(filtArray2[i].bookchapter,filtArray2[i].chapter,filtArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filtArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filtArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
+         output += verseHtml(filtArray2[i]);
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     output += '<div class="seder-nav"></div>';

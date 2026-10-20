@@ -23,7 +23,7 @@ from urllib.parse import quote
 SITE = 'https://www.masdirim.org'
 GENERATED_DIRS = ('seder', 'perek', 'parasha', 'book')
 
-# book numbers on mgketer.org (Mikraot Gedolot HaKeter), as in mgketer() in sdarim.js
+# the books in the chapter division, in order
 KETER_BOOKS = ['בראשית', 'שמות', 'ויקרא', 'במדבר', 'דברים', 'יהושע', 'שופטים', 'שמואל א', 'שמואל ב',
                'מלכים א', 'מלכים ב', 'ישעיהו', 'ירמיהו', 'יחזקאל', 'הושע', 'יואל', 'עמוס', 'עובדיה', 'יונה',
                'מיכה', 'נחום', 'חבקוק', 'צפניה', 'חגי', 'זכריה', 'מלאכי', 'תהילים', 'משלי', 'איוב',
@@ -71,11 +71,6 @@ def href(path):
 
 def esc(text):
     return html.escape(text, quote=True)
-
-
-def keter(v):
-    return 'https://www.mgketer.org/tanach/%d/%02d/%02d' % (
-        KETER_BOOKS.index(v['bookchapter']) + 1, number(v['chapter']), number(v['versechapter']))
 
 
 def verse_text(v):
@@ -128,6 +123,7 @@ def page(path, title, description, body, crumbs=None, head=''):
 {breadcrumbs(crumbs) if crumbs is not None else ''}{head}    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link rel="stylesheet" href="/sdarim.css">
+    <script src="/commentary.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -172,7 +168,10 @@ def verses_html(verses, number_by='seder', anchors=False):
         tooltip = (f' title="{esc(v["bookseder"])} סדר {esc(v["seder"])} פסוק {esc(v["verseseder"])}"'
                    if number_by == 'chapter' else '')
         anchor = f' id="{esc(n)}"' if anchors else ''
-        out.append(f'<span class="verse"{anchor}><a class="vnum" href="{keter(v)}" target="_blank"{tooltip}>'
+        # clicking the number opens the commentaries of the verse (commentary.js)
+        data = f' data-book="{esc(v["bookseder"])}" data-seder="{esc(v["seder"])}" data-verse="{esc(v["verseseder"])}"'
+        tooltip = tooltip or ' title="פירושים"'
+        out.append(f'<span class="verse"{anchor}><a class="vnum" href="#"{data}{tooltip}>'
                    f'<sup>({esc(n)})</sup></a> {verse_text(v)}</span>')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
