@@ -35,29 +35,57 @@ LICENSE_URLS = {'CC-BY': 'https://creativecommons.org/licenses/by/3.0/',
                 'CC0': 'https://creativecommons.org/publicdomain/zero/1.0/'}
 LICENSE_HE = {'Public Domain': 'נחלת הכלל', 'CC0': 'CC0', 'CC-BY': 'CC-BY', 'CC-BY-SA': 'CC-BY-SA'}
 
-# Shown in this order: (key, shown open, [(Sefaria title, Hebrew name), ...]).
-# The titles are tried in order for each book and the first with a permitted edition is used;
-# commentators that are not shown open appear as a title that opens on click.
+# Shown in this order: (key, shown open, [(Sefaria title, Hebrew name, part), ...]).
+# The titles are tried in order for each book and the first with a permitted edition is used.
+# "{}" is the book's English name and "{t}" its transliterated name (Bereshit...).
+# part: for a title that holds several books (e.g. "Chizkuni"), the key of the book inside it.
+# Commentators that are not shown open appear as a title that opens on click.
+def one(title, he):
+    return [(title, he, None)]
+
+
 COMMENTATORS = [
-    ('Targum', True, [('Onkelos {}', 'תרגום אונקלוס'), ('Targum Jonathan on {}', 'תרגום יונתן'),
-                      ('Aramaic Targum to {}', 'תרגום'), ('Targum of {}', 'תרגום')]),
-    ('Rashi', True, [('Rashi on {}', 'רש"י')]),
-    ('Rashbam', False, [('Rashbam on {}', 'רשב"ם')]),
-    ('Ibn Ezra', False, [('Ibn Ezra on {}', 'אבן עזרא')]),
-    ('Radak', False, [('Radak on {}', 'רד"ק')]),
-    ('Sforno', False, [('Sforno on {}', 'ספורנו')]),
-    ('Or HaChaim', False, [('Or HaChaim on {}', 'אור החיים')]),
-    ('Kli Yakar', False, [('Kli Yakar on {}', 'כלי יקר')]),
-    ("Da'at Zekenim", False, [("Da'at Zekenim on {}", 'דעת זקנים')]),
-    ("Kitzur Ba'al HaTurim", False, [("Kitzur Ba'al HaTurim on {}", 'בעל הטורים')]),
-    ('Torah Temimah', False, [('Torah Temimah on {}', 'תורה תמימה')]),
-    ('Shadal', False, [('Shadal on {}', 'שד"ל')]),
-    ('Ralbag', False, [('Ralbag on {}', 'רלב"ג')]),
-    ('Malbim', False, [('Malbim on {}', 'מלבי"ם')]),
-    ('Malbim Beur Hamilot', False, [('Malbim Beur Hamilot on {}', 'מלבי"ם, ביאור המילות')]),
-    ('Metzudat David', False, [('Metzudat David on {}', 'מצודת דוד')]),
-    ('Metzudat Zion', False, [('Metzudat Zion on {}', 'מצודת ציון')]),
+    ('Targum', True, [('Onkelos {}', 'תרגום אונקלוס', None), ('Targum Jonathan on {}', 'תרגום יונתן', None),
+                      ('Aramaic Targum to {}', 'תרגום', None), ('Targum of {}', 'תרגום', None)]),
+    ('Rashi', True, one('Rashi on {}', 'רש"י')),
+    ('Targum Jerusalem', False, [('Targum Jerusalem', 'תרגום ירושלמי', '{}')]),
+    ('Rashbam', False, one('Rashbam on {}', 'רשב"ם')),
+    ('Ibn Ezra', False, one('Ibn Ezra on {}', 'אבן עזרא')),
+    ('Radak', False, one('Radak on {}', 'רד"ק')),
+    ('Bekhor Shor', False, [('Bekhor Shor', 'בכור שור', '{}')]),
+    ('Chizkuni', False, [('Chizkuni', 'חזקוני', '{}')]),
+    ('Rabbeinu Bahya', False, [('Rabbeinu Bahya', 'רבנו בחיי', '{t}')]),
+    ('Tur HaArokh', False, [('Tur HaArokh', 'טור הארוך', '{}')]),
+    ('Sforno', False, one('Sforno on {}', 'ספורנו')),
+    ('Or HaChaim', False, one('Or HaChaim on {}', 'אור החיים')),
+    ('Kli Yakar', False, one('Kli Yakar on {}', 'כלי יקר')),
+    ("Da'at Zekenim", False, one("Da'at Zekenim on {}", 'דעת זקנים')),
+    ("Kitzur Ba'al HaTurim", False, one("Kitzur Ba'al HaTurim on {}", 'בעל הטורים')),
+    ('Haamek Davar', False, [('Haamek Davar on {}', 'העמק דבר', '')]),
+    ('Harchev Davar', False, one('Harchev Davar on {}', 'הרחב דבר')),
+    ('HaKtav VeHaKabalah', False, [('HaKtav VeHaKabalah', 'הכתב והקבלה', '{}')]),
+    ('Torah Temimah', False, one('Torah Temimah on {}', 'תורה תמימה')),
+    ('Shadal', False, one('Shadal on {}', 'שד"ל')),
+    ('Ralbag', False, one('Ralbag on {}', 'רלב"ג')),
+    ('Ralbag Beur HaMilot', False, [('Ralbag Beur HaMilot on Torah', 'רלב"ג, ביאור המילות', '{}')]),
+    ('Malbim', False, one('Malbim on {}', 'מלבי"ם')),
+    ('Malbim Beur Hamilot', False, one('Malbim Beur Hamilot on {}', 'מלבי"ם, ביאור המילות')),
+    ('Metzudat David', False, one('Metzudat David on {}', 'מצודת דוד')),
+    ('Metzudat Zion', False, one('Metzudat Zion on {}', 'מצודת ציון')),
+    # on Rashi and on Ibn Ezra
+    ('Siftei Chakhamim', False, [('Siftei Chakhamim', 'שפתי חכמים', '{}')]),
+    ('Gur Aryeh', False, [('Gur Aryeh on {g}', 'גור אריה', None)]),
+    ('Mizrachi', False, [('Mizrachi', 'מזרחי', '{}')]),
+    ('Avi Ezer', False, [('Avi Ezer', 'אבי עזר', '{}')]),
+    # notes on the text and its tradition
+    ('Minchat Shai', False, [('Minchat Shai on {}', 'מנחת שי', None), ('Minchat Shai on Torah', 'מנחת שי', '{}')]),
 ]
+
+# names of the books of the Torah as some of Sefaria's titles spell them
+TRANSLITERATED = {'Genesis': 'Bereshit', 'Exodus': 'Shemot', 'Leviticus': 'Vayikra', 'Numbers': 'Bamidbar',
+                  'Deuteronomy': 'Devarim'}
+GUR_ARYEH = {'Genesis': 'Bereishit', 'Exodus': 'Shemot', 'Leviticus': 'Vayikra', 'Numbers': 'Bamidbar',
+             'Deuteronomy': 'Devarim'}
 
 # book names in sdarim.json (chapter division) -> Sefaria
 BOOKS = OrderedDict(zip(
@@ -155,7 +183,7 @@ def is_chapter_verse(text):
 
 
 def choose_versions(cache):
-    """{(key, book): (version, Hebrew name)}: for each commentator and book, the edition with a
+    """{(key, book): (version, Hebrew name, text)}: for each commentator and book, the edition with a
     permitted license and the most comments, from the first title that has one."""
     by_title = {}
     for b in fetch(BOOKS_JSON, cache)['books']:
@@ -164,18 +192,23 @@ def choose_versions(cache):
     chosen = {}
     for key, _, titles in COMMENTATORS:
         for book in BOOKS.values():
-            for title, he in titles:
+            names = {'t': TRANSLITERATED.get(book, book), 'g': GUR_ARYEH.get(book, book)}
+            for title, he, part in titles:
+                title = title.format(book, **names)
                 best = None
-                for u in by_title.get(title.format(book), []):
+                for u in by_title.get(title, []):
                     v = fetch(u, cache)
-                    if v.get('license') not in ALLOWED_LICENSES or not is_chapter_verse(v.get('text')):
+                    text = v.get('text')
+                    if part is not None:
+                        text = text.get(part.format(book, **names)) if isinstance(text, dict) else None
+                    if v.get('license') not in ALLOWED_LICENSES or not is_chapter_verse(text):
                         continue
-                    n = comment_count(v['text'])
+                    n = comment_count(text)
                     if not best or n > best[0]:
-                        best = (n, v)
+                        best = (n, v, text)
                 if best:
-                    chosen[(key, book)] = (best[1], he)
-                    print(f'{title.format(book)}: {best[1]["versionTitle"]} ({best[1]["license"]})')
+                    chosen[(key, book)] = (best[1], he, best[2])
+                    print(f'{title} [{book}]: {best[1]["versionTitle"]} ({best[1]["license"]})')
                     break
     return chosen
 
@@ -192,7 +225,7 @@ def main():
     for who, shown_open, _ in COMMENTATORS:
         for book in BOOKS.values():
             if (who, book) in chosen:
-                v, he = chosen[(who, book)]
+                v, he, _ = chosen[(who, book)]
                 sources[f'{who}|{book}'] = {
                     'commentator': he, 'open': shown_open, 'book': book, 'edition': v.get('versionTitle', ''),
                     'source': v.get('versionSource', ''), 'license': v['license'],
@@ -208,7 +241,7 @@ def main():
         for who, _, _ in COMMENTATORS:
             if (who, en) not in chosen:
                 continue
-            text = chosen[(who, en)][0]['text']
+            text = chosen[(who, en)][2]
             comments = text[ch][vs] if ch < len(text) and isinstance(text[ch], list) and vs < len(text[ch]) else []
             comments = [clean(c) for c in (comments if isinstance(comments, list) else [comments])
                         if isinstance(c, str) and c.strip()]
