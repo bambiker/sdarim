@@ -5,9 +5,7 @@ async function start(){
           seder = decode(GetURLParameter('seder'));
           verse = decode(GetURLParameter('verse'));
       
-          const json = await loadSdarim();
-          const filt2 = [{label: 'bookseder', value: book}, {label: 'seder', value: seder}];
-          const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+          const filtArray2 = await getSederVerses(book, seder);
           userSeder(filtArray2, book, seder, verse)
           document.title=" מסדירים בספר " + book + " סדר " + seder;
           urlname = "https://www.masdirim.org/?book="+addunderscore(book)+"&seder="+seder+"&verse="+verse;
@@ -41,6 +39,62 @@ function loadSdarim() {
         sdarimPromise.catch(() => { sdarimPromise = null; });
     }
     return sdarimPromise;
+}
+
+// ~~~~~~~~ data access ~~~~~~~~
+// Showing a seder, a parasha or converting a verse only needs the small files in API/
+// (a seder is about 20KB); the full sdarim.json (15MB) is only downloaded for free search,
+// or if a small file can't be loaded.
+
+const jsonCache = {};
+function loadJson(path) {
+    if (!jsonCache[path]) {
+        jsonCache[path] = fetch(path).then(response => {
+            if (response.status == 404) return null;   // no such seder / verse
+            if (!response.ok) throw new Error(response.status);
+            return response.json();
+        });
+        jsonCache[path].catch(() => { delete jsonCache[path]; });
+    }
+    return jsonCache[path];
+}
+
+function apiPath(...parts) {
+    return 'API/' + encodeURIComponent(parts.join('_').replace(/ /g, '_') + '.json');
+}
+
+async function getSederVerses(book, seder) {
+    try {
+        return (await loadJson(apiPath('seder', seder, book))) || [];
+    } catch (err) {
+        const json = await loadSdarim();
+        return json.seder.filter(v => v.bookseder === book && v.seder === seder);
+    }
+}
+
+async function getChapterVerse(book, chapter, verse) {
+    try {
+        return await loadJson(apiPath('chapter', verse, chapter, book));
+    } catch (err) {
+        const json = await loadSdarim();
+        return json.seder.find(v => v.bookchapter === book && v.chapter === chapter && v.versechapter === verse) || null;
+    }
+}
+
+// all sedarim in order: [{book, seder, parashot, ...}], from API/sedarim.json (236KB)
+async function getSederIndex() {
+    try {
+        const index = await loadJson('API/sedarim.json');
+        if (index) return index;
+    } catch (err) { }
+    const json = await loadSdarim();
+    const index = [];
+    json.seder.forEach(v => {
+        let last = index[index.length - 1];
+        if (!last || last.book !== v.bookseder || last.seder !== v.seder) index.push(last = {book: v.bookseder, seder: v.seder, parashot: []});
+        if (v.parasha && !last.parashot.includes(v.parasha)) last.parashot.push(v.parasha);
+    });
+    return index;
 }
 
 function escapeHtml(str) {
@@ -85,17 +139,15 @@ async function chapter2seder(){
     if (chapter.trim()=="") chapter="א";
     if (cverse.trim()=="") cverse="א";
     
-    const json = await loadSdarim();
-    const filt = [{label: 'bookchapter', value: cbook}, {label: 'chapter', value: chapter}, {label: 'versechapter', value: cverse}];
-    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+ 
+    const found = await getChapterVerse(cbook, chapter, cverse);
+    const filtArray = found ? [found] : [];
 
     try{  
     document.getElementById("sbook").value = filtArray[0].bookseder;
     document.getElementById("seder").value = filtArray[0].seder;
     document.getElementById("sverse").value = filtArray[0].verseseder;
-    document.getElementById("result").innerHTML  = filtArray[0].versenikud;
-    const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
-    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
+    const filtArray2 = await getSederVerses(filtArray[0].bookseder, filtArray[0].seder);
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     setUrlLink(urlname);
@@ -120,17 +172,12 @@ async function seder2chapter(){
     if (seder.trim()=="") seder="א";
     if (sverse.trim()=="") sverse="א";
    
-    const json = await loadSdarim();
-
-    const filt = [{label: 'bookseder', value: sbook}, {label: 'seder', value: seder}, {label: 'verseseder', value: sverse}];
-    const filtArray = json.seder.filter(item => filt.every(filt => item[filt.label] === filt.value))
+    const filtArray2 = await getSederVerses(sbook, seder);
+    const filtArray = filtArray2.filter(item => item.verseseder === sverse);
     try{
     document.getElementById("cbook").value = filtArray[0].bookchapter;
     document.getElementById("chapter").value = filtArray[0].chapter;
     document.getElementById("cverse").value = filtArray[0].versechapter;
-    document.getElementById("result").innerHTML  = filtArray[0].versenikud;
-    const filt2 = [{label: 'bookseder', value: filtArray[0].bookseder}, {label: 'seder', value: filtArray[0].seder}];
-    const filtArray2 = json.seder.filter(item => filt2.every(filt2 => item[filt2.label] === filt2.value))
     userSeder(filtArray2, filtArray[0].bookseder, filtArray[0].seder, filtArray[0].verseseder)
     urlname = "https://www.masdirim.org/?book="+addunderscore(filtArray[0].bookseder)+"&seder="+filtArray[0].seder+"&verse="+filtArray[0].verseseder;
     setUrlLink(urlname);
@@ -150,10 +197,10 @@ async function findparasha(){
 
     var parasha = document.getElementById("parasha").value;
 
-    const json = await loadSdarim();
-
-    const filters = [{label: 'parasha', value: parasha}];
-    const filteredArray = json.seder.filter(item => filters.every(filter => item[filter.label] === filter.value))
+    // load only the sedarim this parasha falls in
+    const sedarim = (await getSederIndex()).filter(s => s.parashot.includes(parasha));
+    const verses = await Promise.all(sedarim.map(s => getSederVerses(s.book, s.seder)));
+    const filteredArray = verses.flat().filter(item => item.parasha === parasha);
 
     output = "<h2>" + "פרשת " + escapeHtml(parasha) + "</h2>";
     oldseder='-1' 
@@ -174,13 +221,17 @@ async function findparasha(){
 async function findfree(){
 
     var freetext = document.getElementById("free").value;
+    // the search runs on the text without nikud, so remove nikud, cantillation and maqaf from the query too
+    const searchtext = removenikud(freetext);
+    if (searchtext.length < 2) {
+        document.getElementById("result").innerHTML  = " יש להקליד לפחות 2 אותיות לחיפוש ";
+        return;
+    }
     document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
 
     const json = await loadSdarim();
 
     var results = "";
-    // the search runs on the text without nikud, so remove nikud, cantillation and maqaf from the query too
-    const searchtext = removenikud(freetext);
 
     for (let index = 0; index < json.seder.length; ++index) {
         const entry = json.seder[index];
@@ -1058,18 +1109,6 @@ function userSeder(filtArray2, book, seder, verse){
 
 // ~~~~~~~~ previous / next seder ~~~~~~~~
 
-let sederOrder = null;
-function getSederOrder(json) {
-    if (!sederOrder) {
-        sederOrder = [];
-        json.seder.forEach(v => {
-            const last = sederOrder[sederOrder.length - 1];
-            if (!last || last.book !== v.bookseder || last.seder !== v.seder) sederOrder.push({book: v.bookseder, seder: v.seder});
-        });
-    }
-    return sederOrder;
-}
-
 function sederUrl(s) {
     return '?book=' + encodeURIComponent(addunderscore(s.book)) + '&seder=' + encodeURIComponent(s.seder) + '&verse=' + encodeURIComponent('א');
 }
@@ -1082,7 +1121,7 @@ function sederNavLink(s, cls, label) {
 }
 
 async function fillSederNav(book, seder) {
-    const order = getSederOrder(await loadSdarim());
+    const order = await getSederIndex();
     const i = order.findIndex(s => s.book === book && s.seder === seder);
     if (i < 0) return;
     const html = sederNavLink(order[i - 1], 'prev', 'הסדר הקודם') + sederNavLink(order[i + 1], 'next', 'הסדר הבא');
@@ -1090,8 +1129,7 @@ async function fillSederNav(book, seder) {
 }
 
 async function showSeder(book, seder) {
-    const json = await loadSdarim();
-    const verses = json.seder.filter(v => v.bookseder === book && v.seder === seder);
+    const verses = await getSederVerses(book, seder);
     if (verses.length == 0) return;
     userSeder(verses, book, seder, 'א');
     document.title = " מסדירים בספר " + book + " סדר " + seder;
