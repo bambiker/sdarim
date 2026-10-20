@@ -13,13 +13,15 @@ async function start(){
           document.getElementById("sbook").value  = book;
           document.getElementById("seder").value  = seder;
           document.getElementById("sverse").value  = verse;      
+          // opened from a link: go straight to the text (on a phone it starts below the header and forms)
+          if (filtArray2.length) document.getElementById("result").scrollIntoView();
       }
       catch (err)
     {
        try{
           parasha  = removeunderscore(decode(GetURLParameter('parasha')));
           document.getElementById("parasha").value = parasha;
-          findparasha();
+          findparasha().then(() => document.getElementById("result").scrollIntoView());
        }
           catch{
        urlname = "https://www.masdirim.org";
