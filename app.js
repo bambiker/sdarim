@@ -24,13 +24,13 @@ const masdirimApp = (function () {
         if (h1) remember(location.pathname, h1.textContent.trim());
     }
 
-    // the home page remembers the seder or parasha it shows (sdarim.js draws them)
+    // the home page remembers the seder or parasha it shows (sdarim.js draws them), as a link back to the home page
     if (typeof userSeder == 'function') {
         const renderSeder = userSeder;
         window.userSeder = function (verses, book, seder, verse) {
             renderSeder(verses, book, seder, verse);
-            if (verses.length) remember('/seder/' + addunderscore(book) + '/' + seder + '.html' +
-                (verse && verse != 'א' ? '#' + verse : ''), book + ' סדר ' + seder);
+            if (verses.length) remember('/?book=' + addunderscore(book) + '&seder=' + seder + '&verse=' + (verse || 'א'),
+                book + ' סדר ' + seder);
         };
     }
     if (typeof findparasha == 'function') {
@@ -38,7 +38,7 @@ const masdirimApp = (function () {
         window.findparasha = function () {
             const parasha = document.getElementById('parasha').value;
             return renderParasha().then(result => {
-                if (parasha) remember('/parasha/' + addunderscore(parasha) + '.html', 'פרשת ' + parasha);
+                if (parasha) remember('/?parasha=' + addunderscore(parasha), 'פרשת ' + parasha);
                 return result;
             });
         };
