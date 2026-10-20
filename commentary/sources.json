@@ -1,0 +1,1732 @@
+{
+ "Rashi|Genesis": {
+  "commentator": "רש\"י",
+  "book": "Genesis",
+  "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Exodus": {
+  "commentator": "רש\"י",
+  "book": "Exodus",
+  "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Leviticus": {
+  "commentator": "רש\"י",
+  "book": "Leviticus",
+  "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann, 1929-1934",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Numbers": {
+  "commentator": "רש\"י",
+  "book": "Numbers",
+  "edition": "Pentateuch with Rashi's commentary by M. Rosenbaum and A.M. Silbermann -- corrected vocalization",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001969084",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Deuteronomy": {
+  "commentator": "רש\"י",
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Joshua": {
+  "commentator": "רש\"י",
+  "book": "Joshua",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Judges": {
+  "commentator": "רש\"י",
+  "book": "Judges",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|I Samuel": {
+  "commentator": "רש\"י",
+  "book": "I Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|II Samuel": {
+  "commentator": "רש\"י",
+  "book": "II Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|I Kings": {
+  "commentator": "רש\"י",
+  "book": "I Kings",
+  "edition": "On Your Way -- new",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|II Kings": {
+  "commentator": "רש\"י",
+  "book": "II Kings",
+  "edition": "On Your Way -- new",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Isaiah": {
+  "commentator": "רש\"י",
+  "book": "Isaiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Jeremiah": {
+  "commentator": "רש\"י",
+  "book": "Jeremiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Ezekiel": {
+  "commentator": "רש\"י",
+  "book": "Ezekiel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Hosea": {
+  "commentator": "רש\"י",
+  "book": "Hosea",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Joel": {
+  "commentator": "רש\"י",
+  "book": "Joel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Amos": {
+  "commentator": "רש\"י",
+  "book": "Amos",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Obadiah": {
+  "commentator": "רש\"י",
+  "book": "Obadiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Jonah": {
+  "commentator": "רש\"י",
+  "book": "Jonah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Micah": {
+  "commentator": "רש\"י",
+  "book": "Micah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Nahum": {
+  "commentator": "רש\"י",
+  "book": "Nahum",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Habakkuk": {
+  "commentator": "רש\"י",
+  "book": "Habakkuk",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Zephaniah": {
+  "commentator": "רש\"י",
+  "book": "Zephaniah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Haggai": {
+  "commentator": "רש\"י",
+  "book": "Haggai",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Zechariah": {
+  "commentator": "רש\"י",
+  "book": "Zechariah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Malachi": {
+  "commentator": "רש\"י",
+  "book": "Malachi",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Psalms": {
+  "commentator": "רש\"י",
+  "book": "Psalms",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Proverbs": {
+  "commentator": "רש\"י",
+  "book": "Proverbs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Job": {
+  "commentator": "רש\"י",
+  "book": "Job",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Song of Songs": {
+  "commentator": "רש\"י",
+  "book": "Song of Songs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Ruth": {
+  "commentator": "רש\"י",
+  "book": "Ruth",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Lamentations": {
+  "commentator": "רש\"י",
+  "book": "Lamentations",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Ecclesiastes": {
+  "commentator": "רש\"י",
+  "book": "Ecclesiastes",
+  "edition": "The Metsudah Five Megillot, Lakewood, N.J., 2001",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002162036",
+  "license": "CC-BY",
+  "license_he": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Esther": {
+  "commentator": "רש\"י",
+  "book": "Esther",
+  "edition": "The Metsudah Five Megillot, Lakewood, N.J., 2001",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002162036",
+  "license": "CC-BY",
+  "license_he": "CC-BY",
+  "license_url": "https://creativecommons.org/licenses/by/3.0/",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Daniel": {
+  "commentator": "רש\"י",
+  "book": "Daniel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Ezra": {
+  "commentator": "רש\"י",
+  "book": "Ezra",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|Nehemiah": {
+  "commentator": "רש\"י",
+  "book": "Nehemiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|I Chronicles": {
+  "commentator": "רש\"י",
+  "book": "I Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Rashi|II Chronicles": {
+  "commentator": "רש\"י",
+  "book": "II Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Exodus": {
+  "commentator": "אבן עזרא",
+  "book": "Exodus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Leviticus": {
+  "commentator": "אבן עזרא",
+  "book": "Leviticus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Numbers": {
+  "commentator": "אבן עזרא",
+  "book": "Numbers",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Deuteronomy": {
+  "commentator": "אבן עזרא",
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Hosea": {
+  "commentator": "אבן עזרא",
+  "book": "Hosea",
+  "edition": "Ibn Ezra on Hosea -- Daat",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=15&perek=1&mefaresh=ezra",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Joel": {
+  "commentator": "אבן עזרא",
+  "book": "Joel",
+  "edition": "Ibn Ezra on Joel -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/yoel",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Amos": {
+  "commentator": "אבן עזרא",
+  "book": "Amos",
+  "edition": "Ibn Ezra on Amos -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/amos",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Obadiah": {
+  "commentator": "אבן עזרא",
+  "book": "Obadiah",
+  "edition": "Ibn Ezra on Obadiah -- Daat",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=18&perek=1&mefaresh=ezra",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Jonah": {
+  "commentator": "אבן עזרא",
+  "book": "Jonah",
+  "edition": "Ibn Ezra on Jonah -- Daat",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=19&perek=1&mefaresh=ezra",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Micah": {
+  "commentator": "אבן עזרא",
+  "book": "Micah",
+  "edition": "Ibn Ezra on Micah -- Daat",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=20&perek=1&mefaresh=ezra",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Nahum": {
+  "commentator": "אבן עזרא",
+  "book": "Nahum",
+  "edition": "Ibn Ezra on Nahum -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/nachum",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Habakkuk": {
+  "commentator": "אבן עזרא",
+  "book": "Habakkuk",
+  "edition": "Ibn Ezra on Habakkuk -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/havakuk",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Zephaniah": {
+  "commentator": "אבן עזרא",
+  "book": "Zephaniah",
+  "edition": "Ibn Ezra on Zephaniah -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/zfanya",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Haggai": {
+  "commentator": "אבן עזרא",
+  "book": "Haggai",
+  "edition": "Ibn Ezra on Haggai -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/hagai",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Zechariah": {
+  "commentator": "אבן עזרא",
+  "book": "Zechariah",
+  "edition": "Ibn Ezra on Zecharia -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/zecharya",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Malachi": {
+  "commentator": "אבן עזרא",
+  "book": "Malachi",
+  "edition": "Ibn Ezra on Malachi -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/malachi",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Proverbs": {
+  "commentator": "אבן עזרא",
+  "book": "Proverbs",
+  "edition": "Ibn Ezra on Proverbs -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/mishley/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Job": {
+  "commentator": "אבן עזרא",
+  "book": "Job",
+  "edition": "Ibn Ezra on Job -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/eyov/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Ruth": {
+  "commentator": "אבן עזרא",
+  "book": "Ruth",
+  "edition": "Ibn Ezra on Ruth -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/ruth",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Esther": {
+  "commentator": "אבן עזרא",
+  "book": "Esther",
+  "edition": "Kol Sason, Krotoschin, 1840",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001728315",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Daniel": {
+  "commentator": "אבן עזרא",
+  "book": "Daniel",
+  "edition": "Ibn Ezra on Daniel - Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/daniel",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Ezra": {
+  "commentator": "אבן עזרא",
+  "book": "Ezra",
+  "edition": "Ibn Ezra on Ezra -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/ezra",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ibn Ezra|Nehemiah": {
+  "commentator": "אבן עזרא",
+  "book": "Nehemiah",
+  "edition": "Ibn Ezra on Nehemiah -- Daat",
+  "source": "http://www.daat.ac.il/he-il/tanach/parshanut_hamikra/full-text/eben-ezra/nechemya",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Radak|Psalms": {
+  "commentator": "רד\"ק",
+  "book": "Psalms",
+  "edition": "Derekh Mesilah, Furth 1843",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH001803579&context=L&vid=NLI&lang=iw_IL",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Sforno|Exodus": {
+  "commentator": "ספורנו",
+  "book": "Exodus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Sforno|Leviticus": {
+  "commentator": "ספורנו",
+  "book": "Leviticus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Sforno|Numbers": {
+  "commentator": "ספורנו",
+  "book": "Numbers",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Sforno|Deuteronomy": {
+  "commentator": "ספורנו",
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Or HaChaim|Exodus": {
+  "commentator": "אור החיים",
+  "book": "Exodus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Or HaChaim|Leviticus": {
+  "commentator": "אור החיים",
+  "book": "Leviticus",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Or HaChaim|Numbers": {
+  "commentator": "אור החיים",
+  "book": "Numbers",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Or HaChaim|Deuteronomy": {
+  "commentator": "אור החיים",
+  "book": "Deuteronomy",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|Joshua": {
+  "commentator": "רלב\"ג",
+  "book": "Joshua",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|Judges": {
+  "commentator": "רלב\"ג",
+  "book": "Judges",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|I Samuel": {
+  "commentator": "רלב\"ג",
+  "book": "I Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|II Samuel": {
+  "commentator": "רלב\"ג",
+  "book": "II Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|I Kings": {
+  "commentator": "רלב\"ג",
+  "book": "I Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|II Kings": {
+  "commentator": "רלב\"ג",
+  "book": "II Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|Proverbs": {
+  "commentator": "רלב\"ג",
+  "book": "Proverbs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|Ezra": {
+  "commentator": "רלב\"ג",
+  "book": "Ezra",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|Nehemiah": {
+  "commentator": "רלב\"ג",
+  "book": "Nehemiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|I Chronicles": {
+  "commentator": "רלב\"ג",
+  "book": "I Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Ralbag|II Chronicles": {
+  "commentator": "רלב\"ג",
+  "book": "II Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Genesis": {
+  "commentator": "מלבי\"ם",
+  "book": "Genesis",
+  "edition": "Malbim on Genesis -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%91%D7%A8%D7%90%D7%A9%D7%99%D7%AA",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Exodus": {
+  "commentator": "מלבי\"ם",
+  "book": "Exodus",
+  "edition": "Mikraei Kodesh, Vilna, 1891",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Numbers": {
+  "commentator": "מלבי\"ם",
+  "book": "Numbers",
+  "edition": "Mikraei Kodesh, Vilna, 1891",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Deuteronomy": {
+  "commentator": "מלבי\"ם",
+  "book": "Deuteronomy",
+  "edition": "Mikraei Kodesh, Vilna, 1891",
+  "source": "https://www.nli.org.il/he/books/NNL_ALEPH002100356",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Judges": {
+  "commentator": "מלבי\"ם",
+  "book": "Judges",
+  "edition": "Wikisource",
+  "source": "https://he.wikisource.org/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|II Samuel": {
+  "commentator": "מלבי\"ם",
+  "book": "II Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|I Kings": {
+  "commentator": "מלבי\"ם",
+  "book": "I Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|II Kings": {
+  "commentator": "מלבי\"ם",
+  "book": "II Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Jeremiah": {
+  "commentator": "מלבי\"ם",
+  "book": "Jeremiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Hosea": {
+  "commentator": "מלבי\"ם",
+  "book": "Hosea",
+  "edition": "Malbim on Hosea--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Joel": {
+  "commentator": "מלבי\"ם",
+  "book": "Joel",
+  "edition": "Malbim on Joel--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Amos": {
+  "commentator": "מלבי\"ם",
+  "book": "Amos",
+  "edition": "Malbim on Amos--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Obadiah": {
+  "commentator": "מלבי\"ם",
+  "book": "Obadiah",
+  "edition": "Malbim on Obadiah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Jonah": {
+  "commentator": "מלבי\"ם",
+  "book": "Jonah",
+  "edition": "Malbim on Jonah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Micah": {
+  "commentator": "מלבי\"ם",
+  "book": "Micah",
+  "edition": "Malbim on Micah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Nahum": {
+  "commentator": "מלבי\"ם",
+  "book": "Nahum",
+  "edition": "Malbim on Nahum--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Habakkuk": {
+  "commentator": "מלבי\"ם",
+  "book": "Habakkuk",
+  "edition": "Malbim on Habakkuk--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Zephaniah": {
+  "commentator": "מלבי\"ם",
+  "book": "Zephaniah",
+  "edition": "Malbim on Zephaniah--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Haggai": {
+  "commentator": "מלבי\"ם",
+  "book": "Haggai",
+  "edition": "Malbim on Haggai--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Zechariah": {
+  "commentator": "מלבי\"ם",
+  "book": "Zechariah",
+  "edition": "Malbim on Zechariah--Wikisource",
+  "source": "http://www.daat.ac.il/daat/olam_hatanah/mefaresh.asp?book=25&perek=5&mefaresh=malbim",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Malachi": {
+  "commentator": "מלבי\"ם",
+  "book": "Malachi",
+  "edition": "Malbim on Malachi--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Proverbs": {
+  "commentator": "מלבי\"ם",
+  "book": "Proverbs",
+  "edition": "Malbim on Proverbs--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Ruth": {
+  "commentator": "מלבי\"ם",
+  "book": "Ruth",
+  "edition": "Malbim on Ruth--Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%A7%D7%98%D7%92%D7%95%D7%A8%D7%99%D7%94:%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%94%D7%9E%D7%A7%D7%A8%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Esther": {
+  "commentator": "מלבי\"ם",
+  "book": "Esther",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Daniel": {
+  "commentator": "מלבי\"ם",
+  "book": "Daniel",
+  "edition": "Malbim on Daniel -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%A0%D7%99%D7%90%D7%9C",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Ezra": {
+  "commentator": "מלבי\"ם",
+  "book": "Ezra",
+  "edition": "Wikisource",
+  "source": "https://he.wikisource.org/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|Nehemiah": {
+  "commentator": "מלבי\"ם",
+  "book": "Nehemiah",
+  "edition": "Malbim on Nehemiah -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%A0%D7%97%D7%9E%D7%99%D7%94",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|I Chronicles": {
+  "commentator": "מלבי\"ם",
+  "book": "I Chronicles",
+  "edition": "Malbim on I Chronicles -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D_%D7%90",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Malbim|II Chronicles": {
+  "commentator": "מלבי\"ם",
+  "book": "II Chronicles",
+  "edition": "Malbim on II Chronicles -- Wikisource",
+  "source": "https://he.wikisource.org/wiki/%D7%9E%D7%9C%D7%91%D7%99%22%D7%9D_%D7%A2%D7%9C_%D7%93%D7%91%D7%A8%D7%99_%D7%94%D7%99%D7%9E%D7%99%D7%9D_%D7%91",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Joshua": {
+  "commentator": "מצודת דוד",
+  "book": "Joshua",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Judges": {
+  "commentator": "מצודת דוד",
+  "book": "Judges",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|I Samuel": {
+  "commentator": "מצודת דוד",
+  "book": "I Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|II Samuel": {
+  "commentator": "מצודת דוד",
+  "book": "II Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|I Kings": {
+  "commentator": "מצודת דוד",
+  "book": "I Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|II Kings": {
+  "commentator": "מצודת דוד",
+  "book": "II Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Isaiah": {
+  "commentator": "מצודת דוד",
+  "book": "Isaiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Jeremiah": {
+  "commentator": "מצודת דוד",
+  "book": "Jeremiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Ezekiel": {
+  "commentator": "מצודת דוד",
+  "book": "Ezekiel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Hosea": {
+  "commentator": "מצודת דוד",
+  "book": "Hosea",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Joel": {
+  "commentator": "מצודת דוד",
+  "book": "Joel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Amos": {
+  "commentator": "מצודת דוד",
+  "book": "Amos",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Obadiah": {
+  "commentator": "מצודת דוד",
+  "book": "Obadiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Jonah": {
+  "commentator": "מצודת דוד",
+  "book": "Jonah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Micah": {
+  "commentator": "מצודת דוד",
+  "book": "Micah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Nahum": {
+  "commentator": "מצודת דוד",
+  "book": "Nahum",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Habakkuk": {
+  "commentator": "מצודת דוד",
+  "book": "Habakkuk",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Zephaniah": {
+  "commentator": "מצודת דוד",
+  "book": "Zephaniah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Haggai": {
+  "commentator": "מצודת דוד",
+  "book": "Haggai",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Zechariah": {
+  "commentator": "מצודת דוד",
+  "book": "Zechariah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Malachi": {
+  "commentator": "מצודת דוד",
+  "book": "Malachi",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Psalms": {
+  "commentator": "מצודת דוד",
+  "book": "Psalms",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Proverbs": {
+  "commentator": "מצודת דוד",
+  "book": "Proverbs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Job": {
+  "commentator": "מצודת דוד",
+  "book": "Job",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Song of Songs": {
+  "commentator": "מצודת דוד",
+  "book": "Song of Songs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Ecclesiastes": {
+  "commentator": "מצודת דוד",
+  "book": "Ecclesiastes",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Daniel": {
+  "commentator": "מצודת דוד",
+  "book": "Daniel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Ezra": {
+  "commentator": "מצודת דוד",
+  "book": "Ezra",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|Nehemiah": {
+  "commentator": "מצודת דוד",
+  "book": "Nehemiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|I Chronicles": {
+  "commentator": "מצודת דוד",
+  "book": "I Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat David|II Chronicles": {
+  "commentator": "מצודת דוד",
+  "book": "II Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Joshua": {
+  "commentator": "מצודת ציון",
+  "book": "Joshua",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Judges": {
+  "commentator": "מצודת ציון",
+  "book": "Judges",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|I Samuel": {
+  "commentator": "מצודת ציון",
+  "book": "I Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|II Samuel": {
+  "commentator": "מצודת ציון",
+  "book": "II Samuel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|I Kings": {
+  "commentator": "מצודת ציון",
+  "book": "I Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|II Kings": {
+  "commentator": "מצודת ציון",
+  "book": "II Kings",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Isaiah": {
+  "commentator": "מצודת ציון",
+  "book": "Isaiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Jeremiah": {
+  "commentator": "מצודת ציון",
+  "book": "Jeremiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Ezekiel": {
+  "commentator": "מצודת ציון",
+  "book": "Ezekiel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Hosea": {
+  "commentator": "מצודת ציון",
+  "book": "Hosea",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Joel": {
+  "commentator": "מצודת ציון",
+  "book": "Joel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Amos": {
+  "commentator": "מצודת ציון",
+  "book": "Amos",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Obadiah": {
+  "commentator": "מצודת ציון",
+  "book": "Obadiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Jonah": {
+  "commentator": "מצודת ציון",
+  "book": "Jonah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Micah": {
+  "commentator": "מצודת ציון",
+  "book": "Micah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Nahum": {
+  "commentator": "מצודת ציון",
+  "book": "Nahum",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Habakkuk": {
+  "commentator": "מצודת ציון",
+  "book": "Habakkuk",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Zephaniah": {
+  "commentator": "מצודת ציון",
+  "book": "Zephaniah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Haggai": {
+  "commentator": "מצודת ציון",
+  "book": "Haggai",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Zechariah": {
+  "commentator": "מצודת ציון",
+  "book": "Zechariah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Malachi": {
+  "commentator": "מצודת ציון",
+  "book": "Malachi",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Psalms": {
+  "commentator": "מצודת ציון",
+  "book": "Psalms",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Proverbs": {
+  "commentator": "מצודת ציון",
+  "book": "Proverbs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Job": {
+  "commentator": "מצודת ציון",
+  "book": "Job",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Song of Songs": {
+  "commentator": "מצודת ציון",
+  "book": "Song of Songs",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Ecclesiastes": {
+  "commentator": "מצודת ציון",
+  "book": "Ecclesiastes",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Daniel": {
+  "commentator": "מצודת ציון",
+  "book": "Daniel",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Ezra": {
+  "commentator": "מצודת ציון",
+  "book": "Ezra",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|Nehemiah": {
+  "commentator": "מצודת ציון",
+  "book": "Nehemiah",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|I Chronicles": {
+  "commentator": "מצודת ציון",
+  "book": "I Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ },
+ "Metzudat Zion|II Chronicles": {
+  "commentator": "מצודת ציון",
+  "book": "II Chronicles",
+  "edition": "On Your Way",
+  "source": "http://mobile.tora.ws/",
+  "license": "Public Domain",
+  "license_he": "נחלת הכלל",
+  "license_url": "",
+  "via": "Sefaria (ספריא), https://www.sefaria.org"
+ }
+}
