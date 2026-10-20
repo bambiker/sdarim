@@ -121,9 +121,13 @@ def page(path, title, description, body, crumbs=None, head=''):
     <meta property="og:image:alt" content="מסדירים - חוזרים לחלוקת התנ&quot;ך היהודית">
     <meta name="twitter:card" content="summary_large_image">
 {breadcrumbs(crumbs) if crumbs is not None else ''}{head}    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#11235A">
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link rel="stylesheet" href="/sdarim.css">
     <script src="/commentary.js" defer></script>
+    <script src="/app.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -135,6 +139,7 @@ def page(path, title, description, body, crumbs=None, head=''):
   <body dir="rtl" class="static-page">
     <header class="site-header no-print">
       <a href="/">מסדירים</a> · <span>חוזרים לחלוקת התנ"ך היהודית</span>
+      <button type="button" class="install" data-install hidden>התקנה</button>
     </header>
 {body}
     <footer class="no-print">

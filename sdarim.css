@@ -205,6 +205,77 @@ footer {
   color: #666;
 }
 
+/* ~~~ installing the site as an app, continuing where you stopped (app.js) ~~~ */
+
+.install {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  background-color: #92d050;
+  border: none;
+  border-radius: 10px;
+  padding: 3px 12px;
+}
+
+.install[hidden], .continue[hidden] {
+  display: none;
+}
+
+.site-header {
+  display: flow-root;   /* keeps the floating install button inside the header */
+}
+
+.site-header .install {
+  float: left;
+  margin-top: 2px;
+}
+
+.install-help {
+  max-width: 420px;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-family: inherit;
+  text-align: right;
+}
+
+.install-help::backdrop {
+  background: rgba(17, 35, 90, .5);
+}
+
+.install-help h2 {
+  font-size: 22px;
+}
+
+.install-help ol {
+  padding-right: 20px;
+  line-height: 1.8;
+}
+
+.install-help button {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #11235A;
+  border: none;
+  border-radius: 10px;
+  padding: 4px 18px;
+}
+
+.continue {
+  font-size: 18px;
+  margin: 12px 0 0;
+}
+
+.continue a {
+  color: #4f009e;
+  font-weight: bold;
+}
+
 /* ~~~ printing ~~~ */
 
 @page {
@@ -212,7 +283,7 @@ footer {
 }
 
 @media print {
-  .no-print, .seder-nav, .print-button {
+  .no-print, .seder-nav, .print-button, .install, .continue {
     display: none !important;
   }
   /* on the main page, print only the result: hide everything around it,
