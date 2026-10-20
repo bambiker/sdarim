@@ -1043,14 +1043,86 @@ function cleanverse(para){
 function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
-    output = "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + "</h3>";
+    output = '<div class="seder-nav"></div>' + "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + "</h3>";
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
          output +=  '<a href="'+mgketer(filtArray2[i].bookchapter,filtArray2[i].chapter,filtArray2[i].versechapter)+'" target="_blank">' + "<sup>(" + filtArray2[i].verseseder + ")</sup> " + '</a>'  + cleanverse(filtArray2[i].versenikud)//filteredArray[i].versenikud + "<br>";
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
+    output += '<div class="seder-nav"></div>';
     document.getElementById("result").innerHTML  = output;
+    fillSederNav(book, seder);
     return;
     }
+
+// ~~~~~~~~ previous / next seder ~~~~~~~~
+
+let sederOrder = null;
+function getSederOrder(json) {
+    if (!sederOrder) {
+        sederOrder = [];
+        json.seder.forEach(v => {
+            const last = sederOrder[sederOrder.length - 1];
+            if (!last || last.book !== v.bookseder || last.seder !== v.seder) sederOrder.push({book: v.bookseder, seder: v.seder});
+        });
+    }
+    return sederOrder;
+}
+
+function sederUrl(s) {
+    return '?book=' + encodeURIComponent(addunderscore(s.book)) + '&seder=' + encodeURIComponent(s.seder) + '&verse=' + encodeURIComponent('א');
+}
+
+function sederNavLink(s, cls, label) {
+    if (!s) return '<span></span>';
+    const text = escapeHtml(s.book) + ' סדר ' + escapeHtml(s.seder);
+    return '<a class="' + cls + '" href="' + sederUrl(s) + '" data-book="' + escapeHtml(s.book) + '" data-seder="' + escapeHtml(s.seder) + '">' +
+        (cls == 'prev' ? '→ ' + label + ': ' + text : label + ': ' + text + ' ←') + '</a>';
+}
+
+async function fillSederNav(book, seder) {
+    const order = getSederOrder(await loadSdarim());
+    const i = order.findIndex(s => s.book === book && s.seder === seder);
+    if (i < 0) return;
+    const html = sederNavLink(order[i - 1], 'prev', 'הסדר הקודם') + sederNavLink(order[i + 1], 'next', 'הסדר הבא');
+    document.querySelectorAll('#result .seder-nav').forEach(nav => { nav.innerHTML = html; });
+}
+
+async function showSeder(book, seder) {
+    const json = await loadSdarim();
+    const verses = json.seder.filter(v => v.bookseder === book && v.seder === seder);
+    if (verses.length == 0) return;
+    userSeder(verses, book, seder, 'א');
+    document.title = " מסדירים בספר " + book + " סדר " + seder;
+    setUrlLink("https://www.masdirim.org/?book=" + addunderscore(book) + "&seder=" + seder + "&verse=א");
+    document.getElementById("sbook").value = book;
+    document.getElementById("seder").value = seder;
+    document.getElementById("sverse").value = 'א';
+    history.pushState(null, '', sederUrl({book: book, seder: seder}));
+    document.getElementById("result").scrollIntoView();
+}
+
+document.addEventListener('click', function (event) {
+    const link = event.target.closest && event.target.closest('.seder-nav a');
+    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.button != 0) return;
+    event.preventDefault();
+    showSeder(link.dataset.book, link.dataset.seder);
+});
+
+// left arrow = next seder, right arrow = previous seder (as when turning pages of a Hebrew book)
+document.addEventListener('keydown', function (event) {
+    if (event.altKey || event.ctrlKey || event.metaKey) return;
+    if (event.target.closest && event.target.closest('input, select, textarea')) return;
+    const cls = event.key == 'ArrowLeft' ? 'next' : event.key == 'ArrowRight' ? 'prev' : null;
+    const link = cls && document.querySelector('#result .seder-nav a.' + cls);
+    if (link) {
+        event.preventDefault();
+        showSeder(link.dataset.book, link.dataset.seder);
+    }
+});
+
+window.addEventListener('popstate', function () {
+    start();
+});
 
