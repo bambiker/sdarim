@@ -13,8 +13,12 @@ async function start(){
           document.getElementById("sbook").value  = book;
           document.getElementById("seder").value  = seder;
           document.getElementById("sverse").value  = verse;      
-          // opened from a link: go straight to the text (on a phone it starts below the header and forms)
-          if (filtArray2.length) document.getElementById("result").scrollIntoView();
+          // opened from a link: go straight to the text (on a phone it starts below the header and forms).
+          // A link to a verse puts it in the middle of the screen, with the verses before it above it,
+          // so it is clear where the reader is
+          const mark = document.querySelector("#result mark");
+          if (filtArray2.length && mark && verse && verse != 'א') mark.scrollIntoView({block: "center"});
+          else if (filtArray2.length) document.getElementById("result").scrollIntoView();
       }
       catch (err)
     {
@@ -132,6 +136,16 @@ function setUrlLink(url) {
     const urlname = document.getElementById("urlname");
     if (urlname) urlname.replaceChildren(a);
 }
+
+// "send on WhatsApp" next to the link: the message is the page title and the link shown at that moment
+document.addEventListener('click', function (event) {
+    const button = event.target.closest && event.target.closest('#whatsapp');
+    if (!button) return;
+    const link = document.querySelector('#urlname a');
+    const url = link ? link.href : location.href;
+    const title = document.title.trim();
+    button.href = 'https://wa.me/?text=' + encodeURIComponent((title ? title + '\n' : '') + url);
+});
 
   function decode(str) {
             return decodeURIComponent(str.replace(/\+/g,  " "));

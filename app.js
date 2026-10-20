@@ -44,6 +44,16 @@ const masdirimApp = (function () {
         };
     }
 
+    // a link to a verse on a static page (seder/א.html#ג): the browser puts the verse at the very top;
+    // move it to the middle of the screen so the verses before it show and it is clear where to read
+    function centerVerse() {
+        if (!location.hash) return;
+        const verse = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (verse && verse.classList.contains('verse')) verse.scrollIntoView({block: 'center'});
+    }
+    window.addEventListener('load', centerVerse);
+    window.addEventListener('hashchange', centerVerse);
+
     function lastPage() {
         try {
             const last = JSON.parse(stored('lastPage'));
