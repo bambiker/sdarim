@@ -171,16 +171,32 @@
 
     // "בספר שמואל א'" (a book in two parts, named after the word ספר and with no chapter or verse after it)
     // is one book of sedarim: "בספר שמואל". Groups: the word with its prefix, the book, the part
-    const BOOK_NAME = new RegExp('(?<![א-ת])([ובכלמהש]{0,3}?ספר\\s+)(שמואל|מלכים|דברי[- ]הימים)\\s*-?\\s*(?:א|ב|ראשון|שני)' +
+    const BOOK_NAME = new RegExp('(?<![א-ת])([ובכלמהש]{0,3}?ספר\\s+)(שמואל|מלכים|דברי[- ]הימים)\\s*-?\\s*(?:(א|ראשון)|ב|שני)' +
         Q1 + '?(?![א-ת])', 'g');
+
+    // "בספר עזרא" / "בספר נחמיה" are one book of sedarim, "עזרא ונחמיה"; "בספר עמוס" is in "תרי עשר"
+    const TREI_ASAR = ['הושע', 'יואל', 'עמוס', 'עובדיה', 'יונה', 'מיכה', 'נחום', 'חבקוק', 'צפניה', 'חגי', 'זכריה', 'מלאכי'];
+    const BOOK_IN_SEDER_BOOK = new RegExp('(?<![א-ת])([ובכלמהש]{0,3}?ספר\\s+)(עזרא|נחמיה|' + TREI_ASAR.join('|') +
+        ')(?![א-ת])(?!\\s+ונחמיה)', 'g');
 
     function findBookNames(text) {
         const found = [];
+        BOOK_IN_SEDER_BOOK.lastIndex = 0;
+        let n;
+        while ((n = BOOK_IN_SEDER_BOOK.exec(text))) {
+            const name = n[2];
+            const book = TREI_ASAR.includes(name) ? 'תרי עשר' : 'עזרא ונחמיה';
+            const written = book == 'תרי עשר' ? book + ' (' + name + ')' : book;
+            found.push({start: n.index, end: n.index + n[0].length, prefix: n[1], book: written, kind: 'book',
+                        chapterBook: name, url: 'https://www.masdirim.org/book/' + book.replace(/ /g, '_') + '.html', text: n[0]});
+        }
         BOOK_NAME.lastIndex = 0;
         let m;
         while ((m = BOOK_NAME.exec(text))) {
             const book = m[2].replace('-', ' ');
+            // chapterBook: for "שם, ג, ד" after it
             found.push({start: m.index, end: m.index + m[0].length, prefix: m[1], book, kind: 'book',
+                        chapterBook: book + (m[3] ? ' א' : ' ב'),
                         url: 'https://www.masdirim.org/book/' + book.replace(/ /g, '_') + '.html', text: m[0]});
         }
         return found;
@@ -206,6 +222,7 @@
             const parts = ranges.map(([a, b]) => ({from: index.chapters.get(book + '|' + a).first,
                                                    to: index.chapters.get(book + '|' + b).last}));
             lists.push({start: m.index, end, prefix: m[1] || '', book, chapter: ranges[0][0], verse: null,
+                        lastChapter: ranges[ranges.length - 1][1],
                         from: parts[0].from, to: parts[parts.length - 1].to, parts, text: text.slice(m.index, end)});
         }
         return lists;
@@ -306,7 +323,92 @@
         const refs = found.filter(r => !inList(r.start) && !lists.some(l => l.start >= r.start && l.start < r.end)).concat(lists);
         // a book name only where it does not begin a reference ("בספר שמואל א' ג' ד'" is a reference)
         const overlaps = b => refs.some(r => r.start < b.end && b.start < r.end);
-        return refs.concat(findBookNames(text).filter(b => !overlaps(b))).sort((a, b) => a.start - b.start);
+        const all = refs.concat(findBookNames(text).filter(b => !overlaps(b)));
+        return resolveSham(text, all.sort((a, b) => a.start - b.start), index);
+    }
+
+    // ~~~ "שם": the same book (and chapter) as the reference before it ~~~
+    // "שם, שם, כ" (same book and chapter, verse כ) · "שם, כ" / "שם פסוק כ" (same chapter) ·
+    // "שם, ד, ה" / "שם פרק ד פסוק ה" (same book) · "שם פרק ד" (a whole chapter) · with a range: "שם, כ-כב".
+    // "שם" without a comma or the words פרק / פסוק after it is left alone ("שם ה'" is not a reference).
+    // Groups: prefix; verse after שם, שם; chapter / verse after פרק; chapter, verse; verse; end of range
+    const AFTER_SHAM = "(?:\\s*,\\s*)";
+    const SHAM = new RegExp('(?<![א-ת])([ובכלמה]{0,2}?)שם(?:' +
+        '(?:\\s*,\\s*|\\s+)שם' + AFTER_SHAM + '(?:' + V_WORD + '\\s*)?(' + NUM + ')' +
+        '|(?:' + AFTER_SHAM + '|\\s+)' + CH_WORD + '\\s*(' + NUM + ')(?:' + SEP + V_WORD + '?\\s*(' + NUM + '))?' +
+        '|' + AFTER_SHAM + '(' + NUM + ')' + SEP + '(?:' + V_WORD + '\\s*)?(' + NUM + ')' +
+        '|(?:' + AFTER_SHAM + '(?:' + V_WORD + '\\s*)?|\\s+' + V_WORD + '\\s*)(' + NUM + ')' +
+        ')(?:' + DASH + '(' + NUM + '))?(?![א-ת\\d])', 'gd');
+
+    function resolveSham(text, refs, index) {
+        const candidates = [];
+        SHAM.lastIndex = 0;
+        let m;
+        while ((m = SHAM.exec(text))) {
+            if (!refs.some(r => r.start < SHAM.lastIndex && m.index < r.end)) candidates.push(m);
+            SHAM.lastIndex = m.index + 1;
+        }
+        const out = [];
+        let context = null;   // {book (as in the chapter numbering), chapter}
+        let i = 0;
+        const take = r => {
+            out.push(r);
+            if (r.kind == 'book') context = {book: r.chapterBook, chapter: null};
+            else context = {book: r.book, chapter: r.lastChapter || r.toChapter || r.chapter};
+        };
+        refs.forEach(r => {
+            for (; i < candidates.length && candidates[i].index < r.start; i++) {
+                const s = shamRef(text, candidates[i], context, index);
+                if (s && (!out.length || s.start >= out[out.length - 1].end)) take(s);
+            }
+            take(r);
+        });
+        for (; i < candidates.length; i++) {
+            const s = shamRef(text, candidates[i], context, index);
+            if (s && (!out.length || s.start >= out[out.length - 1].end)) take(s);
+        }
+        return out;
+    }
+
+    function shamRef(text, m, context, index) {
+        if (!context) return null;
+        const at = g => m[g] !== undefined;
+        let chapter = null, verse = null, end = m.indices[0][1], cut = null;
+        if (at(2)) { chapter = context.chapter; verse = numberValue(m[2]); cut = 2; }
+        else if (at(3)) {
+            chapter = numberValue(m[3]);
+            verse = at(4) ? numberValue(m[4]) : null;
+            if (at(4) && !verse) { end = m.indices[3][1]; }   // "שם פרק ד ויאמר": the chapter
+            cut = at(4) && verse ? 4 : 3;
+        }
+        else if (at(5)) {
+            chapter = numberValue(m[5]);
+            verse = numberValue(m[6]);
+            if (!verse) { chapter = context.chapter; verse = numberValue(m[5]); end = m.indices[5][1]; cut = 5; }
+            else cut = 6;
+        }
+        else if (at(7)) { chapter = context.chapter; verse = numberValue(m[7]); cut = 7; }
+        if (!chapter || (cut != 3 && !verse)) return null;
+        const book = context.book;
+        const prefix = m[1] || '';
+        const ref = {start: m.index, prefix, book, chapter, verse, sham: true};
+        let toVerse = at(8) && end == m.indices[0][1] ? numberValue(m[8]) : null;
+        if (at(8) && end == m.indices[0][1] && !toVerse) end = m.indices[cut][1];
+        if (!verse) {
+            const ch = index.chapters.get(book + '|' + chapter);
+            if (!ch) return null;
+            Object.assign(ref, {from: ch.first, to: ch.last});
+        } else {
+            const from = index.verses.get(book + '|' + chapter + '|' + verse);
+            if (!from) return null;
+            let to = toVerse ? index.verses.get(book + '|' + chapter + '|' + toVerse) : null;
+            if (to && to.chapterVerse < from.chapterVerse) to = null;
+            if (toVerse && !to) end = m.indices[cut][1];
+            Object.assign(ref, {from, to});
+        }
+        ref.end = end;
+        ref.text = text.slice(ref.start, end);
+        return ref;
     }
 
     // ~~~ writing ~~~
