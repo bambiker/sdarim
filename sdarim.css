@@ -812,6 +812,18 @@ h2 {
     margin: -56px 12px 0;
     padding: 4px 16px 16px;
   }
+  /* the three tabs share the width, so "פרשת השבוע" is not cut on a narrow phone */
+  .tabs {
+    gap: 0;
+    margin: 0 -10px 16px;
+  }
+  .tab {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 12px 2px 10px;
+    font-size: 15.5px;
+    text-align: center;
+  }
   .fields {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -851,6 +863,12 @@ h2 {
   }
   .contact {
     margin: 44px 12px 0;
+  }
+}
+
+@media (max-width: 345px) {
+  .tab {
+    font-size: 14.5px;
   }
 }
 
