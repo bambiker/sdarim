@@ -169,6 +169,23 @@
         return {ranges, length};
     }
 
+    // "בספר שמואל א'" (a book in two parts, named after the word ספר and with no chapter or verse after it)
+    // is one book of sedarim: "בספר שמואל". Groups: the word with its prefix, the book, the part
+    const BOOK_NAME = new RegExp('(?<![א-ת])([ובכלמהש]{0,3}?ספר\\s+)(שמואל|מלכים|דברי[- ]הימים)\\s*-?\\s*(?:א|ב|ראשון|שני)' +
+        Q1 + '?(?![א-ת])', 'g');
+
+    function findBookNames(text) {
+        const found = [];
+        BOOK_NAME.lastIndex = 0;
+        let m;
+        while ((m = BOOK_NAME.exec(text))) {
+            const book = m[2].replace('-', ' ');
+            found.push({start: m.index, end: m.index + m[0].length, prefix: m[1], book, kind: 'book',
+                        url: 'https://www.masdirim.org/book/' + book.replace(/ /g, '_') + '.html', text: m[0]});
+        }
+        return found;
+    }
+
     function findChapterLists(text, index) {
         const lists = [];
         CHAPTER_LIST.lastIndex = 0;
@@ -286,8 +303,10 @@
             found.push(Object.assign(ref, {toChapter, toVerse, from, to}));
         }
         // a chapter list wins over a reference PATTERN read inside it ("שמות פרק ג-ה")
-        return found.filter(r => !inList(r.start) && !lists.some(l => l.start >= r.start && l.start < r.end))
-            .concat(lists).sort((a, b) => a.start - b.start);
+        const refs = found.filter(r => !inList(r.start) && !lists.some(l => l.start >= r.start && l.start < r.end)).concat(lists);
+        // a book name only where it does not begin a reference ("בספר שמואל א' ג' ד'" is a reference)
+        const overlaps = b => refs.some(r => r.start < b.end && b.start < r.end);
+        return refs.concat(findBookNames(text).filter(b => !overlaps(b))).sort((a, b) => a.start - b.start);
     }
 
     // ~~~ writing ~~~
@@ -299,6 +318,7 @@
     }
 
     function sederRef(ref, options) {
+        if (ref.kind == 'book') return ref.book;
         // a list of chapters that are not one after the other: each range in turn
         if (ref.parts && ref.parts.length > 1)
             return ref.parts.map((part, i) => {
@@ -320,6 +340,7 @@
 
     // the address of a reference on the site: the seder with the first verse marked
     function sederUrl(ref) {
+        if (ref.url) return ref.url;
         return 'https://www.masdirim.org/?book=' + ref.from.book.replace(/ /g, '_') +
             '&seder=' + ref.from.seder + '&verse=' + ref.from.verse;
     }
