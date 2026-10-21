@@ -874,6 +874,19 @@ h2 {
   padding: 12px 28px;
 }
 
+/* a verse opens its commentaries on click */
+.verse:has(a.vnum[data-seder]) {
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color .15s;
+}
+
+@media (hover: hover) {
+  .verse:has(a.vnum[data-seder]):hover {
+    background-color: rgba(200, 162, 74, .12);
+  }
+}
+
 .verse:target {
   background-color: var(--mark);
 }

@@ -227,8 +227,9 @@
                 <option value="וזאת הברכה">וזאת הברכה</option>
               </select>
             </label>
+            <button id="btnparasha" class="btn btn-navy">הצגת הפרשה</button>
           </div>
-          <p class="hint">הפרשה תוצג מחולקת לסדרים, בלי הפרקים.</p>
+          <p class="hint">פרשת השבוע כבר נבחרה ברשימה. הפרשה תוצג מחולקת לסדרים, בלי הפרקים.</p>
         </div>
 
         <p class="continue" id="continue" hidden></p>
@@ -280,7 +281,7 @@
           <li><b>יש לכם מראה מקום לפי פרקים?</b> בלשונית "המרה מפרק" בחרו ספר, פרק ופסוק. המערכת תציג את הסדר שמכיל את הפסוק ותסמן אותו, ותמצא עבורכם את הספר, הסדר והפסוק לפי החלוקה לסדרים.</li>
           <li><b>מחפשים מילה או מילים?</b> הקלידו אותן בשורת החיפוש, ותקבלו את כל הפסוקים בתנ"ך שמכילים אותן.</li>
           <li><b>רוצים לשלוח קישור?</b> לכל פסוק שמוצג יש קישור קבוע שאפשר לשמור או לשלוח.</li>
-          <li><b>רוצים פרשנות?</b> לחיצה על מספר הפסוק תציג מתחתיו את התרגום לארמית ואת פירוש רש"י, ולחיצה על שם של פרשן נוסף תפתח את פירושו.</li>
+          <li><b>רוצים פרשנות?</b> לחיצה על פסוק או על המספר שלו תציג מתחתיו את התרגום לארמית ואת פירוש רש"י, ולחיצה על שם של פרשן נוסף תפתח את פירושו.</li>
           <li><b>רוצים את האתר כאפליקציה?</b> בטלפון או במחשב אפשר להוסיף את מסדירים למסך הבית או לשולחן העבודה. בכרום ובאדג' לחצו על "התקנה" בראש הדף, ובאייפון בחרו בתפריט השיתוף "הוספה למסך הבית". כשתפתחו את האתר שוב, הוא יציע לכם להמשיך מהמקום שעצרתם.</li>
         </ul>
         <h3>למה אי אפשר להציג פרק מסוים?</h3>
@@ -372,6 +373,7 @@
       document.getElementById('btnfindchapter').addEventListener('click', () => chapter2seder());
       document.getElementById('btnfindseder').addEventListener('click', () => seder2chapter());
       document.getElementById('parasha').addEventListener('change', () => findparasha());
+      document.getElementById('btnparasha').addEventListener('click', () => findparasha());
       document.getElementById('btnfindfree').addEventListener('click', () => findfree());
       ['seder', 'sverse', 'chapter', 'cverse'].forEach(id => {
         document.getElementById(id).addEventListener('keydown', event => {

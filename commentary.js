@@ -95,9 +95,17 @@
             .catch(() => { panel.textContent = 'לא ניתן לטעון את הפירושים כרגע.'; });
     }
 
+    // a click on the verse number, or anywhere on the verse, opens (or closes) its commentaries.
+    // Not when the click ends a text selection, so verses can still be selected and copied
     document.addEventListener('click', function (event) {
-        const link = event.target.closest && event.target.closest('a.vnum[data-seder]');
-        if (!link || event.button != 0) return;
+        if (event.button != 0 || !event.target.closest) return;
+        let link = event.target.closest('a.vnum[data-seder]');
+        if (!link) {
+            const verse = event.target.closest('.verse');
+            if (!verse || event.target.closest('a') || String(window.getSelection && window.getSelection()) != '') return;
+            link = verse.querySelector('a.vnum[data-seder]');
+            if (!link) return;
+        }
         event.preventDefault();
         toggle(link);
     });
