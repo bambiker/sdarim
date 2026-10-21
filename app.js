@@ -53,6 +53,9 @@ const masdirimApp = (function () {
             track('open_commentator', {commentator: name ? name.textContent.trim() : ''});
         }
     }, true);
+    document.addEventListener('change', event => {
+        if (event.target.id == 'nusach') track('choose_nusach', {nusach: event.target.value});
+    });
     window.addEventListener('beforeprint', () => track('print', {page_title: document.title.trim()}));
 
     if ('serviceWorker' in navigator) {

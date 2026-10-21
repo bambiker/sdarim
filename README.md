@@ -26,3 +26,8 @@ https://www.masdirim.org
 
     pip install pyluach
     python3 build_calendar.py 2026 2060
+
+אחרי הפרשה מוצגת ההפטרה, לפי נוסח אשכנז או ספרד ועדות המזרח (המבקר בוחר, והבחירה נשמרת). ההפטרות נמצאות ב-`calendar/haftarot.json`: ההפטרה של כל פרשה, וההפטרה המיוחדת של שבתות כמו ראש חודש, שקלים או חנוכה. הנתונים מהספרייה @hebcal/leyning (רישיון BSD). אחרי הארכת לוח הפרשות צריך לבנות גם אותן מחדש:
+
+    npm install --no-save @hebcal/leyning @hebcal/core
+    node build_haftarot.mjs

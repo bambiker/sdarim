@@ -107,14 +107,14 @@ function escapeHtml(str) {
     return String(str).replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 }
 
-// the static page of a seder (made by build_pages.py): it has the text in the page itself,
-// so it shows a proper preview when shared and can be found by search engines
 // the link shown under the text ("קישור ישיר לדף זה") and sent on WhatsApp: it opens the whole site,
 // with the seder shown and the verse marked (the static page stays the canonical page for search engines)
 function siteUrl(book, seder, verse) {
     return "https://www.masdirim.org/?book=" + addunderscore(book) + "&seder=" + seder + "&verse=" + (verse || 'א');
 }
 
+// the static page of a seder (made by build_pages.py): it has the text in the page itself,
+// so it shows a proper preview when shared and can be found by search engines
 function sederPageUrl(book, seder, verse) {
     return "https://www.masdirim.org/seder/" + addunderscore(book) + "/" + seder + ".html" + (verse && verse != 'א' ? "#" + verse : "");
 }
@@ -240,10 +240,12 @@ async function findparasha(){
 
     var parasha = document.getElementById("parasha").value;
 
+    // a double portion (ויקהל-פקודי) is both parashot, one after the other
+    const names = parasha.split('-');
     // load only the sedarim this parasha falls in
-    const sedarim = (await getSederIndex()).filter(s => s.parashot.includes(parasha));
+    const sedarim = (await getSederIndex()).filter(s => s.parashot.some(p => names.includes(p)));
     const verses = await Promise.all(sedarim.map(s => getSederVerses(s.book, s.seder)));
-    const filteredArray = verses.flat().filter(item => item.parasha === parasha);
+    const filteredArray = verses.flat().filter(item => names.includes(item.parasha));
 
     output = "<h2>" + "פרשת " + escapeHtml(parasha) + " " + PRINT_BUTTON + "</h2>";
     oldseder='-1' 
@@ -252,7 +254,7 @@ async function findparasha(){
          output += verseHtml(filteredArray[i]);
          oldseder = filteredArray[i].seder
     }
-    document.getElementById("result").innerHTML  = output;
+    document.getElementById("result").innerHTML  = output + await haftarahHtml(parasha);
 
     urlname = "https://www.masdirim.org/?parasha=" + addunderscore(parasha);
     setCanonical(urlname);
@@ -1152,6 +1154,79 @@ function userSeder(filtArray2, book, seder, verse){
     fillSederNav(book, seder);
     return;
     }
+
+// ~~~~~~~~ this week's parasha and the haftarah ~~~~~~~~
+// calendar/parashot.json (build_calendar.py) has the parasha of every Shabbat by the Israel schedule;
+// calendar/haftarot.json (build_haftarot.mjs) has the haftarah of every parasha, and of the Shabbatot
+// that have a special one, by the Ashkenazi and the Sephardi / Edot HaMizrach custom.
+
+// {name: 'לך לך' or 'ויקהל-פקודי', date: '2026-10-24'}: the coming Shabbat that has a parasha
+// (a Shabbat that is a festival has none), by the date in Jerusalem
+async function getWeeklyParasha() {
+    const shabbatot = await loadJson('calendar/parashot.json');
+    if (!shabbatot) return null;
+    const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Jerusalem'}).format(new Date());
+    const date = Object.keys(shabbatot).sort().find(d => d >= today && shabbatot[d].length);
+    return date ? {name: shabbatot[date].join('-'), date: date} : null;
+}
+
+const NUSACHIM = {ashkenazi: 'אשכנז', sephardi: 'ספרד ועדות המזרח'};
+
+function getNusach() {
+    let nusach = null;
+    try { nusach = localStorage.getItem('nusach'); } catch (e) { }
+    return NUSACHIM[nusach] ? nusach : 'ashkenazi';
+}
+
+async function haftarahHtml(parasha) {
+    try {
+        const data = await loadJson('calendar/haftarot.json');
+        if (!data) return '';
+        let entry = data.parashot[parasha];
+        let reason = '';
+        // this week's parasha: a special Shabbat (Rosh Chodesh, Shekalim...) has its own haftarah
+        const week = await getWeeklyParasha();
+        if (week && week.name == parasha && data.shabbatot[week.date]) {
+            entry = data.shabbatot[week.date];
+            reason = entry.reason;
+        }
+        if (!entry) return '';
+        const nusach = getNusach();
+        const pieces = entry[nusach] || entry.ashkenazi;
+        const verses = (await Promise.all(pieces.map(async ([book, chapter, first, last]) =>
+            ((await loadJson(apiPath('chapter', chapter, book))) || []).slice(first - 1, last)))).flat();
+        let html = '<section class="haftarah" id="haftarah">' +
+            '<h2>הפטרה <span class="nusach-name">לפי נוסח ' + NUSACHIM[nusach] + '</span></h2>' +
+            '<label class="nusach no-print">נוסח: <select id="nusach">' +
+            Object.entries(NUSACHIM).map(([key, name]) =>
+                '<option value="' + key + '"' + (key == nusach ? ' selected' : '') + '>' + name + '</option>').join('') +
+            '</select></label>';
+        if (reason) html += '<p class="haftarah-note">' + escapeHtml(reason) + ': בשבת הקרובה מפטירים בהפטרה מיוחדת.</p>';
+        let lastSeder = '';
+        verses.forEach(v => {
+            const seder = v.bookseder + ' סדר ' + v.seder;
+            if (seder != lastSeder) html += '<h3>' + escapeHtml(seder) + '</h3>';
+            lastSeder = seder;
+            html += verseHtml(v);
+        });
+        return html + '</section>';
+    } catch (err) {
+        return '';   // no haftarah is better than no parasha
+    }
+}
+
+// choosing another custom shows its haftarah, and is remembered for next time
+document.addEventListener('change', async function (event) {
+    if (event.target.id != 'nusach') return;
+    try { localStorage.setItem('nusach', event.target.value); } catch (e) { }
+    const section = document.getElementById('haftarah');
+    const parasha = document.getElementById('parasha').value;
+    if (!section || !parasha) return;
+    const html = await haftarahHtml(parasha);
+    if (html) section.outerHTML = html;
+    const select = document.getElementById('nusach');
+    if (select) select.focus();
+});
 
 // ~~~~~~~~ previous / next seder ~~~~~~~~
 

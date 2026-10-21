@@ -501,6 +501,44 @@ a {
   box-shadow: 0 0 0 3px var(--mark);
 }
 
+.haftarah {
+  margin-top: 36px;
+  padding-top: 12px;
+  border-top: 2px solid var(--line);
+}
+
+.haftarah .nusach-name {
+  font-family: var(--ui);
+  font-size: .5em;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.nusach {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--ui);
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.nusach select {
+  font: inherit;
+  color: var(--ink);
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.haftarah-note {
+  font-family: var(--ui);
+  font-size: 15px;
+  color: var(--accent);
+  margin: 8px 0 0;
+}
+
 /* ~~~ shared by the home page and the static pages ~~~ */
 
 h2 {
