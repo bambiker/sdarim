@@ -254,7 +254,7 @@
             <button type="button" class="btn-icon" data-font="1" aria-label="הגדלת הטקסט">א+</button>
           </span>
         </div>
-        <div id="result" class="result"></div>
+        <div id="result" class="result" tabindex="-1"></div>
       </section>
 
       <section class="features">
@@ -376,11 +376,23 @@
     <datalist id="chapters"></datalist>
 
     <script>
-      document.getElementById('btnfindchapter').addEventListener('click', () => chapter2seder());
-      document.getElementById('btnfindseder').addEventListener('click', () => seder2chapter());
-      document.getElementById('parasha').addEventListener('change', () => findparasha());
-      document.getElementById('btnparasha').addEventListener('click', () => findparasha());
-      document.getElementById('btnfindfree').addEventListener('click', () => findfree());
+      // after a search, a seder, a conversion or a parasha, move to the text: the marked verse in the
+      // middle of the screen (unless it is the first one), or the top of the text. The focus moves there
+      // too, so the phone keyboard closes and the keyboard can scroll the text
+      function goToResult() {
+        const result = document.getElementById('result');
+        const mark = result.querySelector('mark .verse');
+        const first = mark && mark == result.querySelector('.verse');
+        result.focus({preventScroll: true});
+        if (mark && !first) mark.scrollIntoView({block: 'center', behavior: 'smooth'});
+        else result.scrollIntoView({behavior: 'smooth'});
+      }
+      const show = action => () => Promise.resolve(action()).then(goToResult, goToResult);
+      document.getElementById('btnfindchapter').addEventListener('click', show(() => chapter2seder()));
+      document.getElementById('btnfindseder').addEventListener('click', show(() => seder2chapter()));
+      document.getElementById('parasha').addEventListener('change', show(() => findparasha()));
+      document.getElementById('btnparasha').addEventListener('click', show(() => findparasha()));
+      document.getElementById('btnfindfree').addEventListener('click', show(() => findfree()));
       ['seder', 'sverse', 'chapter', 'cverse'].forEach(id => {
         document.getElementById(id).addEventListener('keydown', event => {
           if (event.key != 'Enter') return;

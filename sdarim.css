@@ -467,6 +467,10 @@ a {
   text-align: justify;
 }
 
+.result:focus {
+  outline: none;
+}
+
 .result h2, .result h3 {
   font-family: var(--text);
   color: var(--heading);
