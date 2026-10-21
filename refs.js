@@ -127,6 +127,73 @@
         '(?![א-ת\\d])', 'gd');
     const BOOK_GROUPS = bookAlternatives.length;
 
+    // whole chapters: "שמות פרקים ג-ה", "שמות פרקים ג, ד", "פרקים ג וד", "שמות פרק ג-ה" (a single chapter,
+    // "שמות פרק ג", is read by PATTERN). Groups: prefix, book alternatives..., the word, the list
+    const CHAPTER_LIST = new RegExp(
+        '(?<![א-ת])([ובכלמהש]{0,2}?)' + BOOK + '(?:\\s*,)?\\s*(פרקים|פרק)\\s*' +
+        '(' + NUM + '(?:(?:(?:\\s+ו)?' + DASH + '|\\s*,\\s*ו?|\\s+ו(?=[א-ת]))' + NUM + ')*)' +
+        '(?![א-ת\\d])', 'g');
+
+    // the chapters in a list like "ג-ה, ז וט" -> [[3, 5], [7, 7], [9, 9]], consecutive ones joined;
+    // stops at the first number that is not a chapter of the book. {ranges, length} (length: of the text read)
+    function chapterRanges(list, book, index) {
+        const ranges = [];
+        const re = new RegExp('^((?:\\s+ו)?' + DASH + '|\\s*,\\s*ו?|\\s+ו)?(' + NUM + ')');
+        let pos = 0, length = 0, first = true, lastStart = 0;
+        while (pos < list.length) {
+            const m = re.exec(list.slice(pos));
+            if (!m || (first && m[1])) break;
+            const n = numberValue(m[2]);
+            const dash = m[1] && /[-–—]/.test(m[1]);
+            const last = ranges[ranges.length - 1];
+            if (!n || !index.chapters.has(book + '|' + n) || (dash && n <= last[1])) {
+                // "ג-נא" with no chapter נא: the range is wrong, so its first chapter is dropped too
+                if (dash && last && last[0] == last[1]) {
+                    ranges.pop();
+                    length = lastStart;
+                }
+                break;
+            }
+            if (dash && last) {
+                last[1] = n;
+            } else if (last && n == last[1] + 1) {
+                last[1] = n;
+            } else {
+                ranges.push([n, n]);
+                lastStart = pos;
+            }
+            pos += m[0].length;
+            length = pos;
+            first = false;
+        }
+        return {ranges, length};
+    }
+
+    function findChapterLists(text, index) {
+        const lists = [];
+        CHAPTER_LIST.lastIndex = 0;
+        let m;
+        while ((m = CHAPTER_LIST.exec(text))) {
+            let book = null;
+            for (let i = 0; i < BOOK_GROUPS; i++) if (m[2 + i] !== undefined) { book = bookAlternatives[i][1]; break; }
+            const word = m[2 + BOOK_GROUPS], list = m[3 + BOOK_GROUPS];
+            const {ranges, length} = chapterRanges(list, book, index);
+            const read = list.slice(0, length);
+            // "פרק" is a list only with a dash and no comma: "פרק ג" alone is PATTERN's, and "פרק ג, ח" is a verse
+            if (!ranges.length || (word == 'פרק' && (!/[-–—]/.test(read) || /,/.test(read)))) {
+                CHAPTER_LIST.lastIndex = m.index + 1;
+                continue;
+            }
+            const end = m.index + m[0].length - list.length + length;
+            CHAPTER_LIST.lastIndex = end;
+            const parts = ranges.map(([a, b]) => ({from: index.chapters.get(book + '|' + a).first,
+                                                   to: index.chapters.get(book + '|' + b).last}));
+            lists.push({start: m.index, end, prefix: m[1] || '', book, chapter: ranges[0][0], verse: null,
+                        from: parts[0].from, to: parts[parts.length - 1].to, parts, text: text.slice(m.index, end)});
+        }
+        return lists;
+    }
+
     // ~~~ the index: chapter location -> seder location, from API/map.json ~~~
     function buildIndex(map) {
         const fields = map.fields;
@@ -147,6 +214,8 @@
     // ~~~ finding ~~~
     // [{start, end, prefix, book, chapter, verse, toChapter, toVerse, from, to}] (from/to are seder locations)
     function findReferences(text, index) {
+        const lists = findChapterLists(text, index);
+        const inList = pos => lists.some(r => pos >= r.start && pos < r.end);
         const found = [];
         const G = 2 + BOOK_GROUPS;   // the first group after the book: see PATTERN
         PATTERN.lastIndex = 0;
@@ -216,7 +285,9 @@
             }
             found.push(Object.assign(ref, {toChapter, toVerse, from, to}));
         }
-        return found;
+        // a chapter list wins over a reference PATTERN read inside it ("שמות פרק ג-ה")
+        return found.filter(r => !inList(r.start) && !lists.some(l => l.start >= r.start && l.start < r.end))
+            .concat(lists).sort((a, b) => a.start - b.start);
     }
 
     // ~~~ writing ~~~
@@ -228,6 +299,12 @@
     }
 
     function sederRef(ref, options) {
+        // a list of chapters that are not one after the other: each range in turn
+        if (ref.parts && ref.parts.length > 1)
+            return ref.parts.map((part, i) => {
+                const one = sederRef(Object.assign({}, ref, part, {parts: null}), options);
+                return i == 0 ? one : one.replace(/^.*? סדר /, 'סדר ');
+            }).join(', ');
         const quotes = options && options.quotes != null ? options.quotes : /['׳"״”]/.test(ref.text);
         const n = s => numeral(numberValue(s), quotes);
         const a = ref.from, b = ref.to;
