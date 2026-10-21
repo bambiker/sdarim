@@ -317,7 +317,7 @@ def sitemap(urls_with_dates):
 
 
 # pages in sitemap.xml that are not generated here
-STATIC_PAGES = ['', 'api.html', 'fame.html']
+STATIC_PAGES = ['', 'api.html', 'fame.html', 'convert.html']
 
 
 # ~~~ questions and answers ~~~

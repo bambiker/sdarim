@@ -1116,6 +1116,124 @@ dl.fields dd {
   }
 }
 
+/* ~~~ the reference converter (convert.html) ~~~ */
+
+.beta {
+  font-size: 14px;
+  color: var(--muted);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.converter-label {
+  display: block;
+  font-weight: 700;
+  margin: 18px 0 6px;
+}
+
+.converter textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 14px;
+  resize: vertical;
+}
+
+.converter-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin: 10px 0 0;
+}
+
+.converter-tools .btn {
+  padding: 6px 18px;
+  font-size: 15px;
+}
+
+.converter-option {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.converter-result {
+  margin-top: 24px;
+}
+
+.converter-head {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+
+.converter-head h2 {
+  margin: 0;
+}
+
+.converter-head .btn {
+  margin-inline-start: auto;
+  padding: 6px 20px;
+}
+
+.converter-count {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.converter-output {
+  margin-top: 10px;
+  padding: 12px 16px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  white-space: pre-wrap;
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+.converter-output a.ref {
+  color: inherit;
+  background: var(--mark);
+  border-radius: 4px;
+  padding: 1px 3px;
+  text-decoration: none;
+  box-shadow: inset 0 -2px 0 var(--gold);
+}
+
+.converter-list {
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.converter-list summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.converter-list table {
+  border-collapse: collapse;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.converter-list th, .converter-list td {
+  text-align: right;
+  padding: 4px 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.converter-help li {
+  margin-bottom: 6px;
+}
+
 /* ~~~ commentaries under a verse (commentary.js) ~~~ */
 
 .commentary {
