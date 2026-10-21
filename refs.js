@@ -172,6 +172,11 @@
             }
             let toChapter = m[G + 4] !== undefined ? numberValue(m[G + 4]) : null;
             let toVerse = m[G + 5] !== undefined && verse ? numberValue(m[G + 5]) : null;
+            if (m[G + 4] !== undefined && !toChapter) {
+                // "הושע יד י - יואל א ב": a range into another book is not read; the reference ends before the dash
+                toVerse = null;
+                stopBefore(G + 4);
+            }
             // "ג ח-ט, י" is verses ח-ט and then י, not a range to chapter ט: a range to another chapter has
             // to be written like its start ("ג' ח' - ד' ב'", "א, א - ב, ג") and go forward
             const sepKind = (from, to) => { const t = text.slice(m.indices[from][1], m.indices[to][0]); return /,/.test(t) ? ',' : /:/.test(t) ? ':' : /\./.test(t) ? '.' : ' '; };
@@ -199,6 +204,8 @@
             let to = null;
             if (toVerse) {
                 to = index.verses.get(book + '|' + (toChapter || chapter) + '|' + toVerse);
+                // a range has to go forward
+                if (to && (to.chapter < from.chapter || (to.chapter == from.chapter && to.chapterVerse < from.chapterVerse))) to = null;
                 if (!to) {
                     // the dash did not start a range: keep the reference without it
                     stopBefore(m[G + 4] !== undefined ? G + 4 : G + 5);
@@ -224,11 +231,13 @@
         const quotes = options && options.quotes != null ? options.quotes : /['׳"״”]/.test(ref.text);
         const n = s => numeral(numberValue(s), quotes);
         const a = ref.from, b = ref.to;
-        let out = a.book + ' סדר ' + n(a.seder);
+        // the twelve prophets are one book of sedarim: name the prophet too, "תרי עשר (עמוס) סדר ז"
+        const book = loc => loc.book == 'תרי עשר' ? loc.book + ' (' + loc.chapterBook + ')' : loc.book;
+        let out = book(a) + ' סדר ' + n(a.seder);
         if (!b || (b.book == a.book && b.seder == a.seder && b.verse == a.verse)) return out + ' פסוק ' + n(a.verse);
         if (b.book == a.book && b.seder == a.seder) return out + ' פסוקים ' + n(a.verse) + '-' + n(b.verse);
         out += ' פסוק ' + n(a.verse) + ' עד ';
-        if (b.book != a.book) out += b.book + ' ';
+        if (b.book != a.book || b.chapterBook != a.chapterBook) out += book(b) + ' ';
         return out + 'סדר ' + n(b.seder) + ' פסוק ' + n(b.verse);
     }
 
