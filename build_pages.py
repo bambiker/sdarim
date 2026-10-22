@@ -174,10 +174,11 @@ def verses_html(verses, number_by='seder', anchors=False):
                    if number_by == 'chapter' else '')
         anchor = f' id="{esc(n)}"' if anchors else ''
         # clicking the number opens the commentaries of the verse (commentary.js)
-        data = f' data-book="{esc(v["bookseder"])}" data-seder="{esc(v["seder"])}" data-verse="{esc(v["verseseder"])}"'
+        data = (f' data-book="{esc(v["bookseder"])}" data-seder="{esc(v["seder"])}" data-verse="{esc(v["verseseder"])}"'
+                f' data-chapter="{esc(v["bookchapter"])} {esc(v["chapter"])}, {esc(v["versechapter"])}"')
         tooltip = tooltip or ' title="פירושים"'
-        out.append(f'<span class="verse"{anchor}><a class="vnum" href="#"{data}{tooltip}>'
-                   f'<sup>({esc(n)})</sup></a> {verse_text(v)}</span>')
+        out.append(f'<span class="verse"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
+                   f'<sup>({esc(n)})</sup></span> {verse_text(v)}</span>')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
 

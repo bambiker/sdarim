@@ -34,10 +34,10 @@ const masdirimApp = (function () {
         else if (target.closest('#continue a')) track('continue_reading', {page: target.closest('a').getAttribute('href')});
         else if (target.closest('#whatsapp')) track('share_whatsapp', {page_title: document.title.trim(), page_url: shownUrl()});
         else if (target.closest('#copylink')) track('copy_link', {page_title: document.title.trim(), page_url: shownUrl()});
-        else if (target.closest('a.vnum[data-seder]') ||
+        else if (target.closest('.vnum[data-seder]') ||
                  (target.closest('.verse') && !target.closest('a') && String(window.getSelection()) == '' &&
-                  target.closest('.verse').querySelector('a.vnum[data-seder]'))) {
-            const v = target.closest('a.vnum[data-seder]') || target.closest('.verse').querySelector('a.vnum[data-seder]');
+                  target.closest('.verse').querySelector('.vnum[data-seder]'))) {
+            const v = target.closest('.vnum[data-seder]') || target.closest('.verse').querySelector('.vnum[data-seder]');
             // the click opens the commentary panel, or closes it if it is open
             const anchor = v.closest('.verse') || v;
             const box = (anchor.parentElement && anchor.parentElement.tagName == 'MARK' ? anchor.parentElement : anchor).nextElementSibling;
