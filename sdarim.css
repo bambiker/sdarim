@@ -373,6 +373,11 @@ a {
   width: 96px;
 }
 
+.field input.invalid {
+  border-color: #c0392b;
+  box-shadow: 0 0 0 2px rgba(192, 57, 43, .15);
+}
+
 .field-book select {
   width: 180px;
 }
