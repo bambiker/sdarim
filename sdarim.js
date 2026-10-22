@@ -127,9 +127,12 @@ function setCanonical(url) {
 
 // a verse with its number; clicking the number opens the commentaries (commentary.js)
 function verseHtml(v) {
-    return '<span class="verse"><a class="vnum" href="#" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
-        '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) + '">' +
-        "<sup>(" + v.verseseder + ")</sup> " + '</a>' + cleanverse(v.versenikud) + '</span>';
+    // the number is not a link: a click on it, or on the verse, opens the commentaries (commentary.js),
+    // which also show where the verse is by the chapters (data-chapter)
+    return '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
+        '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) +
+        '" data-chapter="' + escapeHtml(v.bookchapter + ' ' + v.chapter + ', ' + v.versechapter) + '">' +
+        "<sup>(" + v.verseseder + ")</sup> " + '</span>' + cleanverse(v.versenikud) + '</span>';
 }
 
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';

@@ -935,14 +935,14 @@ h2 {
 }
 
 /* a verse opens its commentaries on click */
-.verse:has(a.vnum[data-seder]) {
+.verse:has(.vnum[data-seder]) {
   cursor: pointer;
   border-radius: 4px;
   transition: background-color .15s;
 }
 
 @media (hover: hover) {
-  .verse:has(a.vnum[data-seder]):hover {
+  .verse:has(.vnum[data-seder]):hover {
     background-color: rgba(200, 162, 74, .12);
   }
 }
@@ -1292,6 +1292,12 @@ dl.fields dd {
   content: " ▴";
   font-size: 12px;
   color: var(--muted);
+}
+
+.commentary .commentary-chapter {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
 }
 
 .commentary .commentary-source {

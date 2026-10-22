@@ -1,4 +1,4 @@
-// Commentaries under a verse, opened by clicking its number.
+// Commentaries under a verse, opened by clicking the verse or its number.
 // Used by the main site (sdarim.js renders the verses) and by the static pages.
 // The data comes from commentary/<book>/<seder>.json, made by build_commentary.py from
 // Sefaria's public export (only editions whose license allows reuse); its HTML is already cleaned.
@@ -17,10 +17,19 @@
         return cache[path];
     }
 
-    function render(panel, entries, sources) {
+    // where the verse is by the chapters, in small print next to the sources ("בראשית ג, ח")
+    function chapterNote(link) {
+        const note = document.createElement('div');
+        note.className = 'commentary-chapter';
+        note.textContent = 'לפי החלוקה לפרקים: ' + link.dataset.chapter;
+        return note;
+    }
+
+    function render(panel, entries, sources, link) {
         panel.replaceChildren();
         if (!entries || entries.length == 0) {
             panel.textContent = 'אין פירושים לפסוק זה.';
+            if (link.dataset.chapter) panel.appendChild(chapterNote(link));
             return;
         }
         const used = [];
@@ -74,6 +83,7 @@
         sefaria.textContent = 'ספריא';
         credit.append(sefaria);
         panel.appendChild(credit);
+        if (link.dataset.chapter) panel.appendChild(chapterNote(link));
     }
 
     function toggle(link) {
@@ -91,7 +101,7 @@
         const file = '/commentary/' + encodeURIComponent(link.dataset.book.replace(/ /g, '_')) + '/' +
             encodeURIComponent(link.dataset.seder) + '.json';
         Promise.all([load(file), load('/commentary/sources.json')])
-            .then(([seder, sources]) => render(panel, seder[link.dataset.verse], sources))
+            .then(([seder, sources]) => render(panel, seder[link.dataset.verse], sources, link))
             .catch(() => { panel.textContent = 'לא ניתן לטעון את הפירושים כרגע.'; });
     }
 
@@ -99,13 +109,22 @@
     // Not when the click ends a text selection, so verses can still be selected and copied
     document.addEventListener('click', function (event) {
         if (event.button != 0 || !event.target.closest) return;
-        let link = event.target.closest('a.vnum[data-seder]');
+        let link = event.target.closest('.vnum[data-seder]');
         if (!link) {
             const verse = event.target.closest('.verse');
             if (!verse || event.target.closest('a') || String(window.getSelection && window.getSelection()) != '') return;
-            link = verse.querySelector('a.vnum[data-seder]');
+            link = verse.querySelector('.vnum[data-seder]');
             if (!link) return;
         }
+        event.preventDefault();
+        toggle(link);
+    });
+
+    // the verse number takes the keyboard focus (tabindex): Enter or Space opens the commentaries too
+    document.addEventListener('keydown', function (event) {
+        if (event.key != 'Enter' && event.key != ' ') return;
+        const link = event.target.closest && event.target.closest('.vnum[data-seder]');
+        if (!link) return;
         event.preventDefault();
         toggle(link);
     });
