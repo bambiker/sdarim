@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="/sdarim.css">
     <script src="/commentary.js" defer></script>
     <script src="/app.js" defer></script>
+    <script src="/sdarim.js" defer></script>
+    <script src="/layout.js" defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -35,10 +37,22 @@
     </script>
   </head>
   <body dir="rtl" class="static-page">
-    <header class="site-header no-print">
-      <a href="/">מסדירים</a> <span class="site-tagline">· חוזרים לחלוקת התנ"ך היהודית</span>
-      <button type="button" class="install" data-install hidden>התקנה</button>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="/"><span class="brand-mark" aria-hidden="true">ס</span>מסדירים</a>
+        <nav class="topnav" aria-label="ניווט ראשי">
+          <a href="/#tools">קריאה</a>
+          <a href="/#about">אודות</a>
+          <a class="wide-only" href="/#agree">הסכמות</a>
+          <a class="wide-only" href="/#contact">יצירת קשר</a>
+        </nav>
+        <button type="button" class="install" data-install hidden>התקנה<span class="wide-only"> כאפליקציה</span></button>
+      </div>
     </header>
+    <main>
+      <!-- the search and the tools, and below the text the rest of the home page: added by layout.js -->
+      <div id="site-top"></div>
+      <article class="reader page-text" id="page-text">
     <nav class="seder-nav no-print"><a class="prev" rel="prev" href="/perek/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D_%D7%90/%D7%9B.html">→ הפרק הקודם: מלכים א כ</a><a class="next" rel="next" href="/perek/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D_%D7%90/%D7%9B%D7%91.html">הפרק הבא: מלכים א כב ←</a></nav>
     <h1>מלכים א פרק כא לפי החלוקה לסדרים</h1>
     <p class="seder-info">פרק כא בספר מלכים א (29 פסוקים) נמצא ב<a href="/seder/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D/%D7%99%D7%96.html">מלכים סדר יז</a> (פסוקים לב–מח) וב<a href="/seder/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D/%D7%99%D7%97.html">מלכים סדר יח</a> (פסוקים א–יב).</p>
@@ -80,11 +94,16 @@
     </div>
     <nav class="seder-nav no-print"><a class="prev" rel="prev" href="/perek/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D_%D7%90/%D7%9B.html">→ הפרק הקודם: מלכים א כ</a><a class="next" rel="next" href="/perek/%D7%9E%D7%9C%D7%9B%D7%99%D7%9D_%D7%90/%D7%9B%D7%91.html">הפרק הבא: מלכים א כב ←</a></nav>
 
-    <footer class="no-print">
-      <a href="/">לאתר מסדירים: המרה בין פרקים לסדרים וחיפוש</a> ·
+      </article>
+      <div id="site-bottom"></div>
+    </main>
+    <footer class="site-footer">
+      <a href="/">לדף הבית</a> ·
       <a href="/seder/">כל הסדרים, הפרקים והפרשות</a> ·
       <a href="/faq.html">שאלות ותשובות</a> ·
-      <a href="/api.html">API ונתונים</a>
+      <a href="/api.html">API ונתונים</a> ·
+      <a href="/convert.html">המרת מראי מקום</a> ·
+      <a href="https://github.com/bambiker/sdarim" target="_blank" rel="noopener">קוד פתוח</a>
     </footer>
   </body>
 </html>
