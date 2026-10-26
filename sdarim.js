@@ -1,5 +1,26 @@
 async function start(){
 
+   // the tools of the static pages (layout.js) open their result here: ?q= a word search,
+   // ?cbook=&chapter=&cverse= a chapter to convert
+   const query = GetURLParameter('q');
+   if (query) {
+       document.getElementById("free").value = decode(query);
+       await findfree();
+       document.getElementById("result").scrollIntoView();
+       return;
+   }
+   const chapterParam = GetURLParameter('chapter');
+   if (chapterParam && GetURLParameter('cbook')) {
+       document.getElementById("cbook").value = removeunderscore(decode(GetURLParameter('cbook')));
+       document.getElementById("chapter").value = decode(chapterParam);
+       document.getElementById("cverse").value = decode(GetURLParameter('cverse') || '');
+       await chapter2seder();
+       const mark = document.querySelector("#result mark");
+       if (mark && document.getElementById("sverse").value != 'א') mark.scrollIntoView({block: "center"});
+       else document.getElementById("result").scrollIntoView();
+       return;
+   }
+
    try{
           book  = removeunderscore(decode(GetURLParameter('book')));
           seder = decode(GetURLParameter('seder'));
@@ -41,7 +62,7 @@ async function start(){
 let sdarimPromise = null;
 function loadSdarim() {
     if (!sdarimPromise) {
-        sdarimPromise = fetch("sdarim.json").then(response => response.json());
+        sdarimPromise = fetch("/sdarim.json").then(response => response.json());
         sdarimPromise.catch(() => { sdarimPromise = null; });
     }
     return sdarimPromise;
@@ -66,7 +87,7 @@ function loadJson(path) {
 }
 
 function apiPath(...parts) {
-    return 'API/' + encodeURIComponent(parts.join('_').replace(/ /g, '_') + '.json');
+    return '/API/' + encodeURIComponent(parts.join('_').replace(/ /g, '_') + '.json');
 }
 
 async function getSederVerses(book, seder) {
@@ -90,7 +111,7 @@ async function getChapterVerse(book, chapter, verse) {
 // all sedarim in order: [{book, seder, parashot, ...}], from API/sedarim.json (236KB)
 async function getSederIndex() {
     try {
-        const index = await loadJson('API/sedarim.json');
+        const index = await loadJson('/API/sedarim.json');
         if (index) return index;
     } catch (err) { }
     const json = await loadSdarim();
@@ -1166,7 +1187,7 @@ function userSeder(filtArray2, book, seder, verse){
 // {name: 'לך לך' or 'ויקהל-פקודי', date: '2026-10-24'}: the coming Shabbat that has a parasha
 // (a Shabbat that is a festival has none), by the date in Jerusalem
 async function getWeeklyParasha() {
-    const shabbatot = await loadJson('calendar/parashot.json');
+    const shabbatot = await loadJson('/calendar/parashot.json');
     if (!shabbatot) return null;
     const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Asia/Jerusalem'}).format(new Date());
     const date = Object.keys(shabbatot).sort().find(d => d >= today && shabbatot[d].length);
@@ -1183,7 +1204,7 @@ function getNusach() {
 
 async function haftarahHtml(parasha) {
     try {
-        const data = await loadJson('calendar/haftarot.json');
+        const data = await loadJson('/calendar/haftarot.json');
         if (!data) return '';
         let entry = data.parashot[parasha];
         let reason = '';
@@ -1268,7 +1289,8 @@ async function showSeder(book, seder) {
 
 document.addEventListener('click', function (event) {
     const link = event.target.closest && event.target.closest('.seder-nav a');
-    if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.button != 0) return;
+    // the static pages' links (no data-book) are ordinary links to the next page
+    if (!link || !link.dataset.book || event.ctrlKey || event.metaKey || event.shiftKey || event.button != 0) return;
     event.preventDefault();
     showSeder(link.dataset.book, link.dataset.seder);
 });

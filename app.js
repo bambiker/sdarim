@@ -110,6 +110,7 @@ const masdirimApp = (function () {
         const verse = document.getElementById(decodeURIComponent(location.hash.slice(1)));
         if (verse && verse.classList.contains('verse')) verse.scrollIntoView({block: 'center'});
     }
+    window.centerVerse = centerVerse;   // layout.js calls it after adding the parts above the text
     window.addEventListener('load', centerVerse);
     window.addEventListener('hashchange', centerVerse);
 

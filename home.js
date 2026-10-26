@@ -33,10 +33,11 @@
     select(tabs[0]);
 
     // ~~~ text size ~~~
-    const result = document.getElementById('result');
+    // the text: #result on the home page, the page's own text on the static pages (layout.js loads this file there)
+    const result = document.getElementById('result') || document.getElementById('page-text');
     let size = Number(stored('fontStep')) || 0;
     function applySize() {
-        result.style.setProperty('--font-step', size);
+        if (result) result.style.setProperty('--font-step', size);
     }
     document.querySelectorAll('[data-font]').forEach(button => {
         button.addEventListener('click', () => {
@@ -124,11 +125,12 @@
         if (sbook.value) sedarim(); else check(sederInput, 'seders');
         if (cbook.value) chapters(); else check(chapterInput, 'chapters');
     }
-    new MutationObserver(refreshLists).observe(document.getElementById('result'), {childList: true});
+    if (document.getElementById('result'))
+        new MutationObserver(refreshLists).observe(document.getElementById('result'), {childList: true});
 
     // ~~~ copy the link ~~~
     const copy = document.getElementById('copylink');
-    copy.addEventListener('click', () => {
+    if (copy) copy.addEventListener('click', () => {
         const link = document.querySelector('#urlname a');
         if (!link || !navigator.clipboard) return;
         navigator.clipboard.writeText(link.href).then(() => {
