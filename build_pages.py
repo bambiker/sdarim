@@ -6,7 +6,7 @@ link previews (WhatsApp, Facebook) see the text of every seder without running J
 
 Run through build_api.py, which writes and checks these files together with API/:
     seder/<book>/<seder>.html     one seder (447 pages)
-    perek/<book>/<chapter>.html   one chapter, showing the sedarim it falls in (929 pages)
+    perek/<book>/<chapter>.html   one chapter: the whole seder(s) it falls in, the chapter marked (929 pages)
     parasha/<parasha>.html        one parasha (54 pages)
     book/<book>.html              a whole book by sedarim, for reading and printing (24 pages)
     seder/index.html              list of all of the above
@@ -201,6 +201,27 @@ def verses_html(verses, number_by='seder', anchors=False):
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
 
+def seder_with_chapter(verses, chapter_verses):
+    """A whole seder on a chapter page: the verses are numbered by the seder, the chapter's verses have their
+    chapter letter as id (perek/…#ה links), and a line shows where the chapter starts and where it ends (a chapter
+    in two sedarim starts in the first and ends in the second)."""
+    inside = [v in chapter_verses for v in verses]
+    first, last = chapter_verses[0], chapter_verses[-1]
+    chapter = first['chapter']
+    out = []
+    for i, v in enumerate(verses):
+        data = (f' data-book="{esc(v["bookseder"])}" data-seder="{esc(v["seder"])}" data-verse="{esc(v["verseseder"])}"'
+                f' data-chapter="{esc(v["bookchapter"])} {esc(v["chapter"])}, {esc(v["versechapter"])}"')
+        if v is first:
+            out.append(f'<span class="chapter-mark" id="chapter-start">תחילת פרק {esc(chapter)}</span>')
+        anchor = f' id="{esc(v["versechapter"])}"' if inside[i] else ''
+        out.append(f'<span class="verse{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
+                   f'{data} title="פירושים"><sup>({esc(v["verseseder"])})</sup></span> {verse_text(v)}</span>')
+        if v is last:
+            out.append(f'<span class="chapter-mark">סוף פרק {esc(chapter)}</span>')
+    return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
+
+
 def build_pages(verses, sedarim):
     """Return {path: html text} for every generated file."""
     pages = OrderedDict()
@@ -254,8 +275,10 @@ def build_pages(verses, sedarim):
                  + ' וב'.join(f'<a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a> '
                               f'(פסוקים {esc(p[0]["verseseder"])}–{esc(p[-1]["verseseder"])})' for (b, s), p in parts.items())
                  + f'.</p>\n    <p class="seder-tools no-print">{print_button()}</p>\n')
+        # the whole seder (or sedarim) the chapter is in, with the chapter marked in it
         for (b, s), p in parts.items():
-            body += f'    <h2><a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a></h2>\n' + verses_html(p, number_by='chapter', anchors=True)
+            body += (f'    <h2><a href="{href(seder_path(b, s))}">{esc(b)} סדר {esc(s)}</a></h2>\n'
+                     + seder_with_chapter(by_seder[(b, s)], vs))
         body += navs
         desc = f'{book} פרק {chapter} לפי החלוקה היהודית לסדרים: הפרק נמצא ב{where}. {snippet(vs, 15)}'
         pages[perek_path(book, chapter)] = page(perek_path(book, chapter),

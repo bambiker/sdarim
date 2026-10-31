@@ -942,6 +942,31 @@ h2 {
   background-color: var(--mark);
 }
 
+/* a chapter page shows the whole seder: the verses outside the chapter are lighter, and a line marks
+   where the chapter starts and ends */
+.outside-chapter {
+  color: var(--muted);
+}
+
+.chapter-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-family: var(--ui);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: var(--gold-dark);
+  scroll-margin-top: 90px;
+}
+
+.chapter-mark::before, .chapter-mark::after {
+  content: '';
+  flex: 1;
+  border-top: 2px solid var(--gold);
+}
+
 .index-list a {
   margin: 0 2px;
 }
@@ -1340,5 +1365,8 @@ dl.fields dd {
   mark, .verse:target, .result mark {
     background: none;
     box-shadow: none;
+  }
+  .outside-chapter, .chapter-mark {
+    color: #555 !important;
   }
 }
