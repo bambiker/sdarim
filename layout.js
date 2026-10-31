@@ -61,6 +61,11 @@
     document.body.appendChild(share);
 
     // the parts above push the text down: keep the reader at the text (or at the verse in the address)
-    if (!location.hash) document.getElementById('page-text').scrollIntoView();
+    if (!location.hash) {
+        document.getElementById('page-text').scrollIntoView();
+        // a chapter page: if the chapter starts further down in its seder, show where it starts
+        const start = document.getElementById('chapter-start');
+        if (start && start.getBoundingClientRect().bottom > innerHeight) start.scrollIntoView();
+    }
     else if (typeof window.centerVerse == 'function') window.centerVerse();
 })();
