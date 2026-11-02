@@ -245,9 +245,29 @@
         return {verses, chapters};
     }
 
+    // ~~~ a chapter alone: "משלי ח'" / "משלי פרק ח" as the whole text (the commentaries write "(משלי ח')").
+    // Outside such a text a book and a number are not read as a chapter: "שמות א' אמר" is not a reference.
+    const CHAPTER_ALONE = new RegExp('^\\s*([ובכלמהש]{0,2}?)' + BOOK + '(?:\\s*,)?\\s*(?:' + CH_WORD + '\\s*)?(' + NUM + ')\\s*$');
+
+    // {prefix, book, chapter, verse: null, from, to} for the whole of text, or null
+    function chapterAlone(text, index) {
+        const m = CHAPTER_ALONE.exec(text);
+        if (!m) return null;
+        let book = null;
+        for (let i = 0; i < BOOK_GROUPS; i++) if (m[2 + i] !== undefined) { book = bookAlternatives[i][1]; break; }
+        const chapter = numberValue(m[2 + BOOK_GROUPS]);
+        const ch = chapter && index.chapters.get(book + '|' + chapter);
+        if (!ch) return null;
+        const start = text.length - text.replace(/^\s+/, '').length;
+        const end = text.replace(/\s+$/, '').length;
+        return {start, end, prefix: m[1] || '', book, chapter, verse: null, from: ch.first, to: ch.last, text: text.slice(start, end)};
+    }
+
     // ~~~ finding ~~~
-    // [{start, end, prefix, book, chapter, verse, toChapter, toVerse, from, to}] (from/to are seder locations)
-    function findReferences(text, index) {
+    // [{start, end, prefix, book, chapter, verse, toChapter, toVerse, from, to}] (from/to are seder locations).
+    // options.context: the book and chapter "שם" refers to before the first reference ({book, chapter});
+    // it is set to the last one found, so the next text can go on from it.
+    function findReferences(text, index, options) {
         const lists = findChapterLists(text, index);
         const inList = pos => lists.some(r => pos >= r.start && pos < r.end);
         const found = [];
@@ -324,7 +344,7 @@
         // a book name only where it does not begin a reference ("בספר שמואל א' ג' ד'" is a reference)
         const overlaps = b => refs.some(r => r.start < b.end && b.start < r.end);
         const all = refs.concat(findBookNames(text).filter(b => !overlaps(b)));
-        return resolveSham(text, all.sort((a, b) => a.start - b.start), index);
+        return resolveSham(text, all.sort((a, b) => a.start - b.start), index, options);
     }
 
     // ~~~ "שם": the same book (and chapter) as the reference before it ~~~
@@ -340,7 +360,7 @@
         '|(?:' + AFTER_SHAM + '(?:' + V_WORD + '\\s*)?|\\s+' + V_WORD + '\\s*)(' + NUM + ')' +
         ')(?:' + DASH + '(' + NUM + '))?(?![א-ת\\d])', 'gd');
 
-    function resolveSham(text, refs, index) {
+    function resolveSham(text, refs, index, options) {
         const candidates = [];
         SHAM.lastIndex = 0;
         let m;
@@ -349,7 +369,7 @@
             SHAM.lastIndex = m.index + 1;
         }
         const out = [];
-        let context = null;   // {book (as in the chapter numbering), chapter}
+        let context = (options && options.context) || null;   // {book (as in the chapter numbering), chapter}
         let i = 0;
         const take = r => {
             out.push(r);
@@ -367,6 +387,7 @@
             const s = shamRef(text, candidates[i], context, index);
             if (s && (!out.length || s.start >= out[out.length - 1].end)) take(s);
         }
+        if (options) options.context = context;
         return out;
     }
 
@@ -459,7 +480,7 @@
         return {text: out + text.slice(last), refs};
     }
 
-    const api = {buildIndex, findReferences, convertText, sederRef, sederUrl, numberValue, hebrewNumber};
+    const api = {buildIndex, findReferences, chapterAlone, convertText, sederRef, sederUrl, numeral, numberValue, hebrewNumber};
     if (typeof module == 'object' && module.exports) module.exports = api;
     else root.masdirimRefs = api;
 })(typeof window != 'undefined' ? window : this);
