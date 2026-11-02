@@ -96,7 +96,7 @@ const masdirimApp = (function () {
         window.findparasha = function () {
             const parasha = document.getElementById('parasha').value;
             return renderParasha().then(result => {
-                if (parasha) remember('/?parasha=' + addunderscore(parasha), 'פרשת ' + parasha);
+                if (parasha) remember('/?parasha=' + addunderscore(parasha), parashaTitle(parasha));
                 if (parasha) track('open_parasha', {parasha: parasha});
                 return result;
             });

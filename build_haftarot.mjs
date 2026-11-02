@@ -1,6 +1,8 @@
 // Write calendar/haftarot.json: the haftarah of every parasha, and of every Shabbat in
 // calendar/parashot.json where it is a different one (a special Shabbat), by the Ashkenazi and the
-// Sephardi / Edot HaMizrach custom, for the Israel schedule. The data comes from @hebcal/leyning (BSD).
+// Sephardi / Edot HaMizrach custom, for the Israel schedule; and the readings of the special Shabbatot,
+// Rosh Chodesh, the festivals and the fasts (the Torah reading, the maftir and the haftarah), which the
+// parasha list on the home page offers after the parashot. The data comes from @hebcal/leyning (BSD).
 //
 //     npm install --no-save @hebcal/leyning @hebcal/core
 //     node build_haftarot.mjs
@@ -10,7 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {getLeyningForParsha, getLeyningOnDate} from '@hebcal/leyning';
+import {getLeyningForParsha, getLeyningOnDate, getLeyningForHolidayKey} from '@hebcal/leyning';
 import {HDate, parshiot} from '@hebcal/core';
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -23,7 +25,8 @@ const NAMES = ['בראשית', 'נח', 'לך לך', 'וירא', 'חיי שרה',
     'דברים', 'ואתחנן', 'עקב', 'ראה', 'שפטים', 'כי תצא', 'כי תבוא', 'נצבים', 'וילך', 'האזינו', 'וזאת הברכה'];
 const DOUBLE = [['Vayakhel', 'Pekudei'], ['Tazria', 'Metzora'], ['Achrei Mot', 'Kedoshim'], ['Behar', 'Bechukotai'],
     ['Matot', 'Masei'], ['Nitzavim', 'Vayeilech']];
-const BOOKS = {'Joshua': 'יהושע', 'Judges': 'שופטים', 'I Samuel': 'שמואל א', 'II Samuel': 'שמואל ב',
+const BOOKS = {'Genesis': 'בראשית', 'Exodus': 'שמות', 'Leviticus': 'ויקרא', 'Numbers': 'במדבר', 'Deuteronomy': 'דברים',
+    'Joshua': 'יהושע', 'Judges': 'שופטים', 'I Samuel': 'שמואל א', 'II Samuel': 'שמואל ב',
     'I Kings': 'מלכים א', 'II Kings': 'מלכים ב', 'Isaiah': 'ישעיהו', 'Jeremiah': 'ירמיהו', 'Ezekiel': 'יחזקאל',
     'Hosea': 'הושע', 'Joel': 'יואל', 'Amos': 'עמוס', 'Obadiah': 'עובדיה', 'Jonah': 'יונה', 'Micah': 'מיכה',
     'Nahum': 'נחום', 'Habakkuk': 'חבקוק', 'Zephaniah': 'צפניה', 'Haggai': 'חגי', 'Zechariah': 'זכריה', 'Malachi': 'מלאכי'};
@@ -97,9 +100,98 @@ for (const [date, names] of Object.entries(calendar)) {
     shabbatot[date] = Object.assign({reason}, week);
 }
 
+// ~~~ the special readings: [name in the list, hebcal key or a range of our own, note shown above the reading] ~~~
+// A name has no '-', which joins a double parasha (ויקהל-פקודי). The order and the names are those of the
+// options in index.html (the special readings group of the parasha list).
+const WEEKLY = 'בשבת זו קוראים את פרשת השבוע, ולמפטיר את הקריאה המיוחדת';
+const READINGS = [
+    ['פרשת שקלים', 'Shabbat Shekalim', WEEKLY + ':'],
+    ['פרשת זכור', 'Shabbat Zachor', WEEKLY + ':'],
+    ['פרשת פרה', 'Shabbat Parah', WEEKLY + ':'],
+    ['פרשת החודש', 'Shabbat HaChodesh', WEEKLY + ':'],
+    ['שבת הגדול', 'Shabbat HaGadol', 'בשבת זו קוראים את פרשת השבוע, ומפטירים בהפטרה מיוחדת.'],
+    ['שבת שובה', 'Shabbat Shuva', 'בשבת זו קוראים את פרשת השבוע, ומפטירים בהפטרה מיוחדת.'],
+    ['שבת ראש חודש', 'Shabbat Rosh Chodesh', WEEKLY + ' של ראש חודש:'],
+    ['שבת מחר חודש', 'Shabbat Machar Chodesh', 'בשבת שלמחרתה ראש חודש קוראים את פרשת השבוע, ומפטירים בהפטרה מיוחדת.'],
+    ['שבת חנוכה', 'Chanukah Day 1 (on Shabbat)', 'בשבת חנוכה קוראים את פרשת השבוע, ולמפטיר את קרבן הנשיא של אותו יום. ההפטרה:', 'haftarah'],
+    ['שבת שנייה של חנוכה', 'Chanukah Day 8 (on Shabbat)', 'כשיש בחנוכה שתי שבתות, בשבת השנייה מפטירים בהפטרה זו.', 'haftarah'],
+    ['ראש חודש', 'Rosh Chodesh', ''],
+    ['ראש השנה יום ראשון', 'Rosh Hashana I', ''],
+    ['ראש השנה יום שני', 'Rosh Hashana II', ''],
+    ['יום כיפור', 'Yom Kippur', ''],
+    ['יום כיפור במנחה', 'Yom Kippur (Mincha)', ''],
+    ['סוכות', 'Sukkot I', ''],
+    ['חול המועד סוכות', [['Numbers', '29:17', '29:34']], 'בכל יום מימי חול המועד קוראים את קרבן אותו יום.'],
+    ['שבת חול המועד סוכות', 'Sukkot Shabbat Chol ha-Moed', 'ולמפטיר את קרבן אותו יום.'],
+    ['שמיני עצרת ושמחת תורה', 'Simchat Torah', ''],
+    ['חנוכה', [['Numbers', '7:1', '8:4']], 'בכל יום מימי חנוכה קוראים את קרבן הנשיא של אותו יום, וביום השמיני עד סוף הפרשה.'],
+    ['פורים', 'Purim', 'ובערב ובבוקר קוראים את מגילת אסתר.'],
+    ['פסח', 'Pesach I', ''],
+    ['שבת חול המועד פסח', 'Pesach Shabbat Chol ha-Moed', ''],
+    ['שביעי של פסח', 'Pesach VII', ''],
+    ['שבועות', 'Shavuot', ''],
+    ['תענית ציבור', 'Fast Day (Morning)', ''],
+    ['תענית ציבור במנחה', 'Fast Day (Afternoon)', ''],
+    ['תשעה באב', "Tish'a B'Av", ''],
+    ['תשעה באב במנחה', "Tish'a B'Av (Mincha)", ''],
+];
+
+// verses [book, chapter, verse] of hebcal's ranges, in order and each once -> pieces, one per chapter
+function versePieces(ranges) {
+    const seen = new Set(), list = [];
+    for (const part of ranges) {
+        const book = BOOKS[part.k];
+        if (!book) throw new Error('unknown book ' + part.k);
+        const [c1, v1] = part.b.split(':').map(Number);
+        const [c2, v2] = part.e.split(':').map(Number);
+        for (let c = c1; c <= c2; c++)
+            for (let v = c == c1 ? v1 : 1; v <= (c == c2 ? v2 : chapterLength(book, c)); v++) {
+                const key = book + ' ' + c + ':' + v;
+                if (!seen.has(key)) { seen.add(key); list.push([book, c, v]); }
+            }
+    }
+    const out = [];
+    for (const [book, c, v] of list) {
+        const last = out[out.length - 1];
+        if (last && last[0] == book && last[1] == hebrewNumber(c) && last[3] == v - 1) last[3] = v;
+        else out.push([book, hebrewNumber(c), v, v]);
+    }
+    return out.length ? out : null;
+}
+
+const readings = {};
+for (const [name, source, note, only] of READINGS) {
+    const entry = {note};
+    if (Array.isArray(source)) {
+        entry.torah = versePieces(source.map(([k, b, e]) => ({k, b, e})));
+    } else {
+        const leyning = getLeyningForHolidayKey(source, undefined, true);
+        if (!leyning) throw new Error('no reading for ' + source);
+        const aliyot = Object.entries(leyning.fullkriyah || {});
+        if (only != 'haftarah') {
+            const torah = versePieces(aliyot.filter(([a]) => !a.startsWith('M')).map(([, r]) => r));
+            const maftir = aliyot.filter(([a]) => a == 'M').map(([, r]) => r);
+            entry.torah = torah;
+            // the maftir, when it is not part of the reading itself
+            const inTorah = JSON.stringify(versePieces(aliyot.filter(([a]) => a == 'M' || !a.startsWith('M')).map(([, r]) => r)));
+            if (maftir.length && (!torah || inTorah != JSON.stringify(torah))) {
+                const m = versePieces(maftir), last = torah && torah[torah.length - 1];
+                // a maftir that goes on from the last verse of the reading is shown as part of it
+                if (last && last[0] == m[0][0] && last[1] == m[0][1] && last[3] + 1 == m[0][2]) entry.torah = versePieces(aliyot.map(([, r]) => r));
+                else entry.maftir = m;
+            }
+        }
+        if (leyning.haft) Object.assign(entry, customs(leyning));
+    }
+    readings[name] = entry;
+}
+
 const json = '{\n"parashot": {\n' +
     Object.entries(parashot).map(([k, v]) => JSON.stringify(k) + ':' + JSON.stringify(v)).join(',\n') +
     '\n},\n"shabbatot": {\n' +
-    Object.entries(shabbatot).map(([k, v]) => JSON.stringify(k) + ':' + JSON.stringify(v)).join(',\n') + '\n}\n}\n';
+    Object.entries(shabbatot).map(([k, v]) => JSON.stringify(k) + ':' + JSON.stringify(v)).join(',\n') +
+    '\n},\n"readings": {\n' +
+    Object.entries(readings).map(([k, v]) => JSON.stringify(k) + ':' + JSON.stringify(v)).join(',\n') + '\n}\n}\n';
 fs.writeFileSync(path.join(ROOT, 'calendar', 'haftarot.json'), json);
-console.log(Object.keys(parashot).length, 'parashot,', Object.keys(shabbatot).length, 'special Shabbatot');
+console.log(Object.keys(parashot).length, 'parashot,', Object.keys(shabbatot).length, 'special Shabbatot,',
+    Object.keys(readings).length, 'special readings');
