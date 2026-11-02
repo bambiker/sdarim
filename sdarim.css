@@ -949,6 +949,22 @@ h2 {
   background-color: var(--mark);
 }
 
+/* the big, small and raised letters of the Masorah (אותיות גדולות, קטנות ותלויות) */
+.letter-big {
+  font-size: 1.45em;
+  line-height: 1;
+}
+
+.letter-small {
+  font-size: .7em;
+}
+
+.letter-raised {
+  font-size: .8em;
+  vertical-align: .55em;
+  line-height: 1;
+}
+
 /* a chapter page shows the whole seder: the verses outside the chapter are lighter, and a line marks
    where the chapter starts and ends */
 .outside-chapter {

@@ -16,6 +16,7 @@ Spaces in names become underscores.
 """
 import html
 import json
+import os
 import re
 from collections import OrderedDict
 from urllib.parse import quote
@@ -73,13 +74,44 @@ def esc(text):
     return html.escape(text, quote=True)
 
 
+# the big, small and raised letters (API/letters.json, made by build_letters.py): the letter and its nikud are
+# marked in the text before it is escaped, and the marks become spans (as in withLetters() in sdarim.js)
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'API', 'letters.json'), encoding='utf-8') as _f:
+    LETTERS = json.load(_f)
+LETTER_START = {'big': '\ue000', 'small': '\ue001', 'raised': '\ue002'}
+LETTER_END = '\ue003'
+LETTER_SPANS = re.compile('([\ue000-\ue002])(.*?)\ue003')
+POINTS = re.compile('[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]')
+
+
+def with_letters(v):
+    text = v.get('versenikud', '')
+    marks = LETTERS.get(f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}")
+    if not marks:
+        return text
+    words = text.split(' ')
+    for w, n, kind in sorted(marks, key=lambda m: -m[1]):
+        word = words[w]
+        at = [i for i, c in enumerate(word) if 'א' <= c <= 'ת'][n]
+        end = at + 1
+        while end < len(word) and POINTS.match(word[end]):
+            end += 1
+        words[w] = word[:at] + LETTER_START[kind] + word[at:end] + LETTER_END + word[end:]
+    return ' '.join(words)
+
+
+def letter_spans(text):
+    kinds = {mark: kind for kind, mark in LETTER_START.items()}
+    return LETTER_SPANS.sub(lambda m: f'<span class="letter-{kinds[m.group(1)]}">{m.group(2)}</span>', text)
+
+
 def verse_text(v):
     """The verse as shown on the site (same as cleanverse() in sdarim.js)."""
     # the data has a few <br> tags and entities such as &emsp; that the site displays as HTML
-    t = esc(v.get('versenikud', '')).replace('&lt;br&gt;', '<br>')
+    t = esc(with_letters(v)).replace('&lt;br&gt;', '<br>')
     t = re.sub(r'&amp;(#?\w+);', r'&\1;', t)
     t = KETIV.sub(r'\1<span class="ketiv" title="כתיב">(\2)</span>', t)
-    return t.replace('{פ}', '<br>').replace('{ש}', '<br>').replace('{ס}', '&emsp;&emsp;&emsp;&emsp;')
+    return letter_spans(t.replace('{פ}', '<br>').replace('{ש}', '<br>').replace('{ס}', '&emsp;&emsp;&emsp;&emsp;'))
 
 
 def plain(v):
