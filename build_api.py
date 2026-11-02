@@ -15,6 +15,7 @@ Files written (spaces in book names become underscores):
     API/seder_<seder>_<book>.json               all verses of a seder
     API/sedarim.json                            index of all sedarim: where each starts and ends
     API/map.json                                chapter <-> seder location of every verse, no text
+    API/text.json                               the text of every verse without nikud, in the order of map.json
 It also writes the static pages made by build_pages.py (seder/, perek/, parasha/, book/,
 sitemap.xml, robots.txt, llms.txt).
 """
@@ -76,6 +77,12 @@ def verse_map(verses):
             + ',\n'.join(rows) + '\n]}\n')
 
 
+def verse_text(verses):
+    # one verse per line, in the order of map.json: convert.html finds quoted verses with it (about 3MB)
+    rows = [json.dumps(' '.join(v.get('versenonikud', '').split()), ensure_ascii=False) for v in verses]
+    return '[\n' + ',\n'.join(rows) + '\n]\n'
+
+
 def expected_files(verses):
     files = {}
     chapters = defaultdict(list)
@@ -89,6 +96,7 @@ def expected_files(verses):
     files.update(seders)
     files['sedarim.json'] = sedarim_index(verses)
     files['map.json'] = verse_map(verses)
+    files['text.json'] = verse_text(verses)
     return files
 
 

@@ -1223,6 +1223,13 @@ dl.fields dd {
   box-shadow: inset 0 -2px 0 var(--gold);
 }
 
+/* a source added after a quoted verse: marked differently from a converted reference */
+.converter-output .added a.ref {
+  background: none;
+  color: var(--accent);
+  box-shadow: inset 0 -2px 0 var(--accent);
+}
+
 .converter-list {
   margin-top: 12px;
   font-size: 15px;

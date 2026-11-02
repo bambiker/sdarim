@@ -1,5 +1,5 @@
-// Finding references to the Tanakh by chapter and verse in free Hebrew text, and writing them by seder.
-// Used by convert.html; written so it can also run in Node (for converting the commentaries later):
+// Finding references to the Tanakh by chapter and verse in free Hebrew text, and writing them by seder;
+// and finding quoted verses that have no reference, to add their source. Used by convert.html; written so it can also run in Node (for converting the commentaries later):
 //
 //     const refs = require('./refs.js');
 //     const index = refs.buildIndex(require('./API/map.json'));
@@ -233,16 +233,17 @@
         const fields = map.fields;
         const at = name => fields.indexOf(name);
         const [b, c, v, sb, s, sv] = ['bookchapter', 'chapter', 'versechapter', 'bookseder', 'seder', 'verseseder'].map(at);
-        const verses = new Map(), chapters = new Map();
+        const verses = new Map(), chapters = new Map(), list = [];
         map.verses.forEach(row => {
             const ch = numberValue(row[c]), vs = numberValue(row[v]);
             const loc = {book: row[sb], seder: row[s], verse: row[sv], chapterBook: row[b], chapter: ch, chapterVerse: vs};
             verses.set(row[b] + '|' + ch + '|' + vs, loc);
+            list.push(loc);
             const key = row[b] + '|' + ch;
             if (!chapters.has(key)) chapters.set(key, {first: loc, last: loc});
             chapters.get(key).last = loc;
         });
-        return {verses, chapters};
+        return {verses, chapters, list};
     }
 
     // ~~~ a chapter alone: "משלי ח'" / "משלי פרק ח" as the whole text (the commentaries write "(משלי ח')").
@@ -432,6 +433,80 @@
         return ref;
     }
 
+    // ~~~ quoted verses: words of the Tanakh in the text, with no reference, get their source ~~~
+    // A whole verse (at least QUOTE_VERSE words), or more than QUOTE_WORDS words in a row from a verse (or
+    // from verses one after another). Words are compared without nikud, without ו and י (so full and
+    // defective spelling and a ו at the start do not matter), and with ה' / יקוק for the Name and
+    // אלקים / אלוקים for אלהים. Words found in more than QUOTE_PLACES places are too common to have a source.
+    const QUOTE_WORDS = 7, QUOTE_VERSE = 4, QUOTE_PLACES = 3;
+    const NAME = new RegExp('^([ובכלמש]{0,2})(?:ה' + Q1 + '|ה' + Q2 + '|יקוק|יקו״ק|הוי״ה|יהוה)$');
+
+    function normWord(word) {
+        let w = word.replace(/[֑-ׇ]/g, '');
+        const name = NAME.exec(w);
+        if (name) w = name[1] + 'יהוה';
+        w = w.replace(/[^א-ת]/g, '').replace(/^([ובכלמהש]{0,2})אלו?ק/, '$1אלה');
+        const short = w.replace(/[וי]/g, '');
+        return short || w;
+    }
+
+    // the words of a text: [{start, end, word (normalized)}]; a maqaf or a dash separates words
+    function textWords(text) {
+        const out = [];
+        const re = /[א-ת֑-ֽֿ-ׇ'"׳״”]+/g;
+        let m;
+        while ((m = re.exec(text))) {
+            const word = normWord(m[0]);
+            if (word) out.push({start: m.index, end: m.index + m[0].length, word});
+        }
+        return out;
+    }
+
+    // texts: the verses without nikud, in the order of map.json (API/text.json)
+    function buildQuoteIndex(texts, index) {
+        const words = [], verseOf = [], first = [];
+        texts.forEach((t, v) => {
+            first.push(words.length);
+            t.split(' ').forEach(w => { const n = normWord(w); if (n) { words.push(n); verseOf.push(v); } });
+        });
+        first.push(words.length);
+        const grams = new Map();
+        for (let i = 0; i + 2 < words.length; i++) {
+            const key = words[i] + ' ' + words[i + 1] + ' ' + words[i + 2];
+            const at = grams.get(key);
+            if (at) at.push(i); else grams.set(key, [i]);
+        }
+        return {words, verseOf, first, grams, locs: index.list};
+    }
+
+    // [{start, end, places: [{from, to}]}]: the quotes in the text (start / end: of the quoted words)
+    function findQuotes(text, quoteIndex) {
+        const {words, verseOf, first, grams, locs} = quoteIndex;
+        const tw = textWords(text);
+        const found = [];
+        let i = 0;
+        while (i + 2 < tw.length) {
+            const at = grams.get(tw[i].word + ' ' + tw[i + 1].word + ' ' + tw[i + 2].word) || [];
+            let best = 0, starts = [];
+            for (const p of at) {
+                let n = 3;
+                while (i + n < tw.length && p + n < words.length && tw[i + n].word == words[p + n]) n++;
+                if (n > best) { best = n; starts = [p]; } else if (n == best) starts.push(p);
+            }
+            // a whole verse: from the first word of a verse to the last word of a verse
+            const whole = p => first[verseOf[p]] == p && first[verseOf[p + best - 1] + 1] == p + best;
+            const places = starts.filter(p => best > QUOTE_WORDS || (best >= QUOTE_VERSE && whole(p)));
+            if (places.length && places.length <= QUOTE_PLACES) {
+                found.push({start: tw[i].start, end: tw[i + best - 1].end,
+                            places: places.map(p => ({from: locs[verseOf[p]], to: locs[verseOf[p + best - 1]]}))});
+                i += best;
+            } else {
+                i++;
+            }
+        }
+        return found;
+    }
+
     // ~~~ writing ~~~
     // style: {quotes: true} writes ב׳ / כ״א; the default follows the reference being replaced
     function numeral(n, quotes) {
@@ -468,19 +543,38 @@
             '&seder=' + ref.from.seder + '&verse=' + ref.from.verse;
     }
 
-    // {text, refs}: the text with every reference written by seder, and the references found
+    // {text, refs}: the text with every reference written by seder, and the references found.
+    // With options.quoteIndex (buildQuoteIndex), a quote from the Tanakh that has no reference next to it
+    // gets its source after it: {kind: 'quote', start, end (both where the source goes), quoted, sources}
     function convertText(text, index, options) {
         const refs = findReferences(text, index);
+        refs.forEach(r => { r.converted = r.prefix + sederRef(r, options); });
+        let all = refs;
+        if (options && options.quoteIndex) {
+            // a reference just before or just after the quote is its source already
+            const near = (a, b) => a <= b && /^[\s,.:;()\[\]"'״׳”\-–—]*$/.test(text.slice(a, b)) && b - a <= 20;
+            const quotes = findQuotes(text, options.quoteIndex).filter(q =>
+                !refs.some(r => (r.start < q.end && q.start < r.end) || near(r.end, q.start) || near(q.end, r.start)));
+            all = refs.concat(quotes.map(q => {
+                const sources = q.places.map(place => {
+                    const ref = {from: place.from, to: place.to.verse == place.from.verse && place.to.seder == place.from.seder &&
+                                 place.to.book == place.from.book ? null : place.to, text: ''};
+                    return {text: sederRef(ref, options), url: sederUrl(ref)};
+                });
+                return {kind: 'quote', start: q.end, end: q.end, prefix: '', quoted: text.slice(q.start, q.end), sources,
+                        converted: ' (' + sources.map(x => x.text).join('; ') + ')'};
+            })).sort((a, b) => a.start - b.start);
+        }
         let out = '', last = 0;
-        refs.forEach(r => {
-            r.converted = r.prefix + sederRef(r, options);
+        all.forEach(r => {
             out += text.slice(last, r.start) + r.converted;
             last = r.end;
         });
-        return {text: out + text.slice(last), refs};
+        return {text: out + text.slice(last), refs: all};
     }
 
-    const api = {buildIndex, findReferences, chapterAlone, convertText, sederRef, sederUrl, numeral, numberValue, hebrewNumber};
+    const api = {buildIndex, buildQuoteIndex, findReferences, findQuotes, chapterAlone, convertText, sederRef, sederUrl, numeral,
+                 numberValue, hebrewNumber};
     if (typeof module == 'object' && module.exports) module.exports = api;
     else root.masdirimRefs = api;
 })(typeof window != 'undefined' ? window : this);
