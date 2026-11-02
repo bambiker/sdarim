@@ -259,10 +259,60 @@ async function seder2chapter(){
 
 }
 
+// the special readings (Shekalim, Rosh Chodesh, the festivals, the fasts...) are in the groups of the
+// parasha list marked data-special; their readings are in calendar/haftarot.json (build_haftarot.mjs)
+function isSpecialReading(name) {
+    const option = Array.from(document.getElementById("parasha").options).find(o => o.value == name);
+    return !!(option && option.parentElement.hasAttribute('data-special'));
+}
+
+// "פרשת נח", but "ראש חודש" or "פרשת שקלים" as they are in the list
+function parashaTitle(name) {
+    return isSpecialReading(name) ? name : 'פרשת ' + name;
+}
+
+// pieces [book, chapter, first verse, last verse] -> the verses, from API/chapter_<chapter>_<book>.json
+async function piecesVerses(pieces) {
+    return (await Promise.all(pieces.map(async ([book, chapter, first, last]) =>
+        ((await loadJson(apiPath('chapter', chapter, book))) || []).slice(first - 1, last)))).flat();
+}
+
+// verses with the name of the seder above the first verse of each seder
+function versesBySeder(verses) {
+    let html = '', lastSeder = '';
+    verses.forEach(v => {
+        const seder = v.bookseder + ' סדר ' + v.seder;
+        if (seder != lastSeder) html += '<h3>' + escapeHtml(seder) + '</h3>';
+        lastSeder = seder;
+        html += verseHtml(v);
+    });
+    return html;
+}
+
+async function findreading(name) {
+    const data = await loadJson('/calendar/haftarot.json');
+    const reading = data && data.readings && data.readings[name];
+    if (!reading) {
+        document.getElementById("result").innerHTML = "לא נמצאה הקריאה";
+        return;
+    }
+    let output = "<h2>" + escapeHtml(name) + " " + PRINT_BUTTON + "</h2>";
+    if (reading.note) output += '<p class="haftarah-note">' + escapeHtml(reading.note) + '</p>';
+    if (reading.torah) output += versesBySeder(await piecesVerses(reading.torah));
+    if (reading.maftir) output += '<h2 class="reading-part">מפטיר</h2>' + versesBySeder(await piecesVerses(reading.maftir));
+    document.getElementById("result").innerHTML = output + await haftarahHtml(name);
+
+    urlname = "https://www.masdirim.org/?parasha=" + addunderscore(name);
+    setCanonical(urlname);
+    setUrlLink(urlname);
+    document.title = " " + name + " לפי החלוקה לסדרים ";
+}
+
 async function findparasha(){
     document.getElementById("result").innerHTML  = " אנו מחפשים עבורך את המקור, נא להמתין בסבלנות ";
 
     var parasha = document.getElementById("parasha").value;
+    if (isSpecialReading(parasha)) return findreading(parasha);
 
     // a double portion (ויקהל-פקודי) is both parashot, one after the other
     const names = parasha.split('-');
@@ -1206,7 +1256,8 @@ async function haftarahHtml(parasha) {
     try {
         const data = await loadJson('/calendar/haftarot.json');
         if (!data) return '';
-        let entry = data.parashot[parasha];
+        // a parasha, or a special reading (Shekalim, a festival...) that has a haftarah
+        let entry = data.parashot[parasha] || (data.readings && data.readings[parasha]);
         let reason = '';
         // this week's parasha: a special Shabbat (Rosh Chodesh, Shekalim...) has its own haftarah
         const week = await getWeeklyParasha();
@@ -1214,11 +1265,9 @@ async function haftarahHtml(parasha) {
             entry = data.shabbatot[week.date];
             reason = entry.reason;
         }
-        if (!entry) return '';
+        if (!entry || !entry.ashkenazi) return '';
         const nusach = getNusach();
-        const pieces = entry[nusach] || entry.ashkenazi;
-        const verses = (await Promise.all(pieces.map(async ([book, chapter, first, last]) =>
-            ((await loadJson(apiPath('chapter', chapter, book))) || []).slice(first - 1, last)))).flat();
+        const verses = await piecesVerses(entry[nusach] || entry.ashkenazi);
         let html = '<section class="haftarah" id="haftarah">' +
             '<h2>הפטרה <span class="nusach-name">לפי נוסח ' + NUSACHIM[nusach] + '</span></h2>' +
             '<label class="nusach no-print">נוסח: <select id="nusach">' +
@@ -1226,14 +1275,7 @@ async function haftarahHtml(parasha) {
                 '<option value="' + key + '"' + (key == nusach ? ' selected' : '') + '>' + name + '</option>').join('') +
             '</select></label>';
         if (reason) html += '<p class="haftarah-note">' + escapeHtml(reason) + ': בשבת הקרובה מפטירים בהפטרה מיוחדת.</p>';
-        let lastSeder = '';
-        verses.forEach(v => {
-            const seder = v.bookseder + ' סדר ' + v.seder;
-            if (seder != lastSeder) html += '<h3>' + escapeHtml(seder) + '</h3>';
-            lastSeder = seder;
-            html += verseHtml(v);
-        });
-        return html + '</section>';
+        return html + versesBySeder(verses) + '</section>';
     } catch (err) {
         return '';   // no haftarah is better than no parasha
     }

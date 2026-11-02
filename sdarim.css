@@ -516,6 +516,13 @@ a {
   border-top: 2px solid var(--line);
 }
 
+/* the maftir of a special reading, set apart like the haftarah */
+.result .reading-part {
+  margin-top: 30px;
+  padding-top: 12px;
+  border-top: 2px solid var(--line);
+}
+
 .haftarah .nusach-name {
   font-family: var(--ui);
   font-size: .5em;
