@@ -1,4 +1,5 @@
 async function start(){
+   await lettersReady;
 
    // the tools of the static pages (layout.js) open their result here: ?q= a word search,
    // ?cbook=&chapter=&cverse= a chapter to convert
@@ -146,6 +147,33 @@ function setCanonical(url) {
     if (link) link.href = url;
 }
 
+// ~~~ the big, small and raised letters (API/letters.json, made by build_letters.py), in their size ~~~
+let specialLetters = null;
+const lettersReady = loadJson('/API/letters.json').then(data => { specialLetters = data || {}; }).catch(() => { specialLetters = {}; });
+const LETTER_START = {big: '\uE000', small: '\uE001', raised: '\uE002'};
+const LETTER_END = '\uE003';
+
+// the verse's text with the special letters (and their nikud) between marks; letterSpans() makes them spans
+function withLetters(v) {
+    const marks = specialLetters && specialLetters[v.bookchapter + '|' + v.chapter + '|' + v.versechapter];
+    if (!marks || !v.versenikud) return v.versenikud;
+    const words = v.versenikud.split(' ');
+    marks.slice().sort((a, b) => b[1] - a[1]).forEach(([w, n, kind]) => {
+        const word = words[w];
+        const at = [...word].reduce((list, c, i) => (c >= 'א' && c <= 'ת' ? list.concat(i) : list), [])[n];
+        if (at === undefined) return;
+        let end = at + 1;
+        while (end < word.length && /[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]/.test(word[end])) end++;
+        words[w] = word.slice(0, at) + LETTER_START[kind] + word.slice(at, end) + LETTER_END + word.slice(end);
+    });
+    return words.join(' ');
+}
+
+function letterSpans(html) {
+    const kinds = {'\uE000': 'big', '\uE001': 'small', '\uE002': 'raised'};
+    return html.replace(/([\uE000-\uE002])(.*?)\uE003/g, (m, mark, text) => '<span class="letter-' + kinds[mark] + '">' + text + '</span>');
+}
+
 // a verse with its number; clicking the number opens the commentaries (commentary.js)
 function verseHtml(v) {
     // the number is not a link: a click on it, or on the verse, opens the commentaries (commentary.js),
@@ -153,7 +181,7 @@ function verseHtml(v) {
     return '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
         '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) +
         '" data-chapter="' + escapeHtml(v.bookchapter + ' ' + v.chapter + ', ' + v.versechapter) + '">' +
-        "<sup>(" + v.verseseder + ")</sup> " + '</span>' + cleanverse(v.versenikud) + '</span>';
+        "<sup>(" + v.verseseder + ")</sup> " + '</span>' + letterSpans(cleanverse(withLetters(v))) + '</span>';
 }
 
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';
