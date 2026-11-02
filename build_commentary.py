@@ -10,6 +10,8 @@ Needs network access to raw.githubusercontent.com and storage.googleapis.com. Ru
 pick up new texts from Sefaria; build_api.py does not need it. Writes:
     commentary/<book>/<seder>.json   commentaries of every verse of a seder, keyed by the seder's verse
     commentary/sources.json          the edition and license used for each commentator and book
+Then it runs build_commentary_refs.js (needs node), which writes the references to the Tanakh in the
+commentaries by seder, as links to the sedarim on the site.
 """
 import hashlib
 import html
@@ -18,6 +20,7 @@ import os
 import re
 import shutil
 import ssl
+import subprocess
 import sys
 import tempfile
 import urllib.request
@@ -263,6 +266,10 @@ def main():
     with open(os.path.join(OUT, 'sources.json'), 'w', encoding='utf-8') as f:
         json.dump(sources, f, ensure_ascii=False, indent=1)
     print(f'{len(files)} sedarim, {used} comments, {len(sources)} commentator/book editions')
+    try:
+        subprocess.run(['node', os.path.join(ROOT, 'build_commentary_refs.js')], check=True)
+    except FileNotFoundError:
+        print('node is not installed: run "node build_commentary_refs.js" to write the references by seder')
 
 
 if __name__ == '__main__':

@@ -1264,6 +1264,14 @@ dl.fields dd {
   text-align: right;
 }
 
+/* a reference to another verse, written by seder (build_commentary_refs.js): a link to it */
+.commentary a.ref {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 45, 138, .35);
+  text-underline-offset: 3px;
+}
+
 .commentary .commentator {
   margin-bottom: 6px;
 }

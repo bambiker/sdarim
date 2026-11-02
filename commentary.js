@@ -37,7 +37,8 @@
         entries.forEach(e => {
             const src = sources[e.source] || {};
             const text = document.createElement('span');
-            text.innerHTML = e.comments.join(' • ');   // cleaned at build time: only b, i, br, small
+            // cleaned at build time: only b, i, br, small, and links to the sedarim (build_commentary_refs.js)
+            text.innerHTML = e.comments.join(' • ');
             const name = document.createElement('strong');
             let item;
             if (src.open) {
