@@ -27,6 +27,11 @@
         headline.replaceWith(title);
     }
     bottom.append(...['.features', '#about', '#agree', '#contact'].map(take).filter(Boolean));
+    // links of the home page written relative to it (api.html, haskamot/...) lead to the same place from here
+    [top, bottom].forEach(part => part.querySelectorAll('a[href]').forEach(a => {
+        const href = a.getAttribute('href');
+        if (!/^(?:[a-z]+:|\/|#)/i.test(href)) a.setAttribute('href', '/' + href);
+    }));
     home.querySelectorAll('datalist').forEach(list => document.body.appendChild(document.importNode(list, true)));
     // the menu links of the home page point to its parts, which are on this page too
     document.querySelectorAll('.topnav a[href^="/#"]').forEach(a => a.setAttribute('href', a.getAttribute('href').slice(1)));
