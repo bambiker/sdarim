@@ -1259,6 +1259,12 @@ dl.fields dd {
   font-size: 19px;
 }
 
+.parparaot-common td small {
+  font-family: var(--ui);
+  font-size: 13px;
+  color: var(--muted);
+}
+
 .parparaot-common td:not(:first-child), .parparaot-common th:not(:first-child) {
   text-align: center;
 }
