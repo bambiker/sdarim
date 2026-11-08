@@ -148,11 +148,27 @@
     const selectB = document.getElementById('parasha-b');
     const common = document.getElementById('common');
 
-    // a word is counted without the ו of "and" before it: "ואת" is "את" (but "ו" alone, or "וו", stays)
-    const base = w => (w.length > 2 && w[0] == 'ו' ? w.slice(1) : w);
+    // words are compared by a base form: without the ו of "and" ("ואת" is "את"), without the ה of "the"
+    // ("הארץ" is "ארץ"; only when three letters or more are left, so "הלך" and "היה" stay), and in the
+    // singular: "ים" goes ("מלכים" is "מלך") and "ות" becomes "ה" ("תורות" is "תורה"); final letters count
+    // as plain ones. Nouns that only look plural (שמים, מים, אלהים...) stay as they are.
+    const NOT_PLURAL = new Set(['אלהים', 'שמים', 'מים', 'פנים', 'חיים', 'מצרים', 'ירושלים', 'רחמים', 'אפרים', 'כפרים',
+        'בכורים', 'כלאים', 'נעורים', 'מלואים', 'עשרים', 'שלשים', 'ארבעים', 'חמשים', 'ששים', 'שבעים', 'שמנים', 'תשעים',
+        'מאתים', 'שנים', 'שתים', 'אלפים', 'תאומים']);
+    function base(word) {
+        let w = word;
+        if (w.length > 2 && w[0] == 'ו') w = w.slice(1);
+        if (w.length > 3 && w[0] == 'ה') w = w.slice(1);
+        // at least three letters are left, so "כלים" and "אלים" do not become "כל" and "אל"
+        if (!NOT_PLURAL.has(w) && w.length > 4) {
+            if (w.endsWith('ים')) w = w.slice(0, -2);
+            else if (w.endsWith('ות')) w = w.slice(0, -2) + 'ה';
+        }
+        return plain(w);
+    }
 
-    // how many times each word appears in a parasha (a double one, ויקהל-פקודי, is both),
-    // from API/parashot.json: the verses of each parasha, as places in API/text.json
+    // each base form of a parasha (a double one, ויקהל-פקודי, is both): how many times it appears, and
+    // in which forms, from API/parashot.json: the verses of each parasha, as places in API/text.json
     let ranges = null;
     async function countWords(parasha) {
         if (!ranges) ranges = fetch('/API/parashot.json').then(r => r.json());
@@ -161,9 +177,22 @@
         parasha.split('-').forEach(name => {
             const [first, last] = places[name];
             for (let i = first; i <= last; i++)
-                all[i].split(' ').filter(Boolean).map(base).forEach(w => counts.set(w, (counts.get(w) || 0) + 1));
+                all[i].split(' ').filter(Boolean).forEach(word => {
+                    const key = base(word);
+                    if (!counts.has(key)) counts.set(key, {count: 0, forms: new Map()});
+                    const c = counts.get(key);
+                    c.count++;
+                    c.forms.set(word, (c.forms.get(word) || 0) + 1);
+                });
         });
         return counts;
+    }
+
+    // the forms of a word in both parashot, the most frequent first
+    function forms(x, y) {
+        const all = new Map(x.forms);
+        y.forms.forEach((n, w) => all.set(w, (all.get(w) || 0) + n));
+        return [...all.entries()].sort((p, q) => q[1] - p[1]).map(e => e[0]);
     }
 
     async function compare(a, b) {
@@ -183,13 +212,19 @@
             return;
         }
         // the common words, the most frequent (in both parashot together) first
-        const words = [...ca.keys()].filter(w => cb.has(w))
-            .sort((x, y) => (cb.get(y) + ca.get(y)) - (cb.get(x) + ca.get(x)) || x.localeCompare(y, 'he'));
+        const total = w => ca.get(w).count + cb.get(w).count;
+        const words = [...ca.keys()].filter(w => cb.has(w)).sort((x, y) => total(y) - total(x) || x.localeCompare(y, 'he'));
+        // the word as its most frequent form, with its other forms after it in small print
+        const row = w => {
+            const [first, ...rest] = forms(ca.get(w), cb.get(w));
+            return '<tr><td>' + escapeHtml(first) + (rest.length ? ' <small>' + escapeHtml(rest.join(', ')) + '</small>' : '') +
+                '</td><td>' + ca.get(w).count + '</td><td>' + cb.get(w).count + '</td></tr>';
+        };
         common.innerHTML = '<p class="parparaot-summary">' + (words.length == 1 ? 'מילה אחת משותפת' : words.length + ' מילים משותפות') +
             ' לפרשת ' + escapeHtml(a) + ' (' + ca.size + ' מילים שונות) ולפרשת ' + escapeHtml(b) + ' (' + cb.size + ' מילים שונות).</p>' +
             (words.length ? '<table class="parparaot-common"><thead><tr><th>מילה</th><th>פרשת ' + escapeHtml(a) + '</th><th>פרשת ' +
                 escapeHtml(b) + '</th></tr></thead><tbody>' +
-                words.map(w => '<tr><td>' + escapeHtml(w) + '</td><td>' + ca.get(w) + '</td><td>' + cb.get(w) + '</td></tr>').join('') +
+                words.map(row).join('') +
                 '</tbody></table>' : '');
         track('parparaot_common', {parasha_a: a, parasha_b: b, words: words.length});
     }
