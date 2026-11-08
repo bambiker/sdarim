@@ -197,6 +197,7 @@ def page(path, title, description, body, crumbs=None, head=''):
       <a href="/faq.html">שאלות ותשובות</a> ·
       <a href="/api.html">API ונתונים</a> ·
       <a href="/convert.html">המרת מראי מקום</a> ·
+      <a href="/parparaot.html">פרפראות התורה</a> ·
       <a href="https://github.com/bambiker/sdarim" target="_blank" rel="noopener">קוד פתוח</a>
     </footer>
   </body>
@@ -392,7 +393,7 @@ def sitemap(urls_with_dates):
 
 
 # pages in sitemap.xml that are not generated here
-STATIC_PAGES = ['', 'api.html', 'fame.html', 'convert.html']
+STATIC_PAGES = ['', 'api.html', 'fame.html', 'convert.html', 'parparaot.html']
 
 
 # ~~~ questions and answers ~~~

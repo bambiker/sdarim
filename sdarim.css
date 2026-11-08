@@ -1147,6 +1147,69 @@ dl.fields dd {
   }
 }
 
+/* ~~~ parparaot.html: words spelled in the first or last letters of a run of words ~~~ */
+
+.parparaot-row {
+  display: flex;
+  gap: 10px;
+}
+
+.parparaot-row input {
+  flex: 1;
+  min-width: 0;
+  font: inherit;
+  font-size: 18px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.parparaot-summary {
+  font-weight: 700;
+  margin-top: 22px;
+}
+
+.parparaot-group h2 {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+  margin: 26px 0 8px;
+}
+
+.parparaot-group ol {
+  padding-inline-start: 22px;
+  margin: 0 0 12px;
+}
+
+.parparaot-group li {
+  margin: 0 0 12px;
+}
+
+.parparaot-text {
+  font-family: var(--text);
+  font-size: 19px;
+  line-height: 1.9;
+}
+
+.parparaot-text mark {
+  background: var(--mark);
+  color: inherit;
+  border-radius: 4px;
+  padding: 0 2px;
+}
+
+.parparaot-text b {
+  color: var(--accent);
+}
+
+.parparaot-text .verse-sep {
+  font-size: .75em;
+  color: var(--gold-dark);
+}
+
 /* ~~~ the reference converter (convert.html) ~~~ */
 
 .beta {
