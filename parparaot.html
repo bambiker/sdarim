@@ -41,7 +41,7 @@
       <section class="hero page-hero">
         <div class="hero-inner">
           <h1>פרפראות התורה</h1>
-          <p class="tagline">הקלידו מילה, ונמצא בתנ"ך את כל המקומות שבהם רצף של מילים יוצר אותה בראשי התיבות או בסופי התיבות, מההתחלה לסוף ומהסוף להתחלה.</p>
+          <p class="tagline">הקלידו מילה, ונמצא בתנ"ך את כל המקומות שבהם רצף של מילים יוצר אותה בראשי התיבות או בסופי התיבות, מההתחלה לסוף ומהסוף להתחלה. אפשר גם לבחור שתי פרשות ולראות את המילים המשותפות להן.</p>
         </div>
       </section>
 
@@ -56,6 +56,146 @@
         <p class="hint">לפחות שתי אותיות. אות סופית נחשבת כאות רגילה (ם כמו מ), ורווח בין מילים לא נחשב: "בית אל" כמו "ביתאל". הרצף יכול לעבור מפסוק לפסוק.</p>
 
         <div id="results" class="parparaot-results" aria-live="polite"></div>
+
+        <section class="parparaot-part">
+        <h2>מילים משותפות לשתי פרשות</h2>
+        <form id="common-form" class="parparaot-pair" autocomplete="off">
+          <label class="converter-label">פרשה ראשונה
+            <select id="parasha-a">
+              <option value="">בחרו פרשה</option>
+              <option value="בראשית">בראשית</option>
+              <option value="נח">נח</option>
+              <option value="לך לך">לך לך</option>
+              <option value="וירא">וירא</option>
+              <option value="חיי שרה">חיי שרה</option>
+              <option value="תולדות">תולדות</option>
+              <option value="ויצא">ויצא</option>
+              <option value="וישלח">וישלח</option>
+              <option value="וישב">וישב</option>
+              <option value="מקץ">מקץ</option>
+              <option value="ויגש">ויגש</option>
+              <option value="ויחי">ויחי</option>
+              <option value="שמות">שמות</option>
+              <option value="וארא">וארא</option>
+              <option value="בא">בא</option>
+              <option value="בשלח">בשלח</option>
+              <option value="יתרו">יתרו</option>
+              <option value="משפטים">משפטים</option>
+              <option value="תרומה">תרומה</option>
+              <option value="תצוה">תצוה</option>
+              <option value="כי תשא">כי תשא</option>
+              <option value="ויקהל">ויקהל</option>
+              <option value="פקודי">פקודי</option>
+              <option value="ויקהל-פקודי">ויקהל-פקודי</option>
+              <option value="ויקרא">ויקרא</option>
+              <option value="צו">צו</option>
+              <option value="שמיני">שמיני</option>
+              <option value="תזריע">תזריע</option>
+              <option value="מצורע">מצורע</option>
+              <option value="תזריע-מצורע">תזריע-מצורע</option>
+              <option value="אחרי מות">אחרי מות</option>
+              <option value="קדשים">קדשים</option>
+              <option value="אחרי מות-קדשים">אחרי מות-קדשים</option>
+              <option value="אמר">אמר</option>
+              <option value="בהר">בהר</option>
+              <option value="בחקתי">בחקתי</option>
+              <option value="בהר-בחקתי">בהר-בחקתי</option>
+              <option value="במדבר">במדבר</option>
+              <option value="נשא">נשא</option>
+              <option value="בהעלתך">בהעלתך</option>
+              <option value="שלח לך">שלח לך</option>
+              <option value="קרח">קרח</option>
+              <option value="חקת">חקת</option>
+              <option value="בלק">בלק</option>
+              <option value="פינחס">פינחס</option>
+              <option value="מטות">מטות</option>
+              <option value="מסעי">מסעי</option>
+              <option value="מטות-מסעי">מטות-מסעי</option>
+              <option value="דברים">דברים</option>
+              <option value="ואתחנן">ואתחנן</option>
+              <option value="עקב">עקב</option>
+              <option value="ראה">ראה</option>
+              <option value="שפטים">שפטים</option>
+              <option value="כי תצא">כי תצא</option>
+              <option value="כי תבוא">כי תבוא</option>
+              <option value="נצבים">נצבים</option>
+              <option value="וילך">וילך</option>
+              <option value="נצבים-וילך">נצבים-וילך</option>
+              <option value="האזינו">האזינו</option>
+              <option value="וזאת הברכה">וזאת הברכה</option>
+            </select>
+          </label>
+          <label class="converter-label">פרשה שנייה
+            <select id="parasha-b">
+              <option value="">בחרו פרשה</option>
+              <option value="בראשית">בראשית</option>
+              <option value="נח">נח</option>
+              <option value="לך לך">לך לך</option>
+              <option value="וירא">וירא</option>
+              <option value="חיי שרה">חיי שרה</option>
+              <option value="תולדות">תולדות</option>
+              <option value="ויצא">ויצא</option>
+              <option value="וישלח">וישלח</option>
+              <option value="וישב">וישב</option>
+              <option value="מקץ">מקץ</option>
+              <option value="ויגש">ויגש</option>
+              <option value="ויחי">ויחי</option>
+              <option value="שמות">שמות</option>
+              <option value="וארא">וארא</option>
+              <option value="בא">בא</option>
+              <option value="בשלח">בשלח</option>
+              <option value="יתרו">יתרו</option>
+              <option value="משפטים">משפטים</option>
+              <option value="תרומה">תרומה</option>
+              <option value="תצוה">תצוה</option>
+              <option value="כי תשא">כי תשא</option>
+              <option value="ויקהל">ויקהל</option>
+              <option value="פקודי">פקודי</option>
+              <option value="ויקהל-פקודי">ויקהל-פקודי</option>
+              <option value="ויקרא">ויקרא</option>
+              <option value="צו">צו</option>
+              <option value="שמיני">שמיני</option>
+              <option value="תזריע">תזריע</option>
+              <option value="מצורע">מצורע</option>
+              <option value="תזריע-מצורע">תזריע-מצורע</option>
+              <option value="אחרי מות">אחרי מות</option>
+              <option value="קדשים">קדשים</option>
+              <option value="אחרי מות-קדשים">אחרי מות-קדשים</option>
+              <option value="אמר">אמר</option>
+              <option value="בהר">בהר</option>
+              <option value="בחקתי">בחקתי</option>
+              <option value="בהר-בחקתי">בהר-בחקתי</option>
+              <option value="במדבר">במדבר</option>
+              <option value="נשא">נשא</option>
+              <option value="בהעלתך">בהעלתך</option>
+              <option value="שלח לך">שלח לך</option>
+              <option value="קרח">קרח</option>
+              <option value="חקת">חקת</option>
+              <option value="בלק">בלק</option>
+              <option value="פינחס">פינחס</option>
+              <option value="מטות">מטות</option>
+              <option value="מסעי">מסעי</option>
+              <option value="מטות-מסעי">מטות-מסעי</option>
+              <option value="דברים">דברים</option>
+              <option value="ואתחנן">ואתחנן</option>
+              <option value="עקב">עקב</option>
+              <option value="ראה">ראה</option>
+              <option value="שפטים">שפטים</option>
+              <option value="כי תצא">כי תצא</option>
+              <option value="כי תבוא">כי תבוא</option>
+              <option value="נצבים">נצבים</option>
+              <option value="וילך">וילך</option>
+              <option value="נצבים-וילך">נצבים-וילך</option>
+              <option value="האזינו">האזינו</option>
+              <option value="וזאת הברכה">וזאת הברכה</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-gold">הצגת המילים המשותפות</button>
+        </form>
+        <p class="hint">כל מילה שמופיעה בשתי הפרשות, וכמה פעמים היא מופיעה בכל אחת מהן. המילים מושוות בלי ניקוד ובלי ו׳ החיבור: "ואת" נספרת כמו "את".</p>
+
+        <div id="common" class="parparaot-results" aria-live="polite"></div>
+        </section>
       </article>
     </main>
 

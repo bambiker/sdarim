@@ -2,6 +2,7 @@
 // (ראשי תיבות) or their last letters (סופי תיבות), from the first word to the last or from the last to
 // the first. A final letter counts as the plain letter (ם as מ), and spaces in the word are ignored.
 // The run may go on from verse to verse, but not from one book to the next.
+// Also: the words two parashot have in common, and how many times each appears in each of them.
 
 (function () {
     const form = document.getElementById('search-form');
@@ -21,10 +22,17 @@
     // the text of every verse without nikud (API/text.json) and where it is (API/map.json), in the same order.
     // first / last: the first and last letter of every word, one character per word, with "|" between books
     // so a run does not go from one book to the next; at: [verse, word] of each character
-    let data = null;
+    let data = null, texts = null;
+    const loadTexts = () => {
+        if (!texts) {
+            texts = fetch('/API/text.json').then(r => r.json());
+            texts.catch(() => { texts = null; });
+        }
+        return texts;
+    };
     function load() {
         if (!data) {
-            data = Promise.all([fetch('/API/text.json').then(r => r.json()), fetch('/API/map.json').then(r => r.json())])
+            data = Promise.all([loadTexts(), fetch('/API/map.json').then(r => r.json())])
                 .then(([texts, map]) => {
                     const f = name => map.fields.indexOf(name);
                     const verses = map.verses.map((row, i) => ({
@@ -128,13 +136,82 @@
         event.preventDefault();
         const word = input.value.trim();
         // the address keeps the search, so it can be shared
-        try { history.replaceState(null, '', word ? '?q=' + encodeURIComponent(word) : location.pathname); } catch (e) { }
+        const params = new URLSearchParams(location.search);
+        if (word) params.set('q', word); else params.delete('q');
+        try { history.replaceState(null, '', params.toString() ? '?' + params.toString() : location.pathname); } catch (e) { }
         search(word);
     });
 
-    const query = new URLSearchParams(location.search).get('q');
+    // ~~~ the words two parashot have in common ~~~
+    const commonForm = document.getElementById('common-form');
+    const selectA = document.getElementById('parasha-a');
+    const selectB = document.getElementById('parasha-b');
+    const common = document.getElementById('common');
+
+    // a word is counted without the ו of "and" before it: "ואת" is "את" (but "ו" alone, or "וו", stays)
+    const base = w => (w.length > 2 && w[0] == 'ו' ? w.slice(1) : w);
+
+    // how many times each word appears in a parasha (a double one, ויקהל-פקודי, is both),
+    // from API/parashot.json: the verses of each parasha, as places in API/text.json
+    let ranges = null;
+    async function countWords(parasha) {
+        if (!ranges) ranges = fetch('/API/parashot.json').then(r => r.json());
+        const [all, places] = await Promise.all([loadTexts(), ranges]);
+        const counts = new Map();
+        parasha.split('-').forEach(name => {
+            const [first, last] = places[name];
+            for (let i = first; i <= last; i++)
+                all[i].split(' ').filter(Boolean).map(base).forEach(w => counts.set(w, (counts.get(w) || 0) + 1));
+        });
+        return counts;
+    }
+
+    async function compare(a, b) {
+        if (!a || !b) {
+            common.innerHTML = '<p>יש לבחור שתי פרשות.</p>';
+            return;
+        }
+        if (a == b) {
+            common.innerHTML = '<p>יש לבחור שתי פרשות שונות.</p>';
+            return;
+        }
+        common.innerHTML = '<p>טוען את הפרשות ומשווה...</p>';
+        let ca, cb;
+        try { [ca, cb] = await Promise.all([countWords(a), countWords(b)]); } catch (e) {
+            ranges = null;
+            common.innerHTML = '<p>לא ניתן לטעון את הפרשות כרגע. נסו שוב מאוחר יותר.</p>';
+            return;
+        }
+        // the common words, the most frequent (in both parashot together) first
+        const words = [...ca.keys()].filter(w => cb.has(w))
+            .sort((x, y) => (cb.get(y) + ca.get(y)) - (cb.get(x) + ca.get(x)) || x.localeCompare(y, 'he'));
+        common.innerHTML = '<p class="parparaot-summary">' + (words.length == 1 ? 'מילה אחת משותפת' : words.length + ' מילים משותפות') +
+            ' לפרשת ' + escapeHtml(a) + ' (' + ca.size + ' מילים שונות) ולפרשת ' + escapeHtml(b) + ' (' + cb.size + ' מילים שונות).</p>' +
+            (words.length ? '<table class="parparaot-common"><thead><tr><th>מילה</th><th>פרשת ' + escapeHtml(a) + '</th><th>פרשת ' +
+                escapeHtml(b) + '</th></tr></thead><tbody>' +
+                words.map(w => '<tr><td>' + escapeHtml(w) + '</td><td>' + ca.get(w) + '</td><td>' + cb.get(w) + '</td></tr>').join('') +
+                '</tbody></table>' : '');
+        track('parparaot_common', {parasha_a: a, parasha_b: b, words: words.length});
+    }
+
+    commonForm.addEventListener('submit', event => {
+        event.preventDefault();
+        const params = new URLSearchParams(location.search);
+        params.set('a', selectA.value);
+        params.set('b', selectB.value);
+        try { history.replaceState(null, '', '?' + params.toString()); } catch (e) { }
+        compare(selectA.value, selectB.value);
+    });
+
+    const params = new URLSearchParams(location.search);
+    const query = params.get('q');
     if (query) {
         input.value = query;
         search(query);
+    }
+    if (params.get('a') && params.get('b')) {
+        selectA.value = params.get('a');
+        selectB.value = params.get('b');
+        compare(selectA.value, selectB.value);
     }
 })();

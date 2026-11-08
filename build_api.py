@@ -16,6 +16,7 @@ Files written (spaces in book names become underscores):
     API/sedarim.json                            index of all sedarim: where each starts and ends
     API/map.json                                chapter <-> seder location of every verse, no text
     API/text.json                               the text of every verse without nikud, in the order of map.json
+    API/parashot.json                           the verses of each parasha: [first, last] places in map.json
 (API/letters.json, the big, small and raised letters, is written by build_letters.py and kept.)
 It also writes the static pages made by build_pages.py (seder/, perek/, parasha/, book/,
 sitemap.xml, robots.txt, llms.txt).
@@ -84,6 +85,15 @@ def verse_text(verses):
     return '[\n' + ',\n'.join(rows) + '\n]\n'
 
 
+def parasha_ranges(verses):
+    # each parasha is a run of verses in the order of map.json: parasha -> [first, last] (counted from 0)
+    ranges = {}
+    for i, v in enumerate(verses):
+        if v.get('parasha'):
+            ranges.setdefault(v['parasha'], [i, i])[1] = i
+    return '{\n' + ',\n'.join(json.dumps(k, ensure_ascii=False) + ':' + json.dumps(r) for k, r in ranges.items()) + '\n}\n'
+
+
 def expected_files(verses):
     files = {}
     chapters = defaultdict(list)
@@ -98,6 +108,7 @@ def expected_files(verses):
     files['sedarim.json'] = sedarim_index(verses)
     files['map.json'] = verse_map(verses)
     files['text.json'] = verse_text(verses)
+    files['parashot.json'] = parasha_ranges(verses)
     return files
 
 
