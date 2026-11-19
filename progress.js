@@ -16,7 +16,10 @@ const bar = p => '<div class="progress-bar" role="progressbar" aria-valuenow="' 
 async function render(state) {
     if (!state.ready) return;
     if (!state.user) {
-        box.innerHTML = '<p>כדי לסמן סדרים ופסוקים שלמדתם ולראות את ההתקדמות שלכם, התחברו עם חשבון גוגל.</p>' +
+        box.innerHTML = '<h2>למה להירשם?</h2><p>ההרשמה חינם, בלחיצה אחת עם חשבון גוגל, ונותנת לכם שני דברים:</p><ul class="why-sign-in">' +
+            '<li><b>מעקב אחרי הלימוד:</b> מסמנים סדרים ופסוקים שלמדתם, ורואים כאן כמה למדתם מכל ספר ומהתנ"ך כולו, מה למדתם לאחרונה ומהו הסדר הבא.</li>' +
+            '<li><b>הערות ופרשנות משלכם:</b> כותבים לכל פסוק את הפירוש וההערות שלכם, עוקבים כמה כתבתם, ומדפיסים הכול כ<a href="/my-commentary.html">ספר פרשנות</a> אישי, עם הפסוקים או בלעדיהם.</li>' +
+            '<li>הכול נשמר בחשבון, כך שתמצאו אותו בכל מכשיר שבו תתחברו, ורק אתם רואים אותו.</li></ul>' +
             '<button type="button" class="btn btn-gold" id="sign-in">התחברות עם גוגל</button>';
         document.getElementById('sign-in').addEventListener('click', () => window.masdirimAccount.signIn());
         return;
