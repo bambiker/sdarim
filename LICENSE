@@ -1,0 +1,47 @@
+מסדירים - חלוקת התנ"ך לסדרים
+Masdirim - the Tanakh by the Jewish division into sedarim
+https://www.masdirim.org · https://github.com/bambiker/sdarim
+
+Everyone may take from this project whatever they want, for any purpose, also commercial, as long as
+they say where they took it from, so others can reach the source and check it for updates:
+
+    מקור: מסדירים, https://www.masdirim.org
+
+In detail:
+
+1. The code (the .js, .py, .mjs, .html and .css files) is under the MIT License below.
+
+2. The data and the texts written for the site (sdarim.json, API/, calendar/parashot.json, the generated
+   pages seder/, perek/, parasha/, book/, and the site's own texts) are under the Creative Commons
+   Attribution 4.0 International License (CC BY 4.0), https://creativecommons.org/licenses/by/4.0/ :
+   you may copy, change and share them for any purpose, if you give credit to Masdirim
+   (https://www.masdirim.org), link to the license, and say if you changed them.
+
+3. Files that come from others keep their own licenses, which go with them:
+   - commentary/ : the commentaries, from Sefaria's public export; the edition and license of each
+     commentator and book are in commentary/sources.json (public domain, CC0, CC-BY or CC-BY-SA).
+   - calendar/haftarot.json : the haftarot and the readings of the festivals, from @hebcal/leyning
+     (BSD 2-Clause License, https://github.com/hebcal/hebcal-leyning).
+   - API/letters.json : the big, small and raised letters, from "Miqra according to the Masorah"
+     (Sefaria, CC BY-SA 4.0).
+
+-----------------------------------------------------------------------------------------------------
+
+MIT License
+
+Copyright (c) bambiker and the Masdirim project (https://www.masdirim.org)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
+associated documentation files (the "Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
+LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO
+EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
