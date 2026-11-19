@@ -264,6 +264,15 @@ a {
   padding: 2px 12px;
 }
 
+.note-why {
+  font-size: 13px;
+  margin-inline-start: 8px;
+}
+
+.why-sign-in li {
+  margin-bottom: 6px;
+}
+
 .note-status {
   color: var(--muted);
 }
@@ -890,7 +899,7 @@ h2 {
   margin: 56px auto 0;
   padding: 0 20px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
 }
 

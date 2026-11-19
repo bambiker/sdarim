@@ -114,8 +114,8 @@ function topbar() {
             '<span class="account-mark" aria-hidden="true">✓</span><span class="wide-only"></span></a>';
         box.querySelector('.wide-only').textContent = 'ההתקדמות של ' + name;
     } else {
-        box.innerHTML = '<button type="button" class="account-link">התחברות</button>';
-        box.querySelector('button').addEventListener('click', signIn);
+        // the page that explains what an account gives (following the learning, writing commentary) and signs in
+        box.innerHTML = '<a class="account-link" href="/progress.html" title="מעקב אחרי הלימוד, ופרשנות משלכם לפסוקים">התחברות</a>';
     }
 }
 
@@ -149,7 +149,8 @@ function noteEditor(box) {
     if (!state.user) {
         if (box.dataset.mode == 'out') return;
         box.dataset.mode = 'out';
-        box.innerHTML = '<button type="button" class="note-sign-in">כתיבת פרשנות משלכם לפסוק (התחברות)</button>';
+        box.innerHTML = '<button type="button" class="note-sign-in">כתיבת פרשנות משלכם לפסוק (התחברות)</button> ' +
+            '<a class="note-why" href="/progress.html">למה להירשם?</a>';
         box.querySelector('button').addEventListener('click', signIn);
         return;
     }
