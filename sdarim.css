@@ -214,6 +214,97 @@ a {
   text-underline-offset: 6px;
 }
 
+/* commentators under every verse (commentary.js): the button at the corner, its list, and the boxes */
+.always-button {
+  position: fixed;
+  left: 14px;
+  bottom: 14px;
+  z-index: 30;
+  font-family: var(--ui);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  background: var(--gold);
+  border: 0;
+  border-radius: 999px;
+  padding: 9px 16px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+
+.always-panel {
+  position: fixed;
+  left: 14px;
+  bottom: 62px;
+  z-index: 30;
+  width: min(340px, calc(100vw - 28px));
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  font-family: var(--ui);
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 16px;
+}
+
+.always-title {
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.always-hint {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+
+.always-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 10px;
+  font-size: 15px;
+}
+
+.always-tools {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.always-tools button {
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 3px 12px;
+}
+
+.always-box {
+  font-family: var(--ui);
+  font-size: calc(15px + var(--font-step, 0) * 1px);
+  line-height: 1.7;
+  text-align: right;
+  color: var(--ink);
+  background: rgba(200, 162, 74, .08);
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 4px 0 10px;
+}
+
+.always-item + .always-item {
+  margin-top: 4px;
+}
+
+.always-item strong {
+  color: var(--heading);
+}
+
 /* the reader's own commentary on a verse, under its commentaries */
 .my-note {
   margin-top: 12px;
