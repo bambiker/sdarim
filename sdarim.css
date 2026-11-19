@@ -1242,6 +1242,46 @@ dl.fields dd {
   padding: 8px 12px;
 }
 
+.parparaot-pair input {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  font: inherit;
+  font-weight: 400;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+/* the seder and verse fields of the verse gematria are short */
+.parparaot-pair .parparaot-small {
+  flex: 0 1 110px;
+}
+
+/* the words with the same gematria: one after the other */
+.parparaot-words {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+}
+
+.parparaot-words a {
+  font-family: var(--text);
+  font-size: 20px;
+}
+
+.parparaot-words small {
+  color: var(--muted);
+}
+
+.parparaot-part h3 {
+  margin: 18px 0 8px;
+}
+
 .parparaot-common {
   border-collapse: collapse;
   width: 100%;

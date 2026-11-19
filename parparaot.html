@@ -2,9 +2,9 @@
 <html lang="he">
   <head>
     <meta charset="utf-8">
-    <title>פרפראות התורה: ראשי תיבות וסופי תיבות - מסדירים</title>
+    <title>פרפראות התורה: ראשי תיבות וגימטריות - מסדירים</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="הקלידו מילה ומצאו בתנ&quot;ך רצפי מילים שראשי התיבות או סופי התיבות שלהם יוצרים אותה, מההתחלה לסוף ומהסוף להתחלה, לפי הסדרים.">
+    <meta name="description" content="פרפראות התורה: ראשי תיבות וסופי תיבות בתנ&quot;ך, מילים משותפות לשתי פרשות, וגימטריות של פסוקים, מילים ושמות, לפי הסדרים.">
     <link rel="canonical" href="https://www.masdirim.org/parparaot.html">
     <meta name="theme-color" content="#11235A">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -41,19 +41,20 @@
       <section class="hero page-hero">
         <div class="hero-inner">
           <h1>פרפראות התורה</h1>
-          <p class="tagline">הקלידו מילה, ונמצא בתנ"ך את כל המקומות שבהם רצף של מילים יוצר אותה בראשי התיבות או בסופי התיבות, מההתחלה לסוף ומהסוף להתחלה. אפשר גם לבחור שתי פרשות ולראות את המילים המשותפות להן.</p>
+          <p class="tagline">הקלידו מילה, ונמצא בתנ"ך את כל המקומות שבהם רצף של מילים יוצר אותה בראשי התיבות או בסופי התיבות, מההתחלה לסוף ומהסוף להתחלה. אפשר גם לבחור שתי פרשות ולראות את המילים המשותפות להן, ולמצוא פסוקים ומילים עם אותה גימטריה.</p>
         </div>
       </section>
 
       <article class="page card converter parparaot">
+        <h2>ראשי תיבות בתנ"ך</h2>
         <form id="search-form" class="parparaot-search" autocomplete="off">
           <label for="word" class="converter-label">מילה או צירוף</label>
           <div class="parparaot-row">
-            <input type="search" id="word" placeholder="למשל: תורה, אמת, שלום" dir="rtl">
+            <input type="search" id="word" placeholder="למשל: תורה, אמת, רמב&quot;ם" dir="rtl">
             <button type="submit" class="btn btn-gold">חיפוש</button>
           </div>
         </form>
-        <p class="hint">לפחות שתי אותיות. אות סופית נחשבת כאות רגילה (ם כמו מ), ורווח בין מילים לא נחשב: "בית אל" כמו "ביתאל". הרצף יכול לעבור מפסוק לפסוק.</p>
+        <p class="hint">לפחות שתי אותיות. אות סופית נחשבת כאות רגילה (ם כמו מ), ורווחים, גרשיים ונקודות לא נחשבים: "בית אל" כמו "ביתאל", ו"רמב"ם" או "ר.מ.ב.ם" כמו "רמבם". הרצף יכול לעבור מפסוק לפסוק.</p>
 
         <div id="results" class="parparaot-results" aria-live="polite"></div>
 
@@ -195,6 +196,63 @@
         <p class="hint">כל מילה שמופיעה בשתי הפרשות, וכמה פעמים היא מופיעה בכל אחת מהן. המילים מושוות בלי ניקוד, בלי ו׳ החיבור וה׳ הידיעה, ובצורת היחיד: "והארץ" נספרת כמו "ארץ", ו"מלכים" כמו "מלך". ליד כל מילה רשומות הצורות שבהן היא מופיעה.</p>
 
         <div id="common" class="parparaot-results" aria-live="polite"></div>
+        </section>
+
+        <section class="parparaot-part">
+        <h2>גימטריה של פסוק</h2>
+        <form id="verse-form" class="parparaot-pair" autocomplete="off">
+          <label class="converter-label">ספר
+            <select id="g-book">
+              <option value="">בחרו ספר</option>
+              <option value="בראשית">בראשית</option>
+              <option value="שמות">שמות</option>
+              <option value="ויקרא">ויקרא</option>
+              <option value="במדבר">במדבר</option>
+              <option value="דברים">דברים</option>
+              <option value="יהושע">יהושע</option>
+              <option value="שופטים">שופטים</option>
+              <option value="שמואל">שמואל</option>
+              <option value="מלכים">מלכים</option>
+              <option value="ישעיהו">ישעיהו</option>
+              <option value="ירמיהו">ירמיהו</option>
+              <option value="יחזקאל">יחזקאל</option>
+              <option value="תרי עשר">תרי עשר</option>
+              <option value="תהילים">תהילים</option>
+              <option value="משלי">משלי</option>
+              <option value="איוב">איוב</option>
+              <option value="שיר השירים">שיר השירים</option>
+              <option value="רות">רות</option>
+              <option value="איכה">איכה</option>
+              <option value="קהלת">קהלת</option>
+              <option value="אסתר">אסתר</option>
+              <option value="דניאל">דניאל</option>
+              <option value="עזרא ונחמיה">עזרא ונחמיה</option>
+              <option value="דברי הימים">דברי הימים</option>
+            </select>
+          </label>
+          <label class="converter-label parparaot-small">סדר
+            <input type="text" id="g-seder" placeholder="למשל: א" dir="rtl">
+          </label>
+          <label class="converter-label parparaot-small">פסוק
+            <input type="text" id="g-verse" placeholder="למשל: א" dir="rtl">
+          </label>
+          <button type="submit" class="btn btn-gold">חישוב וחיפוש</button>
+        </form>
+        <p class="hint">הגימטריה של הפסוק, וכל הפסוקים בתנ"ך שיש להם אותה גימטריה. אותיות סופיות נחשבות כרגילות (ך = 20, ם = 40).</p>
+        <div id="verse-gematria" class="parparaot-results" aria-live="polite"></div>
+        </section>
+
+        <section class="parparaot-part">
+        <h2>גימטריה של מילה או שם</h2>
+        <form id="word-form" class="parparaot-search" autocomplete="off">
+          <label for="g-word" class="converter-label">מילה, שם או צירוף</label>
+          <div class="parparaot-row">
+            <input type="search" id="g-word" placeholder="למשל: אהבה, משה רבנו" dir="rtl">
+            <button type="submit" class="btn btn-gold">חיפוש</button>
+          </div>
+        </form>
+        <p class="hint">הגימטריה של מה שהקלדתם, וכל המילים בתנ"ך שיש להן אותה גימטריה, ובכמה מקומות כל אחת מהן כתובה. אפשר להקליד גם מספר.</p>
+        <div id="word-gematria" class="parparaot-results" aria-live="polite"></div>
         </section>
       </article>
     </main>

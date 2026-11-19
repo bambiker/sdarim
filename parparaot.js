@@ -1,8 +1,10 @@
 // parparaot.html: the places in the Tanakh where a run of words spells a word in their first letters
 // (ראשי תיבות) or their last letters (סופי תיבות), from the first word to the last or from the last to
-// the first. A final letter counts as the plain letter (ם as מ), and spaces in the word are ignored.
+// the first. A final letter counts as the plain letter (ם as מ); spaces, gershayim and dots in the word are
+// ignored (רמב"ם, ר.מ.ב.ם).
 // The run may go on from verse to verse, but not from one book to the next.
-// Also: the words two parashot have in common, and how many times each appears in each of them.
+// Also: the words two parashot have in common, and how many times each appears in each of them; and
+// gematria: the verses with the same gematria as a verse, and the words with the same gematria as a word.
 
 (function () {
     const form = document.getElementById('search-form');
@@ -88,6 +90,7 @@
     }
 
     async function search(word) {
+        // only the letters count: not spaces, gershayim (" ״) or dots
         const target = plain(word.replace(/[^א-ת]/g, ''));
         if (target.length < 2) {
             results.innerHTML = '<p>יש להקליד לפחות שתי אותיות.</p>';
@@ -238,7 +241,123 @@
         compare(selectA.value, selectB.value);
     });
 
+    // ~~~ gematria: א = 1 ... ת = 400; a final letter is worth its plain letter (ך = 20, ם = 40) ~~~
+    const VALUES = {};
+    'אבגדהוזחטיכלמנסעפצקרשת'.split('').forEach((c, i) => { VALUES[c] = i < 10 ? i + 1 : i < 19 ? (i - 8) * 10 : (i - 17) * 100; });
+    const gematria = text => [...plain(text)].reduce((sum, c) => sum + (VALUES[c] || 0), 0);
+    const where = v => bookName(v) + ' סדר ' + v.seder + ' פסוק ' + v.verse;
+    const verseItem = v => '<li><a href="' + href(v) + '">' + escapeHtml(where(v)) + '</a><div class="parparaot-text">' +
+        escapeHtml(v.words.join(' ')) + '</div></li>';
+    // a list of places, the first SHOWN of them and a button for the rest
+    function listHtml(items, render, id) {
+        return '<ol id="' + id + '">' + items.slice(0, SHOWN).map(render).join('') + '</ol>' +
+            (items.length > SHOWN ? '<button type="button" class="btn btn-outline" data-all="' + id + '">הצגת כל ' + items.length + '</button>' : '');
+    }
+    function showAll(box, items, render) {
+        const button = box.querySelector('[data-all]');
+        if (button) button.addEventListener('click', () => {
+            document.getElementById(button.dataset.all).innerHTML = items.map(render).join('');
+            button.remove();
+        });
+    }
+
+    // the value of every verse, computed once
+    let verseValues = null;
+    async function valued() {
+        const d = await load();
+        if (!verseValues) verseValues = d.verses.map(v => gematria(v.words.join('')));
+        return d;
+    }
+
+    const verseBox = document.getElementById('verse-gematria');
+    const number = s => s.replace(/[^א-ת]/g, '');
+    async function verseGematria(book, seder, verse) {
+        if (!book || !seder || !verse) {
+            verseBox.innerHTML = '<p>יש לבחור ספר ולהקליד סדר ופסוק.</p>';
+            return;
+        }
+        verseBox.innerHTML = '<p>טוען את טקסט התנ"ך ומחשב...</p>';
+        let d;
+        try { d = await valued(); } catch (e) {
+            verseBox.innerHTML = '<p>לא ניתן לטעון את טקסט התנ"ך כרגע. נסו שוב מאוחר יותר.</p>';
+            return;
+        }
+        const i = d.verses.findIndex(v => v.book == book && v.seder == number(seder) && v.verse == number(verse));
+        if (i < 0) {
+            verseBox.innerHTML = '<p>לא נמצא פסוק ' + escapeHtml(number(verse)) + ' בסדר ' + escapeHtml(number(seder)) + ' בספר ' +
+                escapeHtml(book) + '.</p>';
+            return;
+        }
+        const value = verseValues[i];
+        const same = d.verses.filter((v, j) => j != i && verseValues[j] == value);
+        verseBox.innerHTML = '<p class="parparaot-summary">הגימטריה של ' + escapeHtml(where(d.verses[i])) + ': ' + value + '.</p>' +
+            '<div class="parparaot-text">' + escapeHtml(d.verses[i].words.join(' ')) + '</div>' +
+            '<h3>' + (same.length == 0 ? 'אין פסוק אחר עם גימטריה זו' : same.length == 1 ? 'פסוק אחד נוסף עם גימטריה זו' :
+                same.length + ' פסוקים נוספים עם גימטריה זו') + '</h3>' + (same.length ? listHtml(same, verseItem, 'same-verses') : '');
+        showAll(verseBox, same, verseItem);
+        track('gematria_verse', {book: book, seder: number(seder), verse: number(verse), value: value, results: same.length});
+    }
+
+    const wordBox = document.getElementById('word-gematria');
+    async function wordGematria(text) {
+        const value = /^\s*\d+\s*$/.test(text) ? Number(text) : gematria(text.replace(/[^א-ת]/g, ''));
+        if (!value) {
+            wordBox.innerHTML = '<p>יש להקליד מילה, שם או מספר.</p>';
+            return;
+        }
+        wordBox.innerHTML = '<p>טוען את טקסט התנ"ך ומחפש...</p>';
+        let d;
+        try { d = await load(); } catch (e) {
+            wordBox.innerHTML = '<p>לא ניתן לטעון את טקסט התנ"ך כרגע. נסו שוב מאוחר יותר.</p>';
+            return;
+        }
+        // every word of the Tanakh with this value, and how many times it is written, the most frequent first
+        const counts = new Map();
+        d.verses.forEach(v => v.words.forEach(w => { if (gematria(w) == value) counts.set(w, (counts.get(w) || 0) + 1); }));
+        const words = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], 'he'));
+        // each word is a link to the word search of the home page, which shows where it is written
+        const item = ([w, n]) => '<li><a href="/?q=' + encodeURIComponent(w) + '">' + escapeHtml(w) + '</a> <small>' +
+            (n == 1 ? 'פעם אחת' : n + ' פעמים') + '</small></li>';
+        const lead = /^\s*\d+\s*$/.test(text) ? 'גימטריה ' + value + ': ' :
+            'הגימטריה של "' + escapeHtml(text.replace(/[^א-ת"״' ]/g, '').trim()) + '" היא ' + value + '. ';
+        wordBox.innerHTML = '<p class="parparaot-summary">' + lead +
+            (words.length == 0 ? 'אין בתנ"ך מילה עם גימטריה זו.' : words.length == 1 ? 'בתנ"ך יש מילה אחת עם גימטריה זו.' :
+                'בתנ"ך יש ' + words.length + ' מילים שונות עם גימטריה זו.') + '</p>' +
+            (words.length ? '<ul class="parparaot-words" id="same-words">' + words.slice(0, 300).map(item).join('') + '</ul>' +
+                (words.length > 300 ? '<button type="button" class="btn btn-outline" data-all="same-words">הצגת כל ' + words.length + '</button>' : '') : '');
+        showAll(wordBox, words, item);
+        track('gematria_word', {search_term: text.trim(), value: value, results: words.length});
+    }
+
+    const keep = (pairs) => {
+        const params = new URLSearchParams(location.search);
+        Object.entries(pairs).forEach(([k, v]) => { if (v) params.set(k, v); else params.delete(k); });
+        try { history.replaceState(null, '', params.toString() ? '?' + params.toString() : location.pathname); } catch (e) { }
+    };
+    const gBook = document.getElementById('g-book'), gSeder = document.getElementById('g-seder'), gVerse = document.getElementById('g-verse');
+    document.getElementById('verse-form').addEventListener('submit', event => {
+        event.preventDefault();
+        keep({vb: gBook.value, vs: number(gSeder.value), vv: number(gVerse.value)});
+        verseGematria(gBook.value, gSeder.value, gVerse.value);
+    });
+    const gWord = document.getElementById('g-word');
+    document.getElementById('word-form').addEventListener('submit', event => {
+        event.preventDefault();
+        keep({g: gWord.value.trim()});
+        wordGematria(gWord.value);
+    });
+
     const params = new URLSearchParams(location.search);
+    if (params.get('vb') && params.get('vs') && params.get('vv')) {
+        gBook.value = params.get('vb');
+        gSeder.value = params.get('vs');
+        gVerse.value = params.get('vv');
+        verseGematria(gBook.value, gSeder.value, gVerse.value);
+    }
+    if (params.get('g')) {
+        gWord.value = params.get('g');
+        wordGematria(gWord.value);
+    }
     const query = params.get('q');
     if (query) {
         input.value = query;
