@@ -215,27 +215,44 @@ a {
 }
 
 /* commentators under every verse (commentary.js): the button at the corner, its list, and the boxes */
-.always-button {
-  position: fixed;
-  left: 14px;
-  bottom: 14px;
-  z-index: 30;
-  font-family: var(--ui);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--navy);
-  background: var(--gold);
+.settings-button {
+  position: relative;
+  flex-shrink: 0;
+  margin-inline-start: auto;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1;
+  color: #fff;
+  background: transparent;
   border: 0;
   border-radius: 999px;
-  padding: 9px 16px;
-  box-shadow: var(--shadow);
+  padding: 6px 8px;
   cursor: pointer;
+}
+
+.settings-button + .account, .settings-button + .install {
+  margin-inline-start: 6px;
+}
+
+.settings-count {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 16px;
+  font-family: var(--ui);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: var(--navy);
+  background: var(--gold);
+  border-radius: 999px;
 }
 
 .always-panel {
   position: fixed;
   left: 14px;
-  bottom: 62px;
+  top: 64px;
   z-index: 30;
   width: min(340px, calc(100vw - 28px));
   max-height: min(70vh, 520px);
