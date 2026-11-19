@@ -115,7 +115,9 @@ function topbar() {
         box.querySelector('.wide-only').textContent = 'ההתקדמות של ' + name;
     } else {
         // the page that explains what an account gives (following the learning, writing commentary) and signs in
-        box.innerHTML = '<a class="account-link" href="/progress.html" title="מעקב אחרי הלימוד, ופרשנות משלכם לפסוקים">התחברות</a>';
+        // on a phone only the icon, so the menu has room
+        box.innerHTML = '<a class="account-link" href="/progress.html" title="התחברות: מעקב אחרי הלימוד, ופרשנות משלכם לפסוקים" aria-label="התחברות">' +
+            '<span class="account-mark" aria-hidden="true">👤</span><span class="wide-only">התחברות</span></a>';
     }
 }
 

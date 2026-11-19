@@ -1,5 +1,5 @@
 // Commentaries under a verse, opened by clicking the verse or its number; and commentators the reader
-// chose to see under every verse (the button "פירושים בכל הפסוקים", remembered in the browser).
+// chose to see under every verse (in the settings, ⚙ in the topbar; remembered in the browser).
 // Used by the main site (sdarim.js renders the verses) and by the static pages.
 // The data comes from commentary/<book>/<seder>.json, made by build_commentary.py from
 // Sefaria's public export (only editions whose license allows reuse); its HTML is already cleaned.
@@ -223,21 +223,35 @@
         });
     }
 
-    // the button, at the corner of every page that shows verses, and its list of commentators
+    // the settings: a small ⚙ in the topbar, which opens the list of commentators under it
     async function chooser() {
         if (document.getElementById('always-button')) return;
+        const inner = document.querySelector('.topbar-inner');
+        if (!inner) return;
         const button = document.createElement('button');
         button.type = 'button';
         button.id = 'always-button';
-        button.className = 'always-button no-print';
+        button.className = 'settings-button no-print';
+        button.title = 'הגדרות: פירושים מתחת לכל הפסוקים';
+        button.setAttribute('aria-label', 'הגדרות');
         button.setAttribute('aria-expanded', 'false');
-        const label = () => { button.textContent = chosen.length ? 'פירושים בכל הפסוקים (' + chosen.length + ')' : 'פירושים בכל הפסוקים'; };
+        // the number of commentators chosen, on the icon
+        const label = () => { button.innerHTML = '⚙' + (chosen.length ? '<span class="settings-count">' + chosen.length + '</span>' : ''); };
         label();
         const panel = document.createElement('div');
         panel.id = 'always-panel';
         panel.className = 'always-panel no-print';
         panel.hidden = true;
-        document.body.append(button, panel);
+        const account = inner.querySelector('#account, .install');
+        inner.insertBefore(button, account || null);
+        document.body.appendChild(panel);
+        // a click outside the open settings closes them
+        document.addEventListener('click', event => {
+            if (!panel.hidden && !panel.contains(event.target) && !button.contains(event.target)) {
+                panel.hidden = true;
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
         button.addEventListener('click', async () => {
             panel.hidden = !panel.hidden;
             button.setAttribute('aria-expanded', String(!panel.hidden));
@@ -245,7 +259,7 @@
             panel.textContent = 'טוען...';
             const list = await listCommentators().catch(() => []);
             panel.dataset.ready = '1';
-            panel.innerHTML = '<p class="always-title">הצגת פירושים מתחת לכל הפסוקים</p>' +
+            panel.innerHTML = '<p class="always-title">הגדרות: פירושים מתחת לכל הפסוקים</p>' +
                 '<p class="always-hint">בחרו את הפירושים והתרגומים שתרצו לראות מתחת לכל פסוק. הבחירה נשמרת בדפדפן הזה.</p>';
             const boxes = document.createElement('div');
             boxes.className = 'always-list';
@@ -274,9 +288,10 @@
             done.querySelector('.always-close').addEventListener('click', () => { panel.hidden = true; button.setAttribute('aria-expanded', 'false'); });
         });
     }
-    // the button shows once there are verses on the page (the home page has them only after a search)
+    // the settings are on every page; the commentaries are shown once there are verses
     function ready() {
-        if (document.querySelector('.verse .vnum[data-seder]')) { chooser(); showAll(); }
+        chooser();
+        if (document.querySelector('.verse .vnum[data-seder]')) showAll();
     }
     new MutationObserver(ready).observe(document.body, {childList: true, subtree: true});
     if (document.readyState == 'loading') document.addEventListener('DOMContentLoaded', ready); else ready();
