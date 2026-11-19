@@ -162,6 +162,7 @@ def page(path, title, description, body, crumbs=None, head=''):
     <script src="/app.js" defer></script>
     <script src="/sdarim.js" defer></script>
     <script src="/layout.js" defer></script>
+    <script type="module" src="/account.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JETFHY33T0"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -282,7 +283,8 @@ def build_pages(verses, sedarim):
                 + f'    <h1>{esc(name)}</h1>\n'
                 + (f'    <p class="seder-info">{parashot}</p>\n' if parashot else '')
                 + f'    <p class="seder-tools no-print"><a href="/?book={quote(slug(s["book"]))}&amp;seder={quote(s["seder"])}&amp;verse={quote("א")}">'
-                  f'פתיחה באתר</a> · <a href="{href(book_path(s["book"]))}">ספר {esc(s["book"])} כולו</a> · {print_button()}</p>\n'
+                  f'פתיחה באתר</a> · <a href="{href(book_path(s["book"]))}">ספר {esc(s["book"])} כולו</a> · {print_button()} '
+                  f'<button type="button" class="learn-seder" data-book="{esc(s["book"])}" data-seder="{esc(s["seder"])}" hidden></button></p>\n'
                 + verses_html(vs, anchors=True)
                 + nav(prev and (seder_path(prev['book'], prev['seder']), f'הסדר הקודם: {prev["book"]} סדר {prev["seder"]}'),
                       nxt and (seder_path(nxt['book'], nxt['seder']), f'הסדר הבא: {nxt["book"]} סדר {nxt["seder"]}')))

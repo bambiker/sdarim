@@ -25,11 +25,24 @@
         return note;
     }
 
+    // marking the verse as learned (account.js shows the button and handles the click)
+    function learnButton(link) {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'learn-verse';
+        button.hidden = true;
+        button.dataset.book = link.dataset.book;
+        button.dataset.seder = link.dataset.seder;
+        button.dataset.verse = link.dataset.verse;
+        return button;
+    }
+
     function render(panel, entries, sources, link) {
         panel.replaceChildren();
         if (!entries || entries.length == 0) {
             panel.textContent = 'אין פירושים לפסוק זה.';
             if (link.dataset.chapter) panel.appendChild(chapterNote(link));
+            panel.appendChild(learnButton(link));
             return;
         }
         const used = [];
@@ -85,6 +98,7 @@
         credit.append(sefaria);
         panel.appendChild(credit);
         if (link.dataset.chapter) panel.appendChild(chapterNote(link));
+        panel.appendChild(learnButton(link));
     }
 
     function toggle(link) {
