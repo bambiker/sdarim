@@ -144,6 +144,150 @@ a {
   display: none;
 }
 
+/* ~~~ the reader's account (account.js): sign in, or a link to their progress ~~~ */
+.account {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+}
+
+.account + .install {
+  margin-inline-start: 8px;
+}
+
+.account-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, .45);
+  border-radius: 999px;
+  padding: 5px 14px;
+  text-decoration: none;
+}
+
+.account-mark {
+  color: var(--gold);
+}
+
+/* marking a seder or a verse as learned */
+.learn-seder, .learn-verse {
+  cursor: pointer;
+  font-family: var(--ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: #2e7d4f;
+  background: transparent;
+  border: 1px solid #9ccdb0;
+  border-radius: 999px;
+  padding: 2px 12px;
+}
+
+.learn-seder[aria-pressed="true"], .learn-verse[aria-pressed="true"] {
+  color: #fff;
+  background: #2e7d4f;
+  border-color: #2e7d4f;
+}
+
+.learn-seder[hidden], .learn-verse[hidden] {
+  display: none;
+}
+
+.learn-verse {
+  margin-top: 8px;
+}
+
+.seder-learn {
+  margin: 0 0 8px;
+}
+
+/* a verse learned: a thin green line under it */
+.verse.learned {
+  text-decoration: underline;
+  text-decoration-color: rgba(46, 125, 79, .45);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+/* ~~~ progress.html ~~~ */
+.progress-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 6px 0 4px;
+}
+
+.progress-bar span {
+  display: block;
+  height: 100%;
+  background: #2e7d4f;
+}
+
+.progress-next {
+  font-weight: 700;
+}
+
+.progress-recent small {
+  color: var(--muted);
+}
+
+.progress-book {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 0;
+}
+
+.progress-book summary {
+  cursor: pointer;
+}
+
+.progress-name {
+  font-weight: 700;
+}
+
+.progress-sedarim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 8px 0 4px;
+}
+
+.progress-seder {
+  min-width: 34px;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 3px 4px;
+}
+
+.progress-seder.partly {
+  background: #dff0e5;
+  border-color: #9ccdb0;
+}
+
+.progress-seder.done {
+  color: #fff;
+  background: #2e7d4f;
+  border-color: #2e7d4f;
+}
+
 .install-help {
   max-width: 420px;
   border: 0;
@@ -1568,5 +1712,11 @@ dl.fields dd {
   }
   .outside-chapter, .chapter-mark {
     color: #555 !important;
+  }
+  .learn-seder, .learn-verse, .account {
+    display: none !important;
+  }
+  .verse.learned {
+    text-decoration: none;
   }
 }

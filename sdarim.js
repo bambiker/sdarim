@@ -1244,6 +1244,9 @@ function userSeder(filtArray2, book, seder, verse){
     if (verse=='') verse= 'א'
         
     output = '<div class="seder-nav"></div>' + "<h3>"+escapeHtml(book)+" סדר " + escapeHtml(seder) + " " + PRINT_BUTTON + "</h3>";
+    // marking the seder as learned (account.js shows the button)
+    output += '<p class="seder-learn no-print"><button type="button" class="learn-seder" data-book="' + escapeHtml(book) +
+        '" data-seder="' + escapeHtml(seder) + '" hidden></button></p>';
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
