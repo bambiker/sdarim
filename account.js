@@ -3,12 +3,15 @@
 //
 // Firestore holds one document per reader, users/<uid>:
 //     {sedarim: ['בראשית|א', ...], verses: ['בראשית|ב|ג', ...], dates: {'בראשית|א': <time learned>}, updated}
-// by the seder numbering. The security rules (see firestore.rules) let each reader read and write only their
+// by the seder numbering, and the reader's own commentary, one document per verse:
+//     users/<uid>/notes/<'בראשית|ב|ג'>  {book, seder, verse, text, updated} The security rules (see firestore.rules) let each reader read and write only their
 // own document; the list of readers is seen only in the Firebase console (Authentication, Users).
 //
 // The pages show:
 //     <button class="learn-seder" data-book data-seder hidden>  in a seder (sdarim.js, the static seder pages)
 //     <button class="learn-verse" data-book data-seder data-verse hidden>  in the commentaries of a verse
+//     <div class="my-note" data-book data-seder data-verse>  the reader's commentary on it, written there
+//     .verse.has-note  on every verse the reader wrote on
 //     .verse.learned  on every verse learned, by itself or with its seder
 // and the topbar gets a sign-in button, or the reader's name with a link to their progress (progress.html).
 // progress.html listens to the 'masdirim:account' event, whose detail is the state below.
@@ -16,7 +19,7 @@
 import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js';
 import {getAuth, onAuthStateChanged, GoogleAuthProvider, signInWithPopup, signInWithRedirect, signOut} from
     'https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js';
-import {getFirestore, doc, onSnapshot, setDoc, arrayUnion, arrayRemove, deleteField, serverTimestamp} from
+import {getFirestore, doc, collection, onSnapshot, setDoc, deleteDoc, arrayUnion, arrayRemove, deleteField, serverTimestamp} from
     'https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js';
 
 // the site's Firebase project; these identify it and are public (the rules protect the data)
@@ -31,9 +34,10 @@ const app = initializeApp({
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-const state = {ready: false, user: null, sedarim: new Set(), verses: new Set(), dates: {}};
+const state = {ready: false, user: null, sedarim: new Set(), verses: new Set(), dates: {}, notes: new Map(), notesReady: false};
+const NOTE_MAX = 20000;   // letters in one note (firestore.rules allows the same)
 let pending = null;   // a mark asked for before signing in, done once signed in
-let stopListening = null;
+let stopListening = null, stopNotes = null;
 
 function track(name, params) {
     try { if (typeof gtag == 'function') gtag('event', name, params || {}); } catch (e) { }
@@ -74,6 +78,17 @@ export async function toggleVerse(book, seder, verse) {
     const learned = state.verses.has(key);
     await setDoc(userDoc(), {verses: learned ? arrayRemove(key) : arrayUnion(key), updated: serverTimestamp()}, {merge: true});
     track(learned ? 'unmark_verse' : 'mark_verse', {book, seder, verse});
+}
+
+// the reader's commentary on a verse; empty text deletes it
+export async function saveNote(book, seder, verse, text) {
+    if (!state.user) return signIn();
+    const key = book + '|' + seder + '|' + verse;
+    const ref = doc(db, 'users', state.user.uid, 'notes', key);
+    text = text.trim().slice(0, NOTE_MAX);
+    if (text) await setDoc(ref, {book, seder, verse, text, updated: serverTimestamp()});
+    else await deleteDoc(ref);
+    track(text ? 'save_note' : 'delete_note', {book, seder, verse});
 }
 
 export function getState() {
@@ -122,7 +137,49 @@ function refresh() {
         if (!n) return;
         const seder = n.dataset.book + '|' + n.dataset.seder;
         v.classList.toggle('learned', state.sedarim.has(seder) || state.verses.has(seder + '|' + n.dataset.verse));
+        v.classList.toggle('has-note', state.notes.has(seder + '|' + n.dataset.verse));
     });
+    document.querySelectorAll('.my-note').forEach(noteEditor);
+}
+
+// the reader's commentary under the commentaries of a verse: written and saved there
+function noteEditor(box) {
+    const key = box.dataset.book + '|' + box.dataset.seder + '|' + box.dataset.verse;
+    if (!state.ready) return;
+    if (!state.user) {
+        if (box.dataset.mode == 'out') return;
+        box.dataset.mode = 'out';
+        box.innerHTML = '<button type="button" class="note-sign-in">כתיבת פרשנות משלכם לפסוק (התחברות)</button>';
+        box.querySelector('button').addEventListener('click', signIn);
+        return;
+    }
+    const saved = (state.notes.get(key) || {}).text || '';
+    if (box.dataset.mode != 'in') {
+        box.dataset.mode = 'in';
+        box.innerHTML = '<label class="note-label">הפרשנות שלי</label><textarea rows="3" maxlength="' + NOTE_MAX +
+            '" placeholder="כתבו כאן את הפירוש שלכם לפסוק"></textarea><div class="note-tools"><button type="button" class="note-save">שמירה</button>' +
+            '<span class="note-status" aria-live="polite"></span> <a href="/my-commentary.html">ספר הפרשנות שלי</a></div>';
+        const area = box.querySelector('textarea'), status = box.querySelector('.note-status');
+        area.value = saved;
+        box.dataset.saved = saved;
+        area.addEventListener('input', () => { status.textContent = area.value.trim() != box.dataset.saved ? 'לא נשמר' : ''; });
+        const save = () => {
+            if (area.value.trim() == box.dataset.saved) return;
+            status.textContent = 'שומר...';
+            saveNote(box.dataset.book, box.dataset.seder, box.dataset.verse, area.value)
+                .then(() => { box.dataset.saved = area.value.trim(); status.textContent = 'נשמר ✓'; })
+                .catch(() => { status.textContent = 'לא ניתן לשמור כרגע'; });
+        };
+        box.querySelector('.note-save').addEventListener('click', save);
+        area.addEventListener('blur', save);   // leaving the box saves too
+        return;
+    }
+    // changed elsewhere (another device): shown, unless the reader is writing here
+    const area = box.querySelector('textarea');
+    if (area && document.activeElement != area && area.value.trim() == box.dataset.saved && saved != box.dataset.saved) {
+        area.value = saved;
+        box.dataset.saved = saved;
+    }
 }
 
 function changed() {
@@ -148,6 +205,10 @@ new MutationObserver(() => {
 
 onAuthStateChanged(auth, user => {
     if (stopListening) { stopListening(); stopListening = null; }
+    if (stopNotes) { stopNotes(); stopNotes = null; }
+    document.querySelectorAll('.my-note').forEach(box => { delete box.dataset.mode; });
+    state.notes = new Map();
+    state.notesReady = false;
     state.user = user;
     state.sedarim = new Set();
     state.verses = new Set();
@@ -155,6 +216,11 @@ onAuthStateChanged(auth, user => {
     state.ready = true;
     if (!user) { changed(); return; }
     track('sign_in');
+    stopNotes = onSnapshot(collection(db, 'users', user.uid, 'notes'), snap => {
+        state.notes = new Map(snap.docs.map(d => [d.id, d.data()]));
+        state.notesReady = true;
+        changed();
+    }, () => { state.notesReady = true; changed(); });
     stopListening = onSnapshot(doc(db, 'users', user.uid), snap => {
         const data = snap.exists() ? snap.data() : {};
         state.sedarim = new Set(data.sedarim || []);
@@ -170,5 +236,5 @@ onAuthStateChanged(auth, user => {
     }, () => changed());
 });
 
-window.masdirimAccount = {signIn, signOut: signOutReader, toggleSeder, toggleVerse, getState};
+window.masdirimAccount = {signIn, signOut: signOutReader, toggleSeder, toggleVerse, saveNote, getState};
 changed();

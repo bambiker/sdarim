@@ -214,6 +214,127 @@ a {
   text-underline-offset: 6px;
 }
 
+/* the reader's own commentary on a verse, under its commentaries */
+.my-note {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--line);
+  font-family: var(--ui);
+}
+
+.note-label {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  color: #2e7d4f;
+  margin-bottom: 4px;
+}
+
+.my-note textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 10px;
+  resize: vertical;
+}
+
+.note-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 12px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+.note-save, .note-sign-in {
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #2e7d4f;
+  background: transparent;
+  border: 1px solid #9ccdb0;
+  border-radius: 999px;
+  padding: 2px 12px;
+}
+
+.note-status {
+  color: var(--muted);
+}
+
+/* a verse the reader wrote on: a small pen after its number */
+.verse.has-note .vnum::after {
+  content: '✎';
+  font-size: .7em;
+  color: #2e7d4f;
+  margin-inline-start: 2px;
+}
+
+/* ~~~ my-commentary.html ~~~ */
+.my-commentary-tools {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin-bottom: 18px;
+}
+
+.my-commentary-tools select {
+  font: inherit;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.my-commentary-title {
+  font-size: 30px;
+}
+
+.my-commentary-count {
+  color: var(--muted);
+}
+
+.my-commentary-item {
+  margin: 0 0 18px;
+  break-inside: avoid;
+}
+
+.my-commentary-ref {
+  margin: 0 0 2px;
+}
+
+.my-commentary-ref a {
+  font-size: 13px;
+  margin-inline-start: 8px;
+}
+
+.my-commentary-verse {
+  font-family: var(--text);
+  font-size: 20px;
+  line-height: 1.8;
+  margin: 0 0 4px;
+  color: var(--heading);
+}
+
+.my-commentary-note {
+  white-space: pre-wrap;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.progress-notes {
+  list-style: none;
+  padding: 0;
+}
+
 /* ~~~ progress.html ~~~ */
 .progress-head {
   display: flex;
@@ -1713,7 +1834,16 @@ dl.fields dd {
   .outside-chapter, .chapter-mark {
     color: #555 !important;
   }
-  .learn-seder, .learn-verse, .account {
+  .learn-seder, .learn-verse, .account, .my-note {
+    display: none !important;
+  }
+  .my-commentary {
+    box-shadow: none !important;
+    border: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .my-commentary + .site-footer, .my-commentary .hint {
     display: none !important;
   }
   .verse.learned {

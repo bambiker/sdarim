@@ -37,12 +37,22 @@
         return button;
     }
 
+    // the reader's own commentary on the verse (account.js writes it in)
+    function myNote(link) {
+        const box = document.createElement('div');
+        box.className = 'my-note';
+        box.dataset.book = link.dataset.book;
+        box.dataset.seder = link.dataset.seder;
+        box.dataset.verse = link.dataset.verse;
+        return box;
+    }
+
     function render(panel, entries, sources, link) {
         panel.replaceChildren();
         if (!entries || entries.length == 0) {
             panel.textContent = 'אין פירושים לפסוק זה.';
             if (link.dataset.chapter) panel.appendChild(chapterNote(link));
-            panel.appendChild(learnButton(link));
+            panel.append(myNote(link), learnButton(link));
             return;
         }
         const used = [];
@@ -98,7 +108,7 @@
         credit.append(sefaria);
         panel.appendChild(credit);
         if (link.dataset.chapter) panel.appendChild(chapterNote(link));
-        panel.appendChild(learnButton(link));
+        panel.append(myNote(link), learnButton(link));
     }
 
     function toggle(link) {

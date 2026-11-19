@@ -1,5 +1,6 @@
 // progress.html: the sedarim and verses the reader marked as learned (account.js keeps them), by book.
 // A seder marked as learned counts all its verses; a verse marked by itself counts in its seder.
+// And the reader's own commentary: how many verses they wrote on, in each book.
 
 const box = document.getElementById('progress');
 const sederIndex = fetch('/API/sedarim.json').then(r => r.json());
@@ -72,6 +73,25 @@ async function render(state) {
             return '<li><a href="' + sederHref({book, seder}) + '">' + escapeHtml(book) + ' סדר ' + escapeHtml(seder) + '</a> <small>' +
                 d.toDate().toLocaleDateString('he-IL') + '</small></li>';
         }).join('') + '</ul>';
+    }
+    // the reader's commentary: verses written on, in all and in each book
+    const notes = [...state.notes.values()];
+    html += '<h2>הפרשנות שלי</h2>';
+    if (!notes.length) {
+        html += '<p>עוד לא כתבתם פרשנות. לחצו על פסוק, ובתיבה "הפרשנות שלי" שמתחת לפירושים כתבו את הפירוש שלכם.</p>';
+    } else {
+        const noteSedarim = new Set(notes.map(n => n.book + '|' + n.seder)).size;
+        const letters = notes.reduce((n, x) => n + (x.text || '').length, 0);
+        html += '<p>כתבתם פרשנות ל־' + (notes.length == 1 ? 'פסוק אחד' : notes.length.toLocaleString('he') + ' פסוקים') + ' ב־' +
+            (noteSedarim == 1 ? 'סדר אחד' : noteSedarim + ' סדרים') + ' (' + letters.toLocaleString('he') + ' אותיות). ' +
+            '<a href="/my-commentary.html">לספר הפרשנות שלי, להדפסה</a></p><ul class="progress-notes">' +
+            books.map(b => {
+                const n = notes.filter(x => x.book == b.name).length;
+                if (!n) return '';
+                const verses = b.sedarim.reduce((t, x) => t + x.verses, 0);
+                return '<li><b>' + escapeHtml(b.name) + ':</b> ' + n + ' מתוך ' + verses + ' פסוקים (' + percent(n, verses) + '%)' +
+                    bar(percent(n, verses)) + '</li>';
+            }).join('') + '</ul>';
     }
     html += '<h2>לפי ספרים</h2>';
     books.forEach(b => {
