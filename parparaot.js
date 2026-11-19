@@ -1,6 +1,7 @@
 // parparaot.html: the places in the Tanakh where a run of words spells a word in their first letters
 // (ראשי תיבות) or their last letters (סופי תיבות), from the first word to the last or from the last to
-// the first. A final letter counts as the plain letter (ם as מ), and spaces in the word are ignored.
+// the first. A final letter counts as the plain letter (ם as מ); spaces, gershayim and dots in the word are
+// ignored (רמב"ם, ר.מ.ב.ם).
 // The run may go on from verse to verse, but not from one book to the next.
 // Also: the words two parashot have in common, and how many times each appears in each of them.
 
@@ -88,6 +89,7 @@
     }
 
     async function search(word) {
+        // only the letters count: not spaces, gershayim (" ״) or dots
         const target = plain(word.replace(/[^א-ת]/g, ''));
         if (target.length < 2) {
             results.innerHTML = '<p>יש להקליד לפחות שתי אותיות.</p>';
