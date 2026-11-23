@@ -17,7 +17,8 @@ Files written (spaces in book names become underscores):
     API/map.json                                chapter <-> seder location of every verse, no text
     API/text.json                               the text of every verse without nikud, in the order of map.json
     API/parashot.json                           the verses of each parasha: [first, last] places in map.json
-(API/letters.json, the big, small and raised letters, is written by build_letters.py and kept.)
+(API/letters.json, the big, small and raised letters, is written by build_letters.py, and API/sections.json, the
+open and closed sections, by build_sections.py; both are kept.)
 It also writes the static pages made by build_pages.py (seder/, perek/, parasha/, book/,
 sitemap.xml, robots.txt, llms.txt).
 """
@@ -34,7 +35,7 @@ from build_pages import GENERATED_DIRS, STATIC_PAGES, build_pages, sitemap  # no
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 API = os.path.join(ROOT, 'API')
-KEEP = {'book_names.json', 'letters.json'}   # letters.json: written by build_letters.py
+KEEP = {'book_names.json', 'letters.json', 'sections.json'}   # written by build_letters.py, build_sections.py
 
 
 def name(*parts):

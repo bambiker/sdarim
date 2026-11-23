@@ -22,8 +22,8 @@ In detail:
      commentator and book are in commentary/sources.json (public domain, CC0, CC-BY or CC-BY-SA).
    - calendar/haftarot.json : the haftarot and the readings of the festivals, from @hebcal/leyning
      (BSD 2-Clause License, https://github.com/hebcal/hebcal-leyning).
-   - API/letters.json : the big, small and raised letters, from "Miqra according to the Masorah"
-     (Sefaria, CC BY-SA 4.0).
+   - API/letters.json and API/sections.json : the big, small and raised letters, and the open and closed
+     sections, from "Miqra according to the Masorah" (Sefaria, CC BY-SA 4.0).
 
 -----------------------------------------------------------------------------------------------------
 

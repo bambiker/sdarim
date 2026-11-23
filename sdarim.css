@@ -1302,6 +1302,36 @@ h2 {
   margin: 0 0 14px;
 }
 
+/* stats.html */
+.stats-scroll {
+  overflow-x: auto;
+}
+
+.stats-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: var(--ui);
+  font-size: 15px;
+  margin: 6px 0 14px;
+}
+
+.stats-table th, .stats-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 6px 8px;
+  text-align: center;
+  vertical-align: top;
+}
+
+.stats-table tbody th {
+  text-align: start;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.stats-table thead th {
+  color: var(--heading);
+}
+
 .seder-info {
   color: var(--muted);
   margin: 4px 0;

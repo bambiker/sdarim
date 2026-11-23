@@ -18,6 +18,7 @@ import html
 import json
 import os
 import re
+import statistics
 from collections import OrderedDict
 from urllib.parse import quote
 
@@ -199,6 +200,7 @@ def page(path, title, description, body, crumbs=None, head=''):
       <a href="/api.html">API ונתונים</a> ·
       <a href="/convert.html">המרת מראי מקום</a> ·
       <a href="/parparaot.html">פרפראות התורה</a> ·
+      <a href="/stats.html">סטטיסטיקות</a> ·
       <a href="https://github.com/bambiker/sdarim" target="_blank" rel="noopener">קוד פתוח</a>
     </footer>
   </body>
@@ -378,6 +380,7 @@ def build_pages(verses, sedarim):
                                      body, [])
 
     pages['faq.html'] = faq_page(sedarim)
+    pages['stats.html'] = stats_page(verses, by_seder, by_chapter)
 
     # ~~~ robots.txt, llms.txt ~~~
     pages['robots.txt'] = f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n'
@@ -479,6 +482,144 @@ def faq_page(sedarim):
     return page('faq.html', 'מה הם הסדרים בתנ"ך? שאלות ותשובות | מסדירים',
                 'מה היא החלוקה היהודית של התנ"ך לסדרים, למה לא לפי הפרקים, כמה סדרים יש בכל ספר ואיך מוצאים באיזה סדר נמצא פסוק.',
                 body, [('שאלות ותשובות', 'faq.html')], head)
+
+
+# ~~~ statistics: the sedarim of the Torah, the Prophets and the Writings, and the chapters beside them ~~~
+# The open and closed sections (פרשיות פתוחות וסתומות) are in API/sections.json, made by build_sections.py.
+
+NEVIIM_SEDER_BOOKS = ['יהושע', 'שופטים', 'שמואל', 'מלכים', 'ישעיהו', 'ירמיהו', 'יחזקאל', 'תרי עשר']
+NEVIIM_CHAPTER_BOOKS = ['יהושע', 'שופטים', 'שמואל א', 'שמואל ב', 'מלכים א', 'מלכים ב', 'ישעיהו', 'ירמיהו', 'יחזקאל',
+                        'הושע', 'יואל', 'עמוס', 'עובדיה', 'יונה', 'מיכה', 'נחום', 'חבקוק', 'צפניה', 'חגי', 'זכריה', 'מלאכי']
+PARTS = [('torah', 'תורה'), ('neviim', 'נביאים'), ('ketuvim', 'כתובים'), ('all', 'תנ"ך')]
+
+
+def part_of(book, neviim):
+    return 'torah' if book in TORAH else 'neviim' if book in neviim else 'ketuvim'
+
+
+def stats_page(verses, by_seder, by_chapter):
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'API', 'sections.json'), encoding='utf-8') as f:
+        sections = json.load(f)
+    index = {id(v): i for i, v in enumerate(verses)}
+    seder_starts = {index[id(vs[0])] for vs in by_seder.values()}
+    chapter_starts = {index[id(vs[0])] for vs in by_chapter.values()}
+    words = lambda v: len(v.get('versenonikud', '').split())
+    letters = lambda v: len(re.sub('[^א-ת]', '', v.get('versenonikud', '')))
+
+    def start_kind(i):
+        """how a unit that begins at verses[i] begins: a new book, an open or a closed section, or neither"""
+        if i == 0 or verses[i - 1]['bookchapter'] != verses[i]['bookchapter']:
+            return 'book'
+        p = verses[i - 1]
+        return {'פ': 'open', 'ס': 'closed'}.get(sections.get(f"{p['bookchapter']}|{p['chapter']}|{p['versechapter']}"), 'none')
+
+    def units(groups, book_of, neviim, path, name):
+        out = []
+        for key, vs in groups.items():
+            i = index[id(vs[0])]
+            out.append({'part': part_of(book_of(key, vs), neviim), 'verses': len(vs), 'words': sum(map(words, vs)),
+                        'letters': sum(map(letters, vs)), 'start': start_kind(i), 'i': i, 'path': path(key), 'name': name(key)})
+        return out
+
+    sedarim = units(by_seder, lambda k, vs: k[0], NEVIIM_SEDER_BOOKS, lambda k: seder_path(*k), lambda k: f'{k[0]} סדר {k[1]}')
+    chapters = units(by_chapter, lambda k, vs: k[0], NEVIIM_CHAPTER_BOOKS, lambda k: perek_path(*k), lambda k: f'{k[0]} פרק {k[1]}')
+    pick = lambda items, part: [u for u in items if part == 'all' or u['part'] == part]
+    num = lambda x: f'{x:,.0f}' if abs(x) >= 100 else f'{x:.1f}'
+    pct = lambda a, b: f'{100 * a / b:.1f}%' if b else '–'
+    link = lambda u: f'<a href="{href(u["path"])}">{esc(u["name"])}</a> ({u["verses"]})'
+
+    def table(title, rows, note=''):
+        head = '<tr><th></th>' + ''.join(f'<th>{esc(n)}</th>' for _, n in PARTS) + '</tr>'
+        body = ''.join(f'<tr><th>{esc(label)}</th>' + ''.join(f'<td>{cell(part)}</td>' for part, _ in PARTS) + '</tr>'
+                       for label, cell in rows)
+        return (f'    <h2>{esc(title)}</h2>\n' + (f'    <p class="seder-info">{note}</p>\n' if note else '') +
+                f'    <div class="stats-scroll"><table class="stats-table"><thead>{head}</thead><tbody>{body}</tbody></table></div>\n')
+
+    def measures(items):
+        avg = lambda part, field: num(sum(u[field] for u in pick(items, part)) / max(1, len(pick(items, part))))
+        return [
+            ('מספר', lambda part: f'{len(pick(items, part)):,}'),
+            ('פסוקים בממוצע', lambda part: avg(part, 'verses')),
+            ('מילים בממוצע', lambda part: avg(part, 'words')),
+            ('אותיות בממוצע', lambda part: avg(part, 'letters')),
+            # how even the division is: the spread of the length (in words) around its average
+            ('סטיית תקן (מילים)', lambda part: num(statistics.pstdev([u['words'] for u in pick(items, part)]))),
+            ('הארוך ביותר (פסוקים)', lambda part: link(max(pick(items, part), key=lambda u: u['verses']))),
+            ('הקצר ביותר (פסוקים)', lambda part: link(min(pick(items, part), key=lambda u: u['verses']))),
+        ]
+
+    def beginnings(items):
+        share = lambda part, kind: pct(sum(u['start'] == kind for u in pick(items, part)), len(pick(items, part)))
+        inside = lambda part: [u for u in pick(items, part) if u['start'] != 'book']
+        return [
+            ('בפרשה פתוחה (פ)', lambda part: share(part, 'open')),
+            ('בפרשה סתומה (ס)', lambda part: share(part, 'closed')),
+            ('בתחילת ספר', lambda part: share(part, 'book')),
+            ('באמצע פרשה', lambda part: share(part, 'none')),
+            ('בפרשה פתוחה או סתומה, לא כולל תחילת ספר',
+             lambda part: pct(sum(u['start'] in ('open', 'closed') for u in inside(part)), len(inside(part)))),
+        ]
+
+    # where the two divisions meet
+    def meet(part):
+        ch = pick(chapters, part)
+        return pct(sum(u['i'] in seder_starts for u in ch), len(ch))
+
+    def meet_back(part):
+        sd = pick(sedarim, part)
+        return pct(sum(u['i'] in chapter_starts for u in sd), len(sd))
+
+    def per_verse(field):
+        return lambda part: num(sum(u[field] for u in pick(sedarim, part)) / max(1, sum(u['verses'] for u in pick(sedarim, part))))
+
+    total = lambda field: lambda part: f'{sum(u[field] for u in pick(sedarim, part)):,}'
+    spans = lambda part: num(sum(len({verses[j]['chapter'] + verses[j]['bookchapter'] for j in range(u['i'], u['i'] + u['verses'])})
+                                 for u in pick(sedarim, part)) / max(1, len(pick(sedarim, part))))
+
+    # by book: how many sedarim, and how long
+    books = OrderedDict()
+    for u in sedarim:
+        books.setdefault(u['name'].split(' סדר ')[0], []).append(u)
+    # the first seder of a book begins with the book, so it is not counted in the last column
+    inner = lambda us: [u for u in us if u['start'] != 'book']
+    book_rows = ''.join(
+        f'<tr><th><a href="{href(book_path(b))}">{esc(b)}</a></th><td>{len(us)}</td><td>{num(sum(u["verses"] for u in us) / len(us))}</td>'
+        f'<td>{num(sum(u["words"] for u in us) / len(us))}</td>'
+        f'<td>{pct(sum(u["start"] in ("open", "closed") for u in inner(us)), len(inner(us)))}</td></tr>' for b, us in books.items())
+
+    body = (
+        '    <h1>סטטיסטיקות על הסדרים</h1>\n'
+        '    <p class="seder-info">הסדרים בתורה, בנביאים ובכתובים, ולצדם הפרקים להשוואה: כמה יש, כמה הם ארוכים, '
+        'איפה הם מתחילים ועד כמה שתי החלוקות נפגשות. בטבלאות "הארוך ביותר" ו"הקצר ביותר" מופיע בסוגריים מספר הפסוקים.</p>\n'
+        + table('הסדרים', measures(sedarim))
+        + table('הפרקים, להשוואה', measures(chapters))
+        + table('איפה מתחילים הסדרים', beginnings(sedarim),
+                'סדר מתחיל "בפרשה פתוחה" כשהפסוק שלפניו מסיים פרשה פתוחה (פ), ו"בפרשה סתומה" כשהוא מסיים פרשה סתומה (ס). '
+                'הפרשיות הפתוחות והסתומות לפי המקרא על פי המסורה (ספריא, CC-BY-SA).')
+        + table('איפה מתחילים הפרקים, להשוואה', beginnings(chapters))
+        + table('כשהחלוקות נפגשות', [
+            ('פרקים שמתחילים יחד עם סדר', meet),
+            ('סדרים שמתחילים בתחילת פרק', meet_back),
+            ('בכמה פרקים נוגע סדר, בממוצע', spans),
+        ])
+        + table('ועוד קצת', [
+            ('פסוקים בסך הכול', total('verses')),
+            ('מילים בסך הכול', total('words')),
+            ('אותיות בסך הכול', total('letters')),
+            ('מילים בפסוק, בממוצע', per_verse('words')),
+            ('אותיות במילה, בממוצע', lambda part: num(sum(u['letters'] for u in pick(sedarim, part)) /
+                                                      max(1, sum(u['words'] for u in pick(sedarim, part))))),
+        ])
+        + '    <h2>לפי ספרים</h2>\n'
+        '    <div class="stats-scroll"><table class="stats-table"><thead><tr><th>ספר</th><th>סדרים</th><th>פסוקים בסדר</th>'
+        '<th>מילים בסדר</th><th>מתחילים בפרשה פתוחה או סתומה (בלי הסדר הראשון)</th></tr></thead><tbody>' + book_rows + '</tbody></table></div>\n'
+        '    <p class="seder-info">שמואל, מלכים, עזרא ונחמיה, דברי הימים ותרי עשר הם ספר אחד כל אחד בחלוקה לסדרים. '
+        'המילים והאותיות נספרו בטקסט בלי ניקוד, ומילים שמחוברות במקף נספרו כמילים נפרדות. '
+        '"–" בספר שיש בו סדר אחד בלבד: הוא מתחיל בתחילת הספר.</p>\n'
+    )
+    return page('stats.html', 'סטטיסטיקות על הסדרים בתנ"ך: תורה, נביאים וכתובים | מסדירים',
+                'כמה סדרים יש בתורה, בנביאים ובכתובים, כמה פסוקים, מילים ואותיות יש בסדר בממוצע, כמה מהם מתחילים בפרשה פתוחה '
+                'או סתומה, והשוואה לחלוקה לפרקים.', body, [('סטטיסטיקות', 'stats.html')])
 
 
 # ~~~ llms-full.txt: every seder in plain text, for AI tools ~~~
