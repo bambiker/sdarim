@@ -172,6 +172,46 @@ function songMarks(v) {
 function songBefore(v) {
     return songMarks(v).filter(m => m[0] == 0).map(m => SONG_HTML[SONG_MARK[m[1]]]).join('');
 }
+// the lines of a song are kept whole: on a narrow screen (or a big font) the song's verses are made smaller,
+// step by step, until none of its lines goes on to a second line
+function songLinesFit(verses) {
+    const range = document.createRange();
+    range.setStartBefore(verses[0]);
+    range.setEndAfter(verses[verses.length - 1]);
+    const lineHeight = parseFloat(getComputedStyle(verses[0]).fontSize) * 1.2;
+    const bottoms = [...range.getClientRects()].filter(r => r.width > 0 && r.height > 0).map(r => r.bottom).sort((a, b) => a - b);
+    let lines = bottoms.length ? 1 : 0;
+    for (let i = 1; i < bottoms.length; i++) if (bottoms[i] - bottoms[i - 1] > lineHeight / 2) lines++;
+    const breaks = range.cloneContents().querySelectorAll('br').length;
+    return lines <= breaks + 1;
+}
+function fitSongs() {
+    // the songs on the page: runs of song verses one after the other
+    const runs = [];
+    document.querySelectorAll('.verse.song').forEach(v => {
+        let prev = v.previousElementSibling;
+        while (prev && (prev.matches('br') || prev.matches('.song-gap, .setuma'))) prev = prev.previousElementSibling;
+        if (prev && prev.matches('.verse.song') && runs.length && runs[runs.length - 1].includes(prev)) runs[runs.length - 1].push(v);
+        else runs.push([v]);
+    });
+    runs.forEach(run => {
+        if (!run[0].offsetParent) return;   // not shown (a closed tab)
+        for (const size of [1, .95, .9, .85, .8, .75, .7]) {
+            run.forEach(v => { v.style.fontSize = size == 1 ? '' : size + 'em'; });
+            if (songLinesFit(run)) break;
+        }
+    });
+}
+let songsScheduled = false;
+function scheduleFitSongs() {
+    if (songsScheduled) return;
+    songsScheduled = true;
+    requestAnimationFrame(() => { songsScheduled = false; if (document.querySelector('.verse.song')) fitSongs(); });
+}
+new MutationObserver(scheduleFitSongs).observe(document.documentElement, {childList: true, subtree: true});
+window.addEventListener('resize', scheduleFitSongs);
+if (document.fonts) document.fonts.ready.then(scheduleFitSongs);
+
 function songSpans(html) {
     return html.replace(/([\uE004\uE005]) ?/g, (m, mark) => SONG_HTML[mark]);
 }
@@ -207,7 +247,7 @@ function letterSpans(html) {
 function verseHtml(v, after) {
     // the number is not a link: a click on it, or on the verse, opens the commentaries (commentary.js),
     // which also show where the verse is by the chapters (data-chapter)
-    return (after ? songBefore(v) : '') + '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
+    return (after ? songBefore(v) : '') + '<span class="verse' + (songMarks(v).length ? ' song' : '') + '"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
         '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) +
         '" data-chapter="' + escapeHtml(v.bookchapter + ' ' + v.chapter + ', ' + v.versechapter) + '">' +
         "<sup>(" + v.verseseder + ")</sup> " + '</span>' +

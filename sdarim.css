@@ -1373,6 +1373,13 @@ h2 {
   width: 3em;
 }
 
+/* on a phone a smaller gap, so a line of the song fits in the width (sdarim.js makes the song smaller if not) */
+@media (max-width: 700px) {
+  .song-gap {
+    width: 1em;
+  }
+}
+
 /* the big, small and raised letters of the Masorah (אותיות גדולות, קטנות ותלויות) */
 .letter-big {
   font-size: 1.45em;
