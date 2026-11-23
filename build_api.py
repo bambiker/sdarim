@@ -35,7 +35,7 @@ from build_pages import GENERATED_DIRS, STATIC_PAGES, build_pages, sitemap  # no
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 API = os.path.join(ROOT, 'API')
-KEEP = {'book_names.json', 'letters.json', 'sections.json'}   # written by build_letters.py, build_sections.py
+KEEP = {'book_names.json', 'letters.json', 'sections.json', 'songs.json'}   # written by build_letters.py, build_sections.py, build_songs.py
 
 
 def name(*parts):

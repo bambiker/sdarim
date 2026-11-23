@@ -1367,6 +1367,12 @@ h2 {
   width: 4.5em;
 }
 
+/* the songs (שירות): a gap between the parts of a line, as in a Torah scroll; the new lines are <br> */
+.song-gap {
+  display: inline-block;
+  width: 3em;
+}
+
 /* the big, small and raised letters of the Masorah (אותיות גדולות, קטנות ותלויות) */
 .letter-big {
   font-size: 1.45em;

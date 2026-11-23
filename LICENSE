@@ -24,6 +24,8 @@ In detail:
      (BSD 2-Clause License, https://github.com/hebcal/hebcal-leyning).
    - API/letters.json and API/sections.json : the big, small and raised letters, and the open and closed
      sections, from "Miqra according to the Masorah" (Sefaria, CC BY-SA 4.0).
+   - API/songs.json : the layout of the songs (שירות), from MAM-parsed, "Miqra according to the Masorah"
+     (https://github.com/bdenckla/MAM-basics, CC BY-SA 4.0).
 
 -----------------------------------------------------------------------------------------------------
 

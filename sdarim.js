@@ -1,5 +1,5 @@
 async function start(){
-   await Promise.all([lettersReady, sectionsReady]);
+   await Promise.all([lettersReady, sectionsReady, songsReady]);
 
    // the tools of the static pages (layout.js) open their result here: ?q= a word search,
    // ?cbook=&chapter=&cverse= a chapter to convert
@@ -159,13 +159,30 @@ function sectionAfter(v) {
     const kind = sections[v.bookchapter + '|' + v.chapter + '|' + v.versechapter];
     return kind == 'פ' ? '<br class="petucha">' : kind == 'ס' ? '<span class="setuma" aria-hidden="true"></span>' : '';
 }
+// ~~~ the songs written in a special form (API/songs.json, made by build_songs.py): a gap between the parts
+// of a line, and a new line where the source has it, as in a Torah scroll ~~~
+let songs = {};
+const songsReady = loadJson('/API/songs.json').then(data => { songs = data || {}; }).catch(() => { });
+const SONG_MARK = {gap: '\uE004', line: '\uE005'};
+const SONG_HTML = {'\uE004': '<span class="song-gap" aria-hidden="true"></span>', '\uE005': '<br class="song-line">'};
+function songMarks(v) {
+    return songs[v.bookchapter + '|' + v.chapter + '|' + v.versechapter] || [];
+}
+// the gap or new line before the verse
+function songBefore(v) {
+    return songMarks(v).filter(m => m[0] == 0).map(m => SONG_HTML[SONG_MARK[m[1]]]).join('');
+}
+function songSpans(html) {
+    return html.replace(/([\uE004\uE005]) ?/g, (m, mark) => SONG_HTML[mark]);
+}
 const LETTER_START = {big: '\uE000', small: '\uE001', raised: '\uE002'};
 const LETTER_END = '\uE003';
 
 // the verse's text with the special letters (and their nikud) between marks; letterSpans() makes them spans
 function withLetters(v) {
-    const marks = specialLetters && specialLetters[v.bookchapter + '|' + v.chapter + '|' + v.versechapter];
-    if (!marks || !v.versenikud) return v.versenikud;
+    const marks = (specialLetters && specialLetters[v.bookchapter + '|' + v.chapter + '|' + v.versechapter]) || [];
+    const inside = songMarks(v).filter(m => m[0] > 0);
+    if ((!marks.length && !inside.length) || !v.versenikud) return v.versenikud;
     const words = v.versenikud.split(' ');
     marks.slice().sort((a, b) => b[1] - a[1]).forEach(([w, n, kind]) => {
         const word = words[w];
@@ -175,6 +192,8 @@ function withLetters(v) {
         while (end < word.length && /[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]/.test(word[end])) end++;
         words[w] = word.slice(0, at) + LETTER_START[kind] + word.slice(at, end) + LETTER_END + word.slice(end);
     });
+    // a token of its own before the word, after the letters are marked
+    inside.forEach(([w, kind]) => { if (w < words.length) words[w] = SONG_MARK[kind] + ' ' + words[w]; });
     return words.join(' ');
 }
 
@@ -184,15 +203,16 @@ function letterSpans(html) {
 }
 
 // a verse with its number; clicking the number opens the commentaries (commentary.js)
-function verseHtml(v) {
+// after: not the first verse in its block (a song's gap or new line between verses is not put at the top)
+function verseHtml(v, after) {
     // the number is not a link: a click on it, or on the verse, opens the commentaries (commentary.js),
     // which also show where the verse is by the chapters (data-chapter)
-    return '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
+    return (after ? songBefore(v) : '') + '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
         '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) +
         '" data-chapter="' + escapeHtml(v.bookchapter + ' ' + v.chapter + ', ' + v.versechapter) + '">' +
         "<sup>(" + v.verseseder + ")</sup> " + '</span>' +
         // the few marks in sdarim.json at the end of a verse are in sections.json too
-        letterSpans(cleanverse((withLetters(v) || '').replace(/\s*\{[פס]\}\s*$/, ' '))) + '</span>' + sectionAfter(v);
+        songSpans(letterSpans(cleanverse((withLetters(v) || '').replace(/\s*\{[פס]\}\s*$/, ' ')))) + '</span>' + sectionAfter(v);
 }
 
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';
@@ -321,9 +341,10 @@ function versesBySeder(verses) {
     let html = '', lastSeder = '';
     verses.forEach(v => {
         const seder = v.bookseder + ' סדר ' + v.seder;
-        if (seder != lastSeder) html += '<h3>' + escapeHtml(seder) + '</h3>';
+        const first = seder != lastSeder;
+        if (first) html += '<h3>' + escapeHtml(seder) + '</h3>';
         lastSeder = seder;
-        html += verseHtml(v);
+        html += verseHtml(v, !first);
     });
     return html;
 }
@@ -363,8 +384,9 @@ async function findparasha(){
     output = "<h2>" + "פרשת " + escapeHtml(parasha) + " " + PRINT_BUTTON + "</h2>";
     oldseder='-1' 
     for (let i = 0; i < filteredArray.length; i++) {
-         if (filteredArray[i].seder!=oldseder) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
-         output += verseHtml(filteredArray[i]);
+         const first = filteredArray[i].seder!=oldseder;
+         if (first) output += "<h3>"+ filteredArray[i].bookseder +" סדר " + filteredArray[i].seder + "</h3>";
+         output += verseHtml(filteredArray[i], !first);
          oldseder = filteredArray[i].seder
     }
     document.getElementById("result").innerHTML  = output + await haftarahHtml(parasha);
@@ -1261,7 +1283,7 @@ function userSeder(filtArray2, book, seder, verse){
     
     for (let i = 0; i < filtArray2.length; i++) {
          if (filtArray2[i].verseseder==verse) output += "<mark>"
-         output += verseHtml(filtArray2[i]);
+         output += verseHtml(filtArray2[i], i > 0);
          if (filtArray2[i].verseseder==verse) output += "</mark>"
     }
     output += '<div class="seder-nav"></div>';
