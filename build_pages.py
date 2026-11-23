@@ -270,7 +270,8 @@ def verses_html(verses, number_by='seder', anchors=False):
                 f' data-chapter="{esc(v["bookchapter"])} {esc(v["chapter"])}, {esc(v["versechapter"])}"')
         tooltip = tooltip or ' title="פירושים"'
         # a song's gap or new line between verses, not at the top of the page
-        out.append(f'{song_before(v) if i else ""}<span class="verse"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
+        song = ' song' if f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}" in SONGS else ''
+        out.append(f'{song_before(v) if i else ""}<span class="verse{song}"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
                    f'<sup>({esc(n)})</sup></span> {verse_text(v)}</span>{section_after(v)}')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
@@ -289,7 +290,8 @@ def seder_with_chapter(verses, chapter_verses):
         if v is first:
             out.append(f'<span class="chapter-mark" id="chapter-start">תחילת פרק {esc(chapter)}</span>')
         anchor = f' id="{esc(v["versechapter"])}"' if inside[i] else ''
-        out.append(f'{song_before(v) if i else ""}<span class="verse{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
+        song = ' song' if f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}" in SONGS else ''
+        out.append(f'{song_before(v) if i else ""}<span class="verse{song}{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
                    f'{data} title="פירושים"><sup>({esc(v["verseseder"])})</sup></span> {verse_text(v)}</span>{section_after(v)}')
         if v is last:
             out.append(f'<span class="chapter-mark">סוף פרק {esc(chapter)}</span>')
