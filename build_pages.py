@@ -101,6 +101,18 @@ def with_letters(v):
     return ' '.join(words)
 
 
+# the open and closed sections (API/sections.json, made by build_sections.py): after the last verse of a
+# section, a new line (פתוחה) or a space of nine letters (סתומה), as in a Torah scroll (as sectionAfter() in sdarim.js)
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'API', 'sections.json'), encoding='utf-8') as _f:
+    SECTIONS = json.load(_f)
+SECTION_MARK = re.compile(r'\s*\{[פס]\}\s*$')   # the few marks in sdarim.json at the end of a verse: sections.json has them
+
+
+def section_after(v):
+    kind = SECTIONS.get(f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}")
+    return {'פ': '<br class="petucha">', 'ס': '<span class="setuma" aria-hidden="true"></span>'}.get(kind, '')
+
+
 def letter_spans(text):
     kinds = {mark: kind for kind, mark in LETTER_START.items()}
     return LETTER_SPANS.sub(lambda m: f'<span class="letter-{kinds[m.group(1)]}">{m.group(2)}</span>', text)
@@ -112,6 +124,7 @@ def verse_text(v):
     t = esc(with_letters(v)).replace('&lt;br&gt;', '<br>')
     t = re.sub(r'&amp;(#?\w+);', r'&\1;', t)
     t = KETIV.sub(r'\1<span class="ketiv" title="כתיב">(\2)</span>', t)
+    t = SECTION_MARK.sub(' ', t)
     return letter_spans(t.replace('{פ}', '<br>').replace('{ש}', '<br>').replace('{ס}', '&emsp;&emsp;&emsp;&emsp;'))
 
 
@@ -233,7 +246,7 @@ def verses_html(verses, number_by='seder', anchors=False):
                 f' data-chapter="{esc(v["bookchapter"])} {esc(v["chapter"])}, {esc(v["versechapter"])}"')
         tooltip = tooltip or ' title="פירושים"'
         out.append(f'<span class="verse"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
-                   f'<sup>({esc(n)})</sup></span> {verse_text(v)}</span>')
+                   f'<sup>({esc(n)})</sup></span> {verse_text(v)}</span>{section_after(v)}')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
 
@@ -252,7 +265,7 @@ def seder_with_chapter(verses, chapter_verses):
             out.append(f'<span class="chapter-mark" id="chapter-start">תחילת פרק {esc(chapter)}</span>')
         anchor = f' id="{esc(v["versechapter"])}"' if inside[i] else ''
         out.append(f'<span class="verse{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
-                   f'{data} title="פירושים"><sup>({esc(v["verseseder"])})</sup></span> {verse_text(v)}</span>')
+                   f'{data} title="פירושים"><sup>({esc(v["verseseder"])})</sup></span> {verse_text(v)}</span>{section_after(v)}')
         if v is last:
             out.append(f'<span class="chapter-mark">סוף פרק {esc(chapter)}</span>')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
@@ -498,8 +511,7 @@ def part_of(book, neviim):
 
 
 def stats_page(verses, by_seder, by_chapter):
-    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'API', 'sections.json'), encoding='utf-8') as f:
-        sections = json.load(f)
+    sections = SECTIONS
     index = {id(v): i for i, v in enumerate(verses)}
     seder_starts = {index[id(vs[0])] for vs in by_seder.values()}
     chapter_starts = {index[id(vs[0])] for vs in by_chapter.values()}
