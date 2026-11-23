@@ -519,11 +519,15 @@ def stats_page(verses, by_seder, by_chapter):
     letters = lambda v: len(re.sub('[^א-ת]', '', v.get('versenonikud', '')))
 
     def start_kind(i):
-        """how a unit that begins at verses[i] begins: a new book, an open or a closed section, or neither"""
+        """how a unit that begins at verses[i] begins: a new book, an open or a closed section, at the last verse
+        of an open or a closed section (one verse before the next one), or elsewhere inside a section"""
         if i == 0 or verses[i - 1]['bookchapter'] != verses[i]['bookchapter']:
             return 'book'
-        p = verses[i - 1]
-        return {'פ': 'open', 'ס': 'closed'}.get(sections.get(f"{p['bookchapter']}|{p['chapter']}|{p['versechapter']}"), 'none')
+        key = lambda v: f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}"
+        before = sections.get(key(verses[i - 1]))
+        if before:
+            return {'פ': 'open', 'ס': 'closed'}[before]
+        return {'פ': 'last_open', 'ס': 'last_closed'}.get(sections.get(key(verses[i])), 'none')
 
     def units(groups, book_of, neviim, path, name):
         out = []
@@ -566,10 +570,16 @@ def stats_page(verses, by_seder, by_chapter):
         return [
             ('בפרשה פתוחה (פ)', lambda part: share(part, 'open')),
             ('בפרשה סתומה (ס)', lambda part: share(part, 'closed')),
+            ('בפסוק האחרון של פרשה פתוחה', lambda part: share(part, 'last_open')),
+            ('בפסוק האחרון של פרשה סתומה', lambda part: share(part, 'last_closed')),
             ('בתחילת ספר', lambda part: share(part, 'book')),
-            ('באמצע פרשה', lambda part: share(part, 'none')),
+            ('במקום אחר באמצע פרשה', lambda part: share(part, 'none')),
             ('בפרשה פתוחה או סתומה, לא כולל תחילת ספר',
              lambda part: pct(sum(u['start'] in ('open', 'closed') for u in inside(part)), len(inside(part)))),
+            ('בפסוק האחרון של פרשה, לא כולל תחילת ספר',
+             lambda part: pct(sum(u['start'] in ('last_open', 'last_closed') for u in inside(part)), len(inside(part)))),
+            ('בפרשה או בפסוק שלפניה, לא כולל תחילת ספר',
+             lambda part: pct(sum(u['start'] != 'none' for u in inside(part)), len(inside(part)))),
         ]
 
     # where the two divisions meet
@@ -607,6 +617,8 @@ def stats_page(verses, by_seder, by_chapter):
         + table('הפרקים, להשוואה', measures(chapters))
         + table('איפה מתחילים הסדרים', beginnings(sedarim),
                 'סדר מתחיל "בפרשה פתוחה" כשהפסוק שלפניו מסיים פרשה פתוחה (פ), ו"בפרשה סתומה" כשהוא מסיים פרשה סתומה (ס). '
+                'סדר מתחיל "בפסוק האחרון של פרשה" כשהפסוק הראשון שלו הוא זה שמסיים את הפרשה, פסוק אחד לפני הפרשה הבאה: '
+                'כך מתחילים הרבה מהסדרים בנביאים ובכתובים, ואילו בתורה אין אף סדר כזה. '
                 'הפרשיות הפתוחות והסתומות לפי המקרא על פי המסורה (ספריא, CC-BY-SA).')
         + table('איפה מתחילים הפרקים, להשוואה', beginnings(chapters))
         + table('כשהחלוקות נפגשות', [
