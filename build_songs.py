@@ -33,6 +33,50 @@ SONGS = [('A2-Exodus', None, 'שמות', 15, 1, 19), ('A5-Deuter', None, 'דבר
          ('BA-Samuel', 'שמ"ב', 'שמואל ב', 22, 1, 51), ('E4-Ecclesiastes', None, 'קהלת', 3, 2, 8),
          ('E5-Esther', None, 'אסתר', 9, 7, 10), ('FC-Chronicles', 'דה"א', 'דברי הימים א', 16, 8, 36)]
 MARKS = {'מ:ששש': 'gap', 'ר3': 'line', 'ר4': 'line'}
+# the Song of the Sea: MAM has its gaps but not its lines. Its 30 lines, as in a Torah scroll, by the words they
+# begin with (Tractate Soferim 12:11, Vilna 1883, public domain); the first line is written as usual, then a
+# line in three parts (two gaps) and a line in two parts (one gap), by turns (Rambam, Sefer Torah 8:4)
+SEA = ('אז לאמר ורכבו לישועה אבי שמו שלשיו אבן יהוה קמיך אפיך נוזלים אויב נפשי ברוחך אדירים '
+       'כמוכה פלא בחסדך קדשיך אחז אדום כל ופחד יעבור קנית לשבתך ידיך בא מי').split()
+
+
+def skeleton(word):
+    """a word's letters without ו and י, so full and defective spelling match (כמוכה, כָמֹכָה)"""
+    return re.sub('[וי]', '', letters(word))
+
+
+def sea_lines(songs, verses, problems):
+    """add to songs the new lines of the Song of the Sea, checked against its gaps"""
+    words = []   # (verse key, place in versenikud, word) of every counted word, in order
+    for n in range(1, 20):
+        key = ('שמות', 'טו', hebrew_number(n))
+        for i, w in enumerate(verses[key]['versenikud'].split(' ')):
+            if NIKUD.search(w):
+                words.append(('|'.join(key), i, w))
+    gaps = {(k, w) for k, marks in songs.items() for w, kind in marks if kind == 'gap'}
+    at = 0   # line 1 begins at the first word of the song (after a section: no new line)
+    for line, head in enumerate(SEA[1:], 2):
+        # the head of the line, after the previous one, with the gaps of the line before it (line 1: none;
+        # then three parts and two by turns)
+        want = 0 if line == 2 else (2 if line % 2 else 1)
+        for j in range(at + 1, len(words)):
+            if skeleton(words[j][2]) != skeleton(head):
+                continue
+            inside = sum((k, w) in gaps for k, w, _ in words[at + 1:j])
+            if inside == want and (words[j][0], words[j][1]) not in gaps:
+                break
+        else:
+            problems.append(('sea line', line, head))
+            continue
+        at = j
+        key, place, _ = words[j]
+        songs.setdefault(key, []).append([place, 'line'])
+    # the last line, "מי הים | ובני ישראל הלכו ביבשה בתוך הים", is in two parts
+    last = sum((k, w) in gaps for k, w, _ in words[at + 1:])
+    if last != 1:
+        problems.append(('sea last line gaps', last))
+    for marks in songs.values():
+        marks.sort()
 NIKUD = re.compile('[ְ-ׇּׁׂ]')
 
 
@@ -117,6 +161,7 @@ def main():
                 problems.append((key, 'words', word_count(' '.join(t for t in text if t not in ('gap', 'line'))), len(counted)))
             if marks:
                 songs['|'.join(key)] = marks
+    sea_lines(songs, verses, problems)
     with open(os.path.join(ROOT, 'API', 'songs.json'), 'w', encoding='utf-8') as f:
         f.write('{\n' + ',\n'.join(json.dumps(k, ensure_ascii=False) + ':' + json.dumps(v, ensure_ascii=False)
                                    for k, v in songs.items()) + '\n}\n')
