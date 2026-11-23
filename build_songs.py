@@ -39,10 +39,40 @@ MARKS = {'מ:ששש': 'gap', 'ר3': 'line', 'ר4': 'line'}
 SEA = ('אז לאמר ורכבו לישועה אבי שמו שלשיו אבן יהוה קמיך אפיך נוזלים אויב נפשי ברוחך אדירים '
        'כמוכה פלא בחסדך קדשיך אחז אדום כל ופחד יעבור קנית לשבתך ידיך בא מי').split()
 
+# Haman's sons, as in a megillah: not a half brick over a whole one but a brick over a brick (Tractate Soferim
+# 13:3), in two columns: "איש" at the top and each son's name at the right, "ואת" at the left, and "עשרת" at
+# the bottom (13:6, the same as Shulchan Aruch, Orach Chaim 691:3)
+HAMAN = ('איש', 'פרשנדתא', 'דלפון', 'אספתא', 'פורתא', 'אדליא', 'ארידתא', 'פרמשתא', 'אריסי', 'ארדי', 'ויזתא')
+
 
 def skeleton(word):
     """a word's letters without ו and י, so full and defective spelling match (כמוכה, כָמֹכָה)"""
     return re.sub('[וי]', '', letters(word))
+
+
+def haman_columns(songs, verses, problems):
+    """the marks of Haman's sons (in place of MAM's gaps there): a line for each, and a gap before its ואת"""
+    words = []
+    for n in range(6, 11):
+        key = ('אסתר', 'ט', hebrew_number(n))
+        songs.pop('|'.join(key), None)
+        for i, w in enumerate(verses[key]['versenikud'].split(' ')):
+            if NIKUD.search(w):
+                words.append(('|'.join(key), i, letters(w)))
+    at = 0
+    for head in HAMAN:
+        at = next((j for j in range(at, len(words)) if skeleton(words[j][2]) == skeleton(head)), None)
+        if at is None or at + 1 >= len(words) or words[at + 1][2] not in ('ואת', 'עשרת'):
+            problems.append(('haman', head))
+            return
+        for (key, place, _), kind in ((words[at], 'line'), (words[at + 1], 'gap')):
+            songs.setdefault(key, []).append([place, kind])
+        at += 1
+    # after "עשרת", the rest of the verse on a line of its own
+    key, place, _ = words[at + 1]
+    songs.setdefault(key, []).append([place, 'line'])
+    for n in range(6, 11):
+        songs.get('|'.join(('אסתר', 'ט', hebrew_number(n))), []).sort()
 
 
 def sea_lines(songs, verses, problems):
@@ -162,6 +192,7 @@ def main():
             if marks:
                 songs['|'.join(key)] = marks
     sea_lines(songs, verses, problems)
+    haman_columns(songs, verses, problems)
     with open(os.path.join(ROOT, 'API', 'songs.json'), 'w', encoding='utf-8') as f:
         f.write('{\n' + ',\n'.join(json.dumps(k, ensure_ascii=False) + ':' + json.dumps(v, ensure_ascii=False)
                                    for k, v in songs.items()) + '\n}\n')

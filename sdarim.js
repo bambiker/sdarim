@@ -174,16 +174,37 @@ function songBefore(v) {
 }
 // the lines of a song are kept whole: on a narrow screen (or a big font) the song's verses are made smaller,
 // step by step, until none of its lines goes on to a second line
-function songLinesFit(verses) {
+// the lines of a song that have gaps (a line of the song, between new lines), each as [range, its gaps]; none
+// in a song whose lines are not known (only gaps)
+function songLines(run, gaps) {
+    const box = run[0].parentNode;
     const range = document.createRange();
-    range.setStartBefore(verses[0]);
-    range.setEndAfter(verses[verses.length - 1]);
-    const lineHeight = parseFloat(getComputedStyle(verses[0]).fontSize) * 1.2;
-    const bottoms = [...range.getClientRects()].filter(r => r.width > 0 && r.height > 0).map(r => r.bottom).sort((a, b) => a - b);
-    let lines = bottoms.length ? 1 : 0;
-    for (let i = 1; i < bottoms.length; i++) if (bottoms[i] - bottoms[i - 1] > lineHeight / 2) lines++;
-    const breaks = range.cloneContents().querySelectorAll('br').length;
-    return lines <= breaks + 1;
+    let start = run[0], end = run[run.length - 1];
+    while (start.previousElementSibling && start.previousElementSibling.matches('.song-gap, br')) start = start.previousElementSibling;
+    while (end.nextElementSibling && end.nextElementSibling.matches('br')) end = end.nextElementSibling;
+    range.setStartBefore(start);
+    range.setEndAfter(end);
+    const breaks = [...box.querySelectorAll('br')].filter(b => range.intersectsNode(b)).map(b => [b, false]);
+    if (!breaks.some(([b]) => b.matches('.song-line'))) return [];
+    // the song at the top of the text, or before a title or the end of a chapter: a line ends there too
+    const notText = el => !el || !el.matches('.verse, .song-gap, br');
+    if (notText(start.previousElementSibling) && (!breaks.length || breaks[0][0] != start)) breaks.unshift([start, true]);
+    if (notText(end.nextElementSibling) && (!breaks.length || breaks[breaks.length - 1][0] != end)) breaks.push([end, true]);
+    const lines = [];
+    for (let i = 0; i + 1 < breaks.length; i++) {
+        const line = document.createRange();
+        if (breaks[i][1]) line.setStartBefore(breaks[i][0]); else line.setStartAfter(breaks[i][0]);
+        if (breaks[i + 1][1]) line.setEndAfter(breaks[i + 1][0]); else line.setEndBefore(breaks[i + 1][0]);
+        const inLine = gaps.filter(g => line.intersectsNode(g));
+        if (inLine.length) lines.push([line, inLine]);
+    }
+    return lines;
+}
+// the rectangles of a line, and whether it is shown on one line of the screen
+function lineRects(line, size) {
+    const rects = [...line.getClientRects()].filter(r => r.width > 0 && r.height > 0);
+    const bottoms = rects.map(r => r.bottom);
+    return [rects, rects.length && Math.max(...bottoms) - Math.min(...bottoms) <= size];
 }
 function fitSongs() {
     // the songs on the page: runs of song verses one after the other
@@ -198,11 +219,15 @@ function fitSongs() {
         if (!run[0].offsetParent) return;   // not shown (a closed tab)
         const gaps = songGaps(run);
         gaps.forEach(g => { g.style.width = ''; });
+        run.forEach(v => { v.style.fontSize = ''; });
+        const lines = songLines(run, gaps);
+        if (!lines.length) return;   // a song whose lines are not known: as it is
         for (const size of [1, .95, .9, .85, .8, .75, .7]) {
             run.forEach(v => { v.style.fontSize = size == 1 ? '' : size + 'em'; });
-            if (songLinesFit(run)) break;
+            const px = parseFloat(getComputedStyle(run[0]).fontSize);
+            if (lines.every(([line]) => lineRects(line, px)[1])) break;
         }
-        bricks(run, gaps);
+        bricks(run, lines);
     });
 }
 // the gaps of a song, from the one before its first verse to the last one in it
@@ -217,35 +242,18 @@ function songGaps(run) {
 // "a half brick over a whole brick" (אריח על גבי לבנה), as in a Torah scroll: each line of the song fills the
 // width, the room left in it shared by its gaps, so its first part is at the right edge and its last at the
 // left, and the middle part of a line in three parts stands over the gap of the line above it
-function bricks(run, gaps) {
+function bricks(run, lines) {
     const box = run[0].parentNode;
     const style = getComputedStyle(box);
     const left = box.getBoundingClientRect().left + parseFloat(style.paddingLeft) + parseFloat(style.borderLeftWidth);
-    // the lines: between new lines (a line of the song, or the new line of an open section before or after it)
-    const range = document.createRange();
-    let start = run[0], end = run[run.length - 1];
-    while (start.previousElementSibling && start.previousElementSibling.matches('.song-gap, br')) start = start.previousElementSibling;
-    while (end.nextElementSibling && end.nextElementSibling.matches('br')) end = end.nextElementSibling;
-    range.setStartBefore(start);
-    range.setEndAfter(end);
-    const breaks = [...box.querySelectorAll('br')].filter(b => range.intersectsNode(b)).map(b => [b, false]);
-    // the song at the top of the text, or before a title or the end of a chapter: a line ends there too
-    const notText = el => !el || !el.matches('.verse, .song-gap, br');
-    if (notText(start.previousElementSibling) && (!breaks.length || breaks[0][0] != start)) breaks.unshift([start, true]);
-    if (notText(end.nextElementSibling) && (!breaks.length || breaks[breaks.length - 1][0] != end)) breaks.push([end, true]);
+    const px = parseFloat(getComputedStyle(run[0]).fontSize);
     const wide = [];
-    for (let i = 0; i + 1 < breaks.length; i++) {
-        const line = document.createRange();
-        if (breaks[i][1]) line.setStartBefore(breaks[i][0]); else line.setStartAfter(breaks[i][0]);
-        if (breaks[i + 1][1]) line.setEndAfter(breaks[i + 1][0]); else line.setEndBefore(breaks[i + 1][0]);
-        const inLine = gaps.filter(g => line.intersectsNode(g));
-        const rects = [...line.getClientRects()].filter(r => r.width > 0 && r.height > 0);
-        if (!inLine.length || !rects.length) continue;
-        const bottoms = rects.map(r => r.bottom);
-        if (Math.max(...bottoms) - Math.min(...bottoms) > parseFloat(getComputedStyle(run[0]).fontSize)) continue;   // more than one line
+    lines.forEach(([line, inLine]) => {
+        const [rects, one] = lineRects(line, px);
+        if (!one) return;   // too long for the width: as it is
         const room = Math.min(...rects.map(r => r.left)) - left - 2;
         if (room > 0) wide.push([inLine, room / inLine.length]);
-    }
+    });
     // all measured first, then widened (a wider gap does not move the other lines)
     wide.forEach(([inLine, more]) => inLine.forEach(g => { g.style.width = (g.getBoundingClientRect().width + more) + 'px'; }));
 }
