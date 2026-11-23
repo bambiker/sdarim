@@ -85,12 +85,33 @@ LETTER_SPANS = re.compile('([\ue000-\ue002])(.*?)\ue003')
 POINTS = re.compile('[\u0591-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7]')
 
 
+# the songs written in a special form (API/songs.json, made by build_songs.py): a gap between the parts of a
+# line, and a new line where the source has it, as in a Torah scroll (as songMarks() in sdarim.js)
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'API', 'songs.json'), encoding='utf-8') as _f:
+    SONGS = json.load(_f)
+SONG_MARK = {'gap': '\ue004', 'line': '\ue005'}
+SONG_HTML = {'\ue004': '<span class="song-gap" aria-hidden="true"></span>', '\ue005': '<br class="song-line">'}
+
+
+def song_before(v):
+    """the gap or new line before the verse"""
+    marks = SONGS.get(f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}", [])
+    return ''.join(SONG_HTML[SONG_MARK[kind]] for w, kind in marks if w == 0)
+
+
+def song_spans(text):
+    return re.sub('([\ue004\ue005]) ?', lambda m: SONG_HTML[m.group(1)], text)
+
+
 def with_letters(v):
     text = v.get('versenikud', '')
-    marks = LETTERS.get(f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}")
-    if not marks:
+    key = f"{v['bookchapter']}|{v['chapter']}|{v['versechapter']}"
+    marks, songs = LETTERS.get(key), [m for m in SONGS.get(key, []) if m[0] > 0]
+    if not marks and not songs:
         return text
     words = text.split(' ')
+    if not marks:
+        marks = []
     for w, n, kind in sorted(marks, key=lambda m: -m[1]):
         word = words[w]
         at = [i for i, c in enumerate(word) if 'א' <= c <= 'ת'][n]
@@ -98,6 +119,9 @@ def with_letters(v):
         while end < len(word) and POINTS.match(word[end]):
             end += 1
         words[w] = word[:at] + LETTER_START[kind] + word[at:end] + LETTER_END + word[end:]
+    for w, kind in songs:
+        if w < len(words):
+            words[w] = SONG_MARK[kind] + ' ' + words[w]
     return ' '.join(words)
 
 
@@ -125,7 +149,7 @@ def verse_text(v):
     t = re.sub(r'&amp;(#?\w+);', r'&\1;', t)
     t = KETIV.sub(r'\1<span class="ketiv" title="כתיב">(\2)</span>', t)
     t = SECTION_MARK.sub(' ', t)
-    return letter_spans(t.replace('{פ}', '<br>').replace('{ש}', '<br>').replace('{ס}', '&emsp;&emsp;&emsp;&emsp;'))
+    return song_spans(letter_spans(t.replace('{פ}', '<br>').replace('{ש}', '<br>').replace('{ס}', '&emsp;&emsp;&emsp;&emsp;')))
 
 
 def plain(v):
@@ -235,7 +259,7 @@ def print_button():
 def verses_html(verses, number_by='seder', anchors=False):
     # anchors (id = verse letter) only where verse letters are unique on the page: seder and chapter pages
     out = []
-    for v in verses:
+    for i, v in enumerate(verses):
         n = v['verseseder'] if number_by == 'seder' else v['versechapter']
         # pages by sedarim don't mention chapters; chapter pages show the seder of each verse
         tooltip = (f' title="{esc(v["bookseder"])} סדר {esc(v["seder"])} פסוק {esc(v["verseseder"])}"'
@@ -245,7 +269,8 @@ def verses_html(verses, number_by='seder', anchors=False):
         data = (f' data-book="{esc(v["bookseder"])}" data-seder="{esc(v["seder"])}" data-verse="{esc(v["verseseder"])}"'
                 f' data-chapter="{esc(v["bookchapter"])} {esc(v["chapter"])}, {esc(v["versechapter"])}"')
         tooltip = tooltip or ' title="פירושים"'
-        out.append(f'<span class="verse"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
+        # a song's gap or new line between verses, not at the top of the page
+        out.append(f'{song_before(v) if i else ""}<span class="verse"{anchor}><span class="vnum" role="button" tabindex="0"{data}{tooltip}>'
                    f'<sup>({esc(n)})</sup></span> {verse_text(v)}</span>{section_after(v)}')
     return '    <div class="verses">\n' + '\n'.join(out) + '\n    </div>\n'
 
@@ -264,7 +289,7 @@ def seder_with_chapter(verses, chapter_verses):
         if v is first:
             out.append(f'<span class="chapter-mark" id="chapter-start">תחילת פרק {esc(chapter)}</span>')
         anchor = f' id="{esc(v["versechapter"])}"' if inside[i] else ''
-        out.append(f'<span class="verse{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
+        out.append(f'{song_before(v) if i else ""}<span class="verse{"" if inside[i] else " outside-chapter"}"{anchor}><span class="vnum" role="button" tabindex="0"'
                    f'{data} title="פירושים"><sup>({esc(v["verseseder"])})</sup></span> {verse_text(v)}</span>{section_after(v)}')
         if v is last:
             out.append(f'<span class="chapter-mark">סוף פרק {esc(chapter)}</span>')
