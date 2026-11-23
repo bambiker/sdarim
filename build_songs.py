@@ -44,6 +44,11 @@ SEA = ('אז לאמר ורכבו לישועה אבי שמו שלשיו אבן י
 # the bottom (13:6, the same as Shulchan Aruch, Orach Chaim 691:3)
 HAMAN = ('איש', 'פרשנדתא', 'דלפון', 'אספתא', 'פורתא', 'אדליא', 'ארידתא', 'פרמשתא', 'אריסי', 'ארדי', 'ויזתא')
 
+# the kings of Canaan (Joshua 12:9-24) are also written a brick over a brick (Tractate Soferim 13:3; Megillah
+# 16b): one king to a line, "מלך ..." at the right and "אחד" at the left, and "כל מלכים שלשים ואחד" on a line
+# of its own (MAM has two kings to a line)
+KINGS = ('יהושע', 'יב', 9, 24)
+
 
 def skeleton(word):
     """a word's letters without ו and י, so full and defective spelling match (כמוכה, כָמֹכָה)"""
@@ -73,6 +78,30 @@ def haman_columns(songs, verses, problems):
     songs.setdefault(key, []).append([place, 'line'])
     for n in range(6, 11):
         songs.get('|'.join(('אסתר', 'ט', hebrew_number(n))), []).sort()
+
+
+def kings_columns(songs, verses, problems):
+    """the marks of the kings of Canaan, in place of MAM's: a line for each king, and a gap before its אחד"""
+    book, chapter, first, last = KINGS
+    kings = 0
+    for n in range(first, last + 1):
+        key = '|'.join((book, chapter, hebrew_number(n)))
+        marks = []
+        for i, w in enumerate(verses[(book, chapter, hebrew_number(n))]['versenikud'].split(' ')):
+            word = letters(w)
+            if not NIKUD.search(w):
+                continue
+            if word == 'מלך':
+                kings += 1
+                if kings > 1:   # the first begins after the section before it, on a line of its own
+                    marks.append([i, 'line'])
+            elif word == 'אחד':
+                marks.append([i, 'gap'])
+            elif word == 'כל':
+                marks.append([i, 'line'])
+        songs['|'.join((book, chapter, hebrew_number(n)))] = marks
+    if kings != 31:
+        problems.append(('kings', kings))
 
 
 def sea_lines(songs, verses, problems):
@@ -193,6 +222,7 @@ def main():
                 songs['|'.join(key)] = marks
     sea_lines(songs, verses, problems)
     haman_columns(songs, verses, problems)
+    kings_columns(songs, verses, problems)
     with open(os.path.join(ROOT, 'API', 'songs.json'), 'w', encoding='utf-8') as f:
         f.write('{\n' + ',\n'.join(json.dumps(k, ensure_ascii=False) + ':' + json.dumps(v, ensure_ascii=False)
                                    for k, v in songs.items()) + '\n}\n')
