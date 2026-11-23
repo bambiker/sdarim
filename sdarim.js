@@ -187,7 +187,7 @@ function songLines(run, gaps) {
     const breaks = [...box.querySelectorAll('br')].filter(b => range.intersectsNode(b)).map(b => [b, false]);
     if (!breaks.some(([b]) => b.matches('.song-line'))) return [];
     // the song at the top of the text, or before a title or the end of a chapter: a line ends there too
-    const notText = el => !el || !el.matches('.verse, .song-gap, br');
+    const notText = el => !el || !el.matches('.verse, mark, .song-gap, br');
     if (notText(start.previousElementSibling) && (!breaks.length || breaks[0][0] != start)) breaks.unshift([start, true]);
     if (notText(end.nextElementSibling) && (!breaks.length || breaks[breaks.length - 1][0] != end)) breaks.push([end, true]);
     const lines = [];
@@ -208,12 +208,14 @@ function lineRects(line, size) {
 }
 function fitSongs() {
     // the songs on the page: runs of song verses one after the other
+    // (the verse asked for, on the home page, is marked: <mark><span class="verse">; the mark stands for it)
     const runs = [];
     document.querySelectorAll('.verse.song').forEach(v => {
-        let prev = v.previousElementSibling;
+        const unit = v.parentElement.tagName == 'MARK' ? v.parentElement : v;
+        let prev = unit.previousElementSibling;
         while (prev && (prev.matches('br') || prev.matches('.song-gap, .setuma'))) prev = prev.previousElementSibling;
-        if (prev && prev.matches('.verse.song') && runs.length && runs[runs.length - 1].includes(prev)) runs[runs.length - 1].push(v);
-        else runs.push([v]);
+        if (prev && runs.length && runs[runs.length - 1].includes(prev)) runs[runs.length - 1].push(unit);
+        else runs.push([unit]);
     });
     runs.forEach(run => {
         if (!run[0].offsetParent) return;   // not shown (a closed tab)
