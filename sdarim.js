@@ -1,5 +1,5 @@
 async function start(){
-   await lettersReady;
+   await Promise.all([lettersReady, sectionsReady]);
 
    // the tools of the static pages (layout.js) open their result here: ?q= a word search,
    // ?cbook=&chapter=&cverse= a chapter to convert
@@ -150,6 +150,15 @@ function setCanonical(url) {
 // ~~~ the big, small and raised letters (API/letters.json, made by build_letters.py), in their size ~~~
 let specialLetters = null;
 const lettersReady = loadJson('/API/letters.json').then(data => { specialLetters = data || {}; }).catch(() => { specialLetters = {}; });
+
+// ~~~ the open and closed sections (API/sections.json, made by build_sections.py): after the last verse of a
+// section, a new line (פתוחה) or a space of nine letters (סתומה), as in a Torah scroll ~~~
+let sections = {};
+const sectionsReady = loadJson('/API/sections.json').then(data => { sections = data || {}; }).catch(() => { });
+function sectionAfter(v) {
+    const kind = sections[v.bookchapter + '|' + v.chapter + '|' + v.versechapter];
+    return kind == 'פ' ? '<br class="petucha">' : kind == 'ס' ? '<span class="setuma" aria-hidden="true"></span>' : '';
+}
 const LETTER_START = {big: '\uE000', small: '\uE001', raised: '\uE002'};
 const LETTER_END = '\uE003';
 
@@ -181,7 +190,9 @@ function verseHtml(v) {
     return '<span class="verse"><span class="vnum" role="button" tabindex="0" title="פירושים" data-book="' + escapeHtml(v.bookseder) +
         '" data-seder="' + escapeHtml(v.seder) + '" data-verse="' + escapeHtml(v.verseseder) +
         '" data-chapter="' + escapeHtml(v.bookchapter + ' ' + v.chapter + ', ' + v.versechapter) + '">' +
-        "<sup>(" + v.verseseder + ")</sup> " + '</span>' + letterSpans(cleanverse(withLetters(v))) + '</span>';
+        "<sup>(" + v.verseseder + ")</sup> " + '</span>' +
+        // the few marks in sdarim.json at the end of a verse are in sections.json too
+        letterSpans(cleanverse((withLetters(v) || '').replace(/\s*\{[פס]\}\s*$/, ' '))) + '</span>' + sectionAfter(v);
 }
 
 const PRINT_BUTTON = '<button class="print-button" onclick="window.print()">הדפסה / שמירה כ-PDF</button>';

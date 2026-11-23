@@ -1361,6 +1361,12 @@ h2 {
   background-color: var(--mark);
 }
 
+/* the open and closed sections: a new line after an open one, a space of nine letters after a closed one */
+.setuma {
+  display: inline-block;
+  width: 4.5em;
+}
+
 /* the big, small and raised letters of the Masorah (אותיות גדולות, קטנות ותלויות) */
 .letter-big {
   font-size: 1.45em;
