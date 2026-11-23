@@ -196,11 +196,58 @@ function fitSongs() {
     });
     runs.forEach(run => {
         if (!run[0].offsetParent) return;   // not shown (a closed tab)
+        const gaps = songGaps(run);
+        gaps.forEach(g => { g.style.width = ''; });
         for (const size of [1, .95, .9, .85, .8, .75, .7]) {
             run.forEach(v => { v.style.fontSize = size == 1 ? '' : size + 'em'; });
             if (songLinesFit(run)) break;
         }
+        bricks(run, gaps);
     });
+}
+// the gaps of a song, from the one before its first verse to the last one in it
+function songGaps(run) {
+    const range = document.createRange();
+    let first = run[0];
+    while (first.previousElementSibling && first.previousElementSibling.matches('.song-gap, br.song-line')) first = first.previousElementSibling;
+    range.setStartBefore(first);
+    range.setEndAfter(run[run.length - 1]);
+    return [...run[0].parentNode.querySelectorAll('.song-gap')].filter(g => range.intersectsNode(g));
+}
+// "a half brick over a whole brick" (אריח על גבי לבנה), as in a Torah scroll: each line of the song fills the
+// width, the room left in it shared by its gaps, so its first part is at the right edge and its last at the
+// left, and the middle part of a line in three parts stands over the gap of the line above it
+function bricks(run, gaps) {
+    const box = run[0].parentNode;
+    const style = getComputedStyle(box);
+    const left = box.getBoundingClientRect().left + parseFloat(style.paddingLeft) + parseFloat(style.borderLeftWidth);
+    // the lines: between new lines (a line of the song, or the new line of an open section before or after it)
+    const range = document.createRange();
+    let start = run[0], end = run[run.length - 1];
+    while (start.previousElementSibling && start.previousElementSibling.matches('.song-gap, br')) start = start.previousElementSibling;
+    while (end.nextElementSibling && end.nextElementSibling.matches('br')) end = end.nextElementSibling;
+    range.setStartBefore(start);
+    range.setEndAfter(end);
+    const breaks = [...box.querySelectorAll('br')].filter(b => range.intersectsNode(b)).map(b => [b, false]);
+    // the song at the top of the text, or before a title or the end of a chapter: a line ends there too
+    const notText = el => !el || !el.matches('.verse, .song-gap, br');
+    if (notText(start.previousElementSibling) && (!breaks.length || breaks[0][0] != start)) breaks.unshift([start, true]);
+    if (notText(end.nextElementSibling) && (!breaks.length || breaks[breaks.length - 1][0] != end)) breaks.push([end, true]);
+    const wide = [];
+    for (let i = 0; i + 1 < breaks.length; i++) {
+        const line = document.createRange();
+        if (breaks[i][1]) line.setStartBefore(breaks[i][0]); else line.setStartAfter(breaks[i][0]);
+        if (breaks[i + 1][1]) line.setEndAfter(breaks[i + 1][0]); else line.setEndBefore(breaks[i + 1][0]);
+        const inLine = gaps.filter(g => line.intersectsNode(g));
+        const rects = [...line.getClientRects()].filter(r => r.width > 0 && r.height > 0);
+        if (!inLine.length || !rects.length) continue;
+        const bottoms = rects.map(r => r.bottom);
+        if (Math.max(...bottoms) - Math.min(...bottoms) > parseFloat(getComputedStyle(run[0]).fontSize)) continue;   // more than one line
+        const room = Math.min(...rects.map(r => r.left)) - left - 2;
+        if (room > 0) wide.push([inLine, room / inLine.length]);
+    }
+    // all measured first, then widened (a wider gap does not move the other lines)
+    wide.forEach(([inLine, more]) => inLine.forEach(g => { g.style.width = (g.getBoundingClientRect().width + more) + 'px'; }));
 }
 let songsScheduled = false;
 function scheduleFitSongs() {
@@ -210,6 +257,8 @@ function scheduleFitSongs() {
 }
 new MutationObserver(scheduleFitSongs).observe(document.documentElement, {childList: true, subtree: true});
 window.addEventListener('resize', scheduleFitSongs);
+window.addEventListener('beforeprint', () => { if (document.querySelector('.verse.song')) fitSongs(); });   // the width of the page
+window.addEventListener('afterprint', scheduleFitSongs);
 if (document.fonts) document.fonts.ready.then(scheduleFitSongs);
 
 function songSpans(html) {
